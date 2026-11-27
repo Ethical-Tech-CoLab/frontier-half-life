@@ -6,7 +6,8 @@
 | Field | Value |
 | --- | --- |
 | Status | Approved for specification drafting — implementation remains gated |
-| Author | York E. Rhodes III / Ethical Tech CoLab |
+| Initial author | yorkerhodes3 |
+| Working version | v0.4 — advance as the work proceeds |
 | Reviewer(s) | @yorkerhodes3 — concept-stage scope approval |
 | Created | 2026-11-27 |
 | Last updated | 2026-11-27 |
@@ -106,6 +107,8 @@ Working choices made on 2026-11-27 at the author's request. They are reversible 
 - 🟢 We assume the source hierarchy, evidence-state labels, and uncertainty disclosures in the supplied draft are useful starting principles; reviewers should amend them.
 
 ## 11. Research approach and decision boundaries
+
+**2026-11-27 author direction:** Start the coordinated research, paper, and dashboard at **v0.4**, not v1. The paper is a key deliverable alongside the dashboard: a live, linked research reader whose text cites evidence and points to specific Pages visuals or reproducible interactions. `yorkerhodes3` is the initial author. The revised specification and requested plan remain drafts for review; this direction does not claim that their review gates have been completed.
 
 ### 11.1 Preserve the initial research, validate before adopting it
 
