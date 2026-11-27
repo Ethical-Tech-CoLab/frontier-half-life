@@ -1,0 +1,92 @@
+# BACKLOG: Research, paper, and dashboard — v0.4
+
+| Field | Value |
+| --- | --- |
+| Initial author / coordinator | yorkerhodes3 |
+| Last groomed | 2026-11-27 |
+| Current milestone | Evidence preparation and coordinated review drafts; M0 implementation not started |
+| Status | Revised specification and requested plan pending review |
+
+IDs are stable. **S** means less than an hour of active work; **M** means a few hours. These are proposed sizes, not measured effort. Tasks larger than a source batch or one view must be split before work. Dependencies are explicit, not inferred from order. References point to [SPECIFICATION.md](SPECIFICATION.md) requirements and [PLAN §3](PLAN.md#3-evidence-work-packages) work packages. Drafted artifacts are not marked reviewed or merged merely because they exist.
+
+## Now — independent research and document review
+
+| ID | Task | Ref | Size / state | Acceptance / dependency |
+| --- | --- | --- | --- | --- |
+| T-001 | Review revised v0.4 specification, including live-reader and evidence boundaries | FR-15, FR-16 | M / review | Actual author verdict recorded; source access does not waive evidence or build gates |
+| T-002 | Review coordinated plan, backlog, milestones and paper-section dependencies | FR-16; W8 | M / review | After T-001 approval, record plan verdict, owners and scope cuts; no automatic approval from drafting request |
+| T-003 | Inspect full UKERC review and Masanet methods once public access works | FR-01, FR-02; W4 | M / blocked by independent-source access | Capture sections/limitations and supporting or contrary findings; revise R01/P01 without borrowing AI elasticities |
+| T-004 | Inspect inference-energy and SWE-bench method/version/annotation records | FR-03, FR-04; W2 | M / blocked by independent-source access | Record task/hardware/harness/license boundaries; revise R02/P03/P04; no invented current frontier-energy inputs |
+| T-005 | Define proposed coding, extraction and bounded-agent rubrics for reviewer selection | FR-03, FR-05; W2 | M / todo | Use R02 proposals; mark uninspected dataset/license choices pending; fix thresholds before claiming comparable outcomes |
+| T-006 | Review reader prose and citation/figure links as a coordinated artifact | FR-15; W8 | M / review | P00–P12 are readable without interactions; F01–F09 and every empirical claim have support or explicit gaps; do not promote provisional summaries to findings |
+
+Read-only research and writing may continue while document reviews are pending. Code, model/site implementation and deployment wait for T-001/T-002.
+
+<a id="next-evidence-reconstruction"></a>
+## Next — evidence reconstruction
+
+The author confirmed on 2026-11-27 that filing documents will be provided shortly; no delivery deadline is assumed. Resume the following tasks when files arrive, using [PLAN §6.1](PLAN.md#61-filing-intake-and-remediation).
+
+| ID | Task | Ref / package | Size | Depends on / acceptance |
+| --- | --- | --- | --- | --- |
+| T-010 | Inventory original S-1, amendment, final prospectus and exhibits | FR-01; W1 | S | Author files or restored official access; retain originals, hash, origin, form/accession/date and gaps |
+| T-011 | Authenticate filing identities and enumerate changes through cutoff | FR-01, FR-02; W1 | M | T-010; confirm documents/chronology against official origin; receipt alone is not verification |
+| T-012 | Reconstruct revenue and compute/infrastructure definitions for one source batch | FR-02, FR-04; W1 | M | T-011; locate CL-001/CL-002 values, units, periods, accounting scope; split remaining quarters into further batches |
+| T-013 | Reconstruct short-term compute, pricing adjustments and commitments | FR-02, FR-08; W1 | M | T-011; inspect CL-003/CL-004/CL-005/CL-012 passages, contingencies and overlaps; split contract batches as necessary |
+| T-014 | Reconcile original/amended/final findings and paper impacts | FR-02, FR-15; W1/W8 | M | T-012/T-013; update claims and P02/P03/P06/P09, mark dependent results stale, and list remaining unknowns; reviewer signs actual findings |
+| T-015 | Inspect Epoch method and create one workload-specific release-pair tranche | FR-03; W3 | M | T-004/T-005 and source access; three clocks, versions, censored unmatched records; expand only in bounded subsequent batches |
+| T-016 | Acquire one provider/counterparty profile batch | FR-08; W5 | M | Source access; compare archetypes, preserve unknown metrics/relationships; no inference of Anthropic ties without evidence |
+| T-017 | Inspect LBNL/IEA/eGRID/Cambium boundaries and one regional evidence tranche | FR-09, FR-10; W6 | M | Source access; compatible editions, location/period units, coverage and unknowns; no company allocation by revenue |
+| T-018 | Write demand-identification note with competing empirical studies | FR-02, FR-06; W4 | M | Source access; distinguish measured, borrowed and assumed elasticity; P05 names confounders rather than asserting causality |
+
+## Implementation queue — after specification and plan approval
+
+| ID | Task | Ref / milestone | Size | Depends on / acceptance |
+| --- | --- | --- | --- | --- |
+| T-020 | Confirm Pages eligibility/settings and reviewer/effort availability | FR-16; M0 | S | T-001/T-002; actual permissions and owners recorded; no hosting availability assumed |
+| T-021 | Build reader shell for one paper section with explicit draft states | FR-15, FR-16; M0 | M | T-020; readable without JS; v0.4 and yorkerhodes3 visible; planned visuals are not advertised as live |
+| T-022 | Deploy and verify the walking reader URL and fragments | FR-15, FR-16; M0 | S | T-021 and deployment access; verify real HTTP/assets; analytical draft publication still gated |
+| T-023 | Add metric dictionary and shared deterministic fixture validation | FR-04, FR-05; M3 | M | T-001/T-002/T-005; distinguish unit/quality boundaries and expected synthetic results; no company calibration without T-014 |
+| T-024 | Build one evidence view with bidirectional P02/F01 source references | FR-01, FR-02, FR-15; M3 | M | T-021 and validated evidence/gap artifact; claim states, empty/error paths, locators and return links work |
+| T-025 | Build the deterministic scenario view and compatible manifest replay | FR-05, FR-06, FR-07, FR-15; M3 | M | T-021/T-023; figures use shared results, correct inputs/versions, static caption and error handling |
+| T-026 | Source all 13 theme metadata records and contrast-tested tokens | FR-11, FR-12; M3 | M | T-001/T-002; bounded batches if needed; official/approximate distinction and font/license notes, no logos |
+| T-027 | Integrate theme switching independently of research state | FR-11, FR-12; M3 | M | T-021/T-026; keyboard, URL/state and unchanged-result checks |
+| T-028 | Implement one release-pair/provider/impact view at a time | FR-03, FR-08, FR-09, FR-10, FR-15; M3 | M per view | T-015/T-016/T-017 as appropriate plus T-021; split into specific view tasks before implementation |
+| T-030 | Specify evidence/assumptions for one uncertainty parameter batch | FR-13; M4 | M | T-018/T-023 and relevant W5/W6 evidence; record distribution/correlation rationale |
+| T-031 | Add bounded seeded Monte Carlo with failure counts and replay | FR-07, FR-13; M4 | M | T-025/T-030; deterministic checks first; publish trial settings and model limitations |
+| T-032 | Implement each stress search in a separately reviewable tranche | FR-14; M4 | M per test | T-023 and relevant T-014/T-016/T-017; exact domain and threshold logic; insufficient evidence stays explicit |
+| T-040 | Integrate paper chapters and F01–F09 against shared evidence/manifests | FR-15; M5 | M per chapter | Relevant evidence/views; split chapter batches; no conflicting values or broken return/replay links |
+| T-041 | Produce static/versioned paper review snapshot and reviewer questions | FR-15, FR-16; M5 | M | T-040; pin versions/cutoff/claims, retain citations and static tables without interactions |
+| T-042 | Complete three scoped reviews and release disposition | FR-16; M5 | M coordination | T-041 and actual reviewers; blockers resolved or analytical release withheld; no fabricated sign-offs |
+
+## Blockers and handoffs
+
+| Blocker | Affects | Owner / unblocker | Since / next action |
+| --- | --- | --- | --- |
+| Primary Anthropic files not received; direct source DNS failures | T-010–T-014, company calibration and empirical interpretations in P02/P03/P06/P09 | yorkerhodes3 gathering files; agent performs intake after receipt | 2026-11-27; continue independent work, remediate when supplied |
+| Public-source full-text retrieval fails DNS | T-003/T-004 and full-method portions of T-015–T-018 | Session environment/access restoration or lawful accessible documents | 2026-11-27; provisional indexed synthesis remains limited, not falsely complete |
+| Revised specification and plan not approved | T-020 onward | yorkerhodes3 | 2026-11-27; document review, not inferred approval |
+| Release reviewers not assigned | T-042 and public analytical release | yorkerhodes3 | 2026-11-27; proposed assignment/access checkpoint 2026-12-01, not an automated reminder |
+
+## Drafted this session — not reviewed or merged
+
+| Artifact | Current completion boundary | Ref |
+| --- | --- | --- |
+| v0.4 specification/plan and author attribution | Drafted for review; no execution authorization | FR-15, FR-16 |
+| Source register and ledger | Indexed discovery and access records; filing/literature claims not authenticated | FR-01, FR-02 |
+| Independent evidence synthesis R01–R06 | Scoped source summaries and checked algebra; not full W2–W6 research | FR-03, FR-04, FR-05 |
+| Paper P00–P12 | Prose/methods/synthetic checks and gaps linked to work and planned figures | FR-15 |
+
+## Done — previously merged
+
+| ID | Work | Completed | PR |
+| --- | --- | --- | --- |
+| T-000 | Initial concept, preserved research and MIT license | 2026-11-27 | #1 |
+
+## Later / cuts
+
+Agent-based markets, comprehensive facility maps, additional cohorts, 2035 extensions, full lifecycle estimates, and generalized consumer-chat equivalency remain deferred. They do not silently enter the current milestone. Do not cut evidence provenance, static paper readability, missing-data disclosure or human release review to make the package look complete.
+
+## Grooming and review
+
+At each evidence tranche, update its claim/source records, R/P/F references, remaining blockers, and actual review state. Split aggregate acquisition/view tasks before execution. Recheck the evidence cutoff and version before publishing. Keep unresolved questions in [SPECIFICATION §12](SPECIFICATION.md#12-open-questions-carried-forward) and do not treat changed task status as a scientific finding.
