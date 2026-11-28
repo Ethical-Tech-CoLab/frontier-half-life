@@ -76,6 +76,9 @@ node --test tests/demo-shell.test.mjs
 
 Serve `docs/` with any static HTTP server. No accounts, analytics, live provider
 calls, runtime dependencies, deployment workflow, or ingestion pipeline are added.
+The existing Pages source is `main` at its root. A root redirect opens `docs/`;
+root `_config.yml` excludes research, paper and other source records from Jekyll.
+Review links go to GitHub, and original source text is not republished as Pages.
 Browser accessibility/responsiveness and actual Pages publication are separate
 parent-task checks. Full reviewed paper rendering, models, replay, exports, evidence
 filters, and immutable snapshots are intentionally not implemented.

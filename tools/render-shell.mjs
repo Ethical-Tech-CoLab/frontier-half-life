@@ -64,7 +64,7 @@ function footer() {
           <a href="${theme.registry}">Identity / registry reference</a><a href="${theme.sources[0]}">Source 1</a>
         </div>
         <p>Reading text is contrast-adjusted to at least 4.5:1 and controls / focus to at least 3:1 on the used surfaces. System fonts only; no network fonts, analytics, or browser ingestion of source documents.</p>
-        <div class="provenance-links"><a href="SHELL-NOTES.md">Shell scope and design notes</a><a href="assets/licenses/MIT.txt">Shell MIT license</a><a href="assets/licenses/NOTICE.txt">Reference attribution</a><a href="assets/licenses/neocloud-supply-os-APACHE-2.0.txt">Apache-2.0 reference license</a></div>
+        <div class="provenance-links">${docLink('docs/SHELL-NOTES.md', 'Shell scope and design notes')}<a href="assets/licenses/MIT.txt">Shell MIT license</a><a href="assets/licenses/NOTICE.txt">Reference attribution</a><a href="assets/licenses/neocloud-supply-os-APACHE-2.0.txt">Apache-2.0 reference license</a></div>
       </details>
     </div>
   </footer>`;

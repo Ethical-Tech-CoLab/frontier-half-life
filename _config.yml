@@ -1,0 +1,15 @@
+exclude:
+  - README.md
+  - CONCEPT-IDEA.md
+  - INITIAL-RESEARCH.md
+  - SPECIFICATION.md
+  - PLAN.md
+  - BACKLOG.md
+  - SOURCES.md
+  - CLAIM-LEDGER.csv
+  - LICENSE
+  - research
+  - paper
+  - tools
+  - tests
+  - docs/SHELL-NOTES.md

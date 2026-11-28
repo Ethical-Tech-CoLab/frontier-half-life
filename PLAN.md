@@ -134,11 +134,11 @@ These steps correspond to T-010–T-014 in [BACKLOG.md](BACKLOG.md#next-evidence
 
 ## 7. Environments, deployment, and versioning
 
-Pages root: `https://ethical-tech-colab.github.io/frontier-half-life/`. The first demo shell is authorized separately from analytical publication; deployment status is recorded in README after actual verification. Source and review documents stay on the review branch; a **docs-only `gh-pages` branch** publishes the static shell from its root. The raw filing captures, PDFs and pending-license literature are not copied into the site artifact.
+Pages root: `https://ethical-tech-colab.github.io/frontier-half-life/`. The first demo shell is authorized separately from analytical publication; deployment status is recorded in README after actual verification. The repository already serves Pages from **`main` at `/`**. Updating Pages settings to `gh-pages` was denied to this session token, so retain the existing configuration: a root `index.html` forwards to the static `docs/` shell, preserving the brand query and fragment. A no-JavaScript link opens the same shell.
 
-The former `main`-root Pages build failed when Jekyll interpreted imported filing date metadata as invalid datetimes. Isolating the static shell and adding `.nojekyll` fixes the publication boundary without rewriting source captures to suit a site generator.
+The former `main`-root Pages build failed when Jekyll interpreted imported filing date metadata as invalid datetimes. Root `_config.yml` now excludes research captures, PDFs, paper/source documents, tests and tools from the public build. It leaves the static shell and its local assets available without rewriting source captures. Review documents and shell notes link to GitHub, not to publicly rendered source text.
 
-For the initial shell, create a publication commit whose root tree is the committed source branch's `docs/` tree (`git commit-tree <source-commit>:docs`); its message records the source commit. Publish that commit to `gh-pages` without force-pushing and set Pages to that branch's root. Subsequent publication commits must parent the existing `gh-pages` head so history remains append-only. This avoids requiring a build step or the unavailable `git subtree` command.
+Publication follows a reviewed source PR merged to `main`, using the existing Pages build. No Pages-admin permission or extra build dependency is required. An unused `gh-pages` artifact snapshot was created during the initial attempt; it is not the configured deployment source. Do not assume pushing to that branch publishes the site.
 
 Verify real HTTP availability, section navigation, assets and brand behavior before reporting the site live. Future reader/model releases require reviewed source changes and their own reproducibility checks. M0 presents non-analytical summaries, not a completed paper rendering or replay engine.
 

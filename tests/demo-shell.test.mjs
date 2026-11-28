@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import { access, readFile } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { runInNewContext } from 'node:vm';
 import { THEMES, tokensFor } from '../docs/assets/js/themes.mjs';
 import { contrast } from '../docs/assets/js/color.mjs';
 import { SITE } from '../docs/assets/js/config.mjs';
@@ -20,6 +21,21 @@ test('checked-in static pages and token CSS match the one-source renderer', asyn
   for (const [file, contents] of Object.entries(renderShell())) {
     assert.equal(await read(`docs/${file}`), contents, `${file} must be regenerated after content/config changes`);
     assert.doesNotMatch(contents, /^[\t ]+$/m, `${file} must not render whitespace-only lines`);
+  }
+});
+
+test('existing Pages root preserves presentation state and excludes source captures', async () => {
+  const entry = await read('index.html');
+  const script = entry.match(/<script>([\s\S]*?)<\/script>/)[1];
+  let target;
+  runInNewContext(script, { location: {
+    search: '?brand=anthropic', hash: '#roadmap', replace(value) { target = value; },
+  } });
+  assert.equal(target, 'docs/index.html?brand=anthropic#roadmap');
+  assert.match(entry, /href="docs\/index.html"/);
+  const config = await read('_config.yml');
+  for (const excluded of ['research', 'paper', 'tools', 'tests', 'CLAIM-LEDGER.csv', 'docs/SHELL-NOTES.md']) {
+    assert.ok(config.split('\n').includes(`  - ${excluded}`), `${excluded} must not be published by Jekyll`);
   }
 });
 
