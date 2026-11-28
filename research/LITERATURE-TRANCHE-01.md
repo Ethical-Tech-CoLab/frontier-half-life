@@ -14,7 +14,7 @@
 
 On 2026-11-28 the SHA-256 hash and byte size of each of the seven files matched `MANIFEST.csv`. That establishes intake integrity, not fidelity to the origin. Network access to arXiv, Stanford and Anthropic was unavailable, and no web verification is claimed. The text conversion dropped figures and some tables. Chart values appear as loose numbers, so any value read from a chart is our reconstruction and is labeled as such.
 
-The manifest still marks the two Stanford files and the Anthropic file "held back - license check". Their redistribution status is unresolved. This note quotes at most a sentence from any source and otherwise paraphrases. The four arXiv papers are listed as CC BY 4.0 (see [research/README.md](README.md)).
+The manifest still marks the two Stanford files and the Anthropic file "held back - license check"; on 2026-11-28 the author decided they may be used as attributed input to this project ([decisions](../SOURCES.md#author-decisions-2026-11-28)). This note quotes at most a sentence from any source and otherwise paraphrases. The four arXiv papers are listed as CC BY 4.0 (see [research/README.md](README.md)).
 
 **Locators.** `Lnnn` is a line number in the local file as hashed; a section name is the source's own heading. **Tags:** **[obs]** is the source authors' own observation or measurement; **[relay]** is a figure repeated from another party (vendor, press, another study); **[est]** is an estimate or model output from stated assumptions; **[proj]** is a projection, scenario or subjective probability; **[assert]** is an argument without a method in the text. Ledger mapping: obs/relay → `reported`, est → `estimated`, proj → `scenario`. Assertions are not entered as claims we rely on. All new claims remain verification state `unknown`.
 
@@ -306,7 +306,7 @@ None is company metering, and none is per successful task. R04's boundary, facto
 - Whether token-efficiency gains offset rising test-time budgets in deployed workloads.
 - Any identified AI price elasticity; the direction of the asserted Q2 2026 "regime break".
 - The underlying methods of Jegham et al. (2025), de Vries and Gao (2025), the IEA (2025) edition, the H100 serving-cost study and the DRAM price surveys.
-- Origin authentication and licence status for all seven files, and the edition and date of the Stanford PDF and of arXiv 2604.06217.
+- Origin authentication for all seven files (their use as attributed input was approved by the author on 2026-11-28), and the edition and date of the Stanford PDF and of arXiv 2604.06217.
 
 ## Impacts on existing records (flagged, not silently rewritten)
 

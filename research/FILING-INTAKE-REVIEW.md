@@ -69,7 +69,7 @@ The exhibit index also discloses redacted terms and omitted schedules under Regu
 ## Inventory discrepancies, not missing research requests
 
 - `README - retrieval notes.md` predates the Amendment 2 update and still says it was not retrieved. Amendment 2 is now present.
-- `README.md` and `MANIFEST.csv` say three literature captures were held back for license checks, but the Anthropic inference article and two Stanford AI Index captures are actually present. Their hashes match. Licensing/redistribution status remains unresolved; presence does not authorize republication or convert their terms to MIT.
+- `README.md` and `MANIFEST.csv` say three literature captures were held back for license checks, but the Anthropic inference article and two Stanford AI Index captures are actually present. Their hashes match. **Resolved 2026-11-28 by author decision:** they may be used as attributed input to this project ([decisions](../SOURCES.md#author-decisions-2026-11-28)). Use does not convert their terms to MIT, and their full text is not republished on Pages.
 - Source register, backlog and paper are updated to received-text status. This does **not** supersede pending claim reconciliation or research-review requirements.
 
 ## Work that can proceed

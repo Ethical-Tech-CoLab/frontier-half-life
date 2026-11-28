@@ -65,9 +65,9 @@ Every document except the complete submission file begins with a YAML header rec
 
 Each of these has its own row in MANIFEST.csv with a link to its EDGAR filing index.
 
-## Present files with pending license checks
+## Present files previously held back for license checks
 
-These three documents are physically present, although the intake manifest's upload-status field still records that they were held back. That field reflects the earlier intake intention, not current availability. Their licensing/redistribution status remains unresolved; do not include their full text in the public demo or relicense them as MIT:
+These three documents are physically present, although the intake manifest's upload-status field still records that they were held back. That field reflects the earlier intake intention, not current availability. **Author decision, 2026-11-28:** they may be used as attributed input to this project ([decisions](../SOURCES.md#author-decisions-2026-11-28)). Quote briefly with attribution; do not include their full text in the public site or relicense them as MIT:
 
 | File | License information found |
 |---|---|
