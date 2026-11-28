@@ -121,6 +121,8 @@ export const FACTS = Object.freeze([
     pattern: /committed to spend an aggregate of at least \$([\d.]+) billion between May 2026 and April 2036/, read: groups('2026-05 to 2036-04') },
   { id: 'C-SPACEXAI', claims: 'CL-022', metric: 'SpaceXAI maximum aggregate spend', unit: 'USD billion',
     pattern: /SpaceXAI Arrangements, we agreed to spend an aggregate of up to \$([\d.]+) billion/, read: groups('terms into 2029') },
+  { id: 'C-SPACEXAI-MONTHLY', claims: 'CL-022', metric: 'SpaceXAI aggregate monthly fee once all capacity is delivered', unit: 'USD billion per month',
+    pattern: /consisting of approximately \$([\d.]+) billion in the aggregate per month once all capacity has been delivered/, read: groups('full delivery') },
   { id: 'C-AMD', claims: 'CL-022', metric: 'AMD expected expenditure if initial capacity procured', unit: 'USD billion',
     pattern: /we expect aggregate expenditures to exceed \$([\d.]+) billion over the term of the agreement/, read: groups('lower bound') },
   { id: 'C-BROADCOM-LEASE', claims: 'CL-022', metric: 'Broadcom equipment lease rent excluding interest', unit: 'USD billion',
