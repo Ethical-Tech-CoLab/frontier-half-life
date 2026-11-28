@@ -320,9 +320,9 @@ Seven supplied `05-lit` text captures were analyzed in [research/LITERATURE-TRAN
 - **Feeds:** [L07](research/LITERATURE-TRANCHE-01.md#l07); [proposed rubrics](research/WORKLOAD-RUBRICS.md) metadata; no ledger claim.
 
 <a id="task-set-sources"></a>
-## Task-set sources for the proposed rubric selections (indexed search, 2026-11-28)
+## Task-set sources for the adopted rubric selections (indexed search, 2026-11-28)
 
-These records support the [proposed rubric selections](research/WORKLOAD-RUBRICS.md#selections). They come from indexed web-search excerpts; direct retrieval still fails in this environment. None has been inspected in full. Confirm each against its origin before the selection is adopted.
+These records support the [rubric selections](research/WORKLOAD-RUBRICS.md#selections), adopted by the author on 2026-11-28. They come from indexed web-search excerpts; direct retrieval still fails in this environment. None has been inspected in full. Confirm each against its origin before results from that task set are used.
 
 <a id="src-027"></a>
 ## SRC-027 — OpenAI, "Why we no longer evaluate SWE-bench Verified"

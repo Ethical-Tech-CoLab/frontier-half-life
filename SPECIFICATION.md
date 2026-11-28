@@ -184,7 +184,7 @@ These are explicit research/planning dependencies, not requests to invent missin
 | ID | Question / required decision | Owner role | Needed by |
 | --- | --- | --- | --- |
 | OQ-01 | Can the initial filing claims be authenticated and compared? If not, activate the concept's evidence-gap path. | Research lead | Before historical calibration |
-| OQ-02 | Which licensed task sets, extraction thresholds, and agent budgets define each versioned rubric? | Research lead + methodological reviewer | Before release-pair evaluation |
+| OQ-02 | Which licensed task sets, extraction thresholds, and agent budgets define each versioned rubric? | Research lead + methodological reviewer | Before release-pair evaluation — **resolved 2026-11-28:** rubric [`0.4.0`](research/WORKLOAD-RUBRICS.md#selections) adopted by the author |
 | OQ-03 | What fraction of commitments can be located, and where are marginal/water factors defensible? | Infrastructure/energy reviewer | Before regional numerical claims |
 | OQ-04 | What workload-specific distributions, correlations, and shock domains have evidence or must remain assumptions? | Modeling reviewer | Before stochastic/stress publication |
 | OQ-05 | Are the illustrative stress triggers useful, and which actual contract/community boundaries require separate review? | Author + relevant specialist/stakeholder | Before publishing those stress interpretations |
