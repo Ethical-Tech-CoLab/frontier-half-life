@@ -1,0 +1,20 @@
+Models, Megawatts, and Moats — demo shell
+Original shell code and styling: MIT, Copyright 2026 Ethical Tech CoLab.
+
+Palette facts and source metadata in assets/js/themes.mjs are adapted from:
+Neocloud Supply OS
+Copyright 2026 The Neocloud Supply OS Authors
+Licensed under the Apache License, Version 2.0.
+https://github.com/yorkerhodes3/neocloud-supply-os
+Reference revision: 96a6161c6d2b5e70b86c354cf1f164e67d74fec2
+Reference file: docs/assets/js/themes.js
+See the accompanying neocloud-supply-os-APACHE-2.0.txt.
+
+Changes: original contrast derivation, system-only typography, shell-specific
+tokens, no reference executable code, logos, fonts, maps, or other bundled assets.
+The reference ID voltage-park is presented as voltagepark and accepted as an alias.
+Anthropic is an additional approximate palette based on published identity color
+facts in anthropics/skills; no source prose, source code, logos, or fonts are copied.
+
+All company presets are approximate presentation studies only. No affiliation,
+endorsement, or authorization to use company marks is implied.
