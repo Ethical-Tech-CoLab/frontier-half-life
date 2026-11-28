@@ -6,7 +6,7 @@
 
 **Working version:** v0.4
 
-**Evidence cutoff:** literature 2026-11-27; filing captures through 2026-11-25 (8-K)
+**Evidence cutoff:** indexed literature 2026-11-27; supplied literature tranche analyzed 2026-11-28; filing captures through 2026-11-25 (8-K)
 
 **Status:** Early, incomplete research draft for review. Filing passages are now located and internally checked ([W1 reconstruction](../research/W1-FILING-RECONSTRUCTION.md)), but **no company figure is verified**: capture origin is not yet authenticated and no financial reviewer has signed off. No company energy estimates or empirical stress findings are presented.
 
@@ -50,7 +50,9 @@ The provisional literature gives reasons to consider more than one regime. UKERC
 
 The proposed causal chain is technical/task efficiency → useful-task cost → price and product design → demand and workload mix → model/provider allocation → capacity and energy consequences. Each arrow needs evidence or an explicitly labeled assumption. The task-demand identity captures a direct response; spending elsewhere, capability change, and economy-wide effects require additional analysis.
 
-**Research backing:** [R01](../research/INDEPENDENT-EVIDENCE.md#r01), W4 in [PLAN §3](../PLAN.md#3-evidence-work-packages). Full-text review and empirical AI-demand literature remain open.
+The first supplied literature tranche sharpens what is missing rather than settling the question ([tranche 01 S4](../research/LITERATURE-TRANCHE-01.md#s4)). None of its seven sources measures or borrows an AI price elasticity. Rapid token growth is reported from vendor trackers ([SRC-022](../SOURCES.md#src-022), CL-046), but tokens are not tasks, and the same source lists ways those trackers overstate demand. The source's solvency corridor and scenario probabilities are outputs of assumed parameters, so they can structure a stress test but cannot calibrate one (CL-045).
+
+**Research backing:** [R01](../research/INDEPENDENT-EVIDENCE.md#r01), [tranche 01](../research/LITERATURE-TRANCHE-01.md#synthesis), W4 in [PLAN §3](../PLAN.md#3-evidence-work-packages). Full-text review and empirical AI-demand literature remain open.
 
 <a id="p02"></a>
 ## P02 — Evidence method and filing chronology
@@ -74,11 +76,13 @@ The filings illustrate the problem. The issuer reports compute and infrastructur
 
 The provisional task-energy literature describes different deployment costs across tasks and model configurations ([SRC-005](../SOURCES.md#src-005), CL-007). The appropriate denominator therefore includes useful output and quality, not just tokens or requests. For coding, test-defined issue resolution offers a candidate operational criterion ([SRC-010](../SOURCES.md#src-010), CL-016). Different task subsets and harnesses, including SWE-bench Verified, must not be merged into one supposedly comparable score ([SRC-011](../SOURCES.md#src-011), CL-017).
 
-The proposed useful-task measures count failed attempts, retries, context and tools. They display success rate alongside cost and energy per successful outcome. Extraction and bounded-agent rubrics must be defined in advance; they cannot inherit a coding rubric by analogy.
+Inference-time compute makes the denominator harder still. A controlled evaluation of six frontier models found that larger token budgets added about 12 points on some benchmarks and about 0.3 on SWE-Bench Pro, and that repeated submissions raised scores everywhere ([SRC-021](../SOURCES.md#src-021), CL-040, CL-043). Success rate and energy per attempt are therefore set together by the reasoning budget and protocol; a falling price per token need not mean a falling price per successful task. Larger models in one distilled family did not give shorter correct answers (CL-044), and realized serving cost on identical hardware varied more than seventyfold with utilization (CL-048). Cost per successful task without protocol and serving metadata is not comparable ([tranche 01 S2](../research/LITERATURE-TRANCHE-01.md#s2)).
+
+The proposed useful-task measures count failed attempts, retries, context and tools. They display success rate alongside cost and energy per successful outcome. Extraction and bounded-agent rubrics must be defined in advance; they cannot inherit a coding rubric by analogy. Draft rubrics for all three workloads, with every threshold marked as a proposal for reviewer decision, are in [WORKLOAD-RUBRICS.md](../research/WORKLOAD-RUBRICS.md) (`0.4-draft`, not adopted).
 
 **F02 — Denominator comparison (planned):** `efficiency.html#task-and-financial-measures`. Static caption: show model/operation compute, successful-task cost, financial ratios, capacity use and operational energy as distinct measures with their units and missing-data states. The financial row may show the reported ratio series with its composition caveat once reviewed; no task or energy row is populated from filings, which disclose neither. Return: `paper.html#p03`.
 
-**Research backing:** [R02](../research/INDEPENDENT-EVIDENCE.md#r02), [W1 §3](../research/W1-FILING-RECONSTRUCTION.md#w1-revenue-compute), W2; financial series located, review pending.
+**Research backing:** [R02](../research/INDEPENDENT-EVIDENCE.md#r02), [W1 §3](../research/W1-FILING-RECONSTRUCTION.md#w1-revenue-compute), [tranche 01 S2](../research/LITERATURE-TRANCHE-01.md#s2), [draft rubrics](../research/WORKLOAD-RUBRICS.md), W2; financial series located, review pending.
 
 <a id="p04"></a>
 ## P04 — What it would mean for an open model to catch up
@@ -87,16 +91,18 @@ The initial four-to-six-month hypothesis is testable only after specifying equiv
 
 We distinguish benchmark catch-up, workload catch-up, and commercial catch-up. The second requires a matched task rubric and quality/cost configuration; the third adds licensing, serving availability, region, throughput, reliability and operational requirements. Open weights alone do not settle those requirements.
 
+The benchmark clock is more fragile than it looks. Scores move with token budget, feedback, submission rule and parallel sampling, and 42 of 61 published evaluation citations do not record a token budget at all ([SRC-021](../SOURCES.md#src-021), CL-040, CL-042). Many published open-versus-closed score pairs will therefore be **not comparable**, a status distinct from matched or censored. Release type and licence also vary: in 2025, 47 of 102 notable models were released through API access, and 81 of 102 without training code (CL-051). Two supplied preprints assert open-weight parity without a stated method, and one relays a press claim that an open-weight model matches proprietary flagships at a fraction of the price (CL-047). These are leads, not measurements. No source in the tranche measures the lag, so CL-006 and the four-to-six-month hypothesis are unchanged ([tranche 01 S1](../research/LITERATURE-TRANCHE-01.md#s1)).
+
 The release-pair investigation will retain frontier releases without a match by the cutoff as censored records. It will also record configuration and endpoint availability, rather than treating a model-release date as immediate commercial readiness. At present no release-pair dataset or equivalency distribution has been evaluated; no numerical lag finding is claimed.
 
 **F03 — Release-pair clocks (planned):** `equivalency.html#release-pairs`. Static caption: show three clocks and an explicit “not observed by cutoff” state, with workload/harness versions and license caveats. No invented matched pair is supplied. Return: `paper.html#p04`.
 
-**Research backing:** [R03](../research/INDEPENDENT-EVIDENCE.md#r03), W2/W3.
+**Research backing:** [R03](../research/INDEPENDENT-EVIDENCE.md#r03), [tranche 01 S1](../research/LITERATURE-TRANCHE-01.md#s1), [draft rubrics](../research/WORKLOAD-RUBRICS.md), W2/W3.
 
 <a id="p05"></a>
 ## P05 — Demand response and the conditional rebound threshold
 
-For a defined workload, use nonnegative price-elasticity magnitude `e`. With positive prices, the scenario demand ratio is `(P1/P0)^(-e)`. This is a modeling assumption about price response, not a fitted relationship. Identifying real elasticity requires variation that distinguishes price from capability, customer growth, budgets, routing and other changes. A simultaneous price reduction and revenue increase does not identify it by itself. The filings show exactly that pattern: from Q2 to Q3 2026 revenue rose $5.4B while the issuer attributes an offset of about $600M to price reductions with new model versions and contractual discounts (CL-004). New models, products and customers arrived in the same quarter, so the observation is co-movement, not an elasticity estimate.
+For a defined workload, use nonnegative price-elasticity magnitude `e`. With positive prices, the scenario demand ratio is `(P1/P0)^(-e)`. This is a modeling assumption about price response, not a fitted relationship. Identifying real elasticity requires variation that distinguishes price from capability, customer growth, budgets, routing and other changes. A simultaneous price reduction and revenue increase does not identify it by itself. The filings show exactly that pattern: from Q2 to Q3 2026 revenue rose $5.4B while the issuer attributes an offset of about $600M to price reductions with new model versions and contractual discounts (CL-004). New models, products and customers arrived in the same quarter, so the observation is co-movement, not an elasticity estimate. The literature tranche adds named confounders for any future estimate: supply-injected volume, channel substitution, subsidies, low-value context re-reading, base effects, budget rationing and relocation from metered cloud to owned hardware. Relocation moves load out of a provider's revenue without removing it from the grid ([SRC-022](../SOURCES.md#src-022); [tranche 01 S4](../research/LITERATURE-TRANCHE-01.md#s4)).
 
 Facility energy is expected attempted work times IT energy per attempt times matched PUE. Under the declared repeated-attempt model, successful task demand `S` and success rate `s>0` imply expected attempts `S/s`. Combining these definitions gives:
 
@@ -138,7 +144,9 @@ Unlocated capacity remains unlocated; US factors are not applied to non-US commi
 
 **F06 — Location coverage (planned):** `impacts.html#location-coverage`. Static caption: quantify the share of capacity with documented compatible regional evidence and show excluded/unknown locations. There is no regional capacity allocation or company energy total in this draft. Return: `paper.html#p07`.
 
-**Research backing:** [R04](../research/INDEPENDENT-EVIDENCE.md#r04), W2/W6.
+Secondary energy figures in the tranche illustrate the boundary problem. One estimate converts chip power ratings into about 29.6 GW of AI data-center capacity using a roughly 2.5× multiplier (CL-049). Modeled per-prompt estimates span roughly 5 to 23 Wh depending on model and reasoning setting (CL-050). Neither is company metering, and neither is energy per successful task. Both are order-of-magnitude context only ([tranche 01 S5](../research/LITERATURE-TRANCHE-01.md#s5)).
+
+**Research backing:** [R04](../research/INDEPENDENT-EVIDENCE.md#r04), [tranche 01 S5](../research/LITERATURE-TRANCHE-01.md#s5), W2/W6.
 
 <a id="p08"></a>
 ## P08 — Deterministic futures: synthetic checks before empirical results
@@ -190,6 +198,8 @@ The present contribution is a bounded method and provisional synthesis, not an e
 
 The first filing pass confirmed four of the five initial figures and superseded the fifth; later passes and review can still correct numbers or change the case-study framing. Failure to authenticate the anchor must produce an evidence-gap analysis, not a modeled company result. Failure of the six-month hypothesis is a valid finding. Future results should distinguish task price, workload growth, model substitution, provider allocation and facility intensity rather than report one efficiency score.
 
+Still unknown after the first literature tranche ([S7](../research/LITERATURE-TRANCHE-01.md#s7)): any measured distribution of open/closed lags at any of the three clocks; open-weight results under protocols matched to frontier results; dollar cost and energy per successful task for any current model; whether token-efficiency gains offset rising test-time budgets; and any identified AI price elasticity.
+
 **Questions for review:** Are the task rubrics defensible? Are the three equivalency clocks appropriately separated? Which causal links have identification evidence, rather than co-movement? Are financial/physical boundaries compatible? Can a reader trace every number through a source or formula? Which local impacts and participant perspectives are still missing?
 
 Follow [PLAN milestones and dependencies](../PLAN.md#6-milestones-and-dependencies) and [the backlog](../BACKLOG.md) to see what is unfinished. The author approved the revised specification and plan/backlog on 2026-11-28. Three actual reviewers and resolution of blocking findings are still required before analytical release.
@@ -210,6 +220,8 @@ The following references are stable **discovery records**, not claims of complet
 | [SRC-010](../SOURCES.md#src-010), [SRC-011](../SOURCES.md#src-011) | SWE-bench paper; OpenAI Verified announcement | P03/P04; coding rubric/harness provenance |
 | [SRC-012](../SOURCES.md#src-012), [SRC-013](../SOURCES.md#src-013) | EPA eGRID FAQ; NREL Cambium documentation/data descriptions | P07; different emissions questions |
 | CL-013/CL-014 in [CLAIM-LEDGER.csv](../CLAIM-LEDGER.csv) | Local algebra and synthetic checks | P05/P08; not empirical inputs |
+| [SRC-020](../SOURCES.md#src-020)–[SRC-026](../SOURCES.md#src-026); [literature tranche 01](../research/LITERATURE-TRANCHE-01.md) | Four arXiv preprints (2026), Stanford AI Index 2026 Ch. 1, Anthropic provable-inference post | P01/P03/P04/P05/P07/P11; CL-040–CL-051; supplied local text, unreviewed, licensing of three files unresolved |
+| [Draft workload rubrics](../research/WORKLOAD-RUBRICS.md) | Proposed coding, extraction and bounded-agent rubrics (`0.4-draft`) | P03/P04; awaiting the OQ-02 reviewer decision |
 | [W1 reconstruction](../research/W1-FILING-RECONSTRUCTION.md), [extracted facts](../data/extracted/w1-filing-facts.csv), [derived checks](../data/derived/w1-reconciliation-checks.csv) | Reproducible filing extraction (`node tools/extract-filing-facts.mjs --check`) | P02/P03/P05/P06/P09; CL-001–CL-005, CL-011/CL-012, CL-020–CL-025 |
 
 **Reproducibility status:** No company-calibrated dataset, engine release, Monte Carlo trial set, scenario manifest, or deployed Pages interaction exists yet. Current algebra and synthetic inputs are fully shown in P05/P08 and [R05](../research/INDEPENDENT-EVIDENCE.md#r05). Later snapshots must pin paper, source/data/model versions and manifests; a live update must not silently change a reviewed result.
@@ -219,3 +231,5 @@ The following references are stable **discovery records**, not claims of complet
 **v0.4 intake update, 2026-11-28:** Requested text intake complete; claim reconciliation pending. PDF retrieval waived by author; non-analytical demo shell authorized and revised specification/plan/backlog separately approved. Evidence cutoff stays 2026-11-27; analytical release is not approved.
 
 **v0.4 W1 update, 2026-11-28:** Text-based filing reconstruction: located passages and line locators for all initial company claims; 22 derived checks pass; CL-005 superseded by CL-020; new claims CL-020–CL-025; P02/P03/P05/P06/P09 revised. All company claims remain unverified pending origin authentication and financial review.
+
+**v0.4 literature update, 2026-11-28:** Literature tranche 01 (SRC-020–SRC-026, CL-040–CL-051) and draft workload rubrics integrated into P01/P03/P04/P05/P07/P11/P12. No elasticity or open/closed lag is measured by any supplied source; CL-006 unchanged. The manuscript is published on Pages as the live reader (review draft).
