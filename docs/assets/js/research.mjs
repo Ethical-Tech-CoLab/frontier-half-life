@@ -1,4 +1,4 @@
-// This is a non-analytical navigation guide, not a second manuscript or dataset.
+// This is a navigation guide, not a second manuscript or dataset. Only F04/F07 link to live (indexed, uncalibrated) views.
 export const SECTIONS = Object.freeze([
   { id: 'p00', title: 'Provisional abstract', lane: 'The question',
     summary: 'Frame the inquiry before writing conclusions: how do cheaper useful tasks, open-model catch-up, and infrastructure demands interact?',
@@ -12,7 +12,8 @@ export const SECTIONS = Object.freeze([
     summary: 'Trace the received text portfolio from the original registration statement through amendments, the prospectus, and a subsequent filing.',
     research: 'PLAN.md#61-filing-intake-and-remediation', source: 'SOURCES.md#src-001',
     next: 'Text receipt is not authentication, reconciliation, or a verified financial series.',
-    shell: 'evidence.html#filing-timeline', shellLabel: 'Inspect the received-text chronology', figure: 'F01 · chronology shell' },
+    shell: 'evidence.html#filing-timeline', shellLabel: 'Inspect the received-text chronology', figure: 'F01 · chronology shell',
+    shellStatus: 'Non-analytical, received-text view.' },
   { id: 'p03', title: 'Efficiency without collapsed denominators', lane: 'The evidence',
     summary: 'Separate technical operations, successful tasks, financial measures, capacity use, and physical energy. These are not interchangeable.',
     research: 'research/INDEPENDENT-EVIDENCE.md#r02', source: 'SOURCES.md#src-005',
@@ -24,7 +25,10 @@ export const SECTIONS = Object.freeze([
   { id: 'p05', title: 'Demand response', lane: 'The mechanisms',
     summary: 'Ask how price, capability, product design, and workload mix change demand. No measured elasticity is published in this shell.',
     research: 'research/INDEPENDENT-EVIDENCE.md#r01', source: 'SOURCES.md#src-006',
-    next: 'F04 · elasticity-threshold — rebound lab planned; not available.' },
+    next: 'F04 explores the conditional threshold e* = ln(k)/ln(q) with declared, illustrative inputs. It is uncalibrated and not a measured elasticity; company calibration awaits filing reconciliation (T-014).',
+    shell: 'rebound.html#elasticity-threshold', shellLabel: 'Explore the elasticity threshold',
+    figure: 'F04 · elasticity threshold — illustrative indexed explorer',
+    shellStatus: 'Illustrative indexed scenario — not calibrated, not a forecast.' },
   { id: 'p06', title: 'Provider and capacity economics', lane: 'The mechanisms',
     summary: 'Review delivery, financing, cancellation, and utilization boundaries before attributing relationships or comparing providers.',
     research: 'PLAN.md#3-evidence-work-packages', source: 'SOURCES.md#remaining-source-streams',
@@ -36,7 +40,10 @@ export const SECTIONS = Object.freeze([
   { id: 'p08', title: 'Deterministic futures', lane: 'The planned analysis',
     summary: 'Plan comparisons of efficient abundance, rebound acceleration, and a demand air pocket / open-model substitution, without inventing a calibrated baseline.',
     research: 'PLAN.md#6-milestones-and-dependencies', source: 'SOURCES.md#access-and-evidence-policy',
-    next: 'F07 · scenario-comparison — results and replay are planned; not available.' },
+    next: 'F07 compares three illustrative, uncalibrated indexed futures with replayable run manifests. They are not forecasts; company calibration awaits T-014 and workload rubrics await T-005.',
+    shell: 'rebound.html#scenario-comparison', shellLabel: 'Compare the three illustrative futures',
+    figure: 'F07 · scenario comparison — illustrative indexed futures',
+    shellStatus: 'Illustrative indexed scenario — not calibrated, not a forecast.' },
   { id: 'p09', title: 'Uncertainty and reverse stress', lane: 'The planned analysis',
     summary: 'Make load-bearing inputs, missing evidence, and the limits of any future shock search inspectable. No risk probabilities are presented.',
     research: 'PLAN.md#3-evidence-work-packages', source: 'SOURCES.md#remaining-source-streams',
@@ -52,7 +59,7 @@ export const SECTIONS = Object.freeze([
   { id: 'p12', title: 'References and reproducibility', lane: 'The review trail',
     summary: 'Connect source locators, claim IDs, compatible versions, and reviewer records. Future runs must have immutable manifests, not just seeds.',
     research: 'PLAN.md#7-environments-deployment-and-versioning', source: 'SOURCES.md#access-and-evidence-policy',
-    next: 'No calibrated dataset, model, run manifest, or analytical export is available.' },
+    next: 'No calibrated dataset, reviewed model release, or immutable review snapshot is available. The rebound lab exports illustrative indexed run manifests only.' },
 ].map(Object.freeze));
 
 export const FILINGS = Object.freeze([

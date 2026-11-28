@@ -46,9 +46,9 @@ The requested texts are received; T-010 is complete for this scope. Resume passa
 | T-020 | Confirm Pages eligibility/settings | FR-16; M0 | S / done | Existing legacy Pages site inspected; docs-only publication authorized; full reviewer assignments remain open |
 | T-021 | Build branded reader/evidence shell with explicit draft states | FR-11, FR-12, FR-15, FR-16; M0 | M / done | Three static pages, 13 themes, P00–P12 orientation and six-filing timeline; local browser/theme/mobile and focused tests pass |
 | T-022 | Deploy and verify the walking reader URL and fragments | FR-15, FR-16; M0 | S / done | PR #3 merged; GitHub Pages run 46100801021 succeeded and artifact matches local root/shell/assets; public HTTP blocked here, local navigation checked; no analytical publication |
-| T-023 | Add metric dictionary and shared deterministic fixture validation | FR-04, FR-05; M3 | M | T-001/T-002/T-005; distinguish unit/quality boundaries and expected synthetic results; no company calibration without T-014 |
+| T-023 | Add metric dictionary and shared deterministic fixture validation | FR-04, FR-05; M3 | M / review (indexed, uncalibrated) | T-001/T-002 done; T-005 rubrics still open, so [DATA-DICTIONARY.md](DATA-DICTIONARY.md) defines an abstract “illustrative indexed workload”. Shared engine `docs/assets/js/model/task-energy.mjs` (`task-energy/0.4.0`) passes the §8 fixtures (2.4 / 2.4 / 4.8 kWh), the g^(1−e) identity, threshold edge cases, positive-price, zero-success and indexed-only rules in `tests/model.test.mjs`. No company calibration without T-014; human methods review pending |
 | T-024 | Build one evidence view with bidirectional P02/F01 source references | FR-01, FR-02, FR-15; M3 | M | T-021 and validated evidence/gap artifact; claim states, empty/error paths, locators and return links work |
-| T-025 | Build the deterministic scenario view and compatible manifest replay | FR-05, FR-06, FR-07, FR-15; M3 | M | T-021/T-023; figures use shared results, correct inputs/versions, static caption and error handling |
+| T-025 | Build the deterministic scenario view and compatible manifest replay | FR-05, FR-06, FR-07, FR-15; M3 | M / review (indexed, uncalibrated) | T-021/T-023; `docs/rebound.html` F04 `#elasticity-threshold` and F07 `#scenario-comparison` use the shared engine: three illustrative presets labeled `scenario` / `assumed — not calibrated`, field-level errors that withhold results and mark output stale, sensitivity, build-time static fallback, P05/P08 return links, run-manifest export/import (≤ 1 MiB, strict schema/version checks) and URL replay; results are theme-invariant. Pages deployment and human review pending |
 | T-026 | Source all 13 theme metadata records and contrast-tested tokens | FR-11, FR-12; M3 | M | T-001/T-002; bounded batches if needed; official/approximate distinction and font/license notes, no logos |
 | T-027 | Integrate theme switching independently of research state | FR-11, FR-12; M3 | M | T-021/T-026; keyboard, URL/state and unchanged-result checks |
 | T-028 | Implement one release-pair/provider/impact view at a time | FR-03, FR-08, FR-09, FR-10, FR-15; M3 | M per view | T-015/T-016/T-017 as appropriate plus T-021; split into specific view tasks before implementation |
@@ -75,6 +75,7 @@ The requested texts are received; T-010 is complete for this scope. Resume passa
 | Source register and ledger | Received filing-text provenance; claim-level reconciliation pending | FR-01, FR-02 |
 | Independent evidence synthesis R01–R06 | Scoped source summaries and checked algebra; not full W2–W6 research | FR-03, FR-04, FR-05 |
 | Paper P00–P12 | Prose/methods/synthetic checks and gaps linked to work and planned figures | FR-15 |
+| Task-energy model and rebound lab | Dictionary, engine, fixtures and F04/F07 illustrative indexed views; uncalibrated and unreviewed | FR-04–FR-07, FR-15 |
 
 ## Done — previously merged
 

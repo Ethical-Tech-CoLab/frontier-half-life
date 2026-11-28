@@ -1,11 +1,14 @@
 # v0.4 demo shell
 
-Initial author: **yorkerhodes3**. This static, no-build-step site is a narrow,
-author-requested non-analytical shell. Text captures are received; claim
+Initial author: **yorkerhodes3**. This static, no-build-step site began as a narrow,
+author-requested non-analytical shell. Its scope now also includes one **indexed
+rebound lab** (T-023/T-025): illustrative, uncalibrated scenarios computed in the
+browser by the shared task-energy model. Text captures are received; claim
 reconciliation, model calibration and analytical publication remain gated.
 The author approved the specification and plan/backlog on 2026-11-28; these
-document verdicts do not verify research claims. No source documents, excerpts, financial values, or
-model results are fetched or embedded.
+document verdicts do not verify research claims. No source documents, excerpts,
+financial values, company or provider figures, or calibrated results are fetched or
+embedded.
 
 ## Content and review links
 
@@ -15,8 +18,32 @@ model results are fetched or embedded.
 - `evidence.html#filing-timeline`: named capture chronology, not an authenticated
   filing series. Dates reflect supplied filenames. `#review-records` links to
   intake, manifest, source, and claim records.
-- Future efficiency, equivalency, rebound, provider, impact, and uncertainty
-  routes are explicitly unavailable. There are no mock simulation controls.
+- `rebound.html#elasticity-threshold` (F04, return to P05) and
+  `#scenario-comparison` (F07, return to P08): the indexed rebound lab. Every
+  value is a declared scenario assumption for an abstract **illustrative indexed
+  workload**, labeled "Illustrative indexed scenario — not calibrated, not a
+  forecast" in text. No company calibration exists (filing reconciliation T-014
+  is incomplete) and workload rubrics (T-005) are unreviewed. Field errors
+  withhold affected results and label the previous output stale. Run manifests
+  (JSON, at most 1 MiB) export and replay all three futures; query parameters such
+  as `?scenario=rebound-acceleration&e=1.4` replay one future. The page is
+  deterministic: no seed, no Monte Carlo.
+- Future efficiency, equivalency, provider, impact, and uncertainty routes remain
+  explicitly unavailable.
+
+## Rebound lab model and static fallback
+
+`assets/js/model/task-energy.mjs` is the single engine (`task-energy/0.4.0`) for
+the live view, the build-time static tables, and the tests; symbols, units,
+domains and edge cases are defined in the repository's `DATA-DICTIONARY.md`.
+`assets/js/model/scenarios.mjs` holds the three presets and their rationales;
+`assets/js/model/manifest.mjs` builds and strictly validates run manifests.
+`tools/render-shell.mjs` imports the same modules to render the default chart,
+the §8 fixture table (2.4 / 2.4 / 4.8 kWh) and preset results into
+`rebound.html`, so both figures remain readable without JavaScript. Interactive
+controls stay hidden until `assets/js/rebound.mjs` loads. Imported text is
+treated as data (strict fields, `textContent` only), and the presentation
+theme never enters inputs or results.
 
 The **single review-document base** is `assets/js/config.mjs` (`SITE.documentBase`).
 It points to `main`, the current repository branch, not an
@@ -87,7 +114,7 @@ From the repository root:
 
 ```sh
 node tools/render-shell.mjs --check
-node --test tests/demo-shell.test.mjs
+node --test tests/
 ```
 
 Serve `docs/` with any static HTTP server. No accounts, analytics, live provider
@@ -96,5 +123,6 @@ The existing Pages source is `main` at its root. A root redirect opens `docs/`;
 root `_config.yml` excludes research, paper and other source records from Jekyll.
 Review links go to GitHub, and original source text is not republished as Pages.
 Browser accessibility/responsiveness and actual Pages publication are separate
-parent-task checks. Full reviewed paper rendering, models, replay, exports, evidence
-filters, and immutable snapshots are intentionally not implemented.
+parent-task checks. Full reviewed paper rendering, calibrated models, stochastic
+runs, evidence filters, and immutable snapshots are intentionally not implemented;
+only the indexed rebound lab has manifests and replay.

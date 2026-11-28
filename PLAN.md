@@ -71,6 +71,8 @@ The section IDs below are permanent even if titles change. The initial [paper dr
 | P11 — Discussion and limitations | All | `paper.html#p11` | What follows from evidence, what remains unknown, next tests |
 | P12 — References and reproducibility | All | `paper.html#p12` | Source locators, dictionary, model card, manifest and review history |
 
+**Status, 2026-11-28:** F04 and F07 now exist in `docs/rebound.html` as illustrative indexed, uncalibrated views awaiting review (T-023/T-025); company calibration still depends on T-014. Apart from the F01 chronology shell, the other planned routes remain unbuilt.
+
 Each F01–F09 record must declare: paper section, purpose, caption, claim IDs, source/method locators, dataset/model/paper versions, evidence cutoff, deployed/planned status, accessible static table or explanation, and manifest ID for a simulated figure. Empirical figures without a run still pin their data and transformation version.
 
 **Reader contract:** Inline citations open a source/claim locator; “Explore this result” opens the exact visual state, not the site's landing page. A replay reference identifies an immutable manifest, not just a seed; seed-only links omit potentially changed inputs. The view offers “Return to P08,” for example, and maintains the paper version. Missing historical manifests show an unavailable-state message and static result, never substitute today's model.
