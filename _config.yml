@@ -13,3 +13,4 @@ exclude:
   - tools
   - tests
   - docs/SHELL-NOTES.md
+  - docs/assets/fonts/LICENSES.md

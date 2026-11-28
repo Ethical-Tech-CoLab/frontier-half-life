@@ -13,22 +13,32 @@ const siteLink = (path, label, className = '') =>
 
 function header(page) {
   return `<a class="skip-link" href="#main" data-site-link>Skip to content</a>
-  <header class="masthead">
+  <header class="masthead" id="masthead">
     <div class="wrap header-row">
-      <a class="identity" href="index.html" data-site-link aria-label="Ethical Tech CoLab — research overview">
+      <a class="identity" href="index.html" data-site-link aria-label="Frontier half-life — Ethical Tech CoLab research overview">
         <span class="identity-mark" aria-hidden="true">C↗</span>
-        <span><strong>Ethical Tech CoLab</strong><small>Frontier half-life / research</small></span>
+        <span class="identity-text"><strong>Frontier half-life</strong><small>Ethical Tech CoLab · research demo</small></span>
       </a>
-      <nav class="site-nav" aria-label="Main navigation">
+      <nav class="site-nav" id="primary-nav" aria-label="Main navigation">
         ${[['index.html', 'Overview'], ['paper.html', 'Paper guide'], ['evidence.html', 'Evidence']].map(([file, label]) =>
           `<a href="${file}" data-site-link${page === file ? ' aria-current="page"' : ''}>${label}</a>`).join('\n        ')}
+        ${docLink('PLAN.md', 'Research docs ↗', 'nav-cta')}
       </nav>
-      <div id="theme-control" class="theme-control" hidden>
-        <label for="theme-select">Presentation theme</label>
-        <select id="theme-select" aria-describedby="theme-message theme-disclaimer">
-          ${Object.values(THEMES).map((theme) => `<option value="${theme.id}">${escape(theme.name)}</option>`).join('\n          ')}
-        </select>
-      </div>
+      <details id="theme-control" class="theme-picker" hidden>
+        <summary id="theme-trigger" aria-label="Choose presentation theme" aria-describedby="theme-disclaimer">
+          <span class="theme-swatch" aria-hidden="true"><i></i><i></i></span>
+          <span id="theme-short">CoLab</span>
+          <svg class="chevron" viewBox="0 0 12 12" aria-hidden="true"><path d="m2.5 4.5 3.5 3.5 3.5-3.5"/></svg>
+        </summary>
+        <div class="theme-panel" role="group" aria-label="Presentation themes">
+          ${Object.values(THEMES).map((theme) => `<button type="button" class="theme-option" data-theme-option="${theme.id}" aria-pressed="${theme.id === 'colab'}"><span>${escape(theme.name)}</span><small>${escape(theme.ground)} · ${escape(theme.confidence)}</small></button>`).join('\n          ')}
+          <p>Presentation only. No logos or affiliation; research content stays unchanged.</p>
+          ${siteLink('#theme-provenance', 'Theme sources and font licenses')}
+        </div>
+      </details>
+      <button id="nav-toggle" class="nav-toggle" type="button" aria-label="Open navigation" aria-controls="primary-nav" aria-expanded="false" hidden>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
     </div>
   </header>
   <div class="wrap notice-row">
@@ -53,7 +63,7 @@ function footer() {
           ${docLink('PLAN.md#4-paper-coordination-and-pages-link-contract', 'Reader / figure plan')}
         </nav>
       </div>
-      <details class="theme-provenance">
+      <details class="theme-provenance" id="theme-provenance">
         <summary>Theme provenance &amp; accessibility · <span id="theme-name">CoLab · presentation only</span></summary>
         <p id="theme-disclaimer" class="disclaimer">All themes are approximate, non-affiliated presentation presets. No company logos or official endorsement. Choosing a theme does not identify a research subject, provider relationship, or verified result.</p>
         <p id="theme-description">${escape(theme.description)}</p>
@@ -63,7 +73,8 @@ function footer() {
         <div id="theme-sources" class="provenance-links">
           <a href="${theme.registry}">Identity / registry reference</a><a href="${theme.sources[0]}">Source 1</a>
         </div>
-        <p>Reading text is contrast-adjusted to at least 4.5:1 and controls / focus to at least 3:1 on the used surfaces. System fonts only; no network fonts, analytics, or browser ingestion of source documents.</p>
+        <p>Reading text is contrast-adjusted to at least 4.5:1 and controls / focus to at least 3:1 on the used surfaces. CoLab fonts are self-hosted; other presets retain documented system substitutes. No external font requests, analytics, or browser ingestion of source documents.</p>
+        <div class="provenance-links">${docLink('docs/assets/fonts/LICENSES.md', 'CoLab font provenance')}<a href="assets/fonts/Bebas-Neue-OFL.txt">Bebas Neue OFL</a><a href="assets/fonts/Space-Mono-OFL.txt">Space Mono OFL</a></div>
         <div class="provenance-links">${docLink('docs/SHELL-NOTES.md', 'Shell scope and design notes')}<a href="assets/licenses/MIT.txt">Shell MIT license</a><a href="assets/licenses/NOTICE.txt">Reference attribution</a><a href="assets/licenses/neocloud-supply-os-APACHE-2.0.txt">Apache-2.0 reference license</a></div>
       </details>
     </div>
@@ -192,6 +203,9 @@ function page(file, title, description, body) {
   <meta name="description" content="${escape(description)}">
   <title>${escape(title)} · ${SITE.version} · Ethical Tech CoLab</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/bebas-neue-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/space-mono-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/fonts/fonts.css">
   <link rel="stylesheet" href="assets/themes.css">
   <link rel="stylesheet" href="assets/site.css">
   <script type="module" src="assets/js/site.mjs"></script>

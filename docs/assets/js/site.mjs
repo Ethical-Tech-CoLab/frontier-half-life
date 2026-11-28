@@ -1,4 +1,5 @@
 import { THEMES, DEFAULT_BRAND, BRAND_ALIASES } from './themes.mjs';
+import { initializeNavigation } from './navigation.mjs';
 
 export const STORAGE_KEY = 'frontier-half-life.brand';
 
@@ -43,13 +44,18 @@ export function initializeTheme({ document, location, history, getStorage, liste
   const preference = readPreference(getStorage);
   let persistenceNotice = preference.notice;
   let addressNotice = '';
-  const selector = document.querySelector('#theme-select');
+  const options = document.querySelectorAll('[data-theme-option]');
+  const picker = document.querySelector('#theme-control');
+  const trigger = document.querySelector('#theme-trigger');
   const message = document.querySelector('#theme-message');
 
   function show(id, notice = '') {
     const theme = THEMES[id];
     document.documentElement.dataset.brand = id;
-    selector.value = id;
+    for (const option of options) {
+      option.setAttribute('aria-pressed', String(option.dataset.themeOption === id));
+    }
+    document.querySelector('#theme-short').textContent = theme.short;
     document.querySelector('#theme-name').textContent = `${theme.short} · presentation only`;
     document.querySelector('#theme-description').textContent = theme.description;
     document.querySelector('#theme-confidence').textContent = `Source confidence: ${theme.confidence}. All styling is approximate.`;
@@ -78,13 +84,17 @@ export function initializeTheme({ document, location, history, getStorage, liste
 
   const initial = resolveBrand(location.search, preference.saved);
   let current = show(initial.id, initial.notice);
-  document.querySelector('#theme-control').hidden = false;
-  selector.addEventListener('change', () => {
-    const selection = resolveBrand(`?brand=${encodeURIComponent(selector.value)}`);
-    const savedNotice = savePreference(getStorage, selection.id);
-    persistenceNotice = savedNotice || persistenceNotice;
-    current = show(selection.id, selection.notice);
-  });
+  picker.hidden = false;
+  for (const option of options) {
+    option.addEventListener('click', () => {
+      const selection = resolveBrand(`?brand=${encodeURIComponent(option.dataset.themeOption)}`);
+      const savedNotice = savePreference(getStorage, selection.id);
+      persistenceNotice = savedNotice || persistenceNotice;
+      current = show(selection.id, selection.notice);
+      picker.open = false;
+      trigger.focus();
+    });
+  }
   listen('popstate', () => {
     const selection = resolveBrand(location.search, current);
     current = show(selection.id, selection.notice);
@@ -98,4 +108,5 @@ if (typeof window !== 'undefined' && typeof document !== 'undefined') {
     getStorage: () => window.localStorage,
     listen: (event, callback) => window.addEventListener(event, callback),
   });
+  initializeNavigation({ document, matchMedia: (query) => window.matchMedia(query) });
 }

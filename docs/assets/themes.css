@@ -11,9 +11,13 @@
   --control: #837d8b;
   --line: #3b3543;
   --glow: #7b5cff;
-  --font-display: Impact, Haettenschweiler, "Arial Narrow", sans-serif;
-  --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-mono: ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --font-display: "Bebas Neue", Impact, sans-serif;
+  --font-body: "Space Mono", ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --font-mono: "Space Mono", ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --display-case: uppercase;
+  --display-tracking: 0.02em;
+  --display-weight: 400;
+  --display-leading: 0.9;
   --radius: 18px;
   --color-scheme: dark;
 }
@@ -30,9 +34,13 @@
   --control: #88818d;
   --line: #d2ced6;
   --glow: #6d28d9;
-  --font-display: Impact, Haettenschweiler, "Arial Narrow", sans-serif;
-  --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-mono: ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --font-display: "Bebas Neue", Impact, sans-serif;
+  --font-body: "Space Mono", ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --font-mono: "Space Mono", ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --display-case: uppercase;
+  --display-tracking: 0.02em;
+  --display-weight: 400;
+  --display-leading: 0.9;
   --radius: 18px;
   --color-scheme: light;
 }
@@ -52,6 +60,10 @@
   --font-display: Arial, Helvetica, sans-serif;
   --font-body: Georgia, "Times New Roman", serif;
   --font-mono: ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --display-case: none;
+  --display-tracking: -0.025em;
+  --display-weight: 600;
+  --display-leading: 1.12;
   --radius: 10px;
   --color-scheme: light;
 }
@@ -71,6 +83,10 @@
   --font-display: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-mono: ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --display-case: none;
+  --display-tracking: -0.025em;
+  --display-weight: 600;
+  --display-leading: 1.12;
   --radius: 18px;
   --color-scheme: light;
 }
@@ -90,6 +106,10 @@
   --font-display: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-mono: ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --display-case: none;
+  --display-tracking: -0.025em;
+  --display-weight: 600;
+  --display-leading: 1.12;
   --radius: 12px;
   --color-scheme: light;
 }
@@ -109,6 +129,10 @@
   --font-display: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-mono: ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --display-case: none;
+  --display-tracking: -0.025em;
+  --display-weight: 600;
+  --display-leading: 1.12;
   --radius: 24px;
   --color-scheme: dark;
 }
@@ -128,6 +152,10 @@
   --font-display: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-mono: ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --display-case: none;
+  --display-tracking: -0.025em;
+  --display-weight: 600;
+  --display-leading: 1.12;
   --radius: 8px;
   --color-scheme: dark;
 }
@@ -147,6 +175,10 @@
   --font-display: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-mono: ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --display-case: none;
+  --display-tracking: -0.025em;
+  --display-weight: 600;
+  --display-leading: 1.12;
   --radius: 16px;
   --color-scheme: light;
 }
@@ -166,6 +198,10 @@
   --font-display: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-mono: ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --display-case: none;
+  --display-tracking: -0.025em;
+  --display-weight: 600;
+  --display-leading: 1.12;
   --radius: 22px;
   --color-scheme: light;
 }
@@ -185,6 +221,10 @@
   --font-display: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-mono: ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --display-case: none;
+  --display-tracking: -0.025em;
+  --display-weight: 600;
+  --display-leading: 1.12;
   --radius: 12px;
   --color-scheme: dark;
 }
@@ -204,6 +244,10 @@
   --font-display: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-mono: ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --display-case: none;
+  --display-tracking: -0.025em;
+  --display-weight: 600;
+  --display-leading: 1.12;
   --radius: 12px;
   --color-scheme: dark;
 }
@@ -223,6 +267,10 @@
   --font-display: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-mono: ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --display-case: none;
+  --display-tracking: -0.025em;
+  --display-weight: 600;
+  --display-leading: 1.12;
   --radius: 12px;
   --color-scheme: light;
 }
@@ -242,6 +290,10 @@
   --font-display: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-mono: ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --display-case: none;
+  --display-tracking: -0.025em;
+  --display-weight: 600;
+  --display-leading: 1.12;
   --radius: 16px;
   --color-scheme: dark;
 }

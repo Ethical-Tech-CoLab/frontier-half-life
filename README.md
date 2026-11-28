@@ -55,6 +55,9 @@ to serve; after changing its content or theme registry, run
 Pages uses the existing `main` root, whose forwarder opens `docs/`;
 `_config.yml` keeps research and source records out of the Pages artifact.
 See [shell notes](docs/SHELL-NOTES.md) for design provenance and scope.
+The CoLab/Daylight presets use self-hosted **Bebas Neue and Space Mono**, with a
+compact sticky masthead, pill links, brand dropdown and mobile menu following
+the lab/neocloud-supply-os design. Font copyright and OFL notices are included.
 
 ## License
 
