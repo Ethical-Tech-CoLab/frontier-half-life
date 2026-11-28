@@ -2,7 +2,7 @@
 
 This folder holds text copies of the SEC filings and research papers listed in the project's source inventory, plus documents added from EDGAR on request (S-1/A Amendment No. 2; the filing index, SEC header and exhibits of Amendment No. 3; and the November 25 Form 8-K), gathered on 2026-11-27 for filing reconstruction ([PLAN.md §6.1, "Filing intake and remediation"](https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/PLAN.md#61-filing-intake-and-remediation)). [MANIFEST.csv](MANIFEST.csv) is the register for this intake: one row per document with its SHA-256 hash, size, official source, accession number, form, date, retrieval method and status, plus rows for documents that are still missing.
 
-> **Status: unauthenticated text captures.** Each file is a complete text rendering of an official source, not a byte-for-byte original. Check passages against EDGAR or the publisher before relying on them (PLAN.md §6.1, step 2). The exception is `04b-8k-2026-11-25__complete-submission-0001628280-26-075973.txt`, which is the EDGAR original byte for byte: its size matches EDGAR's listing exactly.
+> **2026-11-28 working status:** Requested filing texts and exhibits are received; use the extracted text and skip original PDFs as directed by the author. [FILING-INTAKE-REVIEW.md](FILING-INTAKE-REVIEW.md) records the completed inventory and remaining claim-reconciliation work. Most files are text renderings, not byte-for-byte originals. The supplied manifest describes the 8-K complete submission as byte-exact; a matching listed size alone is not independent source authentication.
 
 ## File names
 
@@ -46,7 +46,7 @@ Every document except the complete submission file begins with a YAML header rec
 3. **Complete submission files** were not retrieved for the S-1 (224 MB), S-1/A No. 1 (94 MB), S-1/A No. 2 (96 MB), S-1/A No. 3 (95 MB) or the 424B4 (94 MB); each filing's SEC header is included instead. A file over 100 MiB cannot be pushed to GitHub without Git LFS. The 8-K's submission (1.1 MB) is included whole.
 4. **arXiv ID:** 2606.1793 in the source inventory is corrected to 2606.17930.
 5. **Layout:** tables, charts and images were converted to text; figures and some table structure are not preserved.
-6. **Original HTML of S-1/A No. 1 and the 424B4** is not included: each is a 14 MB HTML document on a single line, which the browser used for this intake could not read whole. A GitHub Actions workflow supplied with this intake, `fetch-sec-originals.yml` (it goes in `.github/workflows/`), downloads both from sec.gov into `data/raw/intake-2026-11-27/originals/`, checks them against EDGAR's listed sizes and records SHA-256 hashes. PDF renditions are on the issuer's investor-relations site: [S-1/A No. 1](https://d18rn0p25nwr6d.cloudfront.net/CIK-0002130357/17103a7b-9865-447b-8322-b73669087d2f.pdf) and [424B4](https://investor.anthropic.com/files/doc_downloads/Anthropic-PBC-424B4.pdf).
+6. **Original-layout retrieval is not a current prerequisite:** on 2026-11-28 the author directed use of the extracted text and asked to skip original PDFs. No fetch workflow or PDF review is needed. The join-check compares words, excluding numeric/table layout; retain claim-specific uncertainty and verify units/columns against the available captures. Leave the already uploaded PDF unchanged.
 
 ## Missing documents
 
@@ -65,9 +65,9 @@ Every document except the complete submission file begins with a YAML header rec
 
 Each of these has its own row in MANIFEST.csv with a link to its EDGAR filing index.
 
-## Held back pending a license check
+## Present files with pending license checks
 
-PLAN.md §6.1 asks to confirm redistribution rights before committing full copies. These documents are listed in MANIFEST.csv with their hashes but are not in this folder:
+These three documents are physically present, although the intake manifest's upload-status field still records that they were held back. That field reflects the earlier intake intention, not current availability. Their licensing/redistribution status remains unresolved; do not include their full text in the public demo or relicense them as MIT:
 
 | File | License information found |
 |---|---|

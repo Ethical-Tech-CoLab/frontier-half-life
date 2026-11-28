@@ -7,17 +7,17 @@
 | Initial author / coordinator | yorkerhodes3 |
 | Input | [SPECIFICATION.md](SPECIFICATION.md), revised v0.4 draft |
 | Companions | [BACKLOG.md](BACKLOG.md), [paper/PAPER-DRAFT.md](paper/PAPER-DRAFT.md), [SOURCES.md](SOURCES.md) |
-| Last updated | 2026-11-27 |
+| Last updated | 2026-11-28 |
 
 ## 1. Approach and deliverable contract
 
 Treat **the coordinated paper draft for review and the dashboard as equal primary deliverables**. Research produces traceable evidence; each completed evidence tranche updates the relevant manuscript section, figure/interaction specification, and dashboard data together. The paper is the reader's entry point to the argument, not a report written after the interface. Its contextual links open specific evidence or reproducible scenarios, then return the reader to the invoking section.
 
-The author requested planning now; the specification and this plan remain review drafts. Read-only source discovery and the provisional manuscript have begun. No website/model implementation, paid acquisition, deployment, or public analytical release is authorized by this plan draft. Follow the startup guide's review gates before building.
+The specification and plan remain review drafts. On 2026-11-28 the author explicitly authorized a narrow **non-analytical demo-shell/Pages exception** while requesting document review. That permits navigation, styling, paper-section summaries and received-file status, not calibrated models, verified financial findings, paid acquisition or public analytical conclusions. Full implementation and analytical release still follow the startup guide's gates.
 
-**Current research state:** [The source-access record](SOURCES.md#access-and-evidence-policy) and [independent synthesis](research/INDEPENDENT-EVIDENCE.md) contain indexed official/original-source leads, scoped literature summaries and checked analytical fixtures. Direct primary retrieval remains blocked by DNS. The [claim ledger](CLAIM-LEDGER.csv) preserves unresolved verification, including all six initial filing-portfolio leads; derived fixtures are separately labeled. This is not completed financial reconstruction or a completed literature review.
+**Current research state:** All requested filing texts, indices and new exhibits are received, including the November 25 8-K; [the intake record](research/FILING-INTAKE-REVIEW.md) confirms 80 manifest file hashes/sizes. The author waived original PDF retrieval. The [claim ledger](CLAIM-LEDGER.csv) still preserves unresolved claim reconciliation, including the initial filing-portfolio leads; derived fixtures are separate. Independent-source full-text gaps remain where no usable text was supplied. Intake completion is not completed financial reconstruction or literature review.
 
-On 2026-11-27 the author confirmed they are gathering the necessary filings and directed the remaining work to proceed. This authorizes independent research and draft preparation, **not** invented company evidence, completed review verdicts, or site/model implementation. Filing-dependent sections remain blocked until the intake/remediation below.
+The gathering dependency is closed for this scope. Proceed with text-based passage extraction/revision reconciliation below; retain specific ambiguous cells as unknown rather than impose a blanket original-layout blocker.
 
 ## 2. Technical and editorial decisions
 
@@ -108,35 +108,39 @@ Do not create empty source/data folders or model stubs just to resemble a comple
 
 | ID | Demonstrable outcome | Covers | Dependencies / target |
 | --- | --- | --- | --- |
-| M0 — Walking reader | Verified public URL with v0.4 attribution, readable paper contents, explicit draft states and non-analytical placeholder links | US-06, US-08; FR-11/FR-15/FR-16 foundation | Specification/plan approvals and Pages eligibility; first build milestone |
-| M1 — Evidence audit | Source register, authenticated filing passages where available, reconciled claim statuses, and P02 narrative; alternatively an explicit gap report | US-01; W1/W8 | Access resolution; not dependent on M0 or UI |
+| M0 — Walking reader | Verified public URL with v0.4 attribution, paper-section navigation, explicit draft states and non-analytical placeholder links | US-06, US-08; FR-11/FR-15/FR-16 foundation | Narrow shell authorized by the author 2026-11-28; full specification/plan reviews remain pending |
+| M1 — Evidence audit | Source register, checked filing passages, reconciled claim statuses, and P02 narrative; alternatively a claim-specific gap report | US-01; W1/W8 | Text intake complete; passage/definition/revision checks pending; independent of M0 |
 | M2 — Research dossier and paper methods | W2–W6 evidence notes, task/pair/profile/factor records, written P01/P03–P07/P10 methods and limits | US-02, US-03, US-05; W2–W6/W8 | W1 governs company claims; other literature and public-source research can proceed independently |
 | M3 — Paired paper/dashboard baseline | Three deterministic futures, F01–F07 static/interactive evidence views, P08 prose and manifests; no contradictory numbers | US-03–US-06/US-08; FR-02–FR-12/FR-15 | M0, validated M1/M2 data or explicit indexed assumptions, approved model dictionary |
 | M4 — Uncertainty chapter | Seeded ensembles, three stress tests or explicit insufficient-evidence states, F08 and P09 | US-07; FR-13/FR-14 | M3 fixtures and disclosed input distributions/search constraints |
 | M5 — Coordinated review package | Coherent P00–P12 paper, F01–F09, dashboard, references, versioned static snapshot, and consolidated review questions | All Must stories; FR-15/FR-16 | M2–M4 integration; initial human review before public analytical release |
 
-M1 and the M0 skeleton can proceed independently after the relevant gates. W2/W3 require a shared rubric before claiming task parity. W4 informs assumptions but does not automatically calibrate elasticity. W5/W6 bound stress and impact interpretations; unknowns prevent claims, not the writing of limitations. W8 runs alongside every package rather than waiting for M4.
+M1 and the narrowly authorized M0 shell proceed independently. W2/W3 require a shared rubric before claiming task parity. W4 informs assumptions but does not automatically calibrate elasticity. W5/W6 bound stress and impact interpretations; unknowns prevent claims, not the writing of limitations. W8 runs alongside every package rather than waiting for M4.
 
 **Access/review checkpoints:** yorkerhodes3 coordinates the next source-access and reviewer-assignment check by **2026-12-01** (proposed checkpoint, not a delivery promise). If full access is still unavailable, prioritize gap documentation and accessible literature; do not fill filing tables from snippets. Choose actual milestone dates after approval and availability confirmation.
 
 ### 6.1 Filing intake and remediation
 
-The necessary documents are a hard evidence dependency, not an optional final citation pass. When the author supplies the original S-1, amendment(s), final prospectus and relevant exhibits:
+The requested filing texts are received. Use the extracted material, not the original PDFs, as directed by the author on 2026-11-28. Continue the following remediation from completed file inventory:
 
-1. **Inventory and preserve:** Record original filenames, size/hash, provider and receipt date, official origin/accession/form/date, and any missing documents. Preserve originals as data; never execute embedded content. Confirm redistribution rights before committing full copies.
-2. **Authenticate and locate:** Inspect issuer, form, accession, filing date and completeness; match official records or documented official download provenance. Uploaded files are not automatically authenticated. Capture page/table/section locators and extraction/OCR uncertainties.
+1. **Inventory and preserve — completed for supplied scope:** Record filenames, size/hash, provider/receipt, stated official origin/accession/form/date. All 80 manifest-listed present files match their hashes/sizes. Preserve received text as data; leave the already uploaded PDF untouched. Hash matching is not independent source authentication.
+2. **Check provenance and locate:** Inspect issuer, form, accession, date, captured indices and provenance headers. Capture text line/page/table locators and conversion uncertainties. The Amendment 1 join-check validates wording continuity, not numbers or table alignment. No PDF/HTML reacquisition prerequisite remains; keep claim-specific ambiguity explicit.
 3. **Reconcile definitions and revisions:** Compare original, amendments, final prospectus and subsequent material filings through the cutoff. Separate expense from commitment, quarter from year-to-date, contingent from unconditional capacity, and original from superseded clauses. Track overlaps and unexplained residuals.
 4. **Remediate claims:** Check CL-001–CL-005/CL-012 individually; record supported, contradicted, unresolved or superseded status, scope, reviewer and transformation. A discovery snippet is not evidence for an absent table. Corrections preserve lineage rather than overwrite the initial research record.
 5. **Propagate to the coordinated reader:** Revise P02/P03/P06/P09, F01/F02/F05/F08 specifications, provider edges and any model inputs/results dependent on a changed claim. Mark downstream derivations/manifests stale until revalidated; do not silently reuse old assumptions.
 6. **Revalidate and review:** Recompute affected transformations and checks, update coverage/cutoff/version explicitly, review financial interpretation, and record remaining blockers. Filing arrival does not complete W2–W6, authorize unsupported physical conversions, or waive the paper/dashboard review gates.
 
-These steps correspond to T-010–T-014 in [BACKLOG.md](BACKLOG.md#next-evidence-reconstruction). W2/W3/W4/W6 literature, rubrics, analytical derivations and manuscript methods can continue independently; Anthropic calibration, actual counterparty attribution, company-energy estimates and empirical financial stress conclusions cannot.
+These steps correspond to T-010–T-014 in [BACKLOG.md](BACKLOG.md#next-evidence-reconstruction). T-010 is complete; interpretation and review are not. Calibration, counterparty attribution, energy and stress conclusions still require the relevant reconciled evidence and phase approvals.
 
 ## 7. Environments, deployment, and versioning
 
-Planned Pages root: `https://ethical-tech-colab.github.io/frontier-half-life/`; **not deployed or verified in this work**. Confirm repository Pages settings/eligibility before M0. Use local static preview and generated artifacts when hosting is unavailable; record that a deployment blocker remains.
+Pages root: `https://ethical-tech-colab.github.io/frontier-half-life/`. The first demo shell is authorized separately from analytical publication; deployment status is recorded in README after actual verification. Source and review documents stay on the review branch; a **docs-only `gh-pages` branch** publishes the static shell from its root. The raw filing captures, PDFs and pending-license literature are not copied into the site artifact.
 
-On reviewed merges, generate the reader from manuscript/evidence, run link and reproducibility checks, then deploy `docs/` through the approved Pages configuration. Verify HTTP availability, section fragments, assets, and replay before marking a URL live. M0 may show draft prose and planned states; it does not waive review of analytical conclusions.
+The former `main`-root Pages build failed when Jekyll interpreted imported filing date metadata as invalid datetimes. Isolating the static shell and adding `.nojekyll` fixes the publication boundary without rewriting source captures to suit a site generator.
+
+For the initial shell, create a publication commit whose root tree is the committed source branch's `docs/` tree (`git commit-tree <source-commit>:docs`); its message records the source commit. Publish that commit to `gh-pages` without force-pushing and set Pages to that branch's root. Subsequent publication commits must parent the existing `gh-pages` head so history remains append-only. This avoids requiring a build step or the unavailable `git subtree` command.
+
+Verify real HTTP availability, section navigation, assets and brand behavior before reporting the site live. Future reader/model releases require reviewed source changes and their own reproducibility checks. M0 presents non-analytical summaries, not a completed paper rendering or replay engine.
 
 Show working version **v0.4**, initial author **yorkerhodes3**, dataset cutoff, and review state on the paper/dashboard and exports. Subsequent changes advance the version deliberately; a later retrieval date is not silently a later evidence cutoff. Archive paper+dataset+model+manifest compatibility at each review. Do not overwrite the original supplied research record.
 

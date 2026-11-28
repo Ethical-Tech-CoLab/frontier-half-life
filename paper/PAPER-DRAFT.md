@@ -10,9 +10,9 @@
 
 **Status:** Early, incomplete research draft for review. No authenticated Anthropic financial results, company energy estimates, or empirical stress findings are presented.
 
-This is the manuscript source for the proposed **live linked research reader**, a key deliverable alongside the dashboard. The prose is readable now in the repository. Pages visuals, interactions, return links, and versioned replay are planned, not built or deployed.
+This is the manuscript source for the **live linked research reader**, a key deliverable alongside the dashboard. A non-analytical Pages shell is authorized on 2026-11-28 for navigation and section summaries. The full manuscript rendering, analytical visuals and versioned replay remain later work; shell availability is not analytical publication.
 
-The author is gathering the primary filings. Until intake and reconciliation, company-specific financial conclusions remain blocked; independent literature, analytical methods, and the review structure proceed. Source discovery uses indexed original/institutional passages because direct retrieval is failing DNS. These provisional summaries are not full-text reviews or verified numerical inputs.
+The requested primary filing texts and exhibits are received, including all three amendments and the November 25 8-K. The author directed text-based review and waived original PDFs. Company-specific financial conclusions remain blocked by passage/definition/revision reconciliation, not file acquisition. Independent literature summaries still distinguish inspected indexed passages from full-text review.
 
 ## Reader guide
 
@@ -57,11 +57,11 @@ The proposed causal chain is technical/task efficiency → useful-task cost → 
 
 Anthropic is the proposed initial company anchor, conditional on authenticating primary documents. The source hierarchy favors filings and official disclosures, then independent research, with estimates and scenarios labeled separately. A claim described as “reported” is not automatically verified; classification, verification state, source confidence, and review status answer different questions.
 
-Indexed SEC metadata identifies candidate original and amended filings ([SRC-001](../SOURCES.md#src-001), [SRC-002](../SOURCES.md#src-002); CL-011 is a metadata lead). That does not authenticate the revenue, expense, short-term compute, discount, or committed-spend figures in the supplied draft (CL-001–CL-005), nor the portfolio description (CL-012). Those claims remain in the ledger but are not conclusions of this paper.
+The original S-1 and Amendment 1 are received text captures ([SRC-001](../SOURCES.md#src-001), [SRC-002](../SOURCES.md#src-002)), alongside Amendments 2/3, the final prospectus and November 25 8-K (SRC-014–SRC-017). Their stated identities and manifest hashes have been checked at inventory level. This does not authenticate every revenue, expense, short-term compute, discount, or committed-spend figure in the supplied draft (CL-001–CL-005), nor the portfolio description (CL-012). Those remain pending claim reconciliation, not conclusions of this paper.
 
-When the files arrive, [the remediation pass](../PLAN.md#61-filing-intake-and-remediation) will preserve originals and hashes, inspect issuer/accession/form/date, reconcile amendments and the final prospectus, capture exact table/passage locators, and record review history. Subsequent material filings through the cutoff must also be considered. Contradictions require correction of paper claims and downstream figures, not merely appending a source link.
+Continue [the remediation pass](../PLAN.md#61-filing-intake-and-remediation) from completed text inventory: inspect exact table/passage locators, units, definitions and revisions, and record review history. The supplied join-check compares words rather than numeric table alignment; original PDF retrieval is not required, but ambiguous values must remain unresolved. The 8-K text covers closing agreements, placement/rights and IPO events rather than providing a new historical compute-efficiency series. Contradictions require correction of paper claims and downstream figures, not merely appending a source link.
 
-**F01 — Filing chronology (planned):** `evidence.html#filing-timeline`. Caption: original, amended, final, and subsequent documents with authentication and supersession status. **Static fallback now:** no authenticated chronology or financial series exists; candidate documents and access failures are listed in the source register. Return destination: `paper.html#p02`.
+**F01 — Filing chronology (demo-shell scope):** `evidence.html#filing-timeline`. The shell lists the received documents and links to their text; this is an inventory timeline, not a reconciled financial series. **Static reference:** [received-text review](../research/FILING-INTAKE-REVIEW.md). Return destination: `paper.html#p02`.
 
 <a id="p03"></a>
 ## P03 — Decomposing efficiency without collapsing denominators
@@ -158,7 +158,7 @@ Monte Carlo methods can propagate declared uncertainty but do not transform assu
 
 The initial reverse tests investigate compute-cost pressure, committed-capacity mismatch, and regional power constraints. The two illustrative financial/capacity boundaries are expense above 60% of revenue and use below 60% of available committed capacity, respectively, for four consecutive comparable quarters. The regional boundary compares required load with documented deliverable supply in a matched period.
 
-These are research triggers, not solvency, covenant, climate, or community acceptability certificates. Relevant missing filings, denominator definitions, obligations, delivery dates, and regional supply prevent empirical evaluation. A search finding no breach within its domain is not evidence of safety outside that domain; claiming a minimal shock requires publishing the search method and admissible assumptions.
+These are research triggers, not solvency, covenant, climate, or community acceptability certificates. The requested filings are received, but unreconciled denominator definitions, obligations, delivery dates, and regional supply still prevent empirical evaluation. A search finding no breach within its domain is not evidence of safety outside that domain; claiming a minimal shock requires publishing the search method and admissible assumptions.
 
 **F08 — Stress boundaries (planned):** `uncertainty.html#stress-boundaries`. Static fallback: the three definitions above and a current “not evaluated / insufficient evidence” state, not a plotted invented result. Return: `paper.html#p09`.
 
@@ -193,7 +193,7 @@ The following references are stable **discovery records**, not claims of complet
 
 | Reference | Work | Use here |
 | --- | --- | --- |
-| [SRC-001](../SOURCES.md#src-001), [SRC-002](../SOURCES.md#src-002), [SRC-003](../SOURCES.md#src-003) | Anthropic S-1/S-1/A and issuer chronology candidates | P02/P03/P06; primary documents pending |
+| [SRC-001](../SOURCES.md#src-001), [SRC-002](../SOURCES.md#src-002), [SRC-003](../SOURCES.md#src-003), [SRC-014](../SOURCES.md#src-014), [SRC-015](../SOURCES.md#src-015), [SRC-016](../SOURCES.md#src-016), [SRC-017](../SOURCES.md#src-017) | Received S-1/amendments/final/8-K text captures and chronology | P02/P03/P06; claim reconciliation pending, no PDF prerequisite |
 | [SRC-004](../SOURCES.md#src-004) | Epoch AI, open/closed ECI gap | P04; indexed analysis, not commercial parity |
 | [SRC-005](../SOURCES.md#src-005) | Luccioni, Jernite and Strubell, *Power Hungry Processing* | P03/P07; task-measurement method |
 | [SRC-006](../SOURCES.md#src-006) | UKERC, rebound review | P01/P05; competing mechanisms |
@@ -206,3 +206,5 @@ The following references are stable **discovery records**, not claims of complet
 **Reproducibility status:** No company-calibrated dataset, engine release, Monte Carlo trial set, scenario manifest, or deployed Pages interaction exists yet. Current algebra and synthetic inputs are fully shown in P05/P08 and [R05](../research/INDEPENDENT-EVIDENCE.md#r05). Later snapshots must pin paper, source/data/model versions and manifests; a live update must not silently change a reviewed result.
 
 **v0.4, 2026-11-27:** Initial coordinated manuscript, independent literature synthesis, source-access triage, and synthetic identities. Primary filings are being gathered by the author; remediation is planned, not completed. The initial author is **yorkerhodes3**. Repository original work is MIT licensed; third-party materials retain their respective terms.
+
+**v0.4 intake update, 2026-11-28:** Requested text intake complete; claim reconciliation pending. PDF retrieval waived by author; non-analytical demo shell authorized while revised specification/plan review remains pending. Evidence cutoff stays 2026-11-27.

@@ -3,7 +3,7 @@
 **Initial author:** yorkerhodes3. **Cutoff / research date:** 2026-11-27.
 **Status:** Provisional synthesis of inspected indexed source passages plus explicit analytical derivations. Full-text source review and empirical calibration are incomplete.
 
-This work proceeds independently of the pending Anthropic filings. It does not establish any of the initial financial figures, provider relationships, actual workload elasticities, or company energy estimates. See the [access record](../SOURCES.md#independent-continuation-pass) and [claim ledger](../CLAIM-LEDGER.csv).
+This work proceeds independently of Anthropic filing reconciliation. The selected filing texts are now received, but this synthesis does not establish any initial financial figures, provider relationships, actual workload elasticities or company energy estimates. See the [access record](../SOURCES.md#independent-continuation-pass) and [claim ledger](../CLAIM-LEDGER.csv).
 
 <a id="r01"></a>
 ## R01 — Rebound is a question, not a predetermined result
@@ -100,6 +100,6 @@ These fixtures check accounting/signs; they are not evidence of real demand, ene
 
 Continue source discovery, scoped literature synthesis, rubric design, algebra, reader/citation contracts, and writing methods/limitations. All retain review status and documented evidence access.
 
-Do not fill company financial tables, estimate actual Anthropic margins, assert counterparty relationships, infer company electricity from revenue, fit historical quarters, or issue empirical stress conclusions without the relevant primary records. The author is gathering them; [the intake/remediation sequence](../PLAN.md#61-filing-intake-and-remediation) is the next step when they arrive.
+Do not fill company financial tables, estimate actual Anthropic margins, assert counterparty relationships, infer company electricity from revenue, fit historical quarters, or issue empirical stress conclusions without reconciled primary evidence. The requested text records are now received; [the intake/remediation sequence](../PLAN.md#61-filing-intake-and-remediation) continues with passage/definition/revision checks. Original PDFs are not a prerequisite as directed by the author.
 
 This note is a bounded independent research tranche. It does not complete W2–W6, establish current price/energy values, or replace specialist review. Paper results and interpretations must be revised if fuller evidence contradicts these provisional source summaries.

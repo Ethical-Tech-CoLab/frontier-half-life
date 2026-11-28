@@ -1,5 +1,10 @@
 # Frontier AI source documents - retrieved 2026-11-27
 
+> Historical first-intake notes. The later [research README](README.md) and
+> [2026-11-28 intake review](FILING-INTAKE-REVIEW.md) supersede the missing-file
+> statements below: all requested amendment/8-K texts and exhibits are now
+> received, and original PDF retrieval is not required.
+
 Complete text for 50 of the 53 sources in your inventory (one through a replacement source), SEC headers in place of
 the 3 oversized complete-submission files, and one added source (the full AI Index chapter). The updated inventory
 (`Frontier AI efficiency SEC filing source inventory - updated.csv`) maps every row to its local file,
