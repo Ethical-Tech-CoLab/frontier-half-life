@@ -8,11 +8,11 @@
 
 | Field | Value |
 | --- | --- |
-| Status | Draft — human specification review required |
+| Status | Approved — plan review required before full implementation |
 | Concept doc | [CONCEPT-IDEA.md](CONCEPT-IDEA.md), approved 2026-11-27 |
 | Initial author | yorkerhodes3 |
 | Drafting support | AI assistance; human review required |
-| Reviewer(s) | Author review pending; specialist release reviewers not yet assigned |
+| Reviewer(s) | yorkerhodes3 — specification approved 2026-11-28; specialist release reviews still required |
 | Working version | v0.4 — update as work proceeds |
 | Last updated | 2026-11-28 |
 
@@ -203,10 +203,10 @@ These are explicit research/planning dependencies, not requests to invent missin
 - [ ] Open research dependencies and illustrative thresholds are not presented as resolved evidence.
 - [ ] The definition of done and remaining planning decisions are realistic.
 
-**Reviewer:** Pending human specification review
+**Reviewer:** yorkerhodes3
 
-**Date:** Not yet reviewed
+**Date:** 2026-11-28
 
-**Verdict:** Pending — no specification approval recorded
+**Verdict:** `Approved`
 
-**Reviewer notes:** Record `Approved`, `Approved with changes`, or `Needs rework` after review. Only an approved specification advances to PLAN + BACKLOG; this document does not authorize implementation.
+**Reviewer notes:** The author selected “Approve the revised v0.4 specification” after receiving the updated requirements and review link. This approves the specification, not financial claims or specialist publication review. PLAN + BACKLOG still require their review; the non-analytical shell has separate authorization.

@@ -24,8 +24,8 @@ so it remains readable without them.
 | [SOURCES.md](SOURCES.md) / [CLAIM-LEDGER.csv](CLAIM-LEDGER.csv) | Source-access records, provisional evidence and explicit verification gaps |
 | [research/FILING-INTAKE-REVIEW.md](research/FILING-INTAKE-REVIEW.md) | Completed requested text intake, provenance limitations, and claim-reconciliation work |
 
-**Status:** Concept merged; revised specification and requested plan are drafts
-for review. The original S-1, three amendments, final prospectus, November 25
+**Status:** Concept merged; revised specification approved 2026-11-28, plan
+review pending. The original S-1, three amendments, final prospectus, November 25
 8-K and requested indices/exhibits are received. The
 [intake review](research/FILING-INTAKE-REVIEW.md) confirms 80 manifest-listed
 file hashes/sizes. **Use the extracted text; original PDFs are not required.**

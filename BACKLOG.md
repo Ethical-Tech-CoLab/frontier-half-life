@@ -5,7 +5,7 @@
 | Initial author / coordinator | yorkerhodes3 |
 | Last groomed | 2026-11-28 |
 | Current milestone | Received-text reconciliation and authorized M0 demo shell |
-| Status | Revised specification and requested plan pending review |
+| Status | Specification approved 2026-11-28; plan review pending |
 
 IDs are stable. **S** means less than an hour of active work; **M** means a few hours. These are proposed sizes, not measured effort. Tasks larger than a source batch or one view must be split before work. Dependencies are explicit, not inferred from order. References point to [SPECIFICATION.md](SPECIFICATION.md) requirements and [PLAN §3](PLAN.md#3-evidence-work-packages) work packages. Drafted artifacts are not marked reviewed or merged merely because they exist.
 
@@ -13,7 +13,7 @@ IDs are stable. **S** means less than an hour of active work; **M** means a few 
 
 | ID | Task | Ref | Size / state | Acceptance / dependency |
 | --- | --- | --- | --- | --- |
-| T-001 | Review revised v0.4 specification, including live-reader and evidence boundaries | FR-15, FR-16 | M / review | Actual author verdict recorded; source access does not waive evidence or build gates |
+| T-001 | Review revised v0.4 specification, including live-reader and evidence boundaries | FR-15, FR-16 | M / done | Author approved 2026-11-28; source access does not waive claim or release review |
 | T-002 | Review coordinated plan, backlog, milestones and paper-section dependencies | FR-16; W8 | M / review | After T-001 approval, record plan verdict, owners and scope cuts; no automatic approval from drafting request |
 | T-003 | Inspect full UKERC review and Masanet methods once public access works | FR-01, FR-02; W4 | M / blocked by independent-source access | Capture sections/limitations and supporting or contrary findings; revise R01/P01 without borrowing AI elasticities |
 | T-004 | Inspect inference-energy and SWE-bench method/version/annotation records | FR-03, FR-04; W2 | M / blocked by independent-source access | Record task/hardware/harness/license boundaries; revise R02/P03/P04; no invented current frontier-energy inputs |
@@ -65,7 +65,7 @@ The requested texts are received; T-010 is complete for this scope. Resume passa
 | --- | --- | --- | --- |
 | Filing claim reconciliation and extraction ambiguity | T-011–T-014, company calibration and empirical interpretations in P02/P03/P06/P09 | Research lead + reviewer | 2026-11-28; requested texts received; reconcile exact passages/units/revisions, no PDF prerequisite |
 | Public-source full-text retrieval fails DNS | T-003/T-004 and full-method portions of T-015–T-018 | Session environment/access restoration or lawful accessible documents | 2026-11-27; provisional indexed synthesis remains limited, not falsely complete |
-| Revised specification and plan not approved | Full model/site phase beyond authorized M0 shell | yorkerhodes3 | 2026-11-27; request document review, not inferred approval from shell |
+| Plan not approved | Full model/site phase beyond authorized M0 shell | yorkerhodes3 | 2026-11-28; revised specification approved, plan review remains explicit |
 | Release reviewers not assigned | T-042 and public analytical release | yorkerhodes3 | 2026-11-27; proposed assignment/access checkpoint 2026-12-01, not an automated reminder |
 
 ## Draft research status

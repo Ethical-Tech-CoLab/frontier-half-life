@@ -2,10 +2,10 @@
 
 | Field | Value |
 | --- | --- |
-| Status | Draft requested by the author; specification and plan reviews pending |
+| Status | Draft for plan review; revised v0.4 specification approved 2026-11-28 |
 | Starting working version | v0.4; advance explicitly, not automatically to v1 |
 | Initial author / coordinator | yorkerhodes3 |
-| Input | [SPECIFICATION.md](SPECIFICATION.md), revised v0.4 draft |
+| Input | [SPECIFICATION.md](SPECIFICATION.md), approved v0.4 |
 | Companions | [BACKLOG.md](BACKLOG.md), [paper/PAPER-DRAFT.md](paper/PAPER-DRAFT.md), [SOURCES.md](SOURCES.md) |
 | Last updated | 2026-11-28 |
 
@@ -13,7 +13,7 @@
 
 Treat **the coordinated paper draft for review and the dashboard as equal primary deliverables**. Research produces traceable evidence; each completed evidence tranche updates the relevant manuscript section, figure/interaction specification, and dashboard data together. The paper is the reader's entry point to the argument, not a report written after the interface. Its contextual links open specific evidence or reproducible scenarios, then return the reader to the invoking section.
 
-The specification and plan remain review drafts. On 2026-11-28 the author explicitly authorized a narrow **non-analytical demo-shell/Pages exception** while requesting document review. That permits navigation, styling, paper-section summaries and received-file status, not calibrated models, verified financial findings, paid acquisition or public analytical conclusions. Full implementation and analytical release still follow the startup guide's gates.
+The revised specification is approved; this plan remains in review. On 2026-11-28 the author explicitly authorized a narrow **non-analytical demo-shell/Pages exception** while requesting document review. That permits navigation, styling, paper-section summaries and received-file status, not calibrated models, verified financial findings, paid acquisition or public analytical conclusions. Full implementation and analytical release still follow the startup guide's gates.
 
 **Current research state:** All requested filing texts, indices and new exhibits are received, including the November 25 8-K; [the intake record](research/FILING-INTAKE-REVIEW.md) confirms 80 manifest file hashes/sizes. The author waived original PDF retrieval. The [claim ledger](CLAIM-LEDGER.csv) still preserves unresolved claim reconciliation, including the initial filing-portfolio leads; derived fixtures are separate. Independent-source full-text gaps remain where no usable text was supplied. Intake completion is not completed financial reconstruction or literature review.
 
@@ -178,7 +178,7 @@ Cut agent-based markets, comprehensive maps, extra provider cohorts and 2035/lif
 
 ## Reviewer sign-off
 
-- [ ] Revised specification reviewed before this plan is approved.
+- [x] Revised specification reviewed and approved 2026-11-28.
 - [ ] Paper and dashboard are equal deliverables with section-level evidence dependencies.
 - [ ] Milestones, estimates, ownership, access checkpoints and scope cuts are realistic.
 - [ ] All Must stories and original research streams have a place or an explicit deferral.
