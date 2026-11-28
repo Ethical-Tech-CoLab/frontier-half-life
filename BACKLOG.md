@@ -4,7 +4,7 @@
 | --- | --- |
 | Initial author / coordinator | yorkerhodes3 |
 | Last groomed | 2026-11-28 |
-| Current milestone | M0 demo shell published; M1 text reconstruction drafted, awaiting authentication and financial review |
+| Current milestone | M0 published; M1 reconstruction drafted on author-attested filings, awaiting the author's financial review |
 | Status | Specification, plan and backlog approved 2026-11-28; claim/release review still required |
 
 IDs are stable. **S** means less than an hour of active work; **M** means a few hours. These are proposed sizes, not measured effort. Tasks larger than a source batch or one view must be split before work. Dependencies are explicit, not inferred from order. References point to [SPECIFICATION.md](SPECIFICATION.md) requirements and [PLAN §3](PLAN.md#3-evidence-work-packages) work packages. Drafted artifacts are not marked reviewed or merged merely because they exist.
@@ -30,7 +30,7 @@ The requested texts are received; T-010 is complete for this scope. T-011–T-01
 | ID | Task | Ref / package | Size | Depends on / acceptance |
 | --- | --- | --- | --- | --- |
 | T-010 | Inventory S-1, three amendments, final prospectus, 8-K and requested exhibits | FR-01; W1 | S / done | All 80 manifest-listed present files hash/size matched; selected text intake complete; see intake review |
-| T-011 | Authenticate filing identities and enumerate changes through cutoff | FR-01, FR-02; W1 | M / review | Internal identity/chronology and per-version change lineage drafted ([W1 §2](research/W1-FILING-RECONSTRUCTION.md#w1-identity)); origin authentication still blocked by SEC network access or needs author attestation plus reviewer record |
+| T-011 | Authenticate filing identities and enumerate changes through cutoff | FR-01, FR-02; W1 | M / done | Identity/chronology and per-version lineage drafted ([W1 §2](research/W1-FILING-RECONSTRUCTION.md#w1-identity)); capture authenticity attested by the author 2026-11-28 ([decisions](SOURCES.md#author-decisions-2026-11-28)); not network-verified |
 | T-012 | Reconstruct revenue and compute/infrastructure definitions for one source batch | FR-02, FR-04; W1 | M / review | Seven quarters, annual and nine-month values located with footings and recomputed ratios; definition and 2026 composition change recorded ([W1 §3](research/W1-FILING-RECONSTRUCTION.md#w1-revenue-compute)); Note 8 cost of revenue not extracted |
 | T-013 | Reconstruct short-term compute, pricing adjustments and commitments | FR-02, FR-08; W1 | M / review | Short-term, pricing, aggregate decomposition, conditionality, exclusions and ten named arrangements with revision lineage drafted ([W1 §4–6](research/W1-FILING-RECONSTRUCTION.md#w1-short-term-pricing)); exhibit-level terms and Notes 13/17 not extracted |
 | T-014 | Reconcile original/amended/final findings and paper impacts | FR-02, FR-15; W1/W8 | M / review | CL-001–CL-004 supported, CL-005 superseded, CL-020–CL-025 added; P02/P03/P05/P06/P09 revised; unknowns listed ([W1 §8–10](research/W1-FILING-RECONSTRUCTION.md#w1-claims)). Awaiting a financial reviewer's actual sign-off; no claim marked verified |
@@ -63,9 +63,9 @@ The requested texts are received; T-010 is complete for this scope. T-011–T-01
 
 | Blocker | Affects | Owner / unblocker | Since / next action |
 | --- | --- | --- | --- |
-| Filing origin authentication and financial review | Promotion of CL-001–CL-005/CL-011/CL-012/CL-020–CL-025 beyond `unknown`; company calibration | yorkerhodes3 + financial reviewer | 2026-11-28; text reconstruction drafted and reproducible; needs origin check or author attestation, then review of dispositions and the 2026 comparability judgment |
+| Financial review of company claims | Promotion of CL-001–CL-005/CL-011/CL-012/CL-020–CL-027 beyond `unknown`; company calibration | yorkerhodes3 (financial reviewer, assigned 2026-11-28) | Authenticity attested 2026-11-28. Next: review the W1 §8 dispositions and the 2026 comparability judgment, then record reviewer and date per claim |
 | Public-source full-text retrieval fails DNS | T-003/T-004 and full-method portions of T-015–T-018 | Session environment/access restoration or lawful accessible documents | 2026-11-27; provisional indexed synthesis remains limited, not falsely complete |
-| Author decisions requested 2026-11-28 | Promotion of company claims; rubric adoption; literature redistribution | yorkerhodes3 | (1) attest or arrange origin authentication of the supplied filing captures; (2) name a financial reviewer for the W1 dispositions and the 2026 comparability judgment; (3) choose rubric thresholds/task sets under OQ-02; (4) decide licensing treatment for the Stanford and Anthropic literature files |
+| Author decisions 2026-11-28 | Claim promotion; rubric adoption; literature use | yorkerhodes3 | Decided: filing copies authentic; financial reviewer is yorkerhodes3; literature files usable as attributed input ([decisions](SOURCES.md#author-decisions-2026-11-28)). Pending: review of the proposed rubric selections (T-005, OQ-02) |
 | Release reviewers not assigned | T-042 and public analytical release | yorkerhodes3 | 2026-11-27; proposed assignment/access checkpoint 2026-12-01, not an automated reminder |
 
 ## Draft research status

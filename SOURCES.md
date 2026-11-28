@@ -3,6 +3,12 @@
 **Initial author:** yorkerhodes3. **Research cutoff / access check:** 2026-11-27.
 **Status:** Discovery and access triage, not a completed literature review or authenticated financial dataset.
 
+<a id="author-decisions-2026-11-28"></a>
+**Author decisions, 2026-11-28 (yorkerhodes3):**
+1. **Filing captures are authentic.** The author attests that the supplied copies of the S-1, the three amendments, the final prospectus, the 8-K and their exhibits (SRC-001, SRC-002, SRC-014–SRC-017) are authentic. This satisfies the document-authentication step of FR-01 by attestation; it is recorded as such and is not a network verification.
+2. **Financial reviewer.** yorkerhodes3 is the financial reviewer for now. Company claims stay `unknown` until that review is recorded claim by claim with a date.
+3. **Literature files.** The supplied literature captures, including the three previously "held back" files (SRC-024–SRC-026), may be used as attributed input to this project.
+
 **2026-11-28 W1 update:** A reproducible text-based reconstruction ([research/W1-FILING-RECONSTRUCTION.md](research/W1-FILING-RECONSTRUCTION.md); `node tools/extract-filing-facts.mjs --check`) locates the company claims in SRC-001/002/014/015/016 with line locators and records per-version revisions. No source is origin-authenticated; no claim is promoted to `verified`.
 
 **2026-11-28 intake update:** All requested text captures for the selected filing sequence are received: original S-1, three amendments, final prospectus, November 25 8-K and the requested exhibits/indices. All 80 present manifest-listed files match their recorded hashes and sizes. See [the intake review](research/FILING-INTAKE-REVIEW.md). Original PDFs are not required; the author directed use of the extracted text. Claim-level reconciliation and review remain pending.
@@ -39,7 +45,8 @@ The ledger also contains explicitly `derived` algebra/synthetic fixtures with lo
 - **Indexed official header:** https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/0001628280-26-067168-index-headers.html
 - **Observed:** Search returned a header identifying Anthropic, PBC, that accession, and form S-1. Direct document retrieval failed DNS.
 - **Received text:** [Primary capture](research/01-s1-2026-10-26__primary-document-anthropicpbc-sx1.md), index, header and exhibits in [research/MANIFEST.csv](research/MANIFEST.csv); received-text inventory confirmed 2026-11-28.
-- **Next:** Origin authentication. W1 found results only through 2026-06-30 and blank commitment placeholders in this version ([W1 §2](research/W1-FILING-RECONSTRUCTION.md#w1-identity)). Metadata alone does not substantiate amounts.
+- **Authentication:** Attested authentic by the author, 2026-11-28 ([decisions](#author-decisions-2026-11-28)); not network-verified.
+- **Next:** Financial review of the W1 dispositions. W1 found results only through 2026-06-30 and blank commitment placeholders in this version ([W1 §2](research/W1-FILING-RECONSTRUCTION.md#w1-identity)).
 - **Feeds:** CL-001–CL-005, CL-012; paper P02/P03/P06.
 
 <a id="src-002"></a>
@@ -50,7 +57,8 @@ The ledger also contains explicitly `derived` algebra/synthetic fixtures with lo
 - **Indexed official index:** https://www.sec.gov/Archives/edgar/data/2130357/000162828026068676/0001628280-26-068676-index.htm
 - **Observed:** Search returned issuer/form/date and the named main document; searches for the amounts did not expose financial-table passages. Direct retrieval failed DNS.
 - **Received text:** [Amendment 1](research/02-s1a1-2026-11-02__primary-document-anthropicpbc-sx1ax1.txt), index, header and revised exhibits; [join-check note](research/02-s1a1-2026-11-02__join-check-note.md) documents word-level continuity checks, not numeric alignment.
-- **Next:** Origin authentication and review. W1 located the A1 values (first Q3-2026 data; $895.4B aggregate, later superseded); table cells are alignment-unverified per the join check ([W1 §5](research/W1-FILING-RECONSTRUCTION.md#w1-commitments)).
+- **Authentication:** Attested authentic by the author, 2026-11-28 ([decisions](#author-decisions-2026-11-28)); not network-verified.
+- **Next:** Financial review. W1 located the A1 values (first Q3-2026 data; $895.4B aggregate, later superseded); table cells are alignment-unverified per the join check ([W1 §5](research/W1-FILING-RECONSTRUCTION.md#w1-commitments)).
 - **Feeds:** CL-001–CL-005; paper P02/P03/P06. No calibrated model inputs yet.
 
 <a id="src-003"></a>
@@ -198,7 +206,7 @@ The ledger also contains explicitly `derived` algebra/synthetic fixtures with lo
 - **Accession / filed date:** `0001628280-26-074944`, 2026-11-19; prospectus dated 2026-11-18.
 - **Local source:** [Final 424B4](research/04-424b4-2026-11-19__primary-document-anthropicpbc-424b4.md), index, header and directory listing.
 - **Use:** Final registration/prospectus reconciliation, separate from later IPO-close events.
-- **Status:** Received text with recorded provenance. Reference version for [W1](research/W1-FILING-RECONSTRUCTION.md); company claims located with line locators, unverified pending origin authentication and review.
+- **Status:** Received text with recorded provenance. Reference version for [W1](research/W1-FILING-RECONSTRUCTION.md); attested authentic by the author 2026-11-28; company claims located with line locators, unverified pending financial review.
 
 <a id="src-017"></a>
 ## SRC-017 — November 25 8-K, received primary and complete submission
@@ -280,7 +288,7 @@ Seven supplied `05-lit` text captures were analyzed in [research/LITERATURE-TRAN
 - **URL (manifest):** https://hai.stanford.edu/assets/files/ai_index_report_2026_chapter_1_research_development.pdf
 - **Local source:** [Text capture](research/05-lit__stanford-hai-ai-index-2026-ch1-full-chapter.md); SHA-256 prefix `5020fdfa9768`.
 - **Access / authentication:** Supplied local text; hash matched manifest; origin not network-authenticated.
-- **License / redistribution:** Pending. The manifest marks the file "held back - license check" and notes that arXiv lists the full report (arXiv:2606.15708) under CC BY-NC-ND 4.0. Short quotations and locators only; do not republish.
+- **License / redistribution:** Author decision 2026-11-28: usable as attributed input to this project. Short quotations with attribution and locators; the full text is not republished on Pages (`research/` stays excluded). The manifest notes that arXiv lists the full report (arXiv:2606.15708) under CC BY-NC-ND 4.0; those terms still apply to any reuse beyond quotation.
 - **Observed:** A secondary synthesis of Epoch AI, Jegham et al. (2025), IEA (2025), de Vries and Gao (2025), Cloudscene and GitHub/Hugging Face data. Charts survive only as loose numbers.
 - **Use:** Release-access and licence categories; pointers to underlying energy and compute estimates.
 - **Limit:** Estimates and projections, not company metering. Per-prompt energy is not per successful task. The extraction has some suspect chart labels, and the capacity and demand estimates are not reconciled.
@@ -293,7 +301,7 @@ Seven supplied `05-lit` text captures were analyzed in [research/LITERATURE-TRAN
 - **URL (manifest):** https://hai.stanford.edu/ai-index/2026-ai-index-report/research-and-development
 - **Local source:** [Text capture](research/05-lit__stanford-hai-ai-index-2026-ch1-web-page.md); SHA-256 prefix `c7f9cf183a68`.
 - **Access / authentication:** Supplied local text; hash matched manifest; origin not network-authenticated.
-- **License / redistribution:** No licence statement found; marked "held back - license check". Short quotations and locators only.
+- **License / redistribution:** No licence statement found. Author decision 2026-11-28: usable as attributed input to this project. Short quotations with attribution and locators; the full text is not republished on Pages (`research/` stays excluded).
 - **Observed:** Ten takeaways that repeat the chapter's headline numbers.
 - **Limit:** Adds nothing beyond SRC-024; cite the chapter instead.
 - **Feeds:** [L06](research/LITERATURE-TRANCHE-01.md#l06); no ledger claim.
@@ -305,7 +313,7 @@ Seven supplied `05-lit` text captures were analyzed in [research/LITERATURE-TRAN
 - **URL (manifest):** https://www.anthropic.com/research/provable-inference
 - **Local source:** [Text capture](research/05-lit__anthropic-provable-inference-progress.md); SHA-256 prefix `c3d138e2b30e`.
 - **Access / authentication:** Supplied local text; hash matched manifest; origin not network-authenticated.
-- **License / redistribution:** No licence stated for the article text; the post says its code, Lean proofs and documentation are Apache 2.0. Marked "held back - license check". Short quotations and locators only.
+- **License / redistribution:** No licence stated for the article text; the post says its code, Lean proofs and documentation are Apache 2.0. Author decision 2026-11-28: usable as attributed input to this project. Short quotations with attribution and locators; the full text is not republished on Pages (`research/` stays excluded).
 - **Observed:** A vendor-measured prototype: zkSNARK proofs for Llama 4 Maverick at about 110 tokens/s on one H100, roughly 70–95 times vLLM GPU time, with stated limits (greedy integer model, MoE only, 1,024-token context).
 - **Use:** A validity threat. Served-model identity through APIs or routers cannot be verified from outputs, so evaluations must record endpoint and identity status.
 - **Limit:** Issuer research on its own prototype; primary only for those prototype results. Not independent, not Claude serving, and not evidence of Anthropic efficiency or cost.

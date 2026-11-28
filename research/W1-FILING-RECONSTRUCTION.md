@@ -4,7 +4,7 @@
 | --- | --- |
 | Initial author / coordinator | yorkerhodes3 |
 | Prepared | 2026-11-28, text-based pass over the supplied captures |
-| Status | **Draft reconstruction for review.** Passages are located and internally checked; no claim is `verified`. Origin authentication and a human financial review are still required. |
+| Status | **Draft reconstruction for review.** Passages are located and internally checked; no claim is `verified`. The author attested the captures authentic on 2026-11-28 ([decisions](../SOURCES.md#author-decisions-2026-11-28)). The financial review by yorkerhodes3 is still required. |
 | Reproduce | `node tools/extract-filing-facts.mjs` (writes), `node tools/extract-filing-facts.mjs --check` (fails if stale or if a derived check fails) |
 | Outputs | [extracted facts](../data/extracted/w1-filing-facts.csv) · [derived checks](../data/derived/w1-reconciliation-checks.csv) · [illustrative compute-pressure evaluation](../data/derived/w1-compute-pressure-illustrative.csv) |
 | Feeds | [CLAIM-LEDGER.csv](../CLAIM-LEDGER.csv) CL-001–CL-005, CL-011, CL-012, CL-020–CL-025 · paper [P02](../paper/PAPER-DRAFT.md#p02), [P03](../paper/PAPER-DRAFT.md#p03), [P06](../paper/PAPER-DRAFT.md#p06), [P09](../paper/PAPER-DRAFT.md#p09) |
@@ -19,7 +19,7 @@ This pass follows [PLAN §6.1](../PLAN.md#61-filing-intake-and-remediation) step
 3. Derived checks recompute footings, rounded ratios, growth rates, the commitment decomposition and the A1→A2 revision. Any failure makes `--check` exit non-zero.
 4. Text extraction artifacts were found and tolerated explicitly, not edited: page numbers inside sentences (for example “compute fees 151 paid”, “$121.3 billion 179 between”) and split words (“a pproximately” in A2/A3). The source files are unchanged.
 
-**What this does not establish:** Hash agreement with the supplied manifest and internal consistency do not authenticate the captures against SEC origin (network access to SEC still fails in this environment). Successive filings by the same issuer are **not independent corroboration**. Therefore every company claim remains `verification_state=unknown` until a reviewer records authentication and sign-off.
+**What this does not establish:** Hash agreement with the supplied manifest and internal consistency do not authenticate the captures. Authentication now rests on the author's attestation of 2026-11-28 ([decisions](../SOURCES.md#author-decisions-2026-11-28)), not on a network check against SEC. Successive filings by the same issuer are **not independent corroboration**. Every company claim therefore remains `verification_state=unknown` until the financial reviewer records a sign-off.
 
 <a id="w1-identity"></a>
 ## 2. T-011 — Identity and chronology
@@ -35,7 +35,7 @@ All six SEC headers or complete-submission headers name **Anthropic, PBC, CIK 00
 | 5 | 424B4 | 0001628280-26-074944 | 2026-11-19 (prospectus 2026-11-18) | 2026-11-19 06:05:50 | Same | No change found in the extracted facts; this is the reference version below |
 | 6 | 8-K | 0001628280-26-075973 | 2026-11-25 (event 2026-11-19) | 2026-11-25 16:10:29 | None | Closing, governance and placement items; **no** compute, revenue or commitment series ([intake review](FILING-INTAKE-REVIEW.md)) |
 
-Accession numbers, forms, dates and CIK agree between filenames, captured indices, headers and [SOURCES.md](../SOURCES.md) (SRC-001, SRC-002, SRC-014–SRC-017). That is internal agreement, not origin authentication.
+Accession numbers, forms, dates and CIK agree between filenames, captured indices, headers and [SOURCES.md](../SOURCES.md) (SRC-001, SRC-002, SRC-014–SRC-017). That is internal agreement. Authentication rests on the author's attestation of 2026-11-28.
 
 <a id="w1-revenue-compute"></a>
 ## 3. T-012 — Revenue and compute/infrastructure expense
@@ -136,7 +136,7 @@ The boundary is met within 2025, where the disclosed composition is the same. Du
 | CL-003 short-term compute | **Supported**, with scope clarified | $5.0B in Q3 expense, $6.5B nine-month; premium undisclosed |
 | CL-004 pricing offset | **Supported**; issuer attribution only | ~$600M Q2→Q3 2026; ~$70M Q3→Q4 2025; not an elasticity |
 | CL-005 aggregate commitments | **Superseded** after A1 | $895.4B (A1) → ~$900.9B (A2–424B4); see CL-020 |
-| CL-011 filing identity | **Supported** internally across headers, indices and filenames | Origin authentication still blocked |
+| CL-011 filing identity | **Supported** internally across headers, indices and filenames | Attested authentic by the author 2026-11-28; not network-verified |
 | CL-012 supply portfolio | **Supported** with specifics | Four accelerator families, multiple CSPs, Anthropic Direct, named neocloud counterparties |
 | CL-020 (new) | Reported | Final aggregate, timing and decomposition |
 | CL-021 (new) | Reported | Conditional $186.2B and excluded $150–175B variable estimate |
@@ -160,7 +160,7 @@ The boundary is met within 2025, where the disclosed composition is the same. Du
 <a id="w1-unknowns"></a>
 ## 10. Remaining unknowns and review requests
 
-1. **Authentication:** Confirm the captures against SEC origin when network access exists, or have the author attest to the provenance. Either way, record a reviewer, date and method.
-2. **Financial review:** A reviewer should confirm the dispositions, especially the comparability judgment across the 2026 composition change and the treatment of A1 table values.
+1. **Authentication — resolved by attestation.** The author attested the captures authentic on 2026-11-28 ([decisions](../SOURCES.md#author-decisions-2026-11-28)). A network check against SEC remains possible later but is no longer a blocker.
+2. **Financial review — reviewer assigned (yorkerhodes3).** The reviewer should confirm the dispositions in §8, especially the comparability judgment across the 2026 composition change and the treatment of A1 table values.
 3. **Not yet extracted:** the Note 8 functional presentation (cost of revenue), Note 13 and Note 17 commitments, exhibit-level contract terms, Anthropic Direct facility locations and power, cash-flow and capex series, and the reason the contingent amount fell between A1 and A2.
 4. **Undisclosed:** short-term compute premium, unit prices, task or token volumes, utilization, and energy. These rule out any physical-efficiency or per-task calibration from the filings alone.

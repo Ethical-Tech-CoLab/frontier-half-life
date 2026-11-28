@@ -8,11 +8,11 @@
 
 **Evidence cutoff:** indexed literature 2026-11-27; supplied literature tranche analyzed 2026-11-28; filing captures through 2026-11-25 (8-K)
 
-**Status:** Early, incomplete research draft for review. Filing passages are now located and internally checked ([W1 reconstruction](../research/W1-FILING-RECONSTRUCTION.md)), but **no company figure is verified**: capture origin is not yet authenticated and no financial reviewer has signed off. No company energy estimates or empirical stress findings are presented.
+**Status:** Early, incomplete research draft for review. Filing passages are now located and internally checked ([W1 reconstruction](../research/W1-FILING-RECONSTRUCTION.md)), but **no company figure is verified**: the author attested the filing copies authentic on 2026-11-28 ([decisions](../SOURCES.md#author-decisions-2026-11-28)), and the financial review by the author is still pending. No company energy estimates or empirical stress findings are presented.
 
 This is the manuscript source for the **live linked research reader**, a key deliverable alongside the dashboard. Pages renders this file directly as the reader, so the published text and the reviewed source cannot drift. Claim IDs open the evidence room; figure panels state whether their view is live or planned. Publishing the review draft is not an analytical release, and versioned replay snapshots remain later work.
 
-The requested primary filing texts and exhibits are received, including all three amendments and the November 25 8-K. The author directed text-based review and waived original PDFs. A reproducible text-based reconstruction (T-011–T-014) now locates every initial company claim, recomputes footings and ratios, and records revisions; company-specific conclusions still await origin authentication and financial review. Independent literature summaries still distinguish inspected indexed passages from full-text review.
+The requested primary filing texts and exhibits are received, including all three amendments and the November 25 8-K. The author directed text-based review and waived original PDFs. A reproducible text-based reconstruction (T-011–T-014) now locates every initial company claim, recomputes footings and ratios, and records revisions; the author has attested the copies authentic, and company-specific conclusions await the author's financial review. Independent literature summaries still distinguish inspected indexed passages from full-text review.
 
 ## Reader guide
 
@@ -41,7 +41,7 @@ Lower AI task costs can reduce the resource intensity of an operation while also
 
 The draft contributes a source-addressable method and four evidence bases. A reproducible reconstruction of the supplied filing texts supports four of five initial financial figures (CL-001–CL-004). It supersedes the fifth: the aggregate commitment rose from $895.4B to about $900.9B after the first amendment (CL-005, CL-020). The same reconstruction locates material conditional and excluded amounts (CL-021) and one evidenced, currently terminable neocloud edge (CL-023). The filings also show why they cannot identify a demand response: the issuer reports demand exceeding available compute, so observed usage measures allocated capacity (CL-026). A first literature tranche finds no measured AI price elasticity and no measured open/closed lag, and shows that benchmark scores depend on inference budget and protocol (CL-040, CL-042). An analytical identity locates the energy break-even at an elasticity of one only under proportional price and intensity reductions with unchanged success and facility conditions (CL-013). An indexed, uncalibrated lab lets readers vary those conditions.
 
-Every company figure is located but unverified until origin authentication and financial review. No elasticity, catch-up lag, cost or energy per successful task, or company energy estimate is claimed. The abstract will be rewritten when reviewed results exist.
+Every company figure is located in author-attested filing copies but stays unverified until the financial review is recorded. No elasticity, catch-up lag, cost or energy per successful task, or company energy estimate is claimed. The abstract will be rewritten when reviewed results exist.
 
 <a id="p01"></a>
 ## P01 — The efficiency question and competing mechanisms
@@ -59,13 +59,13 @@ The first supplied literature tranche sharpens what is missing rather than settl
 <a id="p02"></a>
 ## P02 — Evidence method and filing chronology
 
-Anthropic is the proposed initial company anchor, conditional on authenticating primary documents. The source hierarchy favors filings and official disclosures, then independent research, with estimates and scenarios labeled separately. A claim described as “reported” is not automatically verified; classification, verification state, source confidence, and review status answer different questions.
+Anthropic is the initial company anchor; the author attested the supplied primary documents authentic on 2026-11-28. The source hierarchy favors filings and official disclosures, then independent research, with estimates and scenarios labeled separately. A claim described as “reported” is not automatically verified; classification, verification state, source confidence, and review status answer different questions.
 
-The original S-1 and Amendment 1 are received text captures ([SRC-001](../SOURCES.md#src-001), [SRC-002](../SOURCES.md#src-002)), alongside Amendments 2/3, the final prospectus and November 25 8-K (SRC-014–SRC-017). All six headers name the same issuer and CIK, with accessions and acceptance times matching the captured indices (CL-011). That is internal agreement, not authentication against SEC origin, which remains blocked by network access in the research environment.
+The original S-1 and Amendment 1 are received text captures ([SRC-001](../SOURCES.md#src-001), [SRC-002](../SOURCES.md#src-002)), alongside Amendments 2/3, the final prospectus and November 25 8-K (SRC-014–SRC-017). All six headers name the same issuer and CIK, with accessions and acceptance times matching the captured indices (CL-011). That is internal agreement. Authentication rests on the author's attestation of 2026-11-28 ([decisions](../SOURCES.md#author-decisions-2026-11-28)), not on a network check against SEC, which remains unavailable in the research environment.
 
 The [W1 reconstruction](../research/W1-FILING-RECONSTRUCTION.md) applies one declared pattern per fact to all five registration-sequence documents and records each value with its line locator, so a reader can see where a figure first appears, when it changes, and where a version left a placeholder. Derived checks recompute quarterly footings, rounded ratios, growth rates and the commitment decomposition; all 22 pass. The lineage matters: the original S-1 reports results only through June 30, 2026 and leaves every commitment amount blank; Amendment 1 adds the September quarter and first quantifies commitments; Amendment 2 revises the commitment total and adds termination and exclusion disclosures; Amendment 3 and the final prospectus leave the extracted facts unchanged. The 8-K covers closing, governance and placement items, not a new compute or revenue series.
 
-Four of the five initial financial claims are supported by located passages (CL-001–CL-004) and one is superseded (CL-005, see P06). “Supported” is a reconstruction disposition. Every company claim keeps `verification_state=unknown` until origin authentication and a financial reviewer's sign-off are recorded; successive filings by the same issuer are not independent corroboration. Amendment 1's joined text is not used to assert table alignment.
+Four of the five initial financial claims are supported by located passages (CL-001–CL-004) and one is superseded (CL-005, see P06). “Supported” is a reconstruction disposition. Every company claim keeps `verification_state=unknown` until the financial reviewer (the author, for now) records a sign-off; successive filings by the same issuer are not independent corroboration. Amendment 1's joined text is not used to assert table alignment.
 
 **F01 — Filing chronology and revision lineage:** `evidence.html#filing-timeline`. Static fallback: [W1 §2 identity table](../research/W1-FILING-RECONSTRUCTION.md#w1-identity) and the per-version [extracted facts](../data/extracted/w1-filing-facts.csv). Return destination: `paper.html#p02`.
 
@@ -208,7 +208,7 @@ Still unknown after the first literature tranche ([S7](../research/LITERATURE-TR
 
 | Area | Question | Where to check |
 | --- | --- | --- |
-| Filing evidence | Do the W1 dispositions hold, and is a four-quarter comparison across the 2026 change in expense composition defensible? Can capture origin be attested? | [W1 §8–10](../research/W1-FILING-RECONSTRUCTION.md#w1-claims), `evidence.html#claims` |
+| Filing evidence | Do the W1 dispositions hold, and is a four-quarter comparison across the 2026 change in expense composition defensible? (Capture authenticity was attested by the author on 2026-11-28.) | [W1 §8–10](../research/W1-FILING-RECONSTRUCTION.md#w1-claims), `evidence.html#claims` |
 | Commitments | Is treating the conditional $186.2B as a characteristic rather than a component the right reading? Should Nscale and Fluidstack enter the provider cohort? | [W1 §5–6](../research/W1-FILING-RECONSTRUCTION.md#w1-commitments), `providers.html` |
 | Rubrics | Which thresholds, budgets and task sets should the coding, extraction and agent rubrics adopt (OQ-02)? | [Draft rubrics](../research/WORKLOAD-RUBRICS.md) |
 | Equivalency | Are the three clocks and the separate “not comparable” status the right structure for P04? | [Tranche 01 S1](../research/LITERATURE-TRANCHE-01.md#s1) |
@@ -247,6 +247,8 @@ The following references are stable **discovery records**, not claims of complet
 **v0.4 intake update, 2026-11-28:** Requested text intake complete; claim reconciliation pending. PDF retrieval waived by author; non-analytical demo shell authorized and revised specification/plan/backlog separately approved. Evidence cutoff stays 2026-11-27; analytical release is not approved.
 
 **v0.4 W1 update, 2026-11-28:** Text-based filing reconstruction: located passages and line locators for all initial company claims; 22 derived checks pass; CL-005 superseded by CL-020; new claims CL-020–CL-025; P02/P03/P05/P06/P09 revised. All company claims remain unverified pending origin authentication and financial review.
+
+**v0.4 author decisions, 2026-11-28:** The author attested the supplied filing copies authentic, named themself financial reviewer for now, and approved using the supplied literature files as attributed input ([decisions](../SOURCES.md#author-decisions-2026-11-28)). No claim changes state until the financial review is recorded. Workload-rubric selections are proposed separately for the author's review.
 
 **Correction to snapshot r1, 2026-11-28:** The entry below says a GitHub pre-release attaches the PDF. Creating releases is not permitted for the session that produced the snapshot, so no release exists. The tag `v0.4-review.1` exists as described. The PDFs, printed from the tagged commit with every repository link pointing at the tag, are published at `docs/snapshots/v0.4-review.1/` with SHA-256 checksums and linked from the top of this reader. The snapshot text is left unchanged, so its PDF still contains the original sentence.
 

@@ -65,8 +65,9 @@ Intake completion does not authenticate every financial value. The
 initial company claim with line locators across all versions (22 derived checks
 pass): four figures are supported, the $895.4B commitment total is superseded by
 ~$900.9B, and CL-020–CL-025 add conditionality, named arrangements and the Lambda
-edge. **No company claim is verified** until origin authentication and a
-financial reviewer's sign-off are recorded.
+edge. The author attested the filing copies authentic on 2026-11-28 and is the
+financial reviewer for now ([decisions](SOURCES.md#author-decisions-2026-11-28)). **No company claim is verified**
+until that review is recorded claim by claim.
 A first non-analytical demo shell is authorized for Pages while full manuscript
 rendering, calibrated models and analytical interactions remain gated. The
 indexed rebound lab (T-023/T-025) is uncalibrated, illustrative and awaiting review.
