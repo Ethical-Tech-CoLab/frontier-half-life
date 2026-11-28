@@ -48,6 +48,8 @@ On 2026-11-28 the author asked for pragmatic thresholds and task sets, with reas
 
 The financial reviewer checks every gold value before the set is frozen.
 
+**Build result (Phase 1, 2026-11-28):** [`ffx-0.4`](ffx-0.4/README.md) has **90 instances**: 59 fact passages and 31 null-gold distractors (180 fields, 69 with null gold). It is smaller than the 150 proposed because exhibit records were not added; the filing index paraphrases titles, so it is not a usable gold source. Free-text facts are also excluded. The margin is therefore 8 points (T1). The gold awaits the financial reviewer's check.
+
 <a id="selections-thresholds"></a>
 ### 0.3 Thresholds and rules
 
@@ -303,7 +305,7 @@ Statuses reflect the selections in [§0.2](#selections-task-sets), adopted 2026-
 | Coding | SWE-bench (original) | [SRC-010](../SOURCES.md#src-010) | Not inspected | MIT (repository) | Not selected: superseded and most exposed |
 | Coding | SWE-bench Verified, Bash Only view | [SRC-011](../SOURCES.md#src-011), [SRC-028](../SOURCES.md#src-028) | 500 instances; mini-SWE-agent, 250 steps, $3.00 | MIT per repository; dataset card has no licence field | **Secondary**, contamination-flagged history (CL-052, CL-054) |
 | Coding | SWE-Bench Pro public set | [SRC-021](../SOURCES.md#src-021), [SRC-029](../SOURCES.md#src-029) | 731 instances; leaderboard standard configuration 250 turns, uncapped cost | Dataset licence not found; copyleft source repositories | **Primary** (CL-053) |
-| Extraction | Project-built filing-fact set `ffx-0.4` | [W1](W1-FILING-RECONSTRUCTION.md), [MANIFEST.csv](MANIFEST.csv) | About 150 instances (see §0.2) | Public SEC filings | **Primary**; gold to be checked by the financial reviewer |
+| Extraction | Project-built filing-fact set [`ffx-0.4`](ffx-0.4/README.md) | [W1](W1-FILING-RECONSTRUCTION.md), [MANIFEST.csv](MANIFEST.csv) | 90 instances built (59 facts, 31 null distractors) | Public SEC filings | **Primary**; gold awaiting the financial reviewer's check |
 | Extraction | An existing public extraction benchmark | None with harness-matched open and closed results found | — | — | Not selected for v0.4 |
 | Bounded agents | τ²-bench | [SRC-030](../SOURCES.md#src-030) | Airline 50, retail 115, telecom 114 | MIT (secondary source) | **Primary** |
 | Bounded agents | Terminal-Bench 2.0 | [SRC-021](../SOURCES.md#src-021), [SRC-031](../SOURCES.md#src-031), L02 L105, L317 | 89 tasks | Apache-2.0 | **Secondary** (Terminus 2 rows only) |
