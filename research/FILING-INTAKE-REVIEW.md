@@ -6,7 +6,7 @@
 
 **Evidence cutoff:** 2026-11-27, unchanged
 
-**Status:** Requested text intake complete for the selected public filing sequence; claim-level reconciliation and methodological review remain pending.
+**Status:** Requested text intake complete for the selected public filing sequence. Claim-level reconstruction is drafted in [W1-FILING-RECONSTRUCTION.md](W1-FILING-RECONSTRUCTION.md); origin authentication and financial review remain pending.
 
 **Author direction, 2026-11-28:** Use the extracted text already provided and skip original PDFs. There is no outstanding PDF/HTML retrieval prerequisite for this phase. Preserve the extraction limitations rather than treating conversion as lossless.
 

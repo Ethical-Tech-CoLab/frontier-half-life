@@ -4,7 +4,7 @@
 | --- | --- |
 | Initial author / coordinator | yorkerhodes3 |
 | Last groomed | 2026-11-28 |
-| Current milestone | M0 demo shell published; M1 claim reconciliation next |
+| Current milestone | M0 demo shell published; M1 text reconstruction drafted, awaiting authentication and financial review |
 | Status | Specification, plan and backlog approved 2026-11-28; claim/release review still required |
 
 IDs are stable. **S** means less than an hour of active work; **M** means a few hours. These are proposed sizes, not measured effort. Tasks larger than a source batch or one view must be split before work. Dependencies are explicit, not inferred from order. References point to [SPECIFICATION.md](SPECIFICATION.md) requirements and [PLAN §3](PLAN.md#3-evidence-work-packages) work packages. Drafted artifacts are not marked reviewed or merged merely because they exist.
@@ -25,15 +25,15 @@ The author authorized a narrow non-analytical demo-shell/Pages exception on 2026
 <a id="next-evidence-reconstruction"></a>
 ## Next — evidence reconstruction
 
-The requested texts are received; T-010 is complete for this scope. Resume passage/definition checks using [PLAN §6.1](PLAN.md#61-filing-intake-and-remediation), without requiring original PDFs.
+The requested texts are received; T-010 is complete for this scope. T-011–T-014 now have a reproducible text-based draft in [the W1 reconstruction](research/W1-FILING-RECONSTRUCTION.md) (`node tools/extract-filing-facts.mjs --check`). Review, not further extraction, is the next step for the selected claims.
 
 | ID | Task | Ref / package | Size | Depends on / acceptance |
 | --- | --- | --- | --- | --- |
 | T-010 | Inventory S-1, three amendments, final prospectus, 8-K and requested exhibits | FR-01; W1 | S / done | All 80 manifest-listed present files hash/size matched; selected text intake complete; see intake review |
-| T-011 | Authenticate filing identities and enumerate changes through cutoff | FR-01, FR-02; W1 | M | T-010; confirm documents/chronology against official origin; receipt alone is not verification |
-| T-012 | Reconstruct revenue and compute/infrastructure definitions for one source batch | FR-02, FR-04; W1 | M | T-011; locate CL-001/CL-002 values, units, periods, accounting scope; split remaining quarters into further batches |
-| T-013 | Reconstruct short-term compute, pricing adjustments and commitments | FR-02, FR-08; W1 | M | T-011; inspect CL-003/CL-004/CL-005/CL-012 passages, contingencies and overlaps; split contract batches as necessary |
-| T-014 | Reconcile original/amended/final findings and paper impacts | FR-02, FR-15; W1/W8 | M | T-012/T-013; update claims and P02/P03/P06/P09, mark dependent results stale, and list remaining unknowns; reviewer signs actual findings |
+| T-011 | Authenticate filing identities and enumerate changes through cutoff | FR-01, FR-02; W1 | M / review | Internal identity/chronology and per-version change lineage drafted ([W1 §2](research/W1-FILING-RECONSTRUCTION.md#w1-identity)); origin authentication still blocked by SEC network access or needs author attestation plus reviewer record |
+| T-012 | Reconstruct revenue and compute/infrastructure definitions for one source batch | FR-02, FR-04; W1 | M / review | Seven quarters, annual and nine-month values located with footings and recomputed ratios; definition and 2026 composition change recorded ([W1 §3](research/W1-FILING-RECONSTRUCTION.md#w1-revenue-compute)); Note 8 cost of revenue not extracted |
+| T-013 | Reconstruct short-term compute, pricing adjustments and commitments | FR-02, FR-08; W1 | M / review | Short-term, pricing, aggregate decomposition, conditionality, exclusions and ten named arrangements with revision lineage drafted ([W1 §4–6](research/W1-FILING-RECONSTRUCTION.md#w1-short-term-pricing)); exhibit-level terms and Notes 13/17 not extracted |
+| T-014 | Reconcile original/amended/final findings and paper impacts | FR-02, FR-15; W1/W8 | M / review | CL-001–CL-004 supported, CL-005 superseded, CL-020–CL-025 added; P02/P03/P05/P06/P09 revised; unknowns listed ([W1 §8–10](research/W1-FILING-RECONSTRUCTION.md#w1-claims)). Awaiting a financial reviewer's actual sign-off; no claim marked verified |
 | T-015 | Inspect Epoch method and create one workload-specific release-pair tranche | FR-03; W3 | M | T-004/T-005 and source access; three clocks, versions, censored unmatched records; expand only in bounded subsequent batches. Tranche 01 note: [L02](research/LITERATURE-TRANCHE-01.md#l02) requires matched inference budgets and protocols for the benchmark clock, with "not comparable" as a separate status. No supplied source measures the lag, so CL-006 is unchanged |
 | T-016 | Acquire one provider/counterparty profile batch | FR-08; W5 | M | Source access; compare archetypes, preserve unknown metrics/relationships; no inference of Anthropic ties without evidence |
 | T-017 | Inspect LBNL/IEA/eGRID/Cambium boundaries and one regional evidence tranche | FR-09, FR-10; W6 | M | Source access; compatible editions, location/period units, coverage and unknowns; no company allocation by revenue |
@@ -63,7 +63,7 @@ The requested texts are received; T-010 is complete for this scope. Resume passa
 
 | Blocker | Affects | Owner / unblocker | Since / next action |
 | --- | --- | --- | --- |
-| Filing claim reconciliation and extraction ambiguity | T-011–T-014, company calibration and empirical interpretations in P02/P03/P06/P09 | Research lead + reviewer | 2026-11-28; requested texts received; reconcile exact passages/units/revisions, no PDF prerequisite |
+| Filing origin authentication and financial review | Promotion of CL-001–CL-005/CL-011/CL-012/CL-020–CL-025 beyond `unknown`; company calibration | yorkerhodes3 + financial reviewer | 2026-11-28; text reconstruction drafted and reproducible; needs origin check or author attestation, then review of dispositions and the 2026 comparability judgment |
 | Public-source full-text retrieval fails DNS | T-003/T-004 and full-method portions of T-015–T-018 | Session environment/access restoration or lawful accessible documents | 2026-11-27; provisional indexed synthesis remains limited, not falsely complete |
 | Release reviewers not assigned | T-042 and public analytical release | yorkerhodes3 | 2026-11-27; proposed assignment/access checkpoint 2026-12-01, not an automated reminder |
 
@@ -72,7 +72,7 @@ The requested texts are received; T-010 is complete for this scope. Resume passa
 | Artifact | Current completion boundary | Ref |
 | --- | --- | --- |
 | v0.4 specification/plan and author attribution | Author approved 2026-11-28; evidence/release verdicts remain separate | FR-15, FR-16 |
-| Source register and ledger | Received filing-text provenance; claim-level reconciliation pending | FR-01, FR-02 |
+| Source register and ledger | Received filing-text provenance; W1 passages located for company claims (CL-001–CL-005, CL-011/012, CL-020–CL-025); all unverified pending review | FR-01, FR-02 |
 | Independent evidence synthesis R01–R06 | Scoped source summaries and checked algebra; not full W2–W6 research | FR-03, FR-04, FR-05 |
 | Literature tranche 01 | Seven supplied `05-lit` texts analyzed with line locators in [research/LITERATURE-TRANCHE-01.md](research/LITERATURE-TRANCHE-01.md). Draft, not reviewed. Recorded as SRC-020–SRC-026 and CL-040–CL-051 at verification state `unknown`; three files license-pending; paper integration pending | FR-02, FR-03, FR-05 |
 | Paper P00–P12 | Prose/methods/synthetic checks and gaps linked to work and planned figures | FR-15 |

@@ -3,6 +3,8 @@
 **Initial author:** yorkerhodes3. **Research cutoff / access check:** 2026-11-27.
 **Status:** Discovery and access triage, not a completed literature review or authenticated financial dataset.
 
+**2026-11-28 W1 update:** A reproducible text-based reconstruction ([research/W1-FILING-RECONSTRUCTION.md](research/W1-FILING-RECONSTRUCTION.md); `node tools/extract-filing-facts.mjs --check`) locates the company claims in SRC-001/002/014/015/016 with line locators and records per-version revisions. No source is origin-authenticated; no claim is promoted to `verified`.
+
 **2026-11-28 intake update:** All requested text captures for the selected filing sequence are received: original S-1, three amendments, final prospectus, November 25 8-K and the requested exhibits/indices. All 80 present manifest-listed files match their recorded hashes and sizes. See [the intake review](research/FILING-INTAKE-REVIEW.md). Original PDFs are not required; the author directed use of the extracted text. Claim-level reconciliation and review remain pending.
 
 **2026-11-28 literature update:** The seven supplied `05-lit` texts are registered as SRC-020–SRC-026 under [supplied literature tranche 01](#supplied-literature-tranche-01). Their analysis is a draft and has not been reviewed.
@@ -37,7 +39,7 @@ The ledger also contains explicitly `derived` algebra/synthetic fixtures with lo
 - **Indexed official header:** https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/0001628280-26-067168-index-headers.html
 - **Observed:** Search returned a header identifying Anthropic, PBC, that accession, and form S-1. Direct document retrieval failed DNS.
 - **Received text:** [Primary capture](research/01-s1-2026-10-26__primary-document-anthropicpbc-sx1.md), index, header and exhibits in [research/MANIFEST.csv](research/MANIFEST.csv); received-text inventory confirmed 2026-11-28.
-- **Next:** Authenticate full submission, issuer, dates, and exhibits; establish which metrics/commitments change in amendments. Metadata alone does not substantiate amounts.
+- **Next:** Origin authentication. W1 found results only through 2026-06-30 and blank commitment placeholders in this version ([W1 §2](research/W1-FILING-RECONSTRUCTION.md#w1-identity)). Metadata alone does not substantiate amounts.
 - **Feeds:** CL-001–CL-005, CL-012; paper P02/P03/P06.
 
 <a id="src-002"></a>
@@ -48,7 +50,7 @@ The ledger also contains explicitly `derived` algebra/synthetic fixtures with lo
 - **Indexed official index:** https://www.sec.gov/Archives/edgar/data/2130357/000162828026068676/0001628280-26-068676-index.htm
 - **Observed:** Search returned issuer/form/date and the named main document; searches for the amounts did not expose financial-table passages. Direct retrieval failed DNS.
 - **Received text:** [Amendment 1](research/02-s1a1-2026-11-02__primary-document-anthropicpbc-sx1ax1.txt), index, header and revised exhibits; [join-check note](research/02-s1a1-2026-11-02__join-check-note.md) documents word-level continuity checks, not numeric alignment.
-- **Next:** Verify the revenue periods, compute/infrastructure definition, short-term cost narrative, discount treatment, aggregate commitments, contingencies, and overlaps.
+- **Next:** Origin authentication and review. W1 located the A1 values (first Q3-2026 data; $895.4B aggregate, later superseded); table cells are alignment-unverified per the join check ([W1 §5](research/W1-FILING-RECONSTRUCTION.md#w1-commitments)).
 - **Feeds:** CL-001–CL-005; paper P02/P03/P06. No calibrated model inputs yet.
 
 <a id="src-003"></a>
@@ -180,7 +182,7 @@ The ledger also contains explicitly `derived` algebra/synthetic fixtures with lo
 - **Accession / filing date:** `0001628280-26-072484`, 2026-11-10.
 - **Local source:** [Primary capture](research/02b-s1a2-2026-11-10__primary-document-anthropicpbc-sx1ax2.md), index, header, fee table and eight exhibits.
 - **Use:** Reconcile revisions from Amendment 1, including contract/note disclosures; do not treat newly added passages as capture gaps without checking.
-- **Status:** Hash/size inventory complete; claim extraction and reconciliation pending.
+- **Status:** Hash/size inventory complete. W1 extraction: commitment total revised to ~$900.9B, $150–175B variable exclusion and Lambda terminable status first appear here ([W1 §5](research/W1-FILING-RECONSTRUCTION.md#w1-commitments)).
 
 <a id="src-015"></a>
 ## SRC-015 — Amendment No. 3, received text and new exhibits
@@ -188,7 +190,7 @@ The ledger also contains explicitly `derived` algebra/synthetic fixtures with lo
 - **Accession / filing date:** `0001628280-26-074338`, 2026-11-17.
 - **Local source:** [Primary](research/03-s1a3-2026-11-17__primary-document-anthropicpbc-sx1ax3.md), [index](research/03-s1a3-2026-11-17__filing-index.md), SEC header, underwriting form 1.1 and consents 23.1/23.2.
 - **Use:** Compare the later offering/underwriting terms with Amendment 2 and the final prospectus.
-- **Status:** All indexed primary/text exhibits present and hash/size matched; no assumption that financial tables are unchanged.
+- **Status:** All indexed primary/text exhibits present and hash/size matched. W1 extraction found no change from A2 in the extracted facts; other passages were not compared.
 
 <a id="src-016"></a>
 ## SRC-016 — Final prospectus, received text
@@ -196,7 +198,7 @@ The ledger also contains explicitly `derived` algebra/synthetic fixtures with lo
 - **Accession / filed date:** `0001628280-26-074944`, 2026-11-19; prospectus dated 2026-11-18.
 - **Local source:** [Final 424B4](research/04-424b4-2026-11-19__primary-document-anthropicpbc-424b4.md), index, header and directory listing.
 - **Use:** Final registration/prospectus reconciliation, separate from later IPO-close events.
-- **Status:** Received text with recorded provenance; individual claims require unit/period/passage checks, not PDF retrieval.
+- **Status:** Received text with recorded provenance. Reference version for [W1](research/W1-FILING-RECONSTRUCTION.md); company claims located with line locators, unverified pending origin authentication and review.
 
 <a id="src-017"></a>
 ## SRC-017 — November 25 8-K, received primary and complete submission
