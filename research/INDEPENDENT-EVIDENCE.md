@@ -3,6 +3,8 @@
 **Initial author:** yorkerhodes3. **Cutoff / research date:** 2026-11-27.
 **Status:** Provisional synthesis of inspected indexed source passages plus explicit analytical derivations. Full-text source review and empirical calibration are incomplete.
 
+**2026-11-28 addition:** [R07](#r07) points to the analysis of the supplied literature tranche. Flagged qualifications are appended to R02, R03 and R05; their original text is not rewritten.
+
 This work proceeds independently of Anthropic filing reconciliation. The selected filing texts are now received, but this synthesis does not establish any initial financial figures, provider relationships, actual workload elasticities or company energy estimates. See the [access record](../SOURCES.md#independent-continuation-pass) and [claim ledger](../CLAIM-LEDGER.csv).
 
 <a id="r01"></a>
@@ -35,6 +37,8 @@ Cost per successful task is total attributable cost across all attempts divided 
 
 **Open work:** Fix licensed task sets and rubrics, inspect harnesses and study limitations, compare price histories at matched quality/configuration. No benchmark run or paid inference experiment has been performed. Feeds W2, paper P03/P04/P07.
 
+> **Flag — tranche 01 qualification (2026-11-28):** For review, the rubric table above is superseded by [WORKLOAD-RUBRICS.md](WORKLOAD-RUBRICS.md), rubric `0.4-draft`, which is proposed and not adopted. Supplied evidence shows that benchmark scores move with inference budget, feedback and submission rules, and that crediting "any correct submission" overstates delivered success ([L02](LITERATURE-TRANCHE-01.md#l02); CL-040, CL-043). An attempt therefore includes every resubmission and parallel sample, and the inference-compute setting is part of the rubric.
+
 <a id="r03"></a>
 ## R03 — Benchmark, workload, and commercial catch-up are different clocks
 
@@ -49,6 +53,8 @@ For each frontier release, define:
 A release can match one clock and remain unmatched on another. At the cutoff, preserve unmatched frontier releases as right-censored records; dropping them selectively would shorten observed lags. Track release-to-endpoint delay separately from model release date. “Open weights” is not necessarily open training data/code or unrestricted commercial deployment.
 
 **Open work:** Build actual release-pair records from official releases and comparable evaluations; select equivalency criteria before examining favorable pairs. No time-to-equivalency distribution is yet estimated. Feeds W3, paper P04/P11.
+
+> **Flag — tranche 01 qualification (2026-11-28):** Besides the index/harness version, the benchmark clock must preserve the inference budget and protocol. Most published setups omit them (CL-042), so a pair with unmatched protocols is "not comparable", a status distinct from matched or censored. Two supplied sources assert open/closed "parity" without a measurement ([L01](LITERATURE-TRANCHE-01.md#l01), [L03](LITERATURE-TRANCHE-01.md#l03); CL-047). No supplied source measures the lag, so CL-006 and the hypothesis status of four to six months are unchanged ([synthesis S1](LITERATURE-TRANCHE-01.md#s1)).
 
 <a id="r04"></a>
 ## R04 — Energy boundaries and electricity factors must match the question
@@ -95,6 +101,8 @@ For price ratio `q<1` and effective intensity ratio `k=(s0/s1)(I1/I0)(p1/p0)>0`,
 
 These fixtures check accounting/signs; they are not evidence of real demand, energy, savings, or provider economics. Task-cost reductions need not pass through fully to prices, and better capability may change what constitutes a task. Feeds W7, paper P05/P08.
 
+> **Flag — tranche 01 qualification (2026-11-28):** With test-time reasoning, success rate `s` and IT energy per attempt `I` are set jointly by the inference budget and protocol ([synthesis S2](LITERATURE-TRANCHE-01.md#s2)). Scenario edits should change them together, using values from one protocol. The identity itself is unchanged. No supplied source measures or borrows an AI price elasticity ([synthesis S4](LITERATURE-TRANCHE-01.md#s4)).
+
 <a id="r06"></a>
 ## R06 — Work allowed now and work requiring remediation
 
@@ -103,3 +111,17 @@ Continue source discovery, scoped literature synthesis, rubric design, algebra, 
 Do not fill company financial tables, estimate actual Anthropic margins, assert counterparty relationships, infer company electricity from revenue, fit historical quarters, or issue empirical stress conclusions without reconciled primary evidence. The requested text records are now received; [the intake/remediation sequence](../PLAN.md#61-filing-intake-and-remediation) continues with passage/definition/revision checks. Original PDFs are not a prerequisite as directed by the author.
 
 This note is a bounded independent research tranche. It does not complete W2–W6, establish current price/energy values, or replace specialist review. Paper results and interpretations must be revised if fuller evidence contradicts these provisional source summaries.
+
+<a id="r07"></a>
+## R07 — Supplied literature tranche 01 (pointer)
+
+The seven supplied `05-lit` texts are analyzed in [LITERATURE-TRANCHE-01.md](LITERATURE-TRANCHE-01.md), which is a draft and has not been reviewed. Proposed coding, extraction and bounded-agent rubrics are in [WORKLOAD-RUBRICS.md](WORKLOAD-RUBRICS.md) (T-005, `0.4-draft`, not adopted). The texts are four arXiv preprints, two Stanford AI Index captures and one Anthropic research post, all hash-matched to the manifest and none authenticated at origin.
+
+Main consequences, each with locators in the tranche note:
+
+1. The benchmark clock must fix the inference budget and protocol.
+2. Cost and energy per successful task depend on test-time compute and must count every submission.
+3. The tranche's memory-scarcity and provider-economics figures are scenario outputs or press relays.
+4. No source measures or borrows an AI price elasticity.
+
+The tranche is recorded as [SRC-020–SRC-026](../SOURCES.md#supplied-literature-tranche-01) and CL-040–CL-051, all at verification state `unknown`. Three of the files remain license-pending. Paper integration is a separate pass. Feeds W2–W6.

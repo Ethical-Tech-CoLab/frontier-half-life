@@ -67,7 +67,7 @@
   <main id="main" class="wrap" tabindex="-1" data-research-content>
     <header class="page-intro"><p class="eyebrow">The evidence room / located, not yet verified</p><h1>Located is not<br><span class="accent">verified.</span></h1>
       <p class="lead">Each company figure below is found in a supplied filing text, has a line locator, and is checked for internal consistency. None is verified yet: the captures have not been authenticated against SEC origin, and no financial reviewer has signed off.</p>
-      <p class="page-meta">v0.4 · Initial author yorkerhodes3 · Filing captures through 2026-11-25<br>25 ledger claims · 22/22 derived W1 checks pass · No source document is loaded into your browser.</p>
+      <p class="page-meta">v0.4 · Initial author yorkerhodes3 · Filing captures through 2026-11-25<br>37 ledger claims · 22/22 derived W1 checks pass · No source document is loaded into your browser.</p>
       <div class="actions"><a href="#claims" data-site-link class="button">Inspect the claims ↓</a><a href="#filing-timeline" data-site-link class="button secondary">Follow the filing lineage ↓</a></div>
     </header>
     <div class="review-strip" aria-label="Research and release status">
@@ -119,12 +119,12 @@
       <div class="section-heading"><div><p class="eyebrow">Claim inspector</p><h2 id="claims-title">Every claim, with its limits.</h2></div><p>Classification, verification state and confidence are separate fields. A state is always written out, never shown by color alone.</p></div>
       <form id="claim-filters" class="filters" hidden aria-label="Filter claims">
         <label>Verification <select name="state"><option value="">All states</option><option value="unknown">unknown</option></select></label>
-        <label>Classification <select name="classification"><option value="">All classes</option><option value="derived">derived</option><option value="reported">reported</option></select></label>
+        <label>Classification <select name="classification"><option value="">All classes</option><option value="derived">derived</option><option value="estimated">estimated</option><option value="reported">reported</option><option value="scenario">scenario</option></select></label>
         <label>Search <input name="search" type="search" autocomplete="off" placeholder="e.g. Lambda, revenue, CL-020"></label>
         <button type="reset" class="button secondary">Reset filters</button>
       </form>
-      <p id="claim-count" class="caption" role="status" aria-live="polite">25 claims.</p>
-      <p id="claims-empty" class="planned-note" hidden>No claims match these filters. Reset the filters to see all 25 claims.</p>
+      <p id="claim-count" class="caption" role="status" aria-live="polite">37 claims.</p>
+      <p id="claims-empty" class="planned-note" hidden>No claims match these filters. Reset the filters to see all 37 claims.</p>
       <div class="claim-list">
         <article class="claim-card" id="cl-001" data-state="unknown" data-classification="reported" data-search="cl-001 revenue was approximately 4.6 billion in fy2025 and 33.2 billion in the first nine months of 2026. anthropic revenue fy2025; nine months 2026 w1 disposition: supported. exact values fy2025 4585 and nine months 2026 33242 usd million; quarterly and annual footings pass (chk-01 to chk-03). nine-month and full-year periods are not comparable as annual growth. primary issuer filing text located in the supplied capture; values consistent across applicable versions; capture hash matches manifest but origin not network-authenticated; no human review recorded.">
           <header><h3>CL-001</h3><p class="claim-labels"><span class="status-label">reported</span><span class="status-label">Verification: unknown</span><span class="status-label">Confidence: medium</span></p></header>
@@ -452,6 +452,162 @@
             <div><dt>Review</dt><dd>No human review recorded</dd></div>
           </dl>
           <p class="caption">Cited in: <a href="paper.html#p09" data-site-link>Return to P09</a> · <a href="paper.html#p12" data-site-link>Return to P12</a></p>
+        </article>
+        <article class="claim-card" id="cl-040" data-state="unknown" data-classification="reported" data-search="cl-040 in a controlled study of six anthropic and openai models, raising per-trajectory token budgets above typical published budgets added about 11.7 points on frontiermath (1m to 10m tokens) and 11.9 points on hle (64k to 5m) but only about 0.3 points on swe-bench pro (about 16m to 30m) and 1.3 points on terminalbench (about 7.3m to 10m). frontier llm evaluations (anthropic and openai models) benchmark score gain from expanded inference budget models released may 2025 to mar 2026; preprint v3 supplied local text hash-matched manifest; origin not network-authenticated; not human-reviewed. medium: controlled crossed design with documented protocol, but unrefereed preprint, up to 100-task subsets (frontiermath 12), one react scaffold, model-averaged gains with large sds measured from the upper end of typical budgets, no open-weight models. supports protocol dependence of benchmark clocks; not a cost, energy or open-versus-closed lag measurement.">
+          <header><h3>CL-040</h3><p class="claim-labels"><span class="status-label">reported</span><span class="status-label">Verification: unknown</span><span class="status-label">Confidence: medium</span></p></header>
+          <p class="claim-text">In a controlled study of six Anthropic and OpenAI models, raising per-trajectory token budgets above typical published budgets added about 11.7 points on FrontierMath (1M to 10M tokens) and 11.9 points on HLE (64K to 5M) but only about 0.3 points on SWE-Bench Pro (about 16M to 30M) and 1.3 points on TerminalBench (about 7.3M to 10M).</p>
+          <dl>
+            <div><dt>Entity · metric</dt><dd>frontier LLM evaluations (Anthropic and OpenAI models) · benchmark score gain from expanded inference budget</dd></div>
+            <div><dt>Period · units</dt><dd>models released May 2025 to Mar 2026; preprint v3 · percentage points</dd></div>
+            <div><dt>Sources</dt><dd><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-021">SRC-021</a></dd></div>
+            <div><dt>Locator</dt><dd>research/05-lit__arxiv-2606.17930-inference-compute-and-frontier-evaluation.md L135-L137 and L147-L159; Sec. 3.1.1 and Table 3</dd></div>
+            <div><dt>Caveats</dt><dd>Supplied local text hash-matched manifest; origin not network-authenticated; not human-reviewed. Medium: controlled crossed design with documented protocol, but unrefereed preprint, up to 100-task subsets (FrontierMath 12), one ReAct scaffold, model-averaged gains with large SDs measured from the upper end of typical budgets, no open-weight models. Supports protocol dependence of benchmark clocks; not a cost, energy or open-versus-closed lag measurement.</dd></div>
+            <div><dt>Review</dt><dd>No human review recorded</dd></div>
+          </dl>
+          <p class="caption">Cited in: not yet cited in the manuscript</p>
+        </article>
+        <article class="claim-card" id="cl-041" data-state="unknown" data-classification="reported" data-search="cl-041 the same study attributes generational gains mainly to reach (more tasks unlocked) and reliability (unlocked tasks solved more consistently); output tokens per solve fell significantly with model generation on four of six benchmarks but not on frontiermath or hle. frontier llm evaluations (anthropic and openai models) decomposition of generational gains models released may 2025 to mar 2026; preprint v3 supplied local text hash-matched manifest; origin not network-authenticated; not human-reviewed. medium: task-level regressions with stated specifications and a balanced-panel sensitivity check. token efficiency is output tokens per solve conditional on unlocked tasks; excludes failed-attempt tokens; tokens not dollars or energy; two vendor families only.">
+          <header><h3>CL-041</h3><p class="claim-labels"><span class="status-label">reported</span><span class="status-label">Verification: unknown</span><span class="status-label">Confidence: medium</span></p></header>
+          <p class="claim-text">The same study attributes generational gains mainly to reach (more tasks unlocked) and reliability (unlocked tasks solved more consistently); output tokens per solve fell significantly with model generation on four of six benchmarks but not on FrontierMath or HLE.</p>
+          <dl>
+            <div><dt>Entity · metric</dt><dd>frontier LLM evaluations (Anthropic and OpenAI models) · decomposition of generational gains</dd></div>
+            <div><dt>Period · units</dt><dd>models released May 2025 to Mar 2026; preprint v3 · regression effects (qualitative summary)</dd></div>
+            <div><dt>Sources</dt><dd><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-021">SRC-021</a></dd></div>
+            <div><dt>Locator</dt><dd>research/05-lit__arxiv-2606.17930-inference-compute-and-frontier-evaluation.md L175; L189-L191; L201-L207; Sec. 3.2 and Table 4</dd></div>
+            <div><dt>Caveats</dt><dd>Supplied local text hash-matched manifest; origin not network-authenticated; not human-reviewed. Medium: task-level regressions with stated specifications and a balanced-panel sensitivity check. Token efficiency is output tokens per solve conditional on unlocked tasks; excludes failed-attempt tokens; tokens not dollars or energy; two vendor families only.</dd></div>
+            <div><dt>Review</dt><dd>No human review recorded</dd></div>
+          </dl>
+          <p class="caption">Cited in: not yet cited in the manuscript</p>
+        </article>
+        <article class="claim-card" id="cl-042" data-state="unknown" data-classification="reported" data-search="cl-042 across 61 citations documenting 89 published harness setups for the studied benchmarks, the token budget was undocumented in 42 (69 percent), the turn cap in 57, the cost cap in 57 and trajectories per task in 34. published llm evaluation reports protocol documentation rate sources dated 2025 to 2026 supplied local text hash-matched manifest; origin not network-authenticated; not human-reviewed. medium: authors own tabulation limited to benchmark preprints, lab system or model cards and prominent leaderboards; caption also says 60 citations (minor inconsistency). implies many published open-versus-closed score pairs cannot be protocol-matched.">
+          <header><h3>CL-042</h3><p class="claim-labels"><span class="status-label">reported</span><span class="status-label">Verification: unknown</span><span class="status-label">Confidence: medium</span></p></header>
+          <p class="claim-text">Across 61 citations documenting 89 published harness setups for the studied benchmarks, the token budget was undocumented in 42 (69 percent), the turn cap in 57, the cost cap in 57 and trajectories per task in 34.</p>
+          <dl>
+            <div><dt>Entity · metric</dt><dd>published LLM evaluation reports · protocol documentation rate</dd></div>
+            <div><dt>Period · units</dt><dd>sources dated 2025 to 2026 · count of citations</dd></div>
+            <div><dt>Sources</dt><dd><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-021">SRC-021</a></dd></div>
+            <div><dt>Locator</dt><dd>research/05-lit__arxiv-2606.17930-inference-compute-and-frontier-evaluation.md L339; Appendix Table 8 caption</dd></div>
+            <div><dt>Caveats</dt><dd>Supplied local text hash-matched manifest; origin not network-authenticated; not human-reviewed. Medium: authors own tabulation limited to benchmark preprints, lab system or model cards and prominent leaderboards; caption also says 60 citations (minor inconsistency). Implies many published open-versus-closed score pairs cannot be protocol-matched.</dd></div>
+            <div><dt>Review</dt><dd>No human review recorded</dd></div>
+          </dl>
+          <p class="caption">Cited in: not yet cited in the manuscript</p>
+        </article>
+        <article class="claim-card" id="cl-043" data-state="unknown" data-classification="reported" data-search="cl-043 allowing repeated submissions raised cumulative performance on all five main benchmarks (about 6.4 to 17.3 points; 14.4 on swe-bench pro); trajectories were credited if any submission was correct, and scoring by first or last submission lowered solve rates on most benchmarks but not on swe-bench pro. frontier llm evaluations (anthropic and openai models) iteration gain and scoring-rule sensitivity models released may 2025 to mar 2026; preprint v3 supplied local text hash-matched manifest; origin not network-authenticated; not human-reviewed. medium: same controlled design; the oracle condition reveals correctness and stops at the first correct submission, which is ecologically valid mainly where deployable verifiers exist. motivates counting each submission as an attempt and scoring the delivered output.">
+          <header><h3>CL-043</h3><p class="claim-labels"><span class="status-label">reported</span><span class="status-label">Verification: unknown</span><span class="status-label">Confidence: medium</span></p></header>
+          <p class="claim-text">Allowing repeated submissions raised cumulative performance on all five main benchmarks (about 6.4 to 17.3 points; 14.4 on SWE-Bench Pro); trajectories were credited if any submission was correct, and scoring by first or last submission lowered solve rates on most benchmarks but not on SWE-Bench Pro.</p>
+          <dl>
+            <div><dt>Entity · metric</dt><dd>frontier LLM evaluations (Anthropic and OpenAI models) · iteration gain and scoring-rule sensitivity</dd></div>
+            <div><dt>Period · units</dt><dd>models released May 2025 to Mar 2026; preprint v3 · percentage points</dd></div>
+            <div><dt>Sources</dt><dd><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-021">SRC-021</a></dd></div>
+            <div><dt>Locator</dt><dd>research/05-lit__arxiv-2606.17930-inference-compute-and-frontier-evaluation.md L123; L143; L215-L221; L233; Sec. 3.1 footnote 1 and Sec. 3.3.1</dd></div>
+            <div><dt>Caveats</dt><dd>Supplied local text hash-matched manifest; origin not network-authenticated; not human-reviewed. Medium: same controlled design; the oracle condition reveals correctness and stops at the first correct submission, which is ecologically valid mainly where deployable verifiers exist. Motivates counting each submission as an attempt and scoring the delivered output.</dd></div>
+            <div><dt>Review</dt><dd>No human review recorded</dd></div>
+          </dl>
+          <p class="caption">Cited in: not yet cited in the manuscript</p>
+        </article>
+        <article class="claim-card" id="cl-044" data-state="unknown" data-classification="reported" data-search="cl-044 for five deepseek-r1-distill models (1.5b to 70b) on four synthetic reasoning tasks, capability grew sublinearly with parameters (for addition at temperature 0.6 doubling parameters multiplied the decay scale by about 1.61) while output length among correct answers did not decrease systematically with model size. deepseek-r1-distill model family capability and token-efficiency scaling with parameter count preprint v2 supplied local text hash-matched manifest; origin not network-authenticated; not human-reviewed. medium: controlled design with 100 instances per size and posterior checks, but one distilled open-weight family, synthetic tasks and possible tokenizer confounding; efficiency conditioned on correct answers; no cost or energy measured. any inference that larger models use more compute per correct answer is project interpretation, not the paper finding.">
+          <header><h3>CL-044</h3><p class="claim-labels"><span class="status-label">reported</span><span class="status-label">Verification: unknown</span><span class="status-label">Confidence: medium</span></p></header>
+          <p class="claim-text">For five DeepSeek-R1-Distill models (1.5B to 70B) on four synthetic reasoning tasks, capability grew sublinearly with parameters (for addition at temperature 0.6 doubling parameters multiplied the decay scale by about 1.61) while output length among correct answers did not decrease systematically with model size.</p>
+          <dl>
+            <div><dt>Entity · metric</dt><dd>DeepSeek-R1-Distill model family · capability and token-efficiency scaling with parameter count</dd></div>
+            <div><dt>Period · units</dt><dd>preprint v2 · dimensionless scaling exponents</dd></div>
+            <div><dt>Sources</dt><dd><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-023">SRC-023</a></dd></div>
+            <div><dt>Locator</dt><dd>research/05-lit__arxiv-2609.27166-scaling-capability-and-efficiency.md L22; L337-L353; L500; L543-L551; Sec. II B-C and III</dd></div>
+            <div><dt>Caveats</dt><dd>Supplied local text hash-matched manifest; origin not network-authenticated; not human-reviewed. Medium: controlled design with 100 instances per size and posterior checks, but one distilled open-weight family, synthetic tasks and possible tokenizer confounding; efficiency conditioned on correct answers; no cost or energy measured. Any inference that larger models use more compute per correct answer is project interpretation, not the paper finding.</dd></div>
+            <div><dt>Review</dt><dd>No human review recorded</dd></div>
+          </dl>
+          <p class="caption">Cited in: not yet cited in the manuscript</p>
+        </article>
+        <article class="claim-card" id="cl-045" data-state="unknown" data-classification="scenario" data-search="cl-045 a single-author scenario model states that with announced capacity growth (about 2.6x by 2029) and assumed 30 percent per year bytes-per-token efficiency gains, new ai infrastructure stays solvent only if token demand grows about 2x per year for four years; the threshold moves from about 1.6x to 2.4x for 15 to 45 percent per year efficiency. ai inference infrastructure (aggregate) solvency threshold for token-demand growth 2026 to 2030 projection supplied local text hash-matched manifest; origin not network-authenticated; not human-reviewed. low: model output from assumed parameters (appendix parameter table absent from extraction) and relayed capacity announcements; scenario probabilities in the same paper are subjective; substantial ai assistance disclosed. stress-test structure only; not calibration, observation or demand-elasticity evidence.">
+          <header><h3>CL-045</h3><p class="claim-labels"><span class="status-label">scenario</span><span class="status-label">Verification: unknown</span><span class="status-label">Confidence: low</span></p></header>
+          <p class="claim-text">A single-author scenario model states that with announced capacity growth (about 2.6x by 2029) and assumed 30 percent per year bytes-per-token efficiency gains, new AI infrastructure stays solvent only if token demand grows about 2x per year for four years; the threshold moves from about 1.6x to 2.4x for 15 to 45 percent per year efficiency.</p>
+          <dl>
+            <div><dt>Entity · metric</dt><dd>AI inference infrastructure (aggregate) · solvency threshold for token-demand growth</dd></div>
+            <div><dt>Period · units</dt><dd>2026 to 2030 projection · annual growth multiple</dd></div>
+            <div><dt>Sources</dt><dd><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-022">SRC-022</a></dd></div>
+            <div><dt>Locator</dt><dd>research/05-lit__arxiv-2607.07207-memory-scarcity-open-models-ai-industry.md L33; L113-L127; Sec. 7 and 7.1</dd></div>
+            <div><dt>Caveats</dt><dd>Supplied local text hash-matched manifest; origin not network-authenticated; not human-reviewed. Low: model output from assumed parameters (appendix parameter table absent from extraction) and relayed capacity announcements; scenario probabilities in the same paper are subjective; substantial AI assistance disclosed. Stress-test structure only; not calibration, observation or demand-elasticity evidence.</dd></div>
+            <div><dt>Review</dt><dd>No human review recorded</dd></div>
+          </dl>
+          <p class="caption">Cited in: not yet cited in the manuscript</p>
+        </article>
+        <article class="claim-card" id="cl-046" data-state="unknown" data-classification="reported" data-search="cl-046 the same paper relays vendor and platform token-volume trackers (google about 9.7 trillion tokens per month in may 2024 to 3.2 quadrillion in may 2026; openrouter about 5 to over 31 trillion tokens per week from spring 2025 to late may 2026) and argues they overstate underlying demand because of supply-injected volume, channel substitution, subsidy, low-value context re-reading and disclosure selection. ai token demand (vendor and platform trackers) token-volume growth and measurement bias may 2024 to may 2026 supplied local text hash-matched manifest; origin not network-authenticated; not human-reviewed. low: second-hand relay of vendor-reported or aggregator figures in non-comparable native units; the author quality-adjusted 2 to 3x per year is an estimate. token growth alongside falling prices is co-movement, not an identified price elasticity; tokens are not tasks.">
+          <header><h3>CL-046</h3><p class="claim-labels"><span class="status-label">reported</span><span class="status-label">Verification: unknown</span><span class="status-label">Confidence: low</span></p></header>
+          <p class="claim-text">The same paper relays vendor and platform token-volume trackers (Google about 9.7 trillion tokens per month in May 2024 to 3.2 quadrillion in May 2026; OpenRouter about 5 to over 31 trillion tokens per week from spring 2025 to late May 2026) and argues they overstate underlying demand because of supply-injected volume, channel substitution, subsidy, low-value context re-reading and disclosure selection.</p>
+          <dl>
+            <div><dt>Entity · metric</dt><dd>AI token demand (vendor and platform trackers) · token-volume growth and measurement bias</dd></div>
+            <div><dt>Period · units</dt><dd>May 2024 to May 2026 · tokens per month or per week</dd></div>
+            <div><dt>Sources</dt><dd><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-022">SRC-022</a></dd></div>
+            <div><dt>Locator</dt><dd>research/05-lit__arxiv-2607.07207-memory-scarcity-open-models-ai-industry.md L139; L145; L151-L153; Sec. 9 and 9.1</dd></div>
+            <div><dt>Caveats</dt><dd>Supplied local text hash-matched manifest; origin not network-authenticated; not human-reviewed. Low: second-hand relay of vendor-reported or aggregator figures in non-comparable native units; the author quality-adjusted 2 to 3x per year is an estimate. Token growth alongside falling prices is co-movement, not an identified price elasticity; tokens are not tasks.</dd></div>
+            <div><dt>Review</dt><dd>No human review recorded</dd></div>
+          </dl>
+          <p class="caption">Cited in: not yet cited in the manuscript</p>
+        </article>
+        <article class="claim-card" id="cl-047" data-state="unknown" data-classification="reported" data-search="cl-047 the same paper relays that open-weight glm-5.2 (744b total and 40b active parameters, mit license, june 2026) matches or exceeds proprietary flagships on long-horizon coding and agentic benchmarks at roughly one-sixth of the serving price. glm-5.2 versus proprietary flagship models benchmark parity and serving-price ratio june 2026 supplied local text hash-matched manifest; origin not network-authenticated; not human-reviewed. low: relayed from vendor release and press coverage; benchmarks, versions, inference budgets and price basis not specified in the passage. benchmark-clock lead only; not workload or commercial equivalency and not a lag estimate (compare cl-006).">
+          <header><h3>CL-047</h3><p class="claim-labels"><span class="status-label">reported</span><span class="status-label">Verification: unknown</span><span class="status-label">Confidence: low</span></p></header>
+          <p class="claim-text">The same paper relays that open-weight GLM-5.2 (744B total and 40B active parameters, MIT license, June 2026) matches or exceeds proprietary flagships on long-horizon coding and agentic benchmarks at roughly one-sixth of the serving price.</p>
+          <dl>
+            <div><dt>Entity · metric</dt><dd>GLM-5.2 versus proprietary flagship models · benchmark parity and serving-price ratio</dd></div>
+            <div><dt>Period · units</dt><dd>June 2026 · qualitative; price ratio</dd></div>
+            <div><dt>Sources</dt><dd><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-022">SRC-022</a></dd></div>
+            <div><dt>Locator</dt><dd>research/05-lit__arxiv-2607.07207-memory-scarcity-open-models-ai-industry.md L45; Sec. 1 Market Context</dd></div>
+            <div><dt>Caveats</dt><dd>Supplied local text hash-matched manifest; origin not network-authenticated; not human-reviewed. Low: relayed from vendor release and press coverage; benchmarks, versions, inference budgets and price basis not specified in the passage. Benchmark-clock lead only; not workload or commercial equivalency and not a lag estimate (compare CL-006).</dd></div>
+            <div><dt>Review</dt><dd>No human review recorded</dd></div>
+          </dl>
+          <p class="caption">Cited in: not yet cited in the manuscript</p>
+        </article>
+        <article class="claim-card" id="cl-048" data-state="unknown" data-classification="reported" data-search="cl-048 the same paper relays a serving-cost study finding effective cost on identical h100 hardware ranging from 0.21 to 15.25 usd per million output tokens depending on utilization and offered request rate. llm serving on h100 hardware effective serving cost study date not verified supplied local text hash-matched manifest; origin not network-authenticated; not human-reviewed. low: secondary relay of an uninspected study; model, workload and pricing basis absent from the passage. supports treating serving configuration and utilization as comparability-critical metadata; not an input value.">
+          <header><h3>CL-048</h3><p class="claim-labels"><span class="status-label">reported</span><span class="status-label">Verification: unknown</span><span class="status-label">Confidence: low</span></p></header>
+          <p class="claim-text">The same paper relays a serving-cost study finding effective cost on identical H100 hardware ranging from 0.21 to 15.25 USD per million output tokens depending on utilization and offered request rate.</p>
+          <dl>
+            <div><dt>Entity · metric</dt><dd>LLM serving on H100 hardware · effective serving cost</dd></div>
+            <div><dt>Period · units</dt><dd>study date not verified · USD per million output tokens</dd></div>
+            <div><dt>Sources</dt><dd><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-022">SRC-022</a></dd></div>
+            <div><dt>Locator</dt><dd>research/05-lit__arxiv-2607.07207-memory-scarcity-open-models-ai-industry.md L65; Sec. 2 scope qualification</dd></div>
+            <div><dt>Caveats</dt><dd>Supplied local text hash-matched manifest; origin not network-authenticated; not human-reviewed. Low: secondary relay of an uninspected study; model, workload and pricing basis absent from the passage. Supports treating serving configuration and utilization as comparability-critical metadata; not an input value.</dd></div>
+            <div><dt>Review</dt><dd>No human review recorded</dd></div>
+          </dl>
+          <p class="caption">Cited in: not yet cited in the manuscript</p>
+        </article>
+        <article class="claim-card" id="cl-049" data-state="unknown" data-classification="estimated" data-search="cl-049 stanford ai index 2026 chapter 1 estimates global ai data-center power capacity at about 29.6 gw by q4 2025, derived from rated thermal design power of ai chips sold (about 11.8 gw) with an approximately 2.5x multiplier for cooling, networking and other infrastructure. global ai data centers ai data-center power capacity q4 2025 supplied local text hash-matched manifest; origin not network-authenticated; not human-reviewed. low: secondary synthesis; rated capacity, not metered consumption; the multiplier is an assumption and not a pue; the chapter separate de vries and gao estimate (about 9.4 gw all-in through 2024) is not reconciled. chapter text license pending. not for company or regional allocation.">
+          <header><h3>CL-049</h3><p class="claim-labels"><span class="status-label">estimated</span><span class="status-label">Verification: unknown</span><span class="status-label">Confidence: low</span></p></header>
+          <p class="claim-text">Stanford AI Index 2026 Chapter 1 estimates global AI data-center power capacity at about 29.6 GW by Q4 2025, derived from rated thermal design power of AI chips sold (about 11.8 GW) with an approximately 2.5x multiplier for cooling, networking and other infrastructure.</p>
+          <dl>
+            <div><dt>Entity · metric</dt><dd>global AI data centers · AI data-center power capacity</dd></div>
+            <div><dt>Period · units</dt><dd>Q4 2025 · GW</dd></div>
+            <div><dt>Sources</dt><dd><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-024">SRC-024</a></dd></div>
+            <div><dt>Locator</dt><dd>research/05-lit__stanford-hai-ai-index-2026-ch1-full-chapter.md L356; Sec. 1.2 Data Center Power Capacity</dd></div>
+            <div><dt>Caveats</dt><dd>Supplied local text hash-matched manifest; origin not network-authenticated; not human-reviewed. Low: secondary synthesis; rated capacity, not metered consumption; the multiplier is an assumption and not a PUE; the chapter separate de Vries and Gao estimate (about 9.4 GW all-in through 2024) is not reconciled. Chapter text license pending. Not for company or regional allocation.</dd></div>
+            <div><dt>Review</dt><dd>No human review recorded</dd></div>
+          </dl>
+          <p class="caption">Cited in: not yet cited in the manuscript</p>
+        </article>
+        <article class="claim-card" id="cl-050" data-state="unknown" data-classification="estimated" data-search="cl-050 the chapter relays jegham et al. (2025) per-prompt inference energy estimates for about 1000 input and 1000 output tokens: deepseek v3.2 and v3.2 exp about 23 wh, gpt-5 (high) about 21.9 wh, and claude 4 opus and gpt-5 mini (medium) between 5 and 6 wh. selected deployed llms inference energy per medium-length prompt 2025 estimates supplied local text hash-matched manifest; origin not network-authenticated; not human-reviewed. low: secondary relay of modeled estimates; method, hardware and serving assumptions absent from the extraction; per prompt not per successful task; reasoning-effort settings change the estimate; other chart values are loose numbers. order-of-magnitude context pending t-004.">
+          <header><h3>CL-050</h3><p class="claim-labels"><span class="status-label">estimated</span><span class="status-label">Verification: unknown</span><span class="status-label">Confidence: low</span></p></header>
+          <p class="claim-text">The chapter relays Jegham et al. (2025) per-prompt inference energy estimates for about 1000 input and 1000 output tokens: DeepSeek V3.2 and V3.2 Exp about 23 Wh, GPT-5 (high) about 21.9 Wh, and Claude 4 Opus and GPT-5 mini (medium) between 5 and 6 Wh.</p>
+          <dl>
+            <div><dt>Entity · metric</dt><dd>selected deployed LLMs · inference energy per medium-length prompt</dd></div>
+            <div><dt>Period · units</dt><dd>2025 estimates · Wh per prompt</dd></div>
+            <div><dt>Sources</dt><dd><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-024">SRC-024</a></dd></div>
+            <div><dt>Locator</dt><dd>research/05-lit__stanford-hai-ai-index-2026-ch1-full-chapter.md L434; Sec. 1.4 Inference</dd></div>
+            <div><dt>Caveats</dt><dd>Supplied local text hash-matched manifest; origin not network-authenticated; not human-reviewed. Low: secondary relay of modeled estimates; method, hardware and serving assumptions absent from the extraction; per prompt not per successful task; reasoning-effort settings change the estimate; other chart values are loose numbers. Order-of-magnitude context pending T-004.</dd></div>
+            <div><dt>Review</dt><dd>No human review recorded</dd></div>
+          </dl>
+          <p class="caption">Cited in: not yet cited in the manuscript</p>
+        </article>
+        <article class="claim-card" id="cl-051" data-state="unknown" data-classification="reported" data-search="cl-051 the chapter reports that in 2025, 47 of 102 notable ai models were released with api access, open weights (unrestricted) was the second most common release type, and 81 of 102 were released without training code; open-weight releases are split into unrestricted, restricted-use and noncommercial categories. notable ai models (epoch-classified) release access type 2025 supplied local text hash-matched manifest; origin not network-authenticated; not human-reviewed. medium: secondary synthesis of epoch notable-model data with stated categories; selection criteria not inspected. supports recording license class for the commercial clock because open weights are not necessarily commercially usable. chapter text license pending.">
+          <header><h3>CL-051</h3><p class="claim-labels"><span class="status-label">reported</span><span class="status-label">Verification: unknown</span><span class="status-label">Confidence: medium</span></p></header>
+          <p class="claim-text">The chapter reports that in 2025, 47 of 102 notable AI models were released with API access, open weights (unrestricted) was the second most common release type, and 81 of 102 were released without training code; open-weight releases are split into unrestricted, restricted-use and noncommercial categories.</p>
+          <dl>
+            <div><dt>Entity · metric</dt><dd>notable AI models (Epoch-classified) · release access type</dd></div>
+            <div><dt>Period · units</dt><dd>2025 · count of models</dd></div>
+            <div><dt>Sources</dt><dd><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-024">SRC-024</a></dd></div>
+            <div><dt>Locator</dt><dd>research/05-lit__stanford-hai-ai-index-2026-ch1-full-chapter.md L194; Sec. 1.1 Model Release</dd></div>
+            <div><dt>Caveats</dt><dd>Supplied local text hash-matched manifest; origin not network-authenticated; not human-reviewed. Medium: secondary synthesis of Epoch notable-model data with stated categories; selection criteria not inspected. Supports recording license class for the commercial clock because open weights are not necessarily commercially usable. Chapter text license pending.</dd></div>
+            <div><dt>Review</dt><dd>No human review recorded</dd></div>
+          </dl>
+          <p class="caption">Cited in: not yet cited in the manuscript</p>
         </article>
       </div>
       <p class="caption"><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/CLAIM-LEDGER.csv">Download the claim ledger (CSV) ↗</a> · <a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#access-and-evidence-policy">Source register and evidence policy ↗</a></p>
