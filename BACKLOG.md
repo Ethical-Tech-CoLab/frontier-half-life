@@ -17,7 +17,7 @@ IDs are stable. **S** means less than an hour of active work; **M** means a few 
 | T-002 | Review coordinated plan, backlog, milestones and paper-section dependencies | FR-16; W8 | M / done | Author separately approved 2026-11-28 after specification approval; not inferred from drafting request |
 | T-003 | Inspect full UKERC review and Masanet methods once public access works | FR-01, FR-02; W4 | M / blocked by independent-source access | Capture sections/limitations and supporting or contrary findings; revise R01/P01 without borrowing AI elasticities |
 | T-004 | Inspect inference-energy and SWE-bench method/version/annotation records | FR-03, FR-04; W2 | M / blocked by independent-source access | Record task/hardware/harness/license boundaries; revise R02/P03/P04; no invented current frontier-energy inputs |
-| T-005 | Define proposed coding, extraction and bounded-agent rubrics for reviewer selection | FR-03, FR-05; W2 | M / todo | Use R02 proposals; mark uninspected dataset/license choices pending; fix thresholds before claiming comparable outcomes |
+| T-005 | Define proposed coding, extraction and bounded-agent rubrics for reviewer selection | FR-03, FR-05; W2 | M / draft / review | Draft rubric `0.4-draft` is in [research/WORKLOAD-RUBRICS.md](research/WORKLOAD-RUBRICS.md), built from the R02 proposals and [literature tranche 01](research/LITERATURE-TRANCHE-01.md). Every threshold, budget and task-set choice remains a proposal for the OQ-02 decision. Task-set licences and versions are not inspected (pending). Not adopted until a reviewer records a verdict |
 | T-006 | Review reader prose and citation/figure links as a coordinated artifact | FR-15; W8 | M / review | P00–P12 are readable without interactions; F01–F09 and every empirical claim have support or explicit gaps; do not promote provisional summaries to findings |
 
 The author authorized a narrow non-analytical demo-shell/Pages exception on 2026-11-28. T-020–T-022 and shell-only theme work may proceed under it. Complete analytical models and later implementation still wait for T-001/T-002 and the relevant evidence.
@@ -34,10 +34,10 @@ The requested texts are received; T-010 is complete for this scope. Resume passa
 | T-012 | Reconstruct revenue and compute/infrastructure definitions for one source batch | FR-02, FR-04; W1 | M | T-011; locate CL-001/CL-002 values, units, periods, accounting scope; split remaining quarters into further batches |
 | T-013 | Reconstruct short-term compute, pricing adjustments and commitments | FR-02, FR-08; W1 | M | T-011; inspect CL-003/CL-004/CL-005/CL-012 passages, contingencies and overlaps; split contract batches as necessary |
 | T-014 | Reconcile original/amended/final findings and paper impacts | FR-02, FR-15; W1/W8 | M | T-012/T-013; update claims and P02/P03/P06/P09, mark dependent results stale, and list remaining unknowns; reviewer signs actual findings |
-| T-015 | Inspect Epoch method and create one workload-specific release-pair tranche | FR-03; W3 | M | T-004/T-005 and source access; three clocks, versions, censored unmatched records; expand only in bounded subsequent batches |
+| T-015 | Inspect Epoch method and create one workload-specific release-pair tranche | FR-03; W3 | M | T-004/T-005 and source access; three clocks, versions, censored unmatched records; expand only in bounded subsequent batches. Tranche 01 note: [L02](research/LITERATURE-TRANCHE-01.md#l02) requires matched inference budgets and protocols for the benchmark clock, with "not comparable" as a separate status. No supplied source measures the lag, so CL-006 is unchanged |
 | T-016 | Acquire one provider/counterparty profile batch | FR-08; W5 | M | Source access; compare archetypes, preserve unknown metrics/relationships; no inference of Anthropic ties without evidence |
 | T-017 | Inspect LBNL/IEA/eGRID/Cambium boundaries and one regional evidence tranche | FR-09, FR-10; W6 | M | Source access; compatible editions, location/period units, coverage and unknowns; no company allocation by revenue |
-| T-018 | Write demand-identification note with competing empirical studies | FR-02, FR-06; W4 | M | Source access; distinguish measured, borrowed and assumed elasticity; P05 names confounders rather than asserting causality |
+| T-018 | Write demand-identification note with competing empirical studies | FR-02, FR-06; W4 | M | Source access; distinguish measured, borrowed and assumed elasticity; P05 names confounders rather than asserting causality. Tranche 01 note: [the tranche](research/LITERATURE-TRANCHE-01.md#s4) supplies no measured or borrowed AI elasticity, only assumed scenario paths. CL-046 relays token trackers together with a list of confounders |
 
 ## Implementation queue — shell exception; full phase still gated
 
@@ -74,6 +74,7 @@ The requested texts are received; T-010 is complete for this scope. Resume passa
 | v0.4 specification/plan and author attribution | Author approved 2026-11-28; evidence/release verdicts remain separate | FR-15, FR-16 |
 | Source register and ledger | Received filing-text provenance; claim-level reconciliation pending | FR-01, FR-02 |
 | Independent evidence synthesis R01–R06 | Scoped source summaries and checked algebra; not full W2–W6 research | FR-03, FR-04, FR-05 |
+| Literature tranche 01 | Seven supplied `05-lit` texts analyzed with line locators in [research/LITERATURE-TRANCHE-01.md](research/LITERATURE-TRANCHE-01.md). Draft, not reviewed. Recorded as SRC-020–SRC-026 and CL-040–CL-051 at verification state `unknown`; three files license-pending; paper integration pending | FR-02, FR-03, FR-05 |
 | Paper P00–P12 | Prose/methods/synthetic checks and gaps linked to work and planned figures | FR-15 |
 
 ## Done — previously merged
