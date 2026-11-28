@@ -4,7 +4,7 @@ export function initializeNavigation({ document, matchMedia }) {
   const toggle = document.querySelector('#nav-toggle');
   const picker = document.querySelector('#theme-control');
   const trigger = document.querySelector('#theme-trigger');
-  const mobile = matchMedia('(max-width: 900px)');
+  const mobile = matchMedia('(max-width: 1100px)');
   let open = false;
 
   function setOpen(value) {

@@ -42,6 +42,17 @@
 .claim-card dl > div { min-width: 0; }
 .claim-card dt { color: var(--muted); font: 600 .66rem/1.5 var(--font-mono); text-transform: uppercase; letter-spacing: .06em; }
 .claim-card dd { margin: .15rem 0 0; overflow-wrap: anywhere; }
+/* Evidence views: proportional bars are decorative; every value is printed as text. */
+.bar-table .bar-col { width: 34%; min-width: 9rem; }
+.bar-track { position: relative; display: flex; height: 14px; background: var(--surface); border: 1px solid var(--line); border-radius: 3px; overflow: visible; }
+.bar-fill { display: block; height: 100%; background: var(--accent); border-radius: 2px 0 0 2px; }
+.bar-range { display: block; height: 100%; background: repeating-linear-gradient(135deg, var(--accent) 0 3px, transparent 3px 7px); border: 1px solid var(--accent); }
+.threshold-marker { position: absolute; top: -4px; bottom: -4px; left: var(--threshold-pos, 23%); width: 2px; background: var(--fg); }
+.pressure tr[data-stale] td { font-style: italic; }
+.total-row > * { border-top: 2px solid var(--line); font-weight: 650; }
+.field-error { flex-basis: 100%; margin: 0; color: var(--fg); font-size: .85rem; border-left: 3px solid var(--accent); padding-left: .7rem; }
+.filters input[aria-invalid="true"] { border-color: var(--fg); border-width: 2px; }
+.two-column.compact { gap: 1rem; margin: 1.5rem 0; }
 /* Keep the sticky contents below the 69px sticky masthead and scrollable on short screens. */
 @media (min-width: 761px) {
   .contents { top: 88px; max-height: calc(100vh - 104px); overflow-y: auto; }

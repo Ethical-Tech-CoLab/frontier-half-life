@@ -281,7 +281,7 @@ button.button { cursor: pointer; }
   .hero { gap: 2rem; }
   .reader-layout { gap: 2rem; grid-template-columns: 215px minmax(0, 1fr); }
 }
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
   .identity { margin-right: auto; }
   .theme-picker { position: static; }
   .theme-panel { right: 1.2rem; }
@@ -293,6 +293,8 @@ button.button { cursor: pointer; }
   .masthead[data-nav-ready] .site-nav a { padding: .75rem 1rem; }
   .masthead:not([data-nav-ready]) .header-row { flex-wrap: wrap; padding-block: .8rem; }
   .masthead:not([data-nav-ready]) .site-nav { width: 100%; margin: 0; flex-wrap: wrap; }
+}
+@media (max-width: 900px) {
   .lab-grid { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 760px) {

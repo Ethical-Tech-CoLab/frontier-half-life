@@ -4,6 +4,7 @@ import { SITE, documentURL } from '../docs/assets/js/config.mjs';
 import { SECTIONS, FILINGS } from '../docs/assets/js/research.mjs';
 import { THEMES, tokensFor } from '../docs/assets/js/themes.mjs';
 import { paperBody, evidenceBody } from './render-reader.mjs';
+import { providersBody, uncertaintyBody } from './render-views.mjs';
 import { MODEL_VERSION, TOLERANCE, SWEEP_VALUES, SYNTHETIC_FIXTURES, compute, sweepElasticity } from '../docs/assets/js/model/task-energy.mjs';
 import { SCENARIOS, FIELDS, WORKLOAD } from '../docs/assets/js/model/scenarios.mjs';
 import { EVIDENCE_CUTOFF } from '../docs/assets/js/model/manifest.mjs';
@@ -26,7 +27,7 @@ function header(page) {
         <span class="identity-text"><strong>Frontier half-life</strong><small>Ethical Tech CoLab · research demo</small></span>
       </a>
       <nav class="site-nav" id="primary-nav" aria-label="Main navigation">
-        ${[['index.html', 'Overview'], ['paper.html', 'Paper'], ['evidence.html', 'Evidence'], ['rebound.html', 'Rebound lab']].map(([file, label]) =>
+        ${[['index.html', 'Overview'], ['paper.html', 'Paper'], ['evidence.html', 'Evidence'], ['rebound.html', 'Rebound lab'], ['providers.html', 'Providers'], ['uncertainty.html', 'Stress']].map(([file, label]) =>
           `<a href="${file}" data-site-link${page === file ? ' aria-current="page"' : ''}>${label}</a>`).join('\n        ')}
         ${docLink('PLAN.md', 'Research docs ↗', 'nav-cta')}
       </nav>
@@ -390,6 +391,8 @@ export function renderShell() {
     'paper.html': page('paper.html', 'Live research reader', 'The v0.4 review draft of Models, Megawatts, and Moats, rendered from the manuscript with linked claims, sources and figures. Not an analytical release.', paper()),
     'evidence.html': page('evidence.html', 'Evidence room', 'Filing lineage and a claim inspector: located, internally checked passages with locators. No claim is verified yet.', evidence()),
     'rebound.html': page('rebound.html', 'Rebound lab', 'F04 elasticity threshold and F07 scenario comparison: illustrative indexed scenarios computed with the task-energy model. Not calibrated, not a forecast.', rebound(), ['assets/js/rebound.mjs']),
+    'providers.html': page('providers.html', 'Providers and commitments', 'F05 commitment exposure from the final prospectus: components, exclusions, conditional amounts and named arrangements. Located, unverified, never summed across instruments.', providersBody(reviewStrip())),
+    'uncertainty.html': page('uncertainty.html', 'Stress boundaries', 'F08 illustrative reverse-stress boundaries: compute-cost pressure evaluated on reported quarters; capacity use and regional power marked insufficient evidence. No probabilities.', uncertaintyBody(reviewStrip())),
     'assets/themes.css': themeCSS,
   };
 }
@@ -404,5 +407,5 @@ if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
       await writeFile(path, contents);
     }
   }
-  console.log(check ? 'Shell HTML and theme CSS are current.' : 'Rendered four static pages and theme CSS.');
+  console.log(check ? 'Shell HTML and theme CSS are current.' : 'Rendered static pages and theme CSS.');
 }

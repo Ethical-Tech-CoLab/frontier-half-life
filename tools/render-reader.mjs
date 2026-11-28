@@ -10,11 +10,11 @@ import { parseCSV } from './csv.mjs';
 
 const root = new URL('../', import.meta.url);
 const read = (path) => readFileSync(new URL(path, root), 'utf8');
-const docLink = (path, label, className = '') =>
+export const docLink = (path, label, className = '') =>
   `<a href="${escape(documentURL(path))}"${className ? ` class="${className}"` : ''}>${escape(label)}</a>`;
-const siteLink = (path, label, className = '') =>
+export const siteLink = (path, label, className = '') =>
   `<a href="${escape(path)}" data-site-link${className ? ` class="${className}"` : ''}>${escape(label)}</a>`;
-const sourceLine = (file, line) => `${documentURL(file)}?plain=1#L${line}`;
+export const sourceLine = (file, line) => `${documentURL(file)}?plain=1#L${line}`;
 
 export function loadResearch() {
   const manuscript = read('paper/PAPER-DRAFT.md');
