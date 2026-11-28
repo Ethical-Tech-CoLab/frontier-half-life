@@ -4,7 +4,7 @@ import { SITE, documentURL } from '../docs/assets/js/config.mjs';
 import { SECTIONS, FILINGS } from '../docs/assets/js/research.mjs';
 import { THEMES, tokensFor } from '../docs/assets/js/themes.mjs';
 import { paperBody, evidenceBody, loadResearch } from './render-reader.mjs';
-import { providersBody, uncertaintyBody } from './render-views.mjs';
+import { providersBody, uncertaintyBody, efficiencyBody } from './render-views.mjs';
 import { MODEL_VERSION, TOLERANCE, SWEEP_VALUES, SYNTHETIC_FIXTURES, compute, sweepElasticity } from '../docs/assets/js/model/task-energy.mjs';
 import { SCENARIOS, FIELDS, WORKLOAD } from '../docs/assets/js/model/scenarios.mjs';
 import { EVIDENCE_CUTOFF } from '../docs/assets/js/model/manifest.mjs';
@@ -27,7 +27,7 @@ function header(page) {
         <span class="identity-text"><strong>Frontier half-life</strong><small>Ethical Tech CoLab · research demo</small></span>
       </a>
       <nav class="site-nav" id="primary-nav" aria-label="Main navigation">
-        ${[['index.html', 'Overview'], ['paper.html', 'Paper'], ['evidence.html', 'Evidence'], ['rebound.html', 'Rebound lab'], ['providers.html', 'Providers'], ['uncertainty.html', 'Stress']].map(([file, label]) =>
+        ${[['index.html', 'Overview'], ['paper.html', 'Paper'], ['evidence.html', 'Evidence'], ['rebound.html', 'Rebound lab'], ['efficiency.html', 'Efficiency'], ['providers.html', 'Providers'], ['uncertainty.html', 'Stress']].map(([file, label]) =>
           `<a href="${file}" data-site-link${page === file ? ' aria-current="page"' : ''}>${label}</a>`).join('\n        ')}
         ${docLink('PLAN.md', 'Research docs ↗', 'nav-cta')}
       </nav>
@@ -49,7 +49,7 @@ function header(page) {
     </div>
   </header>
   <div class="wrap notice-row">
-    <span class="version">${SITE.version} / DEMO</span>
+    <span class="version">${SITE.version} / REVIEW DRAFT</span>
     <p id="theme-message" class="theme-message" role="status" aria-live="polite" aria-atomic="true">CoLab presentation. Review draft; no calibrated results.</p>
   </div>
   <noscript><p class="wrap noscript">JavaScript is off. All research-guide content and source links remain readable in the default CoLab theme. Theme switching requires JavaScript.</p></noscript>`;
@@ -128,7 +128,7 @@ function overview() {
       <div class="cards">
         <article class="card"><span class="step">01 / Evidence room</span><span class="status-label">Passages located · unverified</span><h3>Know what supports a claim.</h3><p>Follow the filing lineage and inspect every claim with its classification, verification state, locator and the paper sections that cite it.</p>${siteLink('evidence.html#claims', 'Open the claim inspector →')}</article>
         <article class="card"><span class="step">02 / Paper reader</span><span class="status-label">Review draft · P00–P12</span><h3>Read the argument, then contest it.</h3><p>The full manuscript, rendered from its source. Claim IDs open the evidence; figure panels say whether a view is live or planned.</p>${siteLink('paper.html#about', 'Read the paper →')}</article>
-        <article class="card"><span class="step">03 / Dashboard workspace</span><span class="status-label">${liveFigures()} figures live · none calibrated</span><h3>Challenge the assumptions.</h3><p>Explore the indexed rebound lab (F04/F07), commitment exposure (F05) and stress boundaries (F08). Efficiency, equivalency and impact views wait for evidence. Nothing here is a forecast or a calibrated result.</p>${siteLink('rebound.html', 'Open the rebound lab →')} · ${siteLink('providers.html', 'Commitments →')} · ${siteLink('uncertainty.html', 'Stress →')}</article>
+        <article class="card"><span class="step">03 / Dashboard workspace</span><span class="status-label">${liveFigures()} figures live · none calibrated</span><h3>Challenge the assumptions.</h3><p>Explore the indexed rebound lab (F04/F07), the efficiency denominators (F02), commitment exposure (F05) and stress boundaries (F08). Equivalency and impact views wait for evidence. Nothing here is a forecast or a calibrated result.</p>${siteLink('rebound.html', 'Open the rebound lab →')} · ${siteLink('efficiency.html', 'Denominators →')} · ${siteLink('providers.html', 'Commitments →')} · ${siteLink('uncertainty.html', 'Stress →')}</article>
       </div>
     </section>
     <section class="section two-column" id="boundaries" aria-labelledby="boundaries-title">
@@ -390,13 +390,21 @@ function page(file, title, description, body, scripts = []) {
 
 export function renderShell() {
   const themeCSS = `/* Generated from the attributed registry by tools/render-shell.mjs. */\n${Object.values(THEMES).map((theme) =>
-    `${theme.id === 'colab' ? ':root, ' : ''}:root[data-brand="${theme.id}"] {\n${Object.entries(tokensFor(theme)).map(([key, value]) => `  ${key}: ${value};`).join('\n')}\n}`).join('\n\n')}\n`;
+    `${theme.id === 'colab' ? ':root, ' : ''}:root[data-brand="${theme.id}"] {\n${Object.entries(tokensFor(theme)).map(([key, value]) => `  ${key}: ${value};`).join('\n')}\n}`).join('\n\n')}\n
+/* Paper is light: print every brand with the contrast-tested CoLab Daylight tokens. */
+@media print {
+  :root, :root[data-brand] {
+${Object.entries(tokensFor(THEMES['colab-daylight'])).map(([key, value]) => `    ${key}: ${value};`).join('\n')}
+  }
+}
+`;
   return {
     'index.html': page('index.html', 'Models, Megawatts, and Moats', 'An evidence-first research demo about AI efficiency, open-model catch-up, demand, and infrastructure. Only illustrative, uncalibrated indexed scenarios are computed.', overview()),
     'paper.html': page('paper.html', 'Live research reader', 'The v0.4 review draft of Models, Megawatts, and Moats, rendered from the manuscript with linked claims, sources and figures. Not an analytical release.', paper()),
     'evidence.html': page('evidence.html', 'Evidence room', 'Filing lineage and a claim inspector: located, internally checked passages with locators. No claim is verified yet.', evidence()),
     'rebound.html': page('rebound.html', 'Rebound lab', 'F04 elasticity threshold and F07 scenario comparison: illustrative indexed scenarios computed with the task-energy model. Not calibrated, not a forecast.', rebound(), ['assets/js/rebound.mjs']),
     'providers.html': page('providers.html', 'Providers and commitments', 'F05 commitment exposure from the final prospectus: components, exclusions, conditional amounts and named arrangements. Located, unverified, never summed across instruments.', providersBody(reviewStrip())),
+    'efficiency.html': page('efficiency.html', 'Efficiency denominators', 'F02: financial, compute, task-cost, capacity and energy measures kept in their own units, with located values or explicit unknowns.', efficiencyBody(reviewStrip())),
     'uncertainty.html': page('uncertainty.html', 'Stress boundaries', 'F08 illustrative reverse-stress boundaries: compute-cost pressure evaluated on reported quarters; capacity use and regional power marked insufficient evidence. No probabilities.', uncertaintyBody(reviewStrip())),
     'assets/themes.css': themeCSS,
   };

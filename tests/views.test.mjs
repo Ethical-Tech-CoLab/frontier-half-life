@@ -82,3 +82,39 @@ test('the stress view withholds results on invalid input and recomputes on valid
   assert.equal(rows[0].dataset.stale, 'true');
   assert.match(nodes['#pressure-status'].textContent, /withheld/);
 });
+
+test('the efficiency view keeps six measures in their own units and only the financial row has values', async () => {
+  const html = await read('docs/efficiency.html');
+  const rows = [...html.matchAll(/<tr id="measure-([\w-]+)">/g)].map((match) => match[1]);
+  assert.deepEqual(rows, ['financial', 'issuer-definition', 'operation-compute', 'task-cost', 'capacity', 'energy']);
+  const facts = parseCSV(await read('data/extracted/w1-filing-facts.csv')).rows;
+  const ratios = ['Q1-2025', 'Q2-2025', 'Q3-2025', 'Q4-2025', 'Q1-2026', 'Q2-2026', 'Q3-2026']
+    .map((period) => facts.find((row) => row.fact_id === 'CI-PCT-Q' && row.filing === '424B4' && row.period === period).value);
+  assert.ok(html.includes(ratios.map((value) => `${value}%</span>`).join(' → ').replace(/<\/span>/g, '</span>')) || ratios.every((value) => html.includes(`${value}%`)));
+  assert.equal((html.match(/<span class="status-label">Unknown<\/span>/g) || []).length, 3);
+  const unknownRows = html.split('<tr id="measure-').slice(4).join('');
+  assert.doesNotMatch(text(unknownRows), /\d+(\.\d+)?\s?(kWh|Wh|USD|%)/, 'unknown rows state no invented values');
+  assert.match(html, /href="paper\.html#p03" data-site-link>Return to P03/);
+});
+
+test('print is revealed only by script and calls the browser print dialog', async () => {
+  const { initializePrint } = await import('../docs/assets/js/site.mjs');
+  let printed = 0;
+  let onClick;
+  const button = { hidden: true, addEventListener: (event, callback) => { onClick = callback; } };
+  assert.equal(initializePrint({ document: { querySelectorAll: () => [button] }, print: () => { printed += 1; } }), 1);
+  assert.equal(button.hidden, false);
+  onClick();
+  assert.equal(printed, 1);
+  const paper = await read('docs/paper.html');
+  assert.match(paper, /<button type="button" class="button secondary" data-print hidden>/);
+  assert.match(paper, /class="print-only">Printed from the live research reader/);
+});
+
+test('every brand prints with the contrast-tested light tokens', async () => {
+  const { THEMES, tokensFor } = await import('../docs/assets/js/themes.mjs');
+  const css = await read('docs/assets/themes.css');
+  const block = css.slice(css.indexOf('@media print'));
+  assert.match(block, /:root, :root\[data-brand\] \{/);
+  for (const [key, value] of Object.entries(tokensFor(THEMES['colab-daylight']))) assert.ok(block.includes(`${key}: ${value};`), key);
+});

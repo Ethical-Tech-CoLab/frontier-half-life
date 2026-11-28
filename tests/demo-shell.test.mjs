@@ -15,7 +15,8 @@ import { MODEL_VERSION } from '../docs/assets/js/model/task-energy.mjs';
 import { SCENARIOS } from '../docs/assets/js/model/scenarios.mjs';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
-const pages = ['index.html', 'paper.html', 'evidence.html', 'rebound.html'];
+// Every generated page is covered; adding a page cannot skip structure or link checks.
+const pages = Object.keys(renderShell()).filter((file) => file.endsWith('.html'));
 const LAB_STATUS = 'Illustrative indexed scenario — not calibrated, not a forecast';
 const read = (path) => readFile(resolve(root, path), 'utf8');
 const decode = (value) => value.replaceAll('&amp;', '&').replaceAll('&#39;', "'").replaceAll('&quot;', '"');
