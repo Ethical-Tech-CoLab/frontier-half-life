@@ -325,3 +325,4 @@ The author approved the [§0](#selections) selections as proposed. In particular
 - `0.4-draft` (2026-11-28): first proposed version from R02 and literature tranche 01. Not reviewed or adopted.
 - `0.4-sel.1` (2026-11-28): pragmatic task-set and threshold selections, with reasons, proposed for the author's review ([§0](#selections)).
 - `0.4.0` (2026-11-28): selections approved as proposed by the author; [PROPOSED] items resolved and marked [ADOPTED].
+- **Proposed `0.4.1` (awaiting author decision):** T14 as adopted labels an interval whose upper bound is never reached "consistent" when it starts below six months. First use exposed this ([Phase 1 coding history §3](PHASE1-CODING-HISTORY.md#ph1-issues)). Proposed: label "inconclusive" when the upper bound is not reached or the median is not estimable; otherwise keep the overlap rule.

@@ -1,0 +1,6 @@
+reference,reference_released,reference_resolved,tasks,delta,confirmed_model,confirmed_released,confirmed_lag_days,confirmed_diff,confirmed_lower_bound,confirmed_method,nominal_model,nominal_released,nominal_lag_days,nominal_diff,status,censored_days,preexisting_matches,flag
+claude-3-7-sonnet-20250219,2025-02-24,0.528,500,0.03,qwen3-coder-480b-a35b-instruct,2025-07-22,148,0.026,-0.0258,unpaired,qwen3-coder-480b-a35b-instruct,2025-07-22,148,0.026,confirmed match,,,contamination-flagged history (T12)
+o3-20250416,2025-04-16,0.584,500,0.03,minimax-m2,2025-10-27,194,0.026,-0.0093,paired,qwen3-coder-480b-a35b-instruct,2025-07-22,97,-0.03,confirmed match,,,contamination-flagged history (T12)
+claude-4-opus-20250514,2025-05-22,0.676,500,0.03,deepseek-v3.2,2025-12-01,193,0.024,-0.0031,paired,deepseek-v3.2,2025-12-01,193,0.024,confirmed match,,,contamination-flagged history (T12)
+claude-sonnet-4-5-20250929,2025-09-29,0.714,500,0.03,kimi-k2.5,2026-01-27,120,-0.006,-0.03,paired,deepseek-v3.2,2025-12-01,63,-0.014,confirmed match,,,contamination-flagged history (T12)
+claude-opus-4-5-20251101,2025-11-24,0.768,500,0.03,,,,,,,minimax-m2.5,2026-02-12,80,-0.01,not observed by cutoff 2026-11-30,371,,contamination-flagged history (T12)
