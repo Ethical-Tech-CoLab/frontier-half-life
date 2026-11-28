@@ -118,3 +118,18 @@ test('every brand prints with the contrast-tested light tokens', async () => {
   assert.match(block, /:root, :root\[data-brand\] \{/);
   for (const [key, value] of Object.entries(tokensFor(THEMES['colab-daylight']))) assert.ok(block.includes(`${key}: ${value};`), key);
 });
+
+test('published review snapshots match their recorded SHA-256 checksums', async () => {
+  const { createHash } = await import('node:crypto');
+  const { SITE } = await import('../docs/assets/js/config.mjs');
+  assert.ok(SITE.snapshots.length >= 1);
+  for (const snapshot of SITE.snapshots) {
+    const sums = (await read(`docs/${snapshot.checksums}`)).trim().split('\n').map((line) => line.split(/\s+/));
+    assert.equal(sums.length, 2);
+    for (const [hash, name] of sums) {
+      const data = await readFile(resolve(root, 'docs', snapshot.checksums, '..', name));
+      assert.equal(createHash('sha256').update(data).digest('hex'), hash, name);
+      assert.equal(data.subarray(0, 5).toString(), '%PDF-', `${name} is a PDF`);
+    }
+  }
+});

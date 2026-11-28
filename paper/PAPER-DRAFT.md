@@ -248,6 +248,8 @@ The following references are stable **discovery records**, not claims of complet
 
 **v0.4 W1 update, 2026-11-28:** Text-based filing reconstruction: located passages and line locators for all initial company claims; 22 derived checks pass; CL-005 superseded by CL-020; new claims CL-020–CL-025; P02/P03/P05/P06/P09 revised. All company claims remain unverified pending origin authentication and financial review.
 
+**Correction to snapshot r1, 2026-11-28:** The entry below says a GitHub pre-release attaches the PDF. Creating releases is not permitted for the session that produced the snapshot, so no release exists. The tag `v0.4-review.1` exists as described. The PDFs, printed from the tagged commit with every repository link pointing at the tag, are published at `docs/snapshots/v0.4-review.1/` with SHA-256 checksums and linked from the top of this reader. The snapshot text is left unchanged, so its PDF still contains the original sentence.
+
 **v0.4 review snapshot r1, 2026-11-28:** The git tag `v0.4-review.1` pins the commit containing this entry: manuscript, claim ledger, figure registry, W1 extraction, model `task-energy/0.4.0` and manifest schema 1.0.0. A pre-release with the same tag attaches a PDF of this reader whose source links point at the tag, not at `main`. The live reader keeps changing; review comments should cite the snapshot. This is a review draft, not an analytical release.
 
 **v0.4 demand-identification update, 2026-11-28:** T-018 note added; CL-026 (supply constraint and non-price rationing) and CL-027 (consumption-based revenue) located; P05 states why the filing series cannot identify an elasticity.
