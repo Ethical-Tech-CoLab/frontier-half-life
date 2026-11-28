@@ -1,8 +1,8 @@
 # Filing intake 2026-11-27: source documents (text captures)
 
-This folder holds text copies of the SEC filings and research papers listed in the project's source inventory, plus S-1/A Amendment No. 2 (added from EDGAR), gathered on 2026-11-27 for filing reconstruction ([PLAN.md §6.1, "Filing intake and remediation"](https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/PLAN.md#61-filing-intake-and-remediation)). [MANIFEST.csv](MANIFEST.csv) is the register for this intake: one row per document with its SHA-256 hash, size, official source, accession number, form, date, retrieval method and status, plus rows for documents that are still missing.
+This folder holds text copies of the SEC filings and research papers listed in the project's source inventory, plus documents added from EDGAR on request (S-1/A Amendment No. 2; the filing index, SEC header and exhibits of Amendment No. 3; and the November 25 Form 8-K), gathered on 2026-11-27 for filing reconstruction ([PLAN.md §6.1, "Filing intake and remediation"](https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/PLAN.md#61-filing-intake-and-remediation)). [MANIFEST.csv](MANIFEST.csv) is the register for this intake: one row per document with its SHA-256 hash, size, official source, accession number, form, date, retrieval method and status, plus rows for documents that are still missing.
 
-> **Status: unauthenticated text captures.** Each file is a complete text rendering of an official source, not a byte-for-byte original. Check passages against EDGAR or the publisher before relying on them (PLAN.md §6.1, step 2).
+> **Status: unauthenticated text captures.** Each file is a complete text rendering of an official source, not a byte-for-byte original. Check passages against EDGAR or the publisher before relying on them (PLAN.md §6.1, step 2). The exception is `04b-8k-2026-11-25__complete-submission-0001628280-26-075973.txt`, which is the EDGAR original byte for byte: its size matches EDGAR's listing exactly.
 
 ## File names
 
@@ -11,13 +11,14 @@ This folder holds text copies of the SEC filings and research papers listed in t
 | Prefix | Filing | Accession | Filed | Files here |
 |---|---|---|---|---|
 | `01-s1-2026-10-26` | Form S-1 (original registration statement) | 0001628280-26-067168 | 2026-10-26 | 35 |
-| `02-s1a1-2026-11-02` | Form S-1/A, Amendment No. 1 | 0001628280-26-068676 | 2026-11-02 | 7 |
+| `02-s1a1-2026-11-02` | Form S-1/A, Amendment No. 1 | 0001628280-26-068676 | 2026-11-02 | 8 |
 | `02b-s1a2-2026-11-10` | Form S-1/A, Amendment No. 2 (preliminary prospectus dated 2026-11-10) | 0001628280-26-072484 | 2026-11-10 | 12 |
-| `03-s1a3-2026-11-17` | Form S-1/A, Amendment No. 3 (preliminary prospectus dated 2026-11-17) | 0001628280-26-074338 | 2026-11-17 | 1 |
+| `03-s1a3-2026-11-17` | Form S-1/A, Amendment No. 3 (preliminary prospectus dated 2026-11-17) | 0001628280-26-074338 | 2026-11-17 | 6 |
 | `04-424b4-2026-11-19` | Final prospectus, Rule 424(b)(4) | 0001628280-26-074944 | 2026-11-19 | 4 |
+| `04b-8k-2026-11-25` | Form 8-K current report (IPO closing) | 0001628280-26-075973 | 2026-11-25 | 8 |
 | `05-lit` | Research papers (arXiv, CC BY 4.0) | - | - | 4 |
 
-`02b` was added in an update so that no file from the first version had to be renamed; it sorts between `02` and `03`, in filing-date order.
+`02b` and `04b` were added in later updates so that no earlier file had to be renamed; each sorts in filing-date order.
 
 Document names within a filing:
 
@@ -27,22 +28,25 @@ Document names within a filing:
 - `filing-fee-table`: the filing fee table (Exhibit 107.1; EDGAR document type EX-FILING FEES)
 - `ex-NN-NN-<description>`: an exhibit, numbered with zero padding (EX-10.2 becomes `ex-10-02`) so exhibits sort in order
 - `directory-listing`: the EDGAR directory listing for the 424B4 submission
+- `complete-submission-<accession>`: the complete submission text file, byte for byte as EDGAR stores it (8-K only)
+- `join-check-note`: a verification note written for this intake
 
-Every document begins with a YAML header recording its source URL, publication time, retrieval date and retrieval method.
+Every document except the complete submission file begins with a YAML header recording its source URL, publication time, retrieval date and retrieval method.
 
 ## Provenance and integrity
 
 - **Sources:** the official URL for each file is in MANIFEST.csv (`source_url`). Where the source inventory listed a different URL, `inventory_url` keeps the original.
-- **Method:** pages and PDFs were rendered to text in a web browser on 2026-11-27, using the Jina Reader service (r.jina.ai) for every document except the S-1/A No. 1 primary document (see Known limitations). Each file's YAML header states the method used.
+- **Method:** pages and PDFs were rendered to text in a web browser on 2026-11-27, using the Jina Reader service (r.jina.ai) for every document except the S-1/A No. 1 primary document (see Known limitations). The 8-K's complete submission file was read directly from sec.gov as plain text, and the document tables in its filing index were transcribed from the index page, which the converter had dropped. Each file's YAML header states the method used.
 - **Hashes:** `sha256` is computed on each file exactly as stored here. To check a file: `Get-FileHash <file> -Algorithm SHA256` (Windows PowerShell) or `shasum -a 256 <file>` (macOS/Linux).
 
 ## Known limitations
 
-1. **S-1/A No. 1 primary document** (`02-s1a1-2026-11-02__primary-document-anthropicpbc-sx1ax1.txt`): the Markdown reader returned only the cover page, so the text was assembled from two renderings of the SEC-hosted document: the cover through prospectus page 340 from the W3C html2txt service, and the financial statements through the signature pages from page-by-page browser captures. The join point is marked in the file. In the second part a few lines may be duplicated or missing at page boundaries.
-2. **Issuer prospectus:** the inventory's issuer link (ipo.anthropic.com/documents/us/prospectus.pdf) now redirects to investor.anthropic.com. The 2026-11-17 preliminary prospectus it pointed to was taken from its EDGAR filing, S-1/A Amendment No. 3 (`03-s1a3-...`). Only its primary document was retrieved.
-3. **Complete submission files** were not retrieved (EDGAR lists the submissions at 224 MB for the S-1, 94 MB for S-1/A No. 1, 96 MB for S-1/A No. 2 and 94 MB for the 424B4); each filing's SEC header is included instead. A file over 100 MiB cannot be pushed to GitHub without Git LFS.
+1. **S-1/A No. 1 primary document** (`02-s1a1-2026-11-02__primary-document-anthropicpbc-sx1ax1.txt`): the Markdown reader returned only the cover page, so the text was assembled from two renderings of the SEC-hosted document: the cover through prospectus page 340 from the W3C html2txt service, and the financial statements through the signature pages from page-by-page browser captures. The join point is marked in the file. A word-by-word check of the second part against S-1/A No. 2 and the S-1 found the join continuous and no missing or duplicated passages; a few words are split (for example "g rant"). See `02-s1a1-2026-11-02__join-check-note.md`.
+2. **Issuer prospectus:** the inventory's issuer link (ipo.anthropic.com/documents/us/prospectus.pdf) now redirects to investor.anthropic.com. The 2026-11-17 preliminary prospectus it pointed to was taken from its EDGAR filing, S-1/A Amendment No. 3 (`03-s1a3-...`), with that filing's index, SEC header and the three exhibits filed with it.
+3. **Complete submission files** were not retrieved for the S-1 (224 MB), S-1/A No. 1 (94 MB), S-1/A No. 2 (96 MB), S-1/A No. 3 (95 MB) or the 424B4 (94 MB); each filing's SEC header is included instead. A file over 100 MiB cannot be pushed to GitHub without Git LFS. The 8-K's submission (1.1 MB) is included whole.
 4. **arXiv ID:** 2606.1793 in the source inventory is corrected to 2606.17930.
 5. **Layout:** tables, charts and images were converted to text; figures and some table structure are not preserved.
+6. **Original HTML of S-1/A No. 1 and the 424B4** is not included: each is a 14 MB HTML document on a single line, which the browser used for this intake could not read whole. A GitHub Actions workflow supplied with this intake, `fetch-sec-originals.yml` (it goes in `.github/workflows/`), downloads both from sec.gov into `data/raw/intake-2026-11-27/originals/`, checks them against EDGAR's listed sizes and records SHA-256 hashes. PDF renditions are on the issuer's investor-relations site: [S-1/A No. 1](https://d18rn0p25nwr6d.cloudfront.net/CIK-0002130357/17103a7b-9865-447b-8322-b73669087d2f.pdf) and [424B4](https://investor.anthropic.com/files/doc_downloads/Anthropic-PBC-424B4.pdf).
 
 ## Missing documents
 
@@ -58,7 +62,6 @@ Every document begins with a YAML header recording its source URL, publication t
 | EFFECT | Notice of Effectiveness | 9999999995-26-003574 | 2026-11-18 | Not retrieved; not in the source inventory |
 | S-8 | Securities to be offered to employees in employee benefit plans | 0001628280-26-074931, 0001628280-26-074934 | 2026-11-19 | Not retrieved; not in the source inventory |
 | 4 | Statement of changes in beneficial ownership of securities | 0001221820-26-000005, 0001997244-26-000005, 0002157947-26-000004, 0002158120-26-000003 | 2026-11-23 | Not retrieved; not in the source inventory |
-| 8-K | Current report, items 1.01, 3.02, 3.03, 5.03, 7.01, 8.01, and 9.01 | 0001628280-26-075973 | 2026-11-25 | Not retrieved; not in the source inventory |
 
 Each of these has its own row in MANIFEST.csv with a link to its EDGAR filing index.
 
@@ -85,3 +88,4 @@ Changes made to each paper: converted to Markdown text by an automated reader; a
 
 - 2026-11-27: first version (51 documents).
 - 2026-11-27, update: added S-1/A Amendment No. 2 (filed 2026-11-10; accession 0001628280-26-072484) as group `02b`: the primary document, filing index, SEC header, filing fee table and 8 exhibits (12 files). Corrected the `note` line in `01-s1-2026-10-26__filing-index.md`: the index page lists 79 files, while EDGAR counts 87 documents in the submission. Updated this README and MANIFEST.csv.
+- 2026-11-27, update 2: added the November 25 Form 8-K (accession 0001628280-26-075973) as group `04b`: the 8-K, its filing index, five exhibits and the complete submission file as a byte-exact original (8 files). Added to group `03` the filing index, SEC header and the three exhibits filed with S-1/A Amendment No. 3 (1.1, 23.1 and 23.2). Added `02-s1a1-2026-11-02__join-check-note.md`. Updated this README and MANIFEST.csv; no earlier document changed.
