@@ -4,7 +4,7 @@
 | --- | --- |
 | Initial author / coordinator | yorkerhodes3 |
 | Last groomed | 2026-11-28 |
-| Current milestone | Received-text reconciliation and authorized M0 demo shell |
+| Current milestone | M0 demo shell published; M1 claim reconciliation next |
 | Status | Specification, plan and backlog approved 2026-11-28; claim/release review still required |
 
 IDs are stable. **S** means less than an hour of active work; **M** means a few hours. These are proposed sizes, not measured effort. Tasks larger than a source batch or one view must be split before work. Dependencies are explicit, not inferred from order. References point to [SPECIFICATION.md](SPECIFICATION.md) requirements and [PLAN §3](PLAN.md#3-evidence-work-packages) work packages. Drafted artifacts are not marked reviewed or merged merely because they exist.
@@ -45,7 +45,7 @@ The requested texts are received; T-010 is complete for this scope. Resume passa
 | --- | --- | --- | --- | --- |
 | T-020 | Confirm Pages eligibility/settings | FR-16; M0 | S / done | Existing legacy Pages site inspected; docs-only publication authorized; full reviewer assignments remain open |
 | T-021 | Build branded reader/evidence shell with explicit draft states | FR-11, FR-12, FR-15, FR-16; M0 | M / done | Three static pages, 13 themes, P00–P12 orientation and six-filing timeline; local browser/theme/mobile and focused tests pass |
-| T-022 | Deploy and verify the walking reader URL and fragments | FR-15, FR-16; M0 | S | T-021 and deployment access; verify real HTTP/assets; analytical draft publication still gated |
+| T-022 | Deploy and verify the walking reader URL and fragments | FR-15, FR-16; M0 | S / done | PR #3 merged; GitHub Pages run 46100801021 succeeded and artifact matches local root/shell/assets; public HTTP blocked here, local navigation checked; no analytical publication |
 | T-023 | Add metric dictionary and shared deterministic fixture validation | FR-04, FR-05; M3 | M | T-001/T-002/T-005; distinguish unit/quality boundaries and expected synthetic results; no company calibration without T-014 |
 | T-024 | Build one evidence view with bidirectional P02/F01 source references | FR-01, FR-02, FR-15; M3 | M | T-021 and validated evidence/gap artifact; claim states, empty/error paths, locators and return links work |
 | T-025 | Build the deterministic scenario view and compatible manifest replay | FR-05, FR-06, FR-07, FR-15; M3 | M | T-021/T-023; figures use shared results, correct inputs/versions, static caption and error handling |
@@ -81,6 +81,7 @@ The requested texts are received; T-010 is complete for this scope. Resume passa
 | ID | Work | Completed | PR |
 | --- | --- | --- | --- |
 | T-000 | Initial concept, preserved research and MIT license | 2026-11-27 | #1 |
+| M0 | Non-analytical v0.4 overview, paper guide, evidence timeline and 13 themes | 2026-11-28 | #3 |
 
 The v0.4 research-planning package was merged in #2. The author separately approved the revised specification and plan/backlog on 2026-11-28; those verdicts are recorded in the documents and do not approve financial findings.
 

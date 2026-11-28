@@ -4,6 +4,13 @@ Models, Megawatts, and Moats: Testing the Six-Month Open-Model Equivalency Hypot
 **Initial author:** yorkerhodes3. Start at **v0.4** and update the working version
 as the research proceeds; the label does not imply a completed release.
 
+**Demo:** [Open the Pages shell](https://ethical-tech-colab.github.io/frontier-half-life/).
+It includes an overview, P00–P12 paper-section guide, received-text timeline,
+and 13 presentation themes. GitHub Pages deployment succeeded on 2026-11-28;
+the published artifact matches the locally checked shell and excludes research
+captures/source documents. Public HTTP access is blocked in this session, so
+remote browser verification is not claimed.
+
 Start with [CONCEPT-IDEA.md](CONCEPT-IDEA.md), which records the working scope,
 decisions on the open questions (§9), and the research approach (§11).
 [INITIAL-RESEARCH.md](INITIAL-RESEARCH.md) preserves the supplied research draft;
@@ -39,6 +46,15 @@ Follow CONCEPT-IDEA → SPECIFICATION → PLAN + BACKLOG, with human approval be
 stages and before full implementation. Specification and plan/backlog approval
 are now recorded; the separate non-analytical shell authorization and those
 document verdicts do not authorize unreconciled claims or analytical release.
+
+## Maintaining the shell
+
+Serve `docs/` with a local static HTTP server. The checked-in site needs no build
+to serve; after changing its content or theme registry, run
+`node tools/render-shell.mjs`, then `node --test tests/demo-shell.test.mjs`.
+Pages uses the existing `main` root, whose forwarder opens `docs/`;
+`_config.yml` keeps research and source records out of the Pages artifact.
+See [shell notes](docs/SHELL-NOTES.md) for design provenance and scope.
 
 ## License
 

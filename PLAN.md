@@ -142,6 +142,8 @@ Publication follows a reviewed source PR merged to `main`, using the existing Pa
 
 Verify real HTTP availability, section navigation, assets and brand behavior before reporting the site live. Future reader/model releases require reviewed source changes and their own reproducibility checks. M0 presents non-analytical summaries, not a completed paper rendering or replay engine.
 
+**2026-11-28 deployment record:** PR #3 merged with explicit author authorization. GitHub Pages run `46100801021` succeeded, Pages reports `built`, and the downloaded artifact contains the exact locally checked root/shell/assets without research or source records. All 13 themes, section navigation and 375px layouts were exercised locally. Direct public HTTP/browser access is blocked by this environment, so remote browser verification remains unavailable rather than falsely claimed.
+
 Show working version **v0.4**, initial author **yorkerhodes3**, dataset cutoff, and review state on the paper/dashboard and exports. Subsequent changes advance the version deliberately; a later retrieval date is not silently a later evidence cutoff. Archive paper+dataset+model+manifest compatibility at each review. Do not overwrite the original supplied research record.
 
 ## 8. Quality and research-to-paper integration
