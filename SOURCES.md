@@ -319,6 +319,59 @@ Seven supplied `05-lit` text captures were analyzed in [research/LITERATURE-TRAN
 - **Limit:** Issuer research on its own prototype; primary only for those prototype results. Not independent, not Claude serving, and not evidence of Anthropic efficiency or cost.
 - **Feeds:** [L07](research/LITERATURE-TRANCHE-01.md#l07); [proposed rubrics](research/WORKLOAD-RUBRICS.md) metadata; no ledger claim.
 
+<a id="task-set-sources"></a>
+## Task-set sources for the proposed rubric selections (indexed search, 2026-11-28)
+
+These records support the [proposed rubric selections](research/WORKLOAD-RUBRICS.md#selections). They come from indexed web-search excerpts; direct retrieval still fails in this environment. None has been inspected in full. Confirm each against its origin before the selection is adopted.
+
+<a id="src-027"></a>
+## SRC-027 — OpenAI, "Why we no longer evaluate SWE-bench Verified"
+
+- **URL:** https://openai.com/index/why-we-no-longer-evaluate-swe-bench-verified/ (dated 2026-02-23 in the index)
+- **Access:** Indexed excerpt only.
+- **Observed:** OpenAI states that Verified is increasingly contaminated: all frontier models it tested reproduced gold patches or verbatim problem details for some tasks. It also states that an audit found flawed tests in many hard tasks, that it stopped reporting Verified scores, and that it recommends SWE-bench Pro.
+- **Limit:** Vendor statement. The contamination probe used LLM elicitation and judges.
+- **Feeds:** CL-052; rubric selections T12 and §0.2.
+
+<a id="src-028"></a>
+## SRC-028 — SWE-bench "Bash Only" configuration and public submissions
+
+- **URLs:** https://github.com/SWE-bench/swe-bench.github.io/blob/master/data/posts/250820-mini-roulette.md; https://github.com/swe-bench/experiments; settings as described by a third-party explainer, https://codepress.dev/benchmarks/swe-bench-verified
+- **Access:** Indexed excerpts only.
+- **Observed:** The Bash Only view runs every model in mini-SWE-agent with bash as the only tool. The explainer gives a 250-step limit, a $3.00 cost limit and a 60-second command timeout. Submissions publish per-instance predictions, results and trajectories.
+- **Limit:** The limits come from a third-party page; confirm them in the SWE-bench configuration.
+- **Feeds:** CL-054; rubric selections §0.2 and T5.
+
+<a id="src-029"></a>
+## SRC-029 — Scale AI, SWE-Bench Pro leaderboard and dataset card
+
+- **URLs:** https://labs.scale.com/leaderboard/swe_bench_pro (indexed 2026-11-28); https://huggingface.co/datasets/ScaleAI/SWE-bench_Pro; third-party explainer https://codepress.dev/benchmarks/swe-bench-pro
+- **Access:** Indexed excerpts only.
+- **Observed:**
+  - The public set has 731 instances drawn from copyleft-licensed repositories. Held-out and commercial sets are not published.
+  - The leaderboard runs most entries with a 250-turn limit and uncapped cost, and marks older 50-turn cost-capped runs separately.
+  - The explainer says asterisked rows use mini-SWE-agent, and that vendor model cards report scores under other harnesses, including one far above the board's top.
+- **Limit:** The dataset licence field was not found. The leaderboard's method page has not been inspected.
+- **Feeds:** CL-053; rubric selections §0.1 and §0.2.
+
+<a id="src-030"></a>
+## SRC-030 — Sierra, τ²-bench
+
+- **URLs:** https://github.com/sierra-research/tau2-bench; secondary summary https://aiwiki.ai/wiki/tau2-bench
+- **Access:** Indexed excerpts only.
+- **Observed:** Airline (50), retail (115) and telecom (114) tasks, scored on final database state and policy constraints, with pass^k reliability. The licence is MIT per the secondary summary. Leaderboard submissions report their user simulator; the submission guide recommends gpt-5.2.
+- **Limit:** The licence and task counts come partly from a secondary page, and the repository's newer multilingual packs use different task frames. Pin a version tag before use.
+- **Feeds:** Rubric selections §0.2 and T5.
+
+<a id="src-031"></a>
+## SRC-031 — Terminal-Bench 2.0
+
+- **URLs:** https://github.com/harbor-framework/terminal-bench-2; leaderboard https://www.tbench.ai
+- **Access:** Indexed excerpts only.
+- **Observed:** Apache-2.0 tasks and harness; 89 tasks in release 2.0; run through the Harbor framework; audited leaderboard.
+- **Limit:** Which leaderboard rows use the neutral Terminus 2 harness has not been confirmed.
+- **Feeds:** Rubric selections §0.2.
+
 ## Remaining source streams
 
 Provider/counterparty filings and contracts; official model/system cards, release notes and price histories; task-evaluation results; inference-runtime/hardware measurements; regional grid/utility planning, interconnection, emissions, water, permitting, and community submissions remain acquisition tasks, **not completed research**. The first pass above is an evidence-discovery seed.

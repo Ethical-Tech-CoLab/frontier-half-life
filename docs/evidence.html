@@ -71,7 +71,7 @@
   <main id="main" class="wrap" tabindex="-1" data-research-content>
     <header class="page-intro"><p class="eyebrow">The evidence room / located, not yet verified</p><h1>Located is not<br><span class="accent">verified.</span></h1>
       <p class="lead">Each company figure below is found in a supplied filing text, has a line locator, and is checked for internal consistency. None is verified yet. The author attested the filing copies authentic on 2026-11-28; the author's financial review of each claim is still pending.</p>
-      <p class="page-meta">v0.4 · Initial author yorkerhodes3 · Filing captures through 2026-11-25<br>39 ledger claims · 22/22 derived W1 checks pass · No source document is loaded into your browser.</p>
+      <p class="page-meta">v0.4 · Initial author yorkerhodes3 · Filing captures through 2026-11-25<br>42 ledger claims · 22/22 derived W1 checks pass · No source document is loaded into your browser.</p>
       <div class="actions"><a href="#claims" data-site-link class="button">Inspect the claims ↓</a><a href="#filing-timeline" data-site-link class="button secondary">Follow the filing lineage ↓</a></div>
     </header>
     <div class="review-strip" aria-label="Research and release status">
@@ -127,8 +127,8 @@
         <label>Search <input name="search" type="search" autocomplete="off" placeholder="e.g. Lambda, revenue, CL-020"></label>
         <button type="reset" class="button secondary">Reset filters</button>
       </form>
-      <p id="claim-count" class="caption" role="status" aria-live="polite">39 claims.</p>
-      <p id="claims-empty" class="planned-note" hidden>No claims match these filters. Reset the filters to see all 39 claims.</p>
+      <p id="claim-count" class="caption" role="status" aria-live="polite">42 claims.</p>
+      <p id="claims-empty" class="planned-note" hidden>No claims match these filters. Reset the filters to see all 42 claims.</p>
       <div class="claim-list">
         <article class="claim-card" id="cl-001" data-state="unknown" data-classification="reported" data-search="cl-001 revenue was approximately 4.6 billion in fy2025 and 33.2 billion in the first nine months of 2026. anthropic revenue fy2025; nine months 2026 w1 disposition: supported. exact values fy2025 4585 and nine months 2026 33242 usd million; quarterly and annual footings pass (chk-01 to chk-03). nine-month and full-year periods are not comparable as annual growth. primary issuer filing text located in the supplied capture; values consistent across applicable versions; capture authenticity attested by the author (yorkerhodes3, 2026-11-28; not network-verified); financial review by yorkerhodes3 pending.">
           <header><h3>CL-001</h3><p class="claim-labels"><span class="status-label">reported</span><span class="status-label">Verification: unknown</span><span class="status-label">Confidence: medium</span></p></header>
@@ -638,6 +638,45 @@
             <div><dt>Review</dt><dd>No human review recorded</dd></div>
           </dl>
           <p class="caption">Cited in: <a href="paper.html#p04" data-site-link>Return to P04</a> · <a href="paper.html#p12" data-site-link>Return to P12</a></p>
+        </article>
+        <article class="claim-card" id="cl-052" data-state="unknown" data-classification="reported" data-search="cl-052 openai states that swe-bench verified is increasingly contaminated because frontier models it tested could reproduce gold patches or verbatim problem details for some tasks; it stopped reporting verified scores and recommends swe-bench pro. software issue benchmark benchmark contamination statement 2026-02 vendor statement with a competitive interest; contamination probe relies on llm elicitation and judges. supports flagging verified matches; does not quantify contamination per model.">
+          <header><h3>CL-052</h3><p class="claim-labels"><span class="status-label">reported</span><span class="status-label">Verification: unknown</span><span class="status-label">Confidence: medium</span></p></header>
+          <p class="claim-text">OpenAI states that SWE-bench Verified is increasingly contaminated because frontier models it tested could reproduce gold patches or verbatim problem details for some tasks; it stopped reporting Verified scores and recommends SWE-bench Pro.</p>
+          <dl>
+            <div><dt>Entity · metric</dt><dd>software issue benchmark · benchmark contamination statement</dd></div>
+            <div><dt>Period · units</dt><dd>2026-02 · qualitative</dd></div>
+            <div><dt>Sources</dt><dd><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-027">SRC-027</a></dd></div>
+            <div><dt>Locator</dt><dd>Indexed excerpt; full article not inspected; research/WORKLOAD-RUBRICS.md#selections</dd></div>
+            <div><dt>Caveats</dt><dd>Vendor statement with a competitive interest; contamination probe relies on LLM elicitation and judges. Supports flagging Verified matches; does not quantify contamination per model.</dd></div>
+            <div><dt>Review</dt><dd>No human review recorded</dd></div>
+          </dl>
+          <p class="caption">Cited in: not yet cited in the manuscript</p>
+        </article>
+        <article class="claim-card" id="cl-053" data-state="unknown" data-classification="reported" data-search="cl-053 the swe-bench pro public set has 731 instances from copyleft repositories; the scale leaderboard runs most entries with a 250-turn limit and uncapped cost and marks 50-turn capped runs separately; vendor model cards report scores from other harnesses well above the leaderboard. software issue benchmark benchmark protocol and comparability as indexed 2026-11-28 indexed excerpts and a third-party explainer; leaderboard method page not inspected. illustrates why only one harness configuration may form a pair; not a performance finding.">
+          <header><h3>CL-053</h3><p class="claim-labels"><span class="status-label">reported</span><span class="status-label">Verification: unknown</span><span class="status-label">Confidence: low</span></p></header>
+          <p class="claim-text">The SWE-Bench Pro public set has 731 instances from copyleft repositories; the Scale leaderboard runs most entries with a 250-turn limit and uncapped cost and marks 50-turn capped runs separately; vendor model cards report scores from other harnesses well above the leaderboard.</p>
+          <dl>
+            <div><dt>Entity · metric</dt><dd>software issue benchmark · benchmark protocol and comparability</dd></div>
+            <div><dt>Period · units</dt><dd>as indexed 2026-11-28 · instances; turns</dd></div>
+            <div><dt>Sources</dt><dd><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-029">SRC-029</a></dd></div>
+            <div><dt>Locator</dt><dd>Indexed leaderboard and dataset-card excerpts; vendor-harness comparison from a third-party explainer; research/WORKLOAD-RUBRICS.md#selections-constraints</dd></div>
+            <div><dt>Caveats</dt><dd>Indexed excerpts and a third-party explainer; leaderboard method page not inspected. Illustrates why only one harness configuration may form a pair; not a performance finding.</dd></div>
+            <div><dt>Review</dt><dd>No human review recorded</dd></div>
+          </dl>
+          <p class="caption">Cited in: not yet cited in the manuscript</p>
+        </article>
+        <article class="claim-card" id="cl-054" data-state="unknown" data-classification="reported" data-search="cl-054 the swe-bench bash only view runs every model in mini-swe-agent with bash as the only tool and fixed step and cost limits (reported as 250 steps and 3.00 usd), and submissions publish per-instance results and trajectories. software issue benchmark harness-matched evaluation protocol as indexed 2026-11-28 step and cost limits taken from a third-party page; confirm in the swe-bench configuration before relying on the dollar-matched budget.">
+          <header><h3>CL-054</h3><p class="claim-labels"><span class="status-label">reported</span><span class="status-label">Verification: unknown</span><span class="status-label">Confidence: low</span></p></header>
+          <p class="claim-text">The SWE-bench Bash Only view runs every model in mini-SWE-agent with bash as the only tool and fixed step and cost limits (reported as 250 steps and 3.00 USD), and submissions publish per-instance results and trajectories.</p>
+          <dl>
+            <div><dt>Entity · metric</dt><dd>software issue benchmark · harness-matched evaluation protocol</dd></div>
+            <div><dt>Period · units</dt><dd>as indexed 2026-11-28 · steps; USD</dd></div>
+            <div><dt>Sources</dt><dd><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-028">SRC-028</a></dd></div>
+            <div><dt>Locator</dt><dd>Indexed repository and blog excerpts; limits from a third-party explainer; research/WORKLOAD-RUBRICS.md#selections-task-sets</dd></div>
+            <div><dt>Caveats</dt><dd>Step and cost limits taken from a third-party page; confirm in the SWE-bench configuration before relying on the dollar-matched budget.</dd></div>
+            <div><dt>Review</dt><dd>No human review recorded</dd></div>
+          </dl>
+          <p class="caption">Cited in: not yet cited in the manuscript</p>
         </article>
       </div>
       <p class="caption"><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/CLAIM-LEDGER.csv">Download the claim ledger (CSV) ↗</a> · <a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#access-and-evidence-policy">Source register and evidence policy ↗</a></p>

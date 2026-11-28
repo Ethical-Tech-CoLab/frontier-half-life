@@ -2,17 +2,100 @@
 
 | Field | Value |
 | --- | --- |
-| Rubric version | `0.4-draft` |
+| Rubric version | `0.4-draft`, with selections `0.4-sel.1` proposed in [§0](#selections) |
 | Project version | v0.4 |
 | Initial author | yorkerhodes3 |
 | Drafting support | AI assistance; human review required |
-| Status | **Proposed — not adopted.** Every threshold, budget and task-set choice below is a proposal for the reviewer decision in [SPECIFICATION §12 OQ-02](../SPECIFICATION.md#12-open-questions-carried-forward) |
+| Status | **Selections proposed for author review (2026-11-28) — not adopted.** At the author's request, [§0](#selections) chooses pragmatic task sets and thresholds with reasons. Until the author records a verdict, every value stays a proposal for [SPECIFICATION §12 OQ-02](../SPECIFICATION.md#12-open-questions-carried-forward) |
 | Date | 2026-11-28 |
 | Backlog / requirements | [T-005](../BACKLOG.md#now--independent-research-and-document-review); FR-03, FR-05; [SPECIFICATION §8](../SPECIFICATION.md#8-modeling-rules-and-edge-cases) |
 | Builds on | [R02 proposed rubrics](INDEPENDENT-EVIDENCE.md#r02), [R03 clocks](INDEPENDENT-EVIDENCE.md#r03), [literature tranche 01](LITERATURE-TRANCHE-01.md) |
-| Spend | No new paid experiments, model calls, dataset purchases or services are proposed or implied |
+| Spend | Phase 1 needs no spend. Phase 2 runs need a separate spend decision; [§0.4](#selections-phases) gives cost ceilings |
 
 These rubrics define how a later, reviewed release-pair dataset would decide success and equivalency for three workloads: coding, structured extraction and bounded agents. **[PROPOSED]** marks a value a reviewer must accept, change or reject before any comparison is evaluated. No task-set licence or version has been inspected, and no rubric has been run. Nothing here is a result. Published third-party results can enter a comparison only if they carry the comparability-critical metadata in [§1.7](#17-required-metadata); otherwise the pair is recorded as **not comparable**.
+
+<a id="selections"></a>
+## 0. Proposed selections for author review — `0.4-sel.1`
+
+On 2026-11-28 the author asked for pragmatic thresholds and task sets, with reasons, for review before work continues. This section makes those choices. **Nothing here is adopted until the author records a verdict.** On approval, these values replace the matching [PROPOSED] items in §1–§5, the rubric version becomes `0.4.0`, and the paper's P03/P04 text is updated. Task-set facts below come from indexed web-search results on 2026-11-28 ([SRC-027](../SOURCES.md#src-027)–[SRC-031](../SOURCES.md#src-031)). They are leads to confirm, not full-text inspections.
+
+<a id="selections-constraints"></a>
+### 0.1 Constraints that drove the choices
+
+1. **Zero incremental spend** for now (CONCEPT §9; SPECIFICATION §10). Phase 1 therefore uses only published results. Running models ourselves (Phase 2) needs a separate spend decision.
+2. **Published results compare only within one harness.** 42 of 61 evaluation citations omit the token budget (CL-042). On SWE-Bench Pro, vendor model cards report scores from their own harnesses that sit well above the leaderboard's, by up to about 18 points in one reported case (CL-053). A pair is matched only within one published harness configuration.
+3. **Contamination.** OpenAI stopped reporting SWE-bench Verified in February 2026 because frontier models could reproduce gold patches or problem details (CL-052). Prefer task sets built to resist this.
+4. **Statistical power.** A "match" must be distinguishable from task-sampling noise, so the margin depends on the number of tasks.
+5. **Licences.** Prefer permissive task-set and harness licences. Publish instance IDs and aggregate results, not task text.
+
+<a id="selections-task-sets"></a>
+### 0.2 Task sets
+
+| Workload | Selection | Role | Why | Main limitation | Licence (indexed; confirm before use) |
+| --- | --- | --- | --- | --- | --- |
+| Coding | **SWE-Bench Pro public set** (731 instances). Only leaderboard rows run in the board's standard configuration (250-turn limit, uncapped cost) count as one protocol; 50-turn capped rows and mini-SWE-agent rows are separate protocols; vendor model-card scores are "not comparable" | **Primary**: benchmark clock (Phase 1), workload clock (Phase 2) | Built from copyleft repositories to resist contamination, and recommended by OpenAI in place of Verified (CL-052). 731 tasks support a 3-point margin. The leaderboard publishes confidence intervals. Same benchmark family as the tranche's inference-budget study (L02) | Turn-matched, not dollar-matched. Per-instance results are not published, so comparisons are unpaired. Open-weight coverage among the standard rows must be checked | Dataset licence field not found; source repositories are copyleft (GPL family). Not confirmed |
+| Coding | **SWE-bench Verified, "Bash Only" view** (mini-SWE-agent, bash only, 250-step and $3.00 limits) | **Secondary**: history from 2024 | The only public series that runs every model in one minimal harness with a dollar cap (a true matched budget). Per-instance results are public in `swe-bench/experiments`, so paired tests are possible | Contaminated (CL-052). Every Verified match is labelled "contamination-flagged" and can never alone date a catch-up | MIT per the SWE-bench repository; the dataset card has no licence field |
+| Extraction | **Project-built filing-fact set `ffx-0.4`**, about 150 instances from the six author-attested filing captures (see the note below the table) | **Primary**: workload clock only (Phase 2) | No public extraction benchmark with harness-matched open and closed results was found. The filings are public records, dated October–November 2026, after most disclosed training cutoffs. The set tests exactly the extraction this project relies on, and costs nothing to build | Single domain. Gold values partly come from our own patterns, so the reviewer must check them, and null-gold distractors test hallucination. About 150 instances gives a 6-point margin. No benchmark clock, because no public results exist | Public SEC filings; locators and gold values are already published in `data/` |
+| Agents | **τ²-bench**, English text tasks: airline 50, retail 115, telecom 114 (pooled n = 279) | **Primary**: benchmark clock (same-simulator rows) and workload clock | Success is a final database-state check plus policy constraints, matching §4's rule that a prohibited action is a failure. Reliability (pass^k) is built in. MIT licence; widely reported | Leaderboard rows are self-submitted with different user simulators, so only rows sharing a simulator and harness version compare. The public benchmark clock may therefore be thin. The LLM user simulator adds variance and cost. Airline alone (50 tasks) is too small | MIT (secondary source); confirm in the repository |
+| Agents | **Terminal-Bench 2.0** (89 tasks), rows run with the benchmark's neutral Terminus 2 harness only | **Secondary** | Apache-2.0, audited leaderboard, and many models under one harness (to confirm on the leaderboard) | 89 tasks gives an 8-point margin; overlaps coding | Apache-2.0 |
+| — | Not selected: original SWE-bench (superseded and the most exposed), project sandbox goals (build cost; deferred), public extraction benchmarks (none suitable found) | — | — | — | — |
+
+**`ffx-0.4` composition.** The W1 extraction holds 198 located fact-by-version instances, but only 73 distinct passages, because unchanged passages repeat across versions. Counting repeats would inflate n, so each distinct passage counts once; a version change, such as $895.4B to $900.9B, counts as a separate instance. The proposed set is:
+
+- 73 distinct W1 passages, each with several fields: amount, unit, period, counterparty, term and condition;
+- about 40 null-gold distractors from the same filings that mention the same terms but do not state the field, including the S-1 blank placeholders;
+- about 40 exhibit records from the captured filing indices: exhibit number, title, agreement date and counterparty.
+
+The financial reviewer checks every gold value before the set is frozen.
+
+<a id="selections-thresholds"></a>
+### 0.3 Thresholds and rules
+
+| # | Item | Selection | Reasoning | Main alternative considered |
+| --- | --- | --- | --- | --- |
+| T1 | Equivalence margin δ | `δ = max(3, round(1.5 × 50/√n))` percentage points. n = 731 → 3; 500 → 3; 279 → 4; 150 → 6; 89 → 8. Below 80 tasks: report only, no match can be declared | `50/√n` is the largest standard error of one success rate on n tasks. With δ at 1.5 times that, a statistically confirmed match means the open model scored at least about level: with about 20% of tasks discordant, the one-sided bound needs a point difference of about zero or better at every n above. Unpaired comparisons, which use published intervals only, need the open model about 1–4 points ahead to confirm (1.3 at 731 tasks; 3.0 at 279), which is conservative. Smaller margins would make matches almost unconfirmable on small sets; larger ones would call clearly weaker models equivalent | A fixed 3 points for every set (unconfirmable below about 500 tasks) or a fixed 5 points (too lenient at 731) |
+| T2 | Match rule | **Primary: confirmed match.** The one-sided 95% lower bound of (open − frontier) is at least −δ. Paired by task where per-instance results exist; unpaired from published intervals otherwise. **Also reported: nominal match.** The point estimate is at least frontier − δ. Every lag gives both dates | The confirmed date is defensible against noise. The nominal date shows how much the conclusion depends on the rule. Fixing both now prevents choosing after seeing the data (§1.6) | Point estimate only: shorter, noisier lags |
+| T3 | Runs | Published results: single runs accepted, flagged "run variance unmeasured". Own runs: 3 per (model, task) at the primary budget. Reliability = share of tasks solved in all 3 runs (pass^3), reported for both models | Public sources rarely publish repeats. Three is the smallest count that reveals inconsistency, and it matches τ²-bench's pass^k | 5 runs: about 1.7× the cost |
+| T4 | Delivered output | One delivered output per task. pass@k never enters a clock. No hidden-test or oracle feedback. The optional coding retry policy is dropped for v0.4 | Matches leaderboard practice. Crediting any correct attempt overstates deployable success (L02) | Allow up to 3 trajectories with visible-failure retries |
+| T5 | Budgets (own runs) | **Coding:** $3.00 and 250 steps per instance as the primary budget, equal to the Bash Only cap, so own and public runs compare; plus one run each at $1.00 and $0.30 to reveal budget censoring. **Extraction:** at most 2 attempts (initial plus one schema-validator repair), ≤ $0.10 per passage, provider-default reasoning. **Agents:** τ²-bench harness defaults, gpt-5.2 user simulator (recommended in the benchmark's submission guide), ≤ $1.00 of agent spend per episode | Dollars compare across tokenizers; tokens do not (L04) | Token caps per model family |
+| T6 | Extraction success | Schema-valid and every required field correct under the §3 normalization rules. Workload threshold: document success non-inferior (δ by n); numeric and monetary micro-accuracy ≥ 0.98; hallucinated-field rate ≤ the frontier model's + 1 point | Financial extraction is used whole. 0.98 allows at most one wrong number in 50. The 1-point allowance stops a rare event from failing a model on noise | Field-level F1 as success, which credits partly wrong outputs |
+| T7 | Workload clock | Quality match only, with reliability also non-inferior. The cost ratio is reported but **not required**. (Change from the draft, which required cost ≤ 1.0×.) | Cost depends on serving configuration and price lists (CL-048), which are the commercial question. Requiring it here would make "capability caught up" depend on that day's prices | Keep cost ≤ 1.0× in the workload clock |
+| T8 | Commercial clock | The later of the workload match and availability, where availability means: <br>• a licence permitting commercial use; <br>• **at least 2 independent hosted providers** with public per-token prices; <br>• context at least the largest the frontier model used in own runs (128K tokens as a placeholder until runs exist); <br>• available in the United States. <br>Cost per successful task must be ≤ 1.0× the frontier model's at production endpoints when own runs exist; otherwise "cost not evaluated". Throughput is not required in v0.4; it is not publicly observable and is recorded as unknown | Two providers indicate a market rather than one self-hosted demonstration. The cohort's providers and the filings are US-centred | One provider, or self-hosting only |
+| T9 | Frontier references | Anthropic and OpenAI flagship releases with a qualifying score in the same harness configuration | Project scope (CONCEPT §9) | Add Google: broader, but outside scope |
+| T10 | Open candidates | Open-weight releases dated after the reference, with licence class recorded. Noncommercial licences count for the benchmark and workload clocks, not the commercial clock | FR-03; licence classes differ (CL-051) | — |
+| T11 | Pre-existing match and not comparable | Excluded from lag distributions, but counted and shown beside them. Sensitivity check: treat "not comparable" as censored | Keeps the main estimate clean while showing how much evidence was unusable | Drop them silently |
+| T12 | Contamination | Verified matches are flagged and never the sole basis. Record model training cutoffs where disclosed. No date filter in v0.4, because cutoffs are mostly undisclosed | CL-052 | Date-filter tasks after both models' cutoffs |
+| T13 | Cutoff and summary | Freeze the pair dataset at T = 2026-11-30. Summarize each clock with a Kaplan–Meier median lag, which handles right-censoring, and the share matched within 6 months | "Not observed by cutoff" is neither zero nor dropped (FR-03) | Mean lag over matched pairs only (biased short) |
+| T14 | Four-to-six-month decision rule | Per clock: **consistent** if the 95% interval of the Kaplan–Meier median overlaps 4–6 months; **refuted** if it lies entirely outside; otherwise **inconclusive**. With few frontier releases, expect "inconclusive" in v0.4 | Fixed before any data, as §1.6 requires | Point median only |
+
+<a id="selections-phases"></a>
+### 0.4 Phases and spend
+
+- **Phase 1 — no spend.** Can start on approval.
+  - Assemble benchmark-clock pairs from four public sources: SWE-Bench Pro standard rows, SWE-bench Verified Bash Only (history, flagged), τ²-bench same-simulator rows, and Terminal-Bench 2.0 Terminus 2 rows.
+  - Build the `ffx-0.4` gold set for the financial reviewer's check.
+- **Phase 2 — needs a spend decision.** Own runs for the workload and commercial clocks. These are ceilings from the budget caps, not estimates, and each pair needs two models:
+  - coding pilot on 150 stratified SWE-Bench Pro instances: up to $1,545 per model;
+  - extraction on about 150–200 instances: up to $60 per model;
+  - agents on 279 τ²-bench tasks: up to $837 per model, plus user-simulator cost.
+
+<a id="selections-changes"></a>
+### 0.5 Changes from `0.4-draft`
+
+- The cost criterion moves from the workload clock to the commercial clock (T7, T8).
+- The optional coding retry policy is dropped (T4).
+- δ is now size-dependent, with an 80-task floor (T1).
+- τ²-bench is added as the primary agent set; Terminal-Bench 2.0 becomes secondary.
+- The extraction set is defined; the search for a public extraction benchmark is closed for v0.4.
+
+<a id="selections-review"></a>
+### 0.6 Most consequential choices for review
+
+1. SWE-Bench Pro as the primary coding set, with Verified as flagged history only.
+2. The size-dependent margin δ (T1) with confirmed matches as primary (T2).
+3. Moving cost out of the workload clock (T7).
+4. The project-built extraction set, whose gold you review as financial reviewer.
+5. Phase 1 without spend; Phase 2 ceilings for a later decision.
 
 ## 1. Rules common to all workloads
 
@@ -151,7 +234,7 @@ Licence uncertainty blocks publication of the affected per-instance artifacts, n
 ## 2. Coding rubric
 
 - **Scope.** Repository issue resolution verified by predefined functional tests.
-- **Candidate task sets.** None is adopted; see [§5](#5-candidate-task-sets-licenceversion-not-inspected).
+- **Candidate task sets.** None is adopted yet; see the proposed selections in [§0.2](#selections-task-sets) and [§5](#candidate-task-sets).
 - **Success.** The delivered patch applies cleanly in the pinned harness container, and all designated fail-to-pass and pass-to-pass tests pass. [PROPOSED] Instances whose reference patch fails in the harness in any of 3 pre-runs are excluded from the task-set version beforehand, and the exclusions are published. No partial credit.
 - **Attempts.** One attempt is one agent trajectory up to the declared caps. [PROPOSED] The delivered policy is a single delivered patch per task. The agent may iterate inside its trajectory using visible tests and build output, but never the hidden evaluation tests. [PROPOSED] An optional retry policy allows up to 3 trajectories, retrying only on failures visible without hidden tests: patch does not apply, build fails, or a visible test fails. Every trajectory is an attempt.
 - **Budgets.** [PROPOSED] A mode A ladder of three total-token or dollar budgets spanning the lower and middle of the published range. The tranche reports "typical" SWE-Bench Pro budgets of ≈473K–16M tokens and little gain above ≈16M for frontier models under one scaffold (L02 L135, L147). The ladder values are for reviewers to set.
@@ -210,19 +293,25 @@ Licence uncertainty blocks publication of the affected per-instance artifacts, n
   - Timeouts that cap productive search (L02 L57).
   - Success on short bounded tasks does not transfer to longer autonomous workflows ([R02](INDEPENDENT-EVIDENCE.md#r02)).
 
-## 5. Candidate task sets (licence/version not inspected)
+<a id="candidate-task-sets"></a>
+## 5. Candidate task sets (licence/version from indexed search; full inspection pending)
 
-| Workload | Candidate | Where referenced | Version | Licence | Status |
+Statuses reflect the proposed selections in [§0.2](#selections-task-sets) and are not adopted until the author approves.
+
+| Workload | Candidate | Where referenced | Version / size | Licence (indexed 2026-11-28) | Proposed status |
 | --- | --- | --- | --- | --- | --- |
-| Coding | SWE-bench (original) | [SRC-010](../SOURCES.md#src-010) | Not inspected | Not inspected | **License/version not inspected — pending** |
-| Coding | SWE-bench Verified (500-sample subset) | [SRC-011](../SOURCES.md#src-011) | Not inspected | Not inspected | **License/version not inspected — pending** |
-| Coding | SWE-Bench Pro (public subset; L02 used the first 100 of 731 instances from one registry variant) | [SRC-021](../SOURCES.md#src-021), L02 L321 | Not inspected | Not inspected | **License/version not inspected — pending** |
-| Extraction | Project-built set from received public filing texts (e.g., cover-page, exhibit-index and dated contract fields) with double human annotation | [MANIFEST.csv](MANIFEST.csv) | To be defined | Reuse terms not checked | **Proposal — pending**; no annotation done |
-| Extraction | An existing public extraction benchmark | None identified in repository sources | — | — | **Not yet identified — pending** |
-| Bounded agents | Terminal-Bench 2.0 | [SRC-021](../SOURCES.md#src-021), L02 L105, L317 | Not inspected | Not inspected | **License/version not inspected — pending** |
-| Bounded agents | Project-defined sandbox goals | — | To be defined | Project-authored | **Proposal — pending** |
+| Coding | SWE-bench (original) | [SRC-010](../SOURCES.md#src-010) | Not inspected | MIT (repository) | Not selected: superseded and most exposed |
+| Coding | SWE-bench Verified, Bash Only view | [SRC-011](../SOURCES.md#src-011), [SRC-028](../SOURCES.md#src-028) | 500 instances; mini-SWE-agent, 250 steps, $3.00 | MIT per repository; dataset card has no licence field | **Secondary**, contamination-flagged history (CL-052, CL-054) |
+| Coding | SWE-Bench Pro public set | [SRC-021](../SOURCES.md#src-021), [SRC-029](../SOURCES.md#src-029) | 731 instances; leaderboard standard configuration 250 turns, uncapped cost | Dataset licence not found; copyleft source repositories | **Primary** (CL-053) |
+| Extraction | Project-built filing-fact set `ffx-0.4` | [W1](W1-FILING-RECONSTRUCTION.md), [MANIFEST.csv](MANIFEST.csv) | About 150 instances (see §0.2) | Public SEC filings | **Primary**; gold to be checked by the financial reviewer |
+| Extraction | An existing public extraction benchmark | None with harness-matched open and closed results found | — | — | Not selected for v0.4 |
+| Bounded agents | τ²-bench | [SRC-030](../SOURCES.md#src-030) | Airline 50, retail 115, telecom 114 | MIT (secondary source) | **Primary** |
+| Bounded agents | Terminal-Bench 2.0 | [SRC-021](../SOURCES.md#src-021), [SRC-031](../SOURCES.md#src-031), L02 L105, L317 | 89 tasks | Apache-2.0 | **Secondary** (Terminus 2 rows only) |
+| Bounded agents | Project-defined sandbox goals | — | To be defined | Project-authored | Deferred: build cost |
 
 ## 6. Decisions requested from reviewers (OQ-02)
+
+The proposed answers to items 1–6 are in [§0](#selections); item 6 is answered by the phase plan in [§0.4](#selections-phases).
 
 1. Accept, change or reject each [PROPOSED] value: δ, run counts, budget ladders, extraction accuracy floors, agent caps and the cost-ratio criterion.
 2. Choose task sets after licence and version inspection; until then every candidate stays pending.
@@ -234,3 +323,4 @@ Licence uncertainty blocks publication of the affected per-instance artifacts, n
 ## 7. Change log
 
 - `0.4-draft` (2026-11-28): first proposed version from R02 and literature tranche 01. Not reviewed or adopted.
+- `0.4-sel.1` (2026-11-28): pragmatic task-set and threshold selections, with reasons, proposed for the author's review ([§0](#selections)). Not adopted.
