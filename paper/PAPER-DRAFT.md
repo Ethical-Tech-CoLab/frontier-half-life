@@ -112,7 +112,7 @@ E1/E0 = (P1/P0)^(-e) × (s0/s1) × (I1/I0) × (p1/p0)
 
 If price and IT energy per attempt both decline by factor `g`, with `0<g<1` and success/PUE unchanged, `E1/E0=g^(1-e)`. Thus the threshold `e=1` is a conditional analytical result (CL-013), not a universal rule. Partial pass-through, quality changes, routing and changed facility intensity can move the boundary.
 
-**F04 — Rebound threshold (planned):** `rebound.html#elasticity-threshold`. Static caption: under the stated proportional conditions, energy falls for `e<1`, stays unchanged for `e=1`, and rises for `e>1`; changing other conditions requires recalculation. Return: `paper.html#p05`.
+**F04 — Rebound threshold (live, illustrative):** `rebound.html#elasticity-threshold`. The explorer computes the threshold `e*=ln(k)/ln(q)` and the energy ratio across elasticities with the shared `task-energy/0.4.0` engine; every input is a declared scenario value, not a measurement. Static caption: under the stated proportional conditions, energy falls for `e<1`, stays unchanged for `e=1`, and rises for `e>1`; changing other conditions requires recalculation. Return: `paper.html#p05`.
 
 **Research backing:** [R05](../research/INDEPENDENT-EVIDENCE.md#r05), [specification modeling rules](../SPECIFICATION.md#8-modeling-rules-and-edge-cases), W4/W7. No actual elasticity estimate is available.
 
@@ -129,7 +129,7 @@ The final prospectus states aggregate contractual obligations and commitments of
 
 Of the seven research candidates, only Lambda is named as a counterparty: about $41.3B of agreements into 2034, with fees only as capacity is delivered and accepted, of which an August 2026 agreement of about $34.9B is currently terminable by either party because Lambda did not secure a facility lease in time (CL-023). Nscale and Fluidstack are also named. The other six candidates are not named in these documents, which is not evidence that no relationship exists. This gives the provider chapter one evidenced, explicitly fragile edge, and shows why delivery and financing conditions matter more than headline totals ([W1 §5–6](../research/W1-FILING-RECONSTRUCTION.md#w1-commitments)).
 
-**F05 — Commitment exposure (planned):** `providers.html#commitment-exposure`. Static caption: separate fixed, variable, conditional and excluded commitments; show the evidenced Lambda edge with its termination status; retain unknown relationships and incompatible metrics. No summed exposure across instruments. Return: `paper.html#p06`.
+**F05 — Commitment exposure (live, located and unverified):** `providers.html#commitment-exposure`. The view shows the issuer's decomposition of the aggregate, the excluded variable estimate and the conditional amount as a characteristic rather than a component, the named arrangements with their instruments and revisions, and the seven research candidates with unknown fields left visible. Static caption: separate fixed, variable, conditional and excluded commitments; show the evidenced Lambda edge with its termination status; retain unknown relationships and incompatible metrics. No summed exposure across instruments. Return: `paper.html#p06`.
 
 **Research backing:** [W1 §5–6](../research/W1-FILING-RECONSTRUCTION.md#w1-commitments), W5; CL-012/CL-020–CL-023 located but unverified. Provider-side evidence is still to be acquired.
 
@@ -163,7 +163,7 @@ Before company calibration, the following checks expose the accounting logic (CL
 
 These examples are verified arithmetic, not research measurements. The actual three futures, calibration and versioned run manifests have not been implemented. Without sufficient data, the eventual tool must label its results indexed or assumed rather than imply empirical absolute company energy.
 
-**F07 — Scenario comparison (planned):** `rebound.html#scenario-comparison`. Static fallback: the table above and the declared equations; future “Explore this result” links must pin the exact model/data versions and inputs, not just a seed. Return: `paper.html#p08`.
+**F07 — Scenario comparison (live, illustrative):** `rebound.html#scenario-comparison`. Three uncalibrated indexed futures (efficient abundance, rebound acceleration, demand air pocket / open-model substitution) with editable inputs, field-level errors, sensitivity and exportable run manifests that replay inputs and results with the pinned model version. Static fallback: the table above and the declared equations. Return: `paper.html#p08`.
 
 **Research backing:** [R05](../research/INDEPENDENT-EVIDENCE.md#r05), W7; real scenario results pending.
 
@@ -176,7 +176,7 @@ The initial reverse tests investigate compute-cost pressure, committed-capacity 
 
 These are research triggers, not solvency, covenant, climate, or community acceptability certificates. Applying the compute-pressure trigger to the reported quarters shows why (CL-025): expense exceeded 60% of revenue in every 2025 quarter (251%, 177%, 148%, 144%) and in Q1-2026 (72%), so the four-quarter boundary was met during 2025, a period when revenue grew more than fivefold while committed capacity came online. Q2 and Q3 2026 were 48% and 58%. Crossing the boundary during a deliberate ramp is not a failure signal, and continuity across 2025–2026 depends on the composition change noted in P03 ([W1 §7](../research/W1-FILING-RECONSTRUCTION.md#w1-stress)). The capacity-use and regional-power tests remain unevaluated: the filings disclose no utilization or facility-level supply. A search finding no breach within its domain is not evidence of safety outside that domain; claiming a minimal shock requires publishing the search method and admissible assumptions.
 
-**F08 — Stress boundaries (planned):** `uncertainty.html#stress-boundaries`. Static fallback: the three definitions above; the compute-pressure history as a derived table with its comparability caveat; “insufficient evidence” for capacity use and regional power. No forward probability. Return: `paper.html#p09`.
+**F08 — Stress boundaries (live for compute pressure only):** `uncertainty.html#stress-boundaries`. The view evaluates the compute-pressure history with an adjustable illustrative threshold and shows capacity use, regional power and Monte Carlo as insufficient evidence or not yet run. Static fallback: the three definitions above; the compute-pressure history as a derived table with its comparability caveat; “insufficient evidence” for capacity use and regional power. No forward probability. Return: `paper.html#p09`.
 
 **Research backing:** [PLAN §3 W7](../PLAN.md#3-evidence-work-packages), [specification](../SPECIFICATION.md#8-modeling-rules-and-edge-cases), W5/W6/W7.
 
@@ -224,7 +224,7 @@ The following references are stable **discovery records**, not claims of complet
 | [Draft workload rubrics](../research/WORKLOAD-RUBRICS.md) | Proposed coding, extraction and bounded-agent rubrics (`0.4-draft`) | P03/P04; awaiting the OQ-02 reviewer decision |
 | [W1 reconstruction](../research/W1-FILING-RECONSTRUCTION.md), [extracted facts](../data/extracted/w1-filing-facts.csv), [derived checks](../data/derived/w1-reconciliation-checks.csv) | Reproducible filing extraction (`node tools/extract-filing-facts.mjs --check`) | P02/P03/P05/P06/P09; CL-001–CL-005, CL-011/CL-012, CL-020–CL-025 |
 
-**Reproducibility status:** No company-calibrated dataset, engine release, Monte Carlo trial set, scenario manifest, or deployed Pages interaction exists yet. Current algebra and synthetic inputs are fully shown in P05/P08 and [R05](../research/INDEPENDENT-EVIDENCE.md#r05). Later snapshots must pin paper, source/data/model versions and manifests; a live update must not silently change a reviewed result.
+**Reproducibility status:** The indexed rebound lab (F04/F07) uses the shared deterministic engine `task-energy/0.4.0`, defined in [DATA-DICTIONARY.md](../DATA-DICTIONARY.md), and exports run manifests (`frontier-half-life/run-manifest` 1.0.0) that replay its illustrative scenarios. No company-calibrated dataset or Monte Carlo trial set exists. Current algebra and synthetic inputs are fully shown in P05/P08 and [R05](../research/INDEPENDENT-EVIDENCE.md#r05). Later snapshots must pin paper, source/data/model versions and manifests; a live update must not silently change a reviewed result.
 
 **v0.4, 2026-11-27:** Initial coordinated manuscript, independent literature synthesis, source-access triage, and synthetic identities. Primary filings are being gathered by the author; remediation is planned, not completed. The initial author is **yorkerhodes3**. Repository original work is MIT licensed; third-party materials retain their respective terms.
 

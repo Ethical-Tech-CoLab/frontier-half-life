@@ -5,6 +5,7 @@ exclude:
   - SPECIFICATION.md
   - PLAN.md
   - BACKLOG.md
+  - DATA-DICTIONARY.md
   - SOURCES.md
   - CLAIM-LEDGER.csv
   - LICENSE

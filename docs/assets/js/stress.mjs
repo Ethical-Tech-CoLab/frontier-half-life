@@ -43,8 +43,8 @@ export function initializeStress({ document }) {
   const input = form.elements.threshold;
   const error = document.querySelector('#threshold-error');
   const status = document.querySelector('#pressure-status');
-  const marker = document.querySelector('#threshold-marker');
-  const scaleMax = Number(marker?.dataset.scaleMax || 260);
+  const table = document.querySelector('#pressure-table');
+  const scaleMax = Number(table?.dataset.scaleMax || 260);
 
   function apply() {
     const parsed = parseThreshold(input.value);
@@ -66,7 +66,7 @@ export function initializeStress({ document }) {
       row.querySelector('[data-cell="run"]').textContent = String(evaluated.run);
       row.querySelector('[data-cell="met"]').textContent = evaluated.met ? 'Met' : '—';
     });
-    if (marker) marker.style.left = `${Math.min(100, (parsed.value / scaleMax) * 100)}%`;
+    if (table) table.style.setProperty('--threshold-pos', `${Math.min(100, (parsed.value / scaleMax) * 100).toFixed(2)}%`);
     document.querySelector('#threshold-label').textContent = `${parsed.value}%`;
     status.textContent = summary(result);
     return result;

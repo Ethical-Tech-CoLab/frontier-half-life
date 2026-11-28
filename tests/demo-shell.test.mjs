@@ -11,9 +11,12 @@ import { SECTIONS, FILINGS } from '../docs/assets/js/research.mjs';
 import { resolveBrand, withBrand, readPreference, savePreference, initializeTheme, STORAGE_KEY } from '../docs/assets/js/site.mjs';
 import { renderShell } from '../tools/render-shell.mjs';
 import { initializeNavigation } from '../docs/assets/js/navigation.mjs';
+import { MODEL_VERSION } from '../docs/assets/js/model/task-energy.mjs';
+import { SCENARIOS } from '../docs/assets/js/model/scenarios.mjs';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
-const pages = ['index.html', 'paper.html', 'evidence.html'];
+const pages = ['index.html', 'paper.html', 'evidence.html', 'rebound.html'];
+const LAB_STATUS = 'Illustrative indexed scenario — not calibrated, not a forecast';
 const read = (path) => readFile(resolve(root, path), 'utf8');
 const decode = (value) => value.replaceAll('&amp;', '&').replaceAll('&#39;', "'").replaceAll('&quot;', '"');
 const ids = (html) => [...html.matchAll(/\bid="([^"]+)"/g)].map((match) => match[1]);
@@ -35,7 +38,7 @@ test('existing Pages root preserves presentation state and excludes source captu
   assert.equal(target, 'docs/index.html?brand=anthropic#roadmap');
   assert.match(entry, /href="docs\/index.html"/);
   const config = await read('_config.yml');
-  for (const excluded of ['research', 'paper', 'tools', 'tests', 'CLAIM-LEDGER.csv', 'docs/SHELL-NOTES.md', 'docs/assets/fonts/LICENSES.md']) {
+  for (const excluded of ['research', 'paper', 'tools', 'tests', 'CLAIM-LEDGER.csv', 'DATA-DICTIONARY.md', 'docs/SHELL-NOTES.md', 'docs/assets/fonts/LICENSES.md']) {
     assert.ok(config.split('\n').includes(`  - ${excluded}`), `${excluded} must not be published by Jekyll`);
   }
 });
@@ -252,10 +255,13 @@ test('each static page is no-JS readable, has labeled navigation/status/skip foc
     assert.match(html, /id="theme-control"[^>]+hidden/);
     assert.equal((html.match(/aria-current="page"/g) || []).length, 1);
     for (const status of ['Passages located · unverified', 'Financial review pending', 'Review draft · no calibrated results']) assert.ok(html.includes(status), `${page}: ${status}`);
+    assert.doesNotMatch(html, /Demo shell only|no analytical results/);
     assert.ok(html.includes(SITE.author) && html.includes(SITE.version));
+    assert.match(html, /<a href="rebound.html" data-site-link[^>]*>Rebound lab<\/a>/);
     assert.doesNotMatch(html, /<(?:script|iframe|img)[^>]+src="https?:/);
     assert.doesNotMatch(html, / disabled|<iframe/);
-    for (const form of html.match(/<form[^>]*>/g) || []) assert.match(form, /\bhidden\b|data-live-form/, `${page}: forms start hidden until their script runs`);
+    // Lab scenario forms sit inside a hidden data-rebound-interactive container (checked in the lab test).
+    for (const form of html.match(/<form[^>]*>/g) || []) if (!/data-scenario-form/.test(form)) assert.match(form, /\bhidden\b/, `${page}: forms start hidden until their script runs`);
     assert.match(html, /<noscript>.*All research-guide content and source links remain readable/);
     assert.equal(new Set(ids(html)).size, ids(html).length, `${page}: duplicate IDs`);
   }
@@ -344,7 +350,8 @@ test('all site links, assets, source files, and explicit or GitHub-heading secti
           assert.ok([...explicit, ...headingIDs].includes(fragment), `${page}: ${path}#${fragment}`);
         }
       } else if (!href.startsWith('https://')) {
-        const [path, fragment] = href.split('#');
+        const [target, fragment] = href.split('#');
+        const path = target.split('?')[0];
         const local = path ? resolve(root, 'docs', dirname(page), path) : resolve(root, 'docs', page);
         await access(local);
         if (fragment) assert.ok(ids(await readFile(local, 'utf8')).includes(fragment), `${page}: ${href}`);
@@ -367,5 +374,71 @@ test('P00–P12 link directly to manuscript anchors, and timeline captures link 
     assert.ok(evidence.includes(`datetime="${filing.date}"`));
   }
   assert.match(evidence, /Return to P02/);
-  assert.doesNotMatch(await read('docs/assets/js/site.mjs'), /\bfetch\(|XMLHttpRequest|innerHTML|eval\(/);
+  for (const module of ['site.mjs', 'rebound.mjs', 'rebound-view.mjs', 'model/task-energy.mjs', 'model/scenarios.mjs', 'model/manifest.mjs']) {
+    assert.doesNotMatch(await read(`docs/assets/js/${module}`), /\bfetch\(|XMLHttpRequest|innerHTML|outerHTML|insertAdjacentHTML|eval\(|new Function|Math\.random/, module);
+  }
+});
+
+test('P05 and P08 open live, labeled F04/F07 lab targets that return to their invoking sections', async () => {
+  const paper = await read('docs/paper.html');
+  for (const [section, target, figure] of [
+    ['p05', 'rebound.html#elasticity-threshold', 'F04'],
+    ['p08', 'rebound.html#scenario-comparison', 'F07'],
+  ]) {
+    const block = paper.match(new RegExp(`<section class="paper-section" id="${section}"[\\s\\S]*?</section>`))[0];
+    assert.ok(block.includes(`href="${target}" data-site-link`), `${section} links to ${target}`);
+    assert.ok(block.includes(`Explore ${figure} →`));
+    assert.match(block, /Live view · not calibrated/);
+    assert.match(block, /live, illustrative/);
+  }
+  const lab = await read('docs/rebound.html');
+  for (const anchor of ['elasticity-threshold', 'scenario-comparison', 'method']) assert.ok(ids(lab).includes(anchor), anchor);
+  for (const back of ['paper.html#p05', 'paper.html#p08']) assert.match(lab, new RegExp(`href="${back}" data-site-link`));
+  assert.match(lab, /aria-current="page">Rebound lab</);
+  assert.match(lab, /<script type="module" src="assets\/js\/rebound.mjs"><\/script>/);
+  for (const figure of ['F04 · Elasticity threshold.', 'F07 · Scenario comparison.']) assert.ok(lab.includes(figure));
+  assert.ok((lab.match(new RegExp(LAB_STATUS, 'g')) || []).length >= 4, 'status label is written in text, not color only');
+  assert.ok(lab.includes(`Model ${MODEL_VERSION}`));
+  for (const doc of ['DATA-DICTIONARY.md', 'SPECIFICATION.md#8-modeling-rules-and-edge-cases', 'research/INDEPENDENT-EVIDENCE.md#r05']) {
+    assert.ok(lab.includes(`${SITE.documentBase}${doc}`), doc);
+  }
+  assert.match(lab, /T-014/);
+  assert.match(lab, /T-005/);
+  assert.match(lab, /<noscript><p class="planned-note">JavaScript is off: inputs, live results, and manifest export\/import are unavailable/);
+  const overview = await read('docs/index.html');
+  assert.match(overview, /Indexed rebound lab live · other views planned/);
+  assert.match(overview, /<a href="rebound.html" data-site-link>Open the rebound lab →<\/a>/);
+});
+
+test('the rebound lab is readable without JavaScript and every control is labeled and progressively revealed', async () => {
+  const lab = await read('docs/rebound.html');
+  const staticParts = lab.split('<div class="static-reference">').slice(1).join('');
+  for (const kWh of ['<td class="num">2.4</td><td class="num">2.4</td>', '<td class="num">4.8</td><td class="num">4.8</td>']) {
+    assert.ok(staticParts.includes(kWh), `static §8 fixture ${kWh}`);
+  }
+  for (const scenario of SCENARIOS) {
+    assert.ok(staticParts.includes(scenario.title));
+    assert.ok(staticParts.includes(`<td>scenario</td><td>${scenario.evidence_status}</td>`));
+  }
+  assert.match(staticParts, /<td class="num">0\.500<\/td><td class="num">−50\.0%<\/td><td class="num">0\.500<\/td>/);
+  assert.match(lab, /<path id="f04-curve" class="chart-curve" d="M[\d.]+ [\d.]+ L/);
+  assert.match(lab, /<svg id="f04-chart"[^>]+role="img" aria-labelledby="f04-chart-title f04-chart-desc"/);
+  const interactive = [...lab.matchAll(/<(form|div) [^>]*data-rebound-interactive hidden[^>]*>/g)];
+  assert.equal(interactive.length, 2, 'F04 controls and the F07 live area start hidden');
+  const f04 = lab.slice(lab.indexOf('<form id="f04-form"'), lab.indexOf('</form>', lab.indexOf('<form id="f04-form"')));
+  const f07 = lab.slice(lab.indexOf('<div class="lab-live" data-rebound-interactive hidden>'), lab.lastIndexOf('<div class="static-reference">'));
+  const inputs = [...lab.matchAll(/<input id="([^"]+)"([^>]*)>/g)];
+  assert.equal(inputs.length, (f04.match(/<input /g) || []).length + (f07.match(/<input /g) || []).length, 'all inputs sit in hidden interactive regions');
+  for (const [, id, attributes] of inputs) {
+    assert.ok(lab.includes(`<label for="${id}">`), `${id} has a label`);
+    if (!attributes.includes('type="file"')) {
+      assert.match(attributes, new RegExp(`aria-describedby="${id}-hint ${id}-error"`));
+      assert.ok(ids(lab).includes(`${id}-error`));
+    }
+  }
+  assert.match(lab, /<input id="manifest-import" type="file" accept="application\/json,\.json"/);
+  assert.match(lab, /id="manifest-errors" class="error-list" role="alert"/);
+  for (const live of ['f04-summary', 'efficient-abundance-summary', 'manifest-status']) {
+    assert.match(lab, new RegExp(`id="${live}"[^>]+role="status" aria-live="polite"`));
+  }
 });
