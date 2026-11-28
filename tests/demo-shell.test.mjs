@@ -10,6 +10,7 @@ import { SITE } from '../docs/assets/js/config.mjs';
 import { SECTIONS, FILINGS } from '../docs/assets/js/research.mjs';
 import { resolveBrand, withBrand, readPreference, savePreference, initializeTheme, STORAGE_KEY } from '../docs/assets/js/site.mjs';
 import { renderShell } from '../tools/render-shell.mjs';
+import { initializeNavigation } from '../docs/assets/js/navigation.mjs';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const pages = ['index.html', 'paper.html', 'evidence.html'];
@@ -34,7 +35,7 @@ test('existing Pages root preserves presentation state and excludes source captu
   assert.equal(target, 'docs/index.html?brand=anthropic#roadmap');
   assert.match(entry, /href="docs\/index.html"/);
   const config = await read('_config.yml');
-  for (const excluded of ['research', 'paper', 'tools', 'tests', 'CLAIM-LEDGER.csv', 'docs/SHELL-NOTES.md']) {
+  for (const excluded of ['research', 'paper', 'tools', 'tests', 'CLAIM-LEDGER.csv', 'docs/SHELL-NOTES.md', 'docs/assets/fonts/LICENSES.md']) {
     assert.ok(config.split('\n').includes(`  - ${excluded}`), `${excluded} must not be published by Jekyll`);
   }
 });
@@ -46,11 +47,37 @@ test('all 13 presets carry approximation, provenance, font deviations, and the s
     assert.match(theme.affiliation, /No affiliation or endorsement/);
     assert.ok(theme.sources.length > 0 && theme.sources.every((url) => url.startsWith('https://')));
     assert.ok(theme.confidence && theme.deviation && theme.licensing);
-    assert.match(tokensFor(theme)['--font-body'], /system-ui|Georgia/);
+    assert.match(tokensFor(theme)['--font-body'], /system-ui|Georgia|Space Mono/);
   }
   assert.equal(THEMES.voltagepark.sourceId, 'voltage-park');
   assert.match(THEMES.anthropic.sources[0], /github.com\/anthropics\/skills/);
   assert.match(THEMES.nscale.confidence, /unverified/);
+});
+
+test('CoLab loads the actual display/body fonts and preserves reference heading treatment', async () => {
+  const fontCSS = await read('docs/assets/fonts/fonts.css');
+  for (const id of ['colab', 'colab-daylight']) {
+    const tokens = tokensFor(THEMES[id]);
+    assert.match(tokens['--font-display'], /^"Bebas Neue"/);
+    assert.match(tokens['--font-body'], /^"Space Mono"/);
+    assert.equal(tokens['--font-mono'], tokens['--font-body']);
+    assert.equal(tokens['--display-weight'], '400');
+    assert.equal(tokens['--display-case'], 'uppercase');
+    assert.equal(tokens['--display-tracking'], '0.02em');
+  }
+  assert.match(fontCSS, /font-family: "Bebas Neue"/);
+  assert.match(fontCSS, /font-family: "Space Mono"/);
+  for (const [, filename] of fontCSS.matchAll(/url\("([^"]+)"\)/g)) {
+    const data = await readFile(resolve(root, 'docs/assets/fonts', filename));
+    assert.equal(data.subarray(0, 4).toString(), 'wOF2', `${filename} must be a real WOFF2 font`);
+  }
+  for (const filename of ['Bebas-Neue-OFL.txt', 'Space-Mono-OFL.txt']) {
+    assert.match(await read(`docs/assets/fonts/${filename}`), /SIL OPEN FONT LICENSE Version 1.1/);
+  }
+  const css = await read('docs/assets/site.css');
+  assert.match(css, /font-weight: var\(--display-weight\)/);
+  assert.match(css, /letter-spacing: var\(--display-tracking\)/);
+  assert.doesNotMatch(fontCSS, /url\(["']?https?:/);
 });
 
 test('actual shipped CSS text, accent buttons, control edges, and focus pass contrast on every used surface', async () => {
@@ -118,13 +145,19 @@ function browserFixture(href, { storageBlocked = false, writeBlocked = false, hi
     href,
     getAttribute() { return this.href; },
   }));
-  const nodes = Object.fromEntries(['theme-select', 'theme-message', 'theme-name', 'theme-description',
+  const nodes = Object.fromEntries(['theme-trigger', 'theme-short', 'theme-message', 'theme-name', 'theme-description',
     'theme-confidence', 'theme-deviation', 'theme-license', 'theme-sources', 'theme-control']
     .map((id) => [id, {
       textContent: '', hidden: true, children: [],
+      focus() { this.focused = true; },
       replaceChildren(...children) { this.children = children; },
       addEventListener(event, callback) { events.set(event, callback); },
     }]));
+  const options = Object.keys(THEMES).map((id) => ({
+    dataset: { themeOption: id }, attributes: {}, events: {},
+    setAttribute(key, value) { this.attributes[key] = value; },
+    addEventListener(event, callback) { this.events[event] = callback; },
+  }));
   const state = Object.freeze({ readerSection: 'p08', seed: 42, evidenceVersion: 'pending' });
   const document = {
     documentElement: { dataset: {} },
@@ -134,6 +167,7 @@ function browserFixture(href, { storageBlocked = false, writeBlocked = false, hi
       return nodes[selector.slice(1)];
     },
     querySelectorAll(selector) {
+      if (selector === '[data-theme-option]') return options;
       assert.equal(selector, 'a[data-site-link]');
       return links;
     },
@@ -162,7 +196,7 @@ function browserFixture(href, { storageBlocked = false, writeBlocked = false, hi
     },
     listen: (event, callback) => events.set(event, callback),
   };
-  return { environment, nodes, storage, links, events, get url() { return url; } };
+  return { environment, nodes, options, storage, links, events, get url() { return url; } };
 }
 
 test('every theme switch changes presentation only and preserves research, URL, and history state', () => {
@@ -173,8 +207,8 @@ test('every theme switch changes presentation only and preserves research, URL, 
   assert.match(fixture.nodes['theme-message'].textContent, /Unknown theme/);
   assert.equal(fixture.nodes['theme-control'].hidden, false);
   for (const id of Object.keys(THEMES)) {
-    fixture.nodes['theme-select'].value = id;
-    fixture.events.get('change')();
+    fixture.nodes['theme-control'].open = true;
+    fixture.options.find((option) => option.dataset.themeOption === id).events.click();
     assert.equal(controller.brand, id);
     assert.equal(fixture.environment.document.documentElement.dataset.brand, id);
     assert.equal(fixture.storage.get(STORAGE_KEY), id);
@@ -183,6 +217,10 @@ test('every theme switch changes presentation only and preserves research, URL, 
     assert.equal(fixture.url.hash, '#p08');
     assert.equal(JSON.stringify({ SECTIONS, FILINGS, state: fixture.environment.history.state }), researchBefore);
     for (const link of fixture.links) assert.equal(new URL(link.href).searchParams.get('brand'), id);
+    assert.equal(fixture.options.filter((option) => option.attributes['aria-pressed'] === 'true').length, 1);
+    assert.equal(fixture.options.find((option) => option.dataset.themeOption === id).attributes['aria-pressed'], 'true');
+    assert.equal(fixture.nodes['theme-control'].open, false);
+    assert.equal(fixture.nodes['theme-trigger'].focused, true);
   }
   assert.equal(new URL(fixture.links[0].href).hash, '#p08');
   assert.equal(new URL(fixture.links[0].href).searchParams.get('scenario'), 'air-pocket');
@@ -194,8 +232,7 @@ test('the rendered status region reports storage and history failures while the 
   for (const options of [{ storageBlocked: true }, { writeBlocked: true }, { historyBlocked: true }]) {
     const fixture = browserFixture('https://example.test/index.html?brand=anthropic', options);
     initializeTheme(fixture.environment);
-    fixture.nodes['theme-select'].value = 'nebius';
-    fixture.events.get('change')();
+    fixture.options.find((option) => option.dataset.themeOption === 'nebius').events.click();
     assert.equal(fixture.environment.document.documentElement.dataset.brand, 'nebius');
     assert.match(fixture.nodes['theme-message'].textContent, /unavailable|could not be saved|address bar could not be updated/);
   }
@@ -208,13 +245,16 @@ test('each static page is no-JS readable, has labeled navigation/status/skip foc
     assert.match(html, /class="skip-link" href="#main" data-site-link/);
     assert.match(html, /id="main"[^>]+tabindex="-1"[^>]+data-research-content/);
     assert.match(html, /id="theme-message"[^>]+role="status"[^>]+aria-live="polite"/);
-    assert.match(html, /<label for="theme-select">/);
+    assert.match(html, /id="theme-trigger"[^>]+aria-label="Choose presentation theme"/);
+    assert.match(html, /role="group" aria-label="Presentation themes"/);
+    assert.equal((html.match(/data-theme-option="/g) || []).length, 13);
+    assert.match(html, /id="nav-toggle"[^>]+aria-controls="primary-nav"[^>]+aria-expanded="false" hidden/);
     assert.match(html, /id="theme-control"[^>]+hidden/);
     assert.equal((html.match(/aria-current="page"/g) || []).length, 1);
     for (const status of ['Text captures received', 'Claim reconciliation pending', 'Demo shell only']) assert.ok(html.includes(status));
     assert.ok(html.includes(SITE.author) && html.includes(SITE.version));
     assert.doesNotMatch(html, /<(?:script|iframe|img)[^>]+src="https?:/);
-    assert.doesNotMatch(html, /<button| disabled|<input|<iframe/);
+    assert.doesNotMatch(html, / disabled|<input|<iframe/);
     assert.match(html, /<noscript>.*All research-guide content and source links remain readable/);
     assert.equal(new Set(ids(html)).size, ids(html).length, `${page}: duplicate IDs`);
   }
@@ -224,6 +264,62 @@ test('each static page is no-JS readable, has labeled navigation/status/skip foc
   assert.doesNotMatch(css, /@import|@font-face|url\(["']?https?:/);
   assert.ok((await read('docs/assets/licenses/neocloud-supply-os-APACHE-2.0.txt')).includes('Apache License'));
   await access(resolve(root, 'docs/.nojekyll'));
+});
+
+test('mobile navigation collapses accessibly and closes on Escape, links, outside clicks and breakpoint changes', () => {
+  const handlers = new Map();
+  const node = (name) => ({
+    name, hidden: false, dataset: {}, attributes: {},
+    addEventListener(event, callback) { handlers.set(`${name}:${event}`, callback); },
+    setAttribute(key, value) { this.attributes[key] = value; },
+    contains(target) { return target?.parent === this || target === this; },
+    focus() { document.activeElement = this; },
+  });
+  const header = node('header'), nav = node('nav'), toggle = node('toggle');
+  const picker = node('picker'), trigger = node('trigger');
+  const document = {
+    activeElement: null,
+    querySelector(selector) { return {
+      '#masthead': header, '#primary-nav': nav, '#nav-toggle': toggle,
+      '#theme-control': picker, '#theme-trigger': trigger,
+    }[selector]; },
+    addEventListener(event, callback) { handlers.set(`document:${event}`, callback); },
+  };
+  const media = { matches: true, addEventListener(event, callback) { handlers.set(`media:${event}`, callback); } };
+  initializeNavigation({ document, matchMedia: () => media });
+  assert.equal(nav.hidden, true);
+  assert.equal(toggle.hidden, false);
+  handlers.get('toggle:click')();
+  assert.equal(nav.hidden, false);
+  assert.equal(toggle.attributes['aria-expanded'], 'true');
+  handlers.get('document:keydown')({ key: 'Escape' });
+  assert.equal(nav.hidden, true);
+  assert.equal(document.activeElement, toggle);
+  handlers.get('toggle:click')();
+  handlers.get('nav:click')({ target: { closest: () => ({}) } });
+  assert.equal(nav.hidden, true);
+  handlers.get('toggle:click')();
+  handlers.get('document:pointerdown')({ target: {} });
+  assert.equal(nav.hidden, true);
+  picker.open = true;
+  handlers.get('document:keydown')({ key: 'Escape' });
+  assert.equal(picker.open, false);
+  assert.equal(document.activeElement, trigger);
+  media.matches = false;
+  handlers.get('media:change')();
+  assert.equal(nav.hidden, false);
+  assert.equal(toggle.hidden, true);
+  document.activeElement = { parent: nav };
+  media.matches = true;
+  handlers.get('media:change')();
+  assert.equal(nav.hidden, true);
+  assert.equal(document.activeElement, toggle);
+  handlers.get('toggle:click')();
+  picker.open = true;
+  handlers.get('picker:toggle')();
+  assert.equal(nav.hidden, true);
+  handlers.get('header:focusout')({ relatedTarget: {} });
+  assert.equal(picker.open, false);
 });
 
 test('all site links, assets, source files, and explicit or GitHub-heading section anchors resolve', async () => {
