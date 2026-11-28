@@ -1,35 +1,44 @@
-# v0.4 demo shell
+# v0.4 site: reader, evidence room and shell
 
-Initial author: **yorkerhodes3**. This static, no-build-step site began as a narrow,
-author-requested non-analytical shell. Its scope now also includes one **indexed
-rebound lab** (T-023/T-025): illustrative, uncalibrated scenarios computed in the
-browser by the shared task-energy model. Text captures are received; claim
-reconciliation, model calibration and analytical publication remain gated.
-The author approved the specification and plan/backlog on 2026-11-28; these
-document verdicts do not verify research claims. No source documents, excerpts,
-financial values, company or provider figures, or calibrated results are fetched or
-embedded.
+Initial author: **yorkerhodes3**. This static, no-build-step site publishes the
+**review draft** of the paper and an evidence room. Filing passages are located
+and internally checked (W1), but no claim is verified; model calibration and
+analytical release remain gated. The author approved the specification and
+plan/backlog on 2026-11-28; these document verdicts do not verify research
+claims. Nothing is fetched at runtime: the reader and evidence room are
+generated at build time from the manuscript, claim ledger, figure registry and
+W1 extraction, and only short filing excerpts with locators are published.
+The site also includes one **indexed rebound lab** (T-023/T-025): illustrative,
+uncalibrated scenarios computed in the browser by the shared task-energy model.
 
 ## Content and review links
 
 - `index.html`: human question, scope, evidence/paper/dashboard roadmap, review gates.
-- `paper.html#p00`–`#p12`: stable orientation anchors, **not** a second manuscript.
-  Each links directly to its GitHub manuscript section and source/method/plan.
-- `evidence.html#filing-timeline`: named capture chronology, not an authenticated
-  filing series. Dates reflect supplied filenames. `#review-records` links to
-  intake, manifest, source, and claim records.
+- `paper.html`: the **live research reader**, rendered from
+  `paper/PAPER-DRAFT.md` by `tools/render-reader.mjs` and `tools/markdown.mjs`
+  (escaped Markdown subset; no hand-maintained copy). Sections keep the stable
+  `#p00`–`#p12` anchors. Claim IDs link to `evidence.html#cl-NNN`; figure panels
+  come from `paper/figures.json` and say “Live view · not calibrated” or
+  “Planned · not available”. Planned routes are never rendered as links.
+- `evidence.html#filing-timeline` (F01): filing chronology plus a per-version
+  lineage table generated from `data/extracted/w1-filing-facts.csv`, with GitHub
+  `?plain=1#L<n>` line locators. `#claims`: every ledger claim with
+  classification, verification state, confidence, locator, caveats and
+  “Return to Pnn” links to each citing section; filters are progressive
+  enhancement (`assets/js/evidence.mjs`) and all claims stay visible without
+  JavaScript. `#review-records` links to the W1, intake, manifest and source records.
 - `rebound.html#elasticity-threshold` (F04, return to P05) and
   `#scenario-comparison` (F07, return to P08): the indexed rebound lab. Every
   value is a declared scenario assumption for an abstract **illustrative indexed
   workload**, labeled "Illustrative indexed scenario — not calibrated, not a
-  forecast" in text. No company calibration exists (filing reconciliation T-014
-  is incomplete) and workload rubrics (T-005) are unreviewed. Field errors
+  forecast" in text. No company calibration exists (filing claims are located
+  but unverified) and workload rubrics (T-005) are unreviewed. Field errors
   withhold affected results and label the previous output stale. Run manifests
   (JSON, at most 1 MiB) export and replay all three futures; query parameters such
   as `?scenario=rebound-acceleration&e=1.4` replay one future. The page is
   deterministic: no seed, no Monte Carlo.
-- Future efficiency, equivalency, provider, impact, and uncertainty routes remain
-  explicitly unavailable.
+- Views whose figures are still planned (efficiency, equivalency, providers,
+  impacts, uncertainty) are explicitly unavailable.
 
 ## Rebound lab model and static fallback
 
@@ -50,7 +59,7 @@ It points to `main`, the current repository branch, not an
 immutable reviewed release. Changing it requires regenerating the checked-in
 HTML with `node tools/render-shell.mjs` from the repository root. This is an
 optional maintenance command; serving `docs/` requires no build or dependencies.
-The HTML guide never parses or duplicates analytical manuscript passages.
+The reader renders the manuscript; it never maintains a separate copy of it.
 
 ## Design and theme provenance
 
@@ -114,6 +123,7 @@ From the repository root:
 
 ```sh
 node tools/render-shell.mjs --check
+node tools/extract-filing-facts.mjs --check
 node --test tests/
 ```
 
@@ -123,6 +133,6 @@ The existing Pages source is `main` at its root. A root redirect opens `docs/`;
 root `_config.yml` excludes research, paper and other source records from Jekyll.
 Review links go to GitHub, and original source text is not republished as Pages.
 Browser accessibility/responsiveness and actual Pages publication are separate
-parent-task checks. Full reviewed paper rendering, calibrated models, stochastic
-runs, evidence filters, and immutable snapshots are intentionally not implemented;
-only the indexed rebound lab has manifests and replay.
+parent-task checks. Calibrated models, Monte Carlo replay, exports and immutable
+review snapshots are not implemented yet. Only the
+indexed rebound lab has manifests and replay.

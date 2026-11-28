@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="dark light">
-  <meta name="description" content="A non-analytical chronology of six received text captures, with claim reconciliation pending and links to review records.">
+  <meta name="description" content="Filing lineage and a claim inspector: located, internally checked passages with locators. No claim is verified yet.">
   <title>Evidence room · v0.4 · Ethical Tech CoLab</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="assets/fonts/bebas-neue-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="assets/fonts/fonts.css">
   <link rel="stylesheet" href="assets/themes.css">
   <link rel="stylesheet" href="assets/site.css">
+  <link rel="stylesheet" href="assets/reader.css">
   <script type="module" src="assets/js/site.mjs"></script>
 </head>
 <body>
@@ -25,7 +26,7 @@
       </a>
       <nav class="site-nav" id="primary-nav" aria-label="Main navigation">
         <a href="index.html" data-site-link>Overview</a>
-        <a href="paper.html" data-site-link>Paper guide</a>
+        <a href="paper.html" data-site-link>Paper</a>
         <a href="evidence.html" data-site-link aria-current="page">Evidence</a>
         <a href="rebound.html" data-site-link>Rebound lab</a>
         <a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/PLAN.md" class="nav-cta">Research docs ↗</a>
@@ -61,64 +62,578 @@
   </header>
   <div class="wrap notice-row">
     <span class="version">v0.4 / DEMO</span>
-    <p id="theme-message" class="theme-message" role="status" aria-live="polite" aria-atomic="true">CoLab presentation. Demo; no calibrated results.</p>
+    <p id="theme-message" class="theme-message" role="status" aria-live="polite" aria-atomic="true">CoLab presentation. Review draft; no calibrated results.</p>
   </div>
   <noscript><p class="wrap noscript">JavaScript is off. All research-guide content and source links remain readable in the default CoLab theme. Theme switching requires JavaScript.</p></noscript>
   <main id="main" class="wrap" tabindex="-1" data-research-content>
-    <header class="page-intro"><p class="eyebrow">The evidence room / intake first</p><h1>Received is not<br><span class="accent">reconciled.</span></h1>
-      <p class="lead">A useful record begins with what arrived, what changed, and what still needs checking. This chronology identifies six named text captures; it does not authenticate the issuer, filing metadata, or financial claims.</p>
-      <p class="page-meta">v0.4 · Initial author yorkerhodes3 · Named capture dates through 2026-11-25<br>No source documents or excerpts are loaded into your browser.</p>
-      <div class="actions"><a href="#filing-timeline" data-site-link class="button">Explore filing chronology ↓</a><a href="#review-records" data-site-link class="button secondary">Find the review records ↓</a></div>
+    <header class="page-intro"><p class="eyebrow">The evidence room / located, not yet verified</p><h1>Located is not<br><span class="accent">verified.</span></h1>
+      <p class="lead">Each company figure below is found in a supplied filing text, has a line locator, and is checked for internal consistency. None is verified yet: the captures have not been authenticated against SEC origin, and no financial reviewer has signed off.</p>
+      <p class="page-meta">v0.4 · Initial author yorkerhodes3 · Filing captures through 2026-11-25<br>37 ledger claims · 22/22 derived W1 checks pass · No source document is loaded into your browser.</p>
+      <div class="actions"><a href="#claims" data-site-link class="button">Inspect the claims ↓</a><a href="#filing-timeline" data-site-link class="button secondary">Follow the filing lineage ↓</a></div>
     </header>
     <div class="review-strip" aria-label="Research and release status">
-    <div class="review-item"><small>Intake</small><strong>Text captures received</strong></div>
-    <div class="review-item"><small>Evidence review</small><strong>Claim reconciliation pending</strong></div>
-    <div class="review-item"><small>This site</small><strong>Demo · no calibrated results</strong></div>
+    <div class="review-item"><small>Filing evidence</small><strong>Passages located · unverified</strong></div>
+    <div class="review-item"><small>Human review</small><strong>Financial review pending</strong></div>
+    <div class="review-item"><small>This site</small><strong>Review draft · no calibrated results</strong></div>
   </div>
     <section class="section" id="filing-timeline" aria-labelledby="timeline-title">
-      <div class="section-heading"><div><p class="eyebrow">F01 / Received-text chronology shell</p><h2 id="timeline-title">Follow the document lineage.</h2></div><p>Dates and form labels reflect the supplied capture names, not a verified external filing history. Originals and PDFs are not embedded here.</p></div>
+      <div class="section-heading"><div><p class="eyebrow">F01 / Filing chronology and revision lineage</p><h2 id="timeline-title">Follow the document lineage.</h2></div><p>The headers agree on issuer, CIK, accessions and dates. That is internal agreement, not authentication against SEC origin.</p></div>
       <ol class="timeline">
         <li><time datetime="2026-10-26">2026-10-26</time>
-          <div><p class="eyebrow">S-1</p><h3>Original registration statement</h3><p>Establish the starting document and its definitions.</p><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/01-s1-2026-10-26__primary-document-anthropicpbc-sx1.md">Inspect the text capture on GitHub ↗</a><span class="source-path">01-s1-2026-10-26__primary-document-anthropicpbc-sx1.md</span></div>
-          <div><span class="status-label">Text received</span><p class="caption">Claim reconciliation pending</p></div></li>
+          <div><p class="eyebrow">S-1</p><h3>Original registration statement</h3><p>Results run through 2026-06-30. Every commitment amount and the obligations table are blank placeholders.</p><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/01-s1-2026-10-26__primary-document-anthropicpbc-sx1.md">Inspect the text capture on GitHub ↗</a><span class="source-path">01-s1-2026-10-26__primary-document-anthropicpbc-sx1.md</span></div>
+          <div><span class="status-label">Passages located</span></div></li>
         <li><time datetime="2026-11-02">2026-11-02</time>
-          <div><p class="eyebrow">S-1/A · 1</p><h3>Amendment one</h3><p>Compare revisions and retain the supplied join-check context.</p><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/02-s1a1-2026-11-02__primary-document-anthropicpbc-sx1ax1.txt">Inspect the text capture on GitHub ↗</a><span class="source-path">02-s1a1-2026-11-02__primary-document-anthropicpbc-sx1ax1.txt</span></div>
-          <div><span class="status-label">Text received</span><p class="caption">Claim reconciliation pending</p></div></li>
+          <div><p class="eyebrow">S-1/A · 1</p><h3>Amendment one</h3><p>Adds the September quarter and first quantifies commitments (~$895.4B). Table values come from joined text; alignment unverified.</p><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/02-s1a1-2026-11-02__primary-document-anthropicpbc-sx1ax1.txt">Inspect the text capture on GitHub ↗</a><span class="source-path">02-s1a1-2026-11-02__primary-document-anthropicpbc-sx1ax1.txt</span></div>
+          <div><span class="status-label">Located · tables limited</span></div></li>
         <li><time datetime="2026-11-10">2026-11-10</time>
-          <div><p class="eyebrow">S-1/A · 2</p><h3>Amendment two</h3><p>Trace changed passages and associated exhibits.</p><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/02b-s1a2-2026-11-10__primary-document-anthropicpbc-sx1ax2.md">Inspect the text capture on GitHub ↗</a><span class="source-path">02b-s1a2-2026-11-10__primary-document-anthropicpbc-sx1ax2.md</span></div>
-          <div><span class="status-label">Text received</span><p class="caption">Claim reconciliation pending</p></div></li>
+          <div><p class="eyebrow">S-1/A · 2</p><h3>Amendment two</h3><p>Revises commitments to ~$900.9B, adds a $150–175B excluded estimate, and discloses that a Lambda agreement is terminable.</p><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/02b-s1a2-2026-11-10__primary-document-anthropicpbc-sx1ax2.md">Inspect the text capture on GitHub ↗</a><span class="source-path">02b-s1a2-2026-11-10__primary-document-anthropicpbc-sx1ax2.md</span></div>
+          <div><span class="status-label">Passages located</span></div></li>
         <li><time datetime="2026-11-17">2026-11-17</time>
-          <div><p class="eyebrow">S-1/A · 3</p><h3>Amendment three</h3><p>Carry forward revision lineage and newly received exhibits.</p><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/03-s1a3-2026-11-17__primary-document-anthropicpbc-sx1ax3.md">Inspect the text capture on GitHub ↗</a><span class="source-path">03-s1a3-2026-11-17__primary-document-anthropicpbc-sx1ax3.md</span></div>
-          <div><span class="status-label">Text received</span><p class="caption">Claim reconciliation pending</p></div></li>
+          <div><p class="eyebrow">S-1/A · 3</p><h3>Amendment three</h3><p>No change found in the extracted facts. New exhibits include the underwriting agreement form and auditor consents.</p><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/03-s1a3-2026-11-17__primary-document-anthropicpbc-sx1ax3.md">Inspect the text capture on GitHub ↗</a><span class="source-path">03-s1a3-2026-11-17__primary-document-anthropicpbc-sx1ax3.md</span></div>
+          <div><span class="status-label">Passages located</span></div></li>
         <li><time datetime="2026-11-19">2026-11-19</time>
-          <div><p class="eyebrow">424B4</p><h3>Final prospectus text</h3><p>Reconcile the prospectus against the registration sequence.</p><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/04-424b4-2026-11-19__primary-document-anthropicpbc-424b4.md">Inspect the text capture on GitHub ↗</a><span class="source-path">04-424b4-2026-11-19__primary-document-anthropicpbc-424b4.md</span></div>
-          <div><span class="status-label">Text received</span><p class="caption">Claim reconciliation pending</p></div></li>
+          <div><p class="eyebrow">424B4</p><h3>Final prospectus text</h3><p>Reference version for the W1 reconstruction; prospectus dated 2026-11-18.</p><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/04-424b4-2026-11-19__primary-document-anthropicpbc-424b4.md">Inspect the text capture on GitHub ↗</a><span class="source-path">04-424b4-2026-11-19__primary-document-anthropicpbc-424b4.md</span></div>
+          <div><span class="status-label">Reference version</span></div></li>
         <li><time datetime="2026-11-25">2026-11-25</time>
-          <div><p class="eyebrow">8-K</p><h3>Subsequent filing text</h3><p>Review the subsequent filing and its exhibits before closing the intake.</p><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/04b-8k-2026-11-25__primary-document-ant-20261119.md">Inspect the text capture on GitHub ↗</a><span class="source-path">04b-8k-2026-11-25__primary-document-ant-20261119.md</span></div>
-          <div><span class="status-label">Text received</span><p class="caption">Claim reconciliation pending</p></div></li>
+          <div><p class="eyebrow">8-K</p><h3>Subsequent filing text</h3><p>Closing, governance and placement items. No compute, revenue or commitment series.</p><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/04b-8k-2026-11-25__primary-document-ant-20261119.md">Inspect the text capture on GitHub ↗</a><span class="source-path">04b-8k-2026-11-25__primary-document-ant-20261119.md</span></div>
+          <div><span class="status-label">Scope checked</span></div></li>
       </ol>
-      <p class="caption" style="margin-top:1.5rem"><a href="paper.html#p02" data-site-link>Return to P02 · evidence method →</a> · <a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/PLAN.md#61-filing-intake-and-remediation">Inspect intake / reconciliation method ↗</a></p>
+      <h3 class="table-title" id="revision-lineage">What changed between versions</h3>
+      <div class="table-wrap" role="region" tabindex="0" aria-labelledby="revision-lineage"><table class="lineage">
+        <caption>Selected extracted values per version, with source line locators. “Blank” means the version left a placeholder; “—” means the passage is not in that version; † marks Amendment 1 table values whose alignment the join check does not establish. Values are unverified.</caption>
+        <thead><tr><th scope="col">Fact</th><th scope="col" class="num"><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/01-s1-2026-10-26__primary-document-anthropicpbc-sx1.md">S-1</a></th><th scope="col" class="num"><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/02-s1a1-2026-11-02__primary-document-anthropicpbc-sx1ax1.txt">A1</a></th><th scope="col" class="num"><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/02b-s1a2-2026-11-10__primary-document-anthropicpbc-sx1ax2.md">A2</a></th><th scope="col" class="num"><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/03-s1a3-2026-11-17__primary-document-anthropicpbc-sx1ax3.md">A3</a></th><th scope="col" class="num"><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/04-424b4-2026-11-19__primary-document-anthropicpbc-424b4.md">424B4</a></th></tr></thead>
+        <tbody><tr><th scope="row">Revenue, nine months to 2026-09-30 <span class="caption">(USD M)</span></th><td><span aria-hidden="true">—</span><span class="visually-hidden">Not in this version</span></td><td class="num">33,242<span class="cell-state" title="A1 joined text; table alignment unverified">†</span> <a class="line-ref" href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/02-s1a1-2026-11-02__primary-document-anthropicpbc-sx1ax1.txt?plain=1#L2175" aria-label="Revenue, nine months to 2026-09-30, S-1/A-1, source line 2175">L2175</a></td><td class="num">33,242 <a class="line-ref" href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/02b-s1a2-2026-11-10__primary-document-anthropicpbc-sx1ax2.md?plain=1#L2720" aria-label="Revenue, nine months to 2026-09-30, S-1/A-2, source line 2720">L2720</a></td><td class="num">33,242 <a class="line-ref" href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/03-s1a3-2026-11-17__primary-document-anthropicpbc-sx1ax3.md?plain=1#L2778" aria-label="Revenue, nine months to 2026-09-30, S-1/A-3, source line 2778">L2778</a></td><td class="num">33,242 <a class="line-ref" href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/04-424b4-2026-11-19__primary-document-anthropicpbc-424b4.md?plain=1#L2611" aria-label="Revenue, nine months to 2026-09-30, 424B4, source line 2611">L2611</a></td></tr>
+        <tr><th scope="row">Compute ÷ revenue, Q3-2026 <span class="caption">(%)</span></th><td><span aria-hidden="true">—</span><span class="visually-hidden">Not in this version</span></td><td class="num">58 <a class="line-ref" href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/02-s1a1-2026-11-02__primary-document-anthropicpbc-sx1ax1.txt?plain=1#L15257" aria-label="Compute ÷ revenue, Q3-2026, S-1/A-1, source line 15257">L15257</a></td><td class="num">58 <a class="line-ref" href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/02b-s1a2-2026-11-10__primary-document-anthropicpbc-sx1ax2.md?plain=1#L15836" aria-label="Compute ÷ revenue, Q3-2026, S-1/A-2, source line 15836">L15836</a></td><td class="num">58 <a class="line-ref" href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/03-s1a3-2026-11-17__primary-document-anthropicpbc-sx1ax3.md?plain=1#L15902" aria-label="Compute ÷ revenue, Q3-2026, S-1/A-3, source line 15902">L15902</a></td><td class="num">58 <a class="line-ref" href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/04-424b4-2026-11-19__primary-document-anthropicpbc-424b4.md?plain=1#L15555" aria-label="Compute ÷ revenue, Q3-2026, 424B4, source line 15555">L15555</a></td></tr>
+        <tr><th scope="row">Short-term compute in Q3 expense <span class="caption">(USD B)</span></th><td><span aria-hidden="true">—</span><span class="visually-hidden">Not in this version</span></td><td class="num">5.0 <a class="line-ref" href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/02-s1a1-2026-11-02__primary-document-anthropicpbc-sx1ax1.txt?plain=1#L15262" aria-label="Short-term compute in Q3 expense, S-1/A-1, source line 15262">L15262</a></td><td class="num">5.0 <a class="line-ref" href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/02b-s1a2-2026-11-10__primary-document-anthropicpbc-sx1ax2.md?plain=1#L15842" aria-label="Short-term compute in Q3 expense, S-1/A-2, source line 15842">L15842</a></td><td class="num">5.0 <a class="line-ref" href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/03-s1a3-2026-11-17__primary-document-anthropicpbc-sx1ax3.md?plain=1#L15908" aria-label="Short-term compute in Q3 expense, S-1/A-3, source line 15908">L15908</a></td><td class="num">5.0 <a class="line-ref" href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/04-424b4-2026-11-19__primary-document-anthropicpbc-424b4.md?plain=1#L15561" aria-label="Short-term compute in Q3 expense, 424B4, source line 15561">L15561</a></td></tr>
+        <tr><th scope="row">Price/discount revenue offset, Q2→Q3 2026 <span class="caption">(USD M)</span></th><td><span aria-hidden="true">—</span><span class="visually-hidden">Not in this version</span></td><td class="num">600 <a class="line-ref" href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/02-s1a1-2026-11-02__primary-document-anthropicpbc-sx1ax1.txt?plain=1#L15235" aria-label="Price/discount revenue offset, Q2→Q3 2026, S-1/A-1, source line 15235">L15235</a></td><td class="num">600 <a class="line-ref" href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/02b-s1a2-2026-11-10__primary-document-anthropicpbc-sx1ax2.md?plain=1#L15812" aria-label="Price/discount revenue offset, Q2→Q3 2026, S-1/A-2, source line 15812">L15812</a></td><td class="num">600 <a class="line-ref" href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/03-s1a3-2026-11-17__primary-document-anthropicpbc-sx1ax3.md?plain=1#L15878" aria-label="Price/discount revenue offset, Q2→Q3 2026, S-1/A-3, source line 15878">L15878</a></td><td class="num">600 <a class="line-ref" href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/04-424b4-2026-11-19__primary-document-anthropicpbc-424b4.md?plain=1#L15531" aria-label="Price/discount revenue offset, Q2→Q3 2026, 424B4, source line 15531">L15531</a></td></tr>
+        <tr><th scope="row">Aggregate commitments <span class="caption">(USD B)</span></th><td><span class="cell-state">blank</span> <a class="line-ref" href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/01-s1-2026-10-26__primary-document-anthropicpbc-sx1.md?plain=1#L16258" aria-label="Aggregate commitments, S-1, source line 16258">L16258</a></td><td class="num">895.4 <a class="line-ref" href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/02-s1a1-2026-11-02__primary-document-anthropicpbc-sx1ax1.txt?plain=1#L16528" aria-label="Aggregate commitments, S-1/A-1, source line 16528">L16528</a></td><td class="num">900.9 <a class="line-ref" href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/02b-s1a2-2026-11-10__primary-document-anthropicpbc-sx1ax2.md?plain=1#L17179" aria-label="Aggregate commitments, S-1/A-2, source line 17179">L17179</a></td><td class="num">900.9 <a class="line-ref" href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/03-s1a3-2026-11-17__primary-document-anthropicpbc-sx1ax3.md?plain=1#L17245" aria-label="Aggregate commitments, S-1/A-3, source line 17245">L17245</a></td><td class="num">900.9 <a class="line-ref" href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/04-424b4-2026-11-19__primary-document-anthropicpbc-424b4.md?plain=1#L16890" aria-label="Aggregate commitments, 424B4, source line 16890">L16890</a></td></tr>
+        <tr><th scope="row">Commitments signed after the quarter <span class="caption">(USD B)</span></th><td><span aria-hidden="true">—</span><span class="visually-hidden">Not in this version</span></td><td class="num">100.2 <a class="line-ref" href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/02-s1a1-2026-11-02__primary-document-anthropicpbc-sx1ax1.txt?plain=1#L16662" aria-label="Commitments signed after the quarter, S-1/A-1, source line 16662">L16662</a></td><td class="num">105.7 <a class="line-ref" href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/02b-s1a2-2026-11-10__primary-document-anthropicpbc-sx1ax2.md?plain=1#L17284" aria-label="Commitments signed after the quarter, S-1/A-2, source line 17284">L17284</a></td><td class="num">105.7 <a class="line-ref" href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/03-s1a3-2026-11-17__primary-document-anthropicpbc-sx1ax3.md?plain=1#L17350" aria-label="Commitments signed after the quarter, S-1/A-3, source line 17350">L17350</a></td><td class="num">105.7 <a class="line-ref" href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/04-424b4-2026-11-19__primary-document-anthropicpbc-424b4.md?plain=1#L16995" aria-label="Commitments signed after the quarter, 424B4, source line 16995">L16995</a></td></tr>
+        <tr><th scope="row">Conditional or terminable <span class="caption">(USD B)</span></th><td><span aria-hidden="true">—</span><span class="visually-hidden">Not in this version</span></td><td class="num">213.8 <a class="line-ref" href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/02-s1a1-2026-11-02__primary-document-anthropicpbc-sx1ax1.txt?plain=1#L16540" aria-label="Conditional or terminable, S-1/A-1, source line 16540">L16540</a></td><td class="num">186.2 <a class="line-ref" href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/02b-s1a2-2026-11-10__primary-document-anthropicpbc-sx1ax2.md?plain=1#L17195" aria-label="Conditional or terminable, S-1/A-2, source line 17195">L17195</a></td><td class="num">186.2 <a class="line-ref" href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/03-s1a3-2026-11-17__primary-document-anthropicpbc-sx1ax3.md?plain=1#L17261" aria-label="Conditional or terminable, S-1/A-3, source line 17261">L17261</a></td><td class="num">186.2 <a class="line-ref" href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/04-424b4-2026-11-19__primary-document-anthropicpbc-424b4.md?plain=1#L16906" aria-label="Conditional or terminable, 424B4, source line 16906">L16906</a></td></tr>
+        <tr><th scope="row">Excluded variable-payment estimate <span class="caption">(USD B)</span></th><td><span aria-hidden="true">—</span><span class="visually-hidden">Not in this version</span></td><td><span aria-hidden="true">—</span><span class="visually-hidden">Not in this version</span></td><td class="num">150–175 <a class="line-ref" href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/02b-s1a2-2026-11-10__primary-document-anthropicpbc-sx1ax2.md?plain=1#L17187" aria-label="Excluded variable-payment estimate, S-1/A-2, source line 17187">L17187</a></td><td class="num">150–175 <a class="line-ref" href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/03-s1a3-2026-11-17__primary-document-anthropicpbc-sx1ax3.md?plain=1#L17253" aria-label="Excluded variable-payment estimate, S-1/A-3, source line 17253">L17253</a></td><td class="num">150–175 <a class="line-ref" href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/04-424b4-2026-11-19__primary-document-anthropicpbc-424b4.md?plain=1#L16898" aria-label="Excluded variable-payment estimate, 424B4, source line 16898">L16898</a></td></tr>
+        <tr><th scope="row">Google CSP minimum <span class="caption">(USD B)</span></th><td class="num">114.5 <a class="line-ref" href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/01-s1-2026-10-26__primary-document-anthropicpbc-sx1.md?plain=1#L16365" aria-label="Google CSP minimum, S-1, source line 16365">L16365</a></td><td class="num">121.3 <a class="line-ref" href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/02-s1a1-2026-11-02__primary-document-anthropicpbc-sx1ax1.txt?plain=1#L16700" aria-label="Google CSP minimum, S-1/A-1, source line 16700">L16700</a></td><td class="num">121.3 <a class="line-ref" href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/02b-s1a2-2026-11-10__primary-document-anthropicpbc-sx1ax2.md?plain=1#L17328" aria-label="Google CSP minimum, S-1/A-2, source line 17328">L17328</a></td><td class="num">121.3 <a class="line-ref" href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/03-s1a3-2026-11-17__primary-document-anthropicpbc-sx1ax3.md?plain=1#L17394" aria-label="Google CSP minimum, S-1/A-3, source line 17394">L17394</a></td><td class="num">121.3 <a class="line-ref" href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/04-424b4-2026-11-19__primary-document-anthropicpbc-424b4.md?plain=1#L17037" aria-label="Google CSP minimum, 424B4, source line 17037">L17037</a></td></tr>
+        <tr><th scope="row">Microsoft minimum <span class="caption">(USD B)</span></th><td class="num">44.9 <a class="line-ref" href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/01-s1-2026-10-26__primary-document-anthropicpbc-sx1.md?plain=1#L16357" aria-label="Microsoft minimum, S-1, source line 16357">L16357</a></td><td class="num">44.9 <a class="line-ref" href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/02-s1a1-2026-11-02__primary-document-anthropicpbc-sx1ax1.txt?plain=1#L16693" aria-label="Microsoft minimum, S-1/A-1, source line 16693">L16693</a></td><td class="num">47.2 <a class="line-ref" href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/02b-s1a2-2026-11-10__primary-document-anthropicpbc-sx1ax2.md?plain=1#L17320" aria-label="Microsoft minimum, S-1/A-2, source line 17320">L17320</a></td><td class="num">47.2 <a class="line-ref" href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/03-s1a3-2026-11-17__primary-document-anthropicpbc-sx1ax3.md?plain=1#L17386" aria-label="Microsoft minimum, S-1/A-3, source line 17386">L17386</a></td><td class="num">47.2 <a class="line-ref" href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/04-424b4-2026-11-19__primary-document-anthropicpbc-424b4.md?plain=1#L17029" aria-label="Microsoft minimum, 424B4, source line 17029">L17029</a></td></tr>
+        <tr><th scope="row">Lambda August agreement</th><td><span aria-hidden="true">—</span><span class="visually-hidden">Not in this version</span></td><td><span aria-hidden="true">—</span><span class="visually-hidden">Not in this version</span></td><td class="num"><span class="cell-state">terminable</span> <a class="line-ref" href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/02b-s1a2-2026-11-10__primary-document-anthropicpbc-sx1ax2.md?plain=1#L17434" aria-label="Lambda August agreement, S-1/A-2, source line 17434">L17434</a></td><td class="num"><span class="cell-state">terminable</span> <a class="line-ref" href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/03-s1a3-2026-11-17__primary-document-anthropicpbc-sx1ax3.md?plain=1#L17500" aria-label="Lambda August agreement, S-1/A-3, source line 17500">L17500</a></td><td class="num"><span class="cell-state">terminable</span> <a class="line-ref" href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/04-424b4-2026-11-19__primary-document-anthropicpbc-424b4.md?plain=1#L17143" aria-label="Lambda August agreement, 424B4, source line 17143">L17143</a></td></tr></tbody>
+      </table></div>
+      <p class="caption" style="margin-top:1rem"><a href="paper.html#p02" data-site-link>Return to P02 · evidence method →</a> · <a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/W1-FILING-RECONSTRUCTION.md#w1-commitments">Read the W1 reconstruction ↗</a> · <a href="../data/extracted/w1-filing-facts.csv">All extracted facts (CSV)</a> · <a href="../data/derived/w1-reconciliation-checks.csv">Derived checks (CSV)</a></p>
+    </section>
+    <section class="section" id="claims" aria-labelledby="claims-title">
+      <div class="section-heading"><div><p class="eyebrow">Claim inspector</p><h2 id="claims-title">Every claim, with its limits.</h2></div><p>Classification, verification state and confidence are separate fields. A state is always written out, never shown by color alone.</p></div>
+      <form id="claim-filters" class="filters" hidden aria-label="Filter claims">
+        <label>Verification <select name="state"><option value="">All states</option><option value="unknown">unknown</option></select></label>
+        <label>Classification <select name="classification"><option value="">All classes</option><option value="derived">derived</option><option value="estimated">estimated</option><option value="reported">reported</option><option value="scenario">scenario</option></select></label>
+        <label>Search <input name="search" type="search" autocomplete="off" placeholder="e.g. Lambda, revenue, CL-020"></label>
+        <button type="reset" class="button secondary">Reset filters</button>
+      </form>
+      <p id="claim-count" class="caption" role="status" aria-live="polite">37 claims.</p>
+      <p id="claims-empty" class="planned-note" hidden>No claims match these filters. Reset the filters to see all 37 claims.</p>
+      <div class="claim-list">
+        <article class="claim-card" id="cl-001" data-state="unknown" data-classification="reported" data-search="cl-001 revenue was approximately 4.6 billion in fy2025 and 33.2 billion in the first nine months of 2026. anthropic revenue fy2025; nine months 2026 w1 disposition: supported. exact values fy2025 4585 and nine months 2026 33242 usd million; quarterly and annual footings pass (chk-01 to chk-03). nine-month and full-year periods are not comparable as annual growth. primary issuer filing text located in the supplied capture; values consistent across applicable versions; capture hash matches manifest but origin not network-authenticated; no human review recorded.">
+          <header><h3>CL-001</h3><p class="claim-labels"><span class="status-label">reported</span><span class="status-label">Verification: unknown</span><span class="status-label">Confidence: medium</span></p></header>
+          <p class="claim-text">Revenue was approximately 4.6 billion in FY2025 and 33.2 billion in the first nine months of 2026.</p>
+          <dl>
+            <div><dt>Entity · metric</dt><dd>Anthropic · revenue</dd></div>
+            <div><dt>Period · units</dt><dd>FY2025; nine months 2026 · USD billion</dd></div>
+            <div><dt>Sources</dt><dd><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-001">SRC-001</a> · <a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-002">SRC-002</a> · <a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-014">SRC-014</a> · <a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-015">SRC-015</a> · <a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-016">SRC-016</a></dd></div>
+            <div><dt>Locator</dt><dd>424B4 L2611 (summary) and L15371 (quarterly); A2 L2720; A3 L2778; S-1 L2335 (FY2025; six-month interim); A1 L2175-2180 (alignment unverified); research/W1-FILING-RECONSTRUCTION.md#w1-revenue-compute</dd></div>
+            <div><dt>Caveats</dt><dd>W1 disposition: supported. Exact values FY2025 4585 and nine months 2026 33242 USD million; quarterly and annual footings pass (CHK-01 to CHK-03). Nine-month and full-year periods are not comparable as annual growth. Primary issuer filing text located in the supplied capture; values consistent across applicable versions; capture hash matches manifest but origin not network-authenticated; no human review recorded.</dd></div>
+            <div><dt>Review</dt><dd>No human review recorded</dd></div>
+          </dl>
+          <p class="caption">Cited in: <a href="paper.html#p02" data-site-link>Return to P02</a> · <a href="paper.html#p12" data-site-link>Return to P12</a></p>
+        </article>
+        <article class="claim-card" id="cl-002" data-state="unknown" data-classification="reported" data-search="cl-002 compute and infrastructure expense was approximately 48 percent of revenue in q2 2026 and 58 percent in q3 2026. anthropic compute infrastructure expense share q2 2026; q3 2026 w1 disposition: supported; recomputed ratios 48.1 and 58.2 percent round to reported values (chk-07f/g). financial ratio only: not gross margin, cost of revenue or physical efficiency. line item composition expands in 2026 (cl-024). primary issuer filing text located in the supplied capture; values consistent across applicable versions; capture hash matches manifest but origin not network-authenticated; no human review recorded.">
+          <header><h3>CL-002</h3><p class="claim-labels"><span class="status-label">reported</span><span class="status-label">Verification: unknown</span><span class="status-label">Confidence: medium</span></p></header>
+          <p class="claim-text">Compute and infrastructure expense was approximately 48 percent of revenue in Q2 2026 and 58 percent in Q3 2026.</p>
+          <dl>
+            <div><dt>Entity · metric</dt><dd>Anthropic · compute infrastructure expense share</dd></div>
+            <div><dt>Period · units</dt><dd>Q2 2026; Q3 2026 · percent</dd></div>
+            <div><dt>Sources</dt><dd><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-001">SRC-001</a> · <a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-002">SRC-002</a> · <a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-014">SRC-014</a> · <a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-015">SRC-015</a> · <a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-016">SRC-016</a></dd></div>
+            <div><dt>Locator</dt><dd>424B4 L15456 (quarterly percent table) and L15555-15559 (narrative); A1 L15257-15260; A2 L15836-15840; A3 L15902-15906; research/W1-FILING-RECONSTRUCTION.md#w1-revenue-compute</dd></div>
+            <div><dt>Caveats</dt><dd>W1 disposition: supported; recomputed ratios 48.1 and 58.2 percent round to reported values (CHK-07f/g). Financial ratio only: not gross margin, cost of revenue or physical efficiency. Line item composition expands in 2026 (CL-024). Primary issuer filing text located in the supplied capture; values consistent across applicable versions; capture hash matches manifest but origin not network-authenticated; no human review recorded.</dd></div>
+            <div><dt>Review</dt><dd>No human review recorded</dd></div>
+          </dl>
+          <p class="caption">Cited in: <a href="paper.html#p02" data-site-link>Return to P02</a> · <a href="paper.html#p03" data-site-link>Return to P03</a> · <a href="paper.html#p12" data-site-link>Return to P12</a></p>
+        </article>
+        <article class="claim-card" id="cl-003" data-state="unknown" data-classification="reported" data-search="cl-003 q3 2026 included approximately 5.0 billion of short-term compute described as more expensive than comparable multiyear compute. anthropic short-term compute q3 2026 w1 disposition: supported with scope clarified. the 5.0 billion is compute under short-term commitments included within q3 expense of 9863 million; nine-month amount 6.5 billion. premium and unit cost undisclosed; s-1 wording changed in a1. primary issuer filing text located in the supplied capture; values consistent across applicable versions; capture hash matches manifest but origin not network-authenticated; no human review recorded.">
+          <header><h3>CL-003</h3><p class="claim-labels"><span class="status-label">reported</span><span class="status-label">Verification: unknown</span><span class="status-label">Confidence: medium</span></p></header>
+          <p class="claim-text">Q3 2026 included approximately 5.0 billion of short-term compute described as more expensive than comparable multiyear compute.</p>
+          <dl>
+            <div><dt>Entity · metric</dt><dd>Anthropic · short-term compute</dd></div>
+            <div><dt>Period · units</dt><dd>Q3 2026 · USD billion</dd></div>
+            <div><dt>Sources</dt><dd><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-001">SRC-001</a> · <a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-002">SRC-002</a> · <a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-014">SRC-014</a> · <a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-015">SRC-015</a> · <a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-016">SRC-016</a></dd></div>
+            <div><dt>Locator</dt><dd>424B4 L15561 (Q3) and L14709-14711 (nine months); cost wording L13352-13354; S-1 L12989 (earlier wording); research/W1-FILING-RECONSTRUCTION.md#w1-short-term-pricing</dd></div>
+            <div><dt>Caveats</dt><dd>W1 disposition: supported with scope clarified. The 5.0 billion is compute under short-term commitments included within Q3 expense of 9863 million; nine-month amount 6.5 billion. Premium and unit cost undisclosed; S-1 wording changed in A1. Primary issuer filing text located in the supplied capture; values consistent across applicable versions; capture hash matches manifest but origin not network-authenticated; no human review recorded.</dd></div>
+            <div><dt>Review</dt><dd>No human review recorded</dd></div>
+          </dl>
+          <p class="caption">Cited in: <a href="paper.html#p02" data-site-link>Return to P02</a> · <a href="paper.html#p03" data-site-link>Return to P03</a> · <a href="paper.html#p12" data-site-link>Return to P12</a></p>
+        </article>
+        <article class="claim-card" id="cl-004" data-state="unknown" data-classification="reported" data-search="cl-004 price reductions and contractual discounts reportedly offset approximately 600 million of q3 revenue growth. anthropic pricing discount effect q3 2026 w1 disposition: supported as issuer attribution of a sequential revenue offset from price reductions with new model versions and contractual discounts. co-occurs with usage growth and releases; does not identify an elasticity. primary issuer filing text located in the supplied capture; values consistent across applicable versions; capture hash matches manifest but origin not network-authenticated; no human review recorded.">
+          <header><h3>CL-004</h3><p class="claim-labels"><span class="status-label">reported</span><span class="status-label">Verification: unknown</span><span class="status-label">Confidence: medium</span></p></header>
+          <p class="claim-text">Price reductions and contractual discounts reportedly offset approximately 600 million of Q3 revenue growth.</p>
+          <dl>
+            <div><dt>Entity · metric</dt><dd>Anthropic · pricing discount effect</dd></div>
+            <div><dt>Period · units</dt><dd>Q3 2026 · USD million</dd></div>
+            <div><dt>Sources</dt><dd><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-001">SRC-001</a> · <a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-002">SRC-002</a> · <a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-014">SRC-014</a> · <a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-015">SRC-015</a> · <a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-016">SRC-016</a></dd></div>
+            <div><dt>Locator</dt><dd>424B4 L15531-15535 (Q2 to Q3 2026) and L15525-15529 (Q3 to Q4 2025: about 70 million); A1 L15235-15239; research/W1-FILING-RECONSTRUCTION.md#w1-short-term-pricing</dd></div>
+            <div><dt>Caveats</dt><dd>W1 disposition: supported as issuer attribution of a sequential revenue offset from price reductions with new model versions and contractual discounts. Co-occurs with usage growth and releases; does not identify an elasticity. Primary issuer filing text located in the supplied capture; values consistent across applicable versions; capture hash matches manifest but origin not network-authenticated; no human review recorded.</dd></div>
+            <div><dt>Review</dt><dd>No human review recorded</dd></div>
+          </dl>
+          <p class="caption">Cited in: <a href="paper.html#p02" data-site-link>Return to P02</a> · <a href="paper.html#p05" data-site-link>Return to P05</a> · <a href="paper.html#p12" data-site-link>Return to P12</a></p>
+        </article>
+        <article class="claim-card" id="cl-005" data-state="unknown" data-classification="reported" data-search="cl-005 aggregate committed spend was approximately 895.4 billion with material conditionality. anthropic aggregate committed spend as of and subsequent to 2026-09-30 per a1 (2026-11-02) w1 disposition: superseded. accurate for a1 only (decomposition chk-12 passes); a2 to 424b4 state about 900.9 billion (cl-020) and exclude an estimated 150 to 175 billion of variable arrangements (cl-021). retained for lineage; do not use as the current figure.">
+          <header><h3>CL-005</h3><p class="claim-labels"><span class="status-label">reported</span><span class="status-label">Verification: unknown</span><span class="status-label">Confidence: medium</span><span class="status-label">Superseded</span></p></header>
+          <p class="claim-text">Aggregate committed spend was approximately 895.4 billion with material conditionality.</p>
+          <dl>
+            <div><dt>Entity · metric</dt><dd>Anthropic · aggregate committed spend</dd></div>
+            <div><dt>Period · units</dt><dd>as of and subsequent to 2026-09-30 per A1 (2026-11-02) · USD billion</dd></div>
+            <div><dt>Sources</dt><dd><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-002">SRC-002</a></dd></div>
+            <div><dt>Locator</dt><dd>A1 L774-775 (summary) and L16528-16531 (contractual obligations); S-1 L764 blank placeholder; research/W1-FILING-RECONSTRUCTION.md#w1-commitments</dd></div>
+            <div><dt>Caveats</dt><dd>W1 disposition: SUPERSEDED. Accurate for A1 only (decomposition CHK-12 passes); A2 to 424B4 state about 900.9 billion (CL-020) and exclude an estimated 150 to 175 billion of variable arrangements (CL-021). Retained for lineage; do not use as the current figure.</dd></div>
+            <div><dt>Review</dt><dd>No human review recorded</dd></div>
+          </dl>
+          <p class="caption">Cited in: <a href="paper.html#p02" data-site-link>Return to P02</a> · <a href="paper.html#p06" data-site-link>Return to P06</a> · <a href="paper.html#p12" data-site-link>Return to P12</a></p>
+        </article>
+        <article class="claim-card" id="cl-006" data-state="unknown" data-classification="reported" data-search="cl-006 epoch describes an average four-month open-weight versus closed-model gap since january 2026 on its aggregate eci. model ecosystem aggregate capability lag since january 2026 indexed primary-source passage only; not task or commercial equivalency; private benchmark caveat; source date requires inspection.">
+          <header><h3>CL-006</h3><p class="claim-labels"><span class="status-label">reported</span><span class="status-label">Verification: unknown</span><span class="status-label">Confidence: unassessed</span></p></header>
+          <p class="claim-text">Epoch describes an average four-month open-weight versus closed-model gap since January 2026 on its aggregate ECI.</p>
+          <dl>
+            <div><dt>Entity · metric</dt><dd>model ecosystem · aggregate capability lag</dd></div>
+            <div><dt>Period · units</dt><dd>since January 2026 · months</dd></div>
+            <div><dt>Sources</dt><dd><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-004">SRC-004</a></dd></div>
+            <div><dt>Locator</dt><dd>Indexed article summary; full method and version pending</dd></div>
+            <div><dt>Caveats</dt><dd>Indexed primary-source passage only; not task or commercial equivalency; private benchmark caveat; source date requires inspection.</dd></div>
+            <div><dt>Review</dt><dd>No human review recorded</dd></div>
+          </dl>
+          <p class="caption">Cited in: <a href="paper.html#p04" data-site-link>Return to P04</a> · <a href="paper.html#p12" data-site-link>Return to P12</a></p>
+        </article>
+        <article class="claim-card" id="cl-007" data-state="unknown" data-classification="reported" data-search="cl-007 power hungry processing compares deployment energy and carbon for 1000 inferences across task-specific and general-purpose models. evaluated ml models measurement design study configuration discovery support only; not current frontier-company measurement or cost per successful task.">
+          <header><h3>CL-007</h3><p class="claim-labels"><span class="status-label">reported</span><span class="status-label">Verification: unknown</span><span class="status-label">Confidence: unassessed</span></p></header>
+          <p class="claim-text">Power Hungry Processing compares deployment energy and carbon for 1000 inferences across task-specific and general-purpose models.</p>
+          <dl>
+            <div><dt>Entity · metric</dt><dd>evaluated ML models · measurement design</dd></div>
+            <div><dt>Period · units</dt><dd>study configuration · per 1000 inferences</dd></div>
+            <div><dt>Sources</dt><dd><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-005">SRC-005</a></dd></div>
+            <div><dt>Locator</dt><dd>Indexed abstract; full method and publication version pending</dd></div>
+            <div><dt>Caveats</dt><dd>Discovery support only; not current frontier-company measurement or cost per successful task.</dd></div>
+            <div><dt>Review</dt><dd>No human review recorded</dd></div>
+          </dl>
+          <p class="caption">Cited in: <a href="paper.html#p03" data-site-link>Return to P03</a></p>
+        </article>
+        <article class="claim-card" id="cl-008" data-state="unknown" data-classification="reported" data-search="cl-008 the ukerc review treats rebound as an explicit limit on expected efficiency savings rather than proof that efficiency never saves energy. energy services rebound interpretation 2007 review full review not inspected; does not identify an ai demand elasticity.">
+          <header><h3>CL-008</h3><p class="claim-labels"><span class="status-label">reported</span><span class="status-label">Verification: unknown</span><span class="status-label">Confidence: unassessed</span></p></header>
+          <p class="claim-text">The UKERC review treats rebound as an explicit limit on expected efficiency savings rather than proof that efficiency never saves energy.</p>
+          <dl>
+            <div><dt>Entity · metric</dt><dd>energy services · rebound interpretation</dd></div>
+            <div><dt>Period · units</dt><dd>2007 review · qualitative</dd></div>
+            <div><dt>Sources</dt><dd><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-006">SRC-006</a></dd></div>
+            <div><dt>Locator</dt><dd>Indexed institutional summary; report sections pending</dd></div>
+            <div><dt>Caveats</dt><dd>Full review not inspected; does not identify an AI demand elasticity.</dd></div>
+            <div><dt>Review</dt><dd>No human review recorded</dd></div>
+          </dl>
+          <p class="caption">Cited in: <a href="paper.html#p01" data-site-link>Return to P01</a></p>
+        </article>
+        <article class="claim-card" id="cl-009" data-state="unknown" data-classification="reported" data-search="cl-009 lbnl reports a historical us data-center estimate of 176 twh for 2023 and a 325 to 580 twh scenario range for 2028. us data centers sector electricity estimate and scenario 2023; 2028 indexed official-source discovery; separate estimate from projection; not ai-only or company metering.">
+          <header><h3>CL-009</h3><p class="claim-labels"><span class="status-label">reported</span><span class="status-label">Verification: unknown</span><span class="status-label">Confidence: unassessed</span></p></header>
+          <p class="claim-text">LBNL reports a historical US data-center estimate of 176 TWh for 2023 and a 325 to 580 TWh scenario range for 2028.</p>
+          <dl>
+            <div><dt>Entity · metric</dt><dd>US data centers · sector electricity estimate and scenario</dd></div>
+            <div><dt>Period · units</dt><dd>2023; 2028 · TWh</dd></div>
+            <div><dt>Sources</dt><dd><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-007">SRC-007</a></dd></div>
+            <div><dt>Locator</dt><dd>Indexed report executive summary; full tables pending</dd></div>
+            <div><dt>Caveats</dt><dd>Indexed official-source discovery; separate estimate from projection; not AI-only or company metering.</dd></div>
+            <div><dt>Review</dt><dd>No human review recorded</dd></div>
+          </dl>
+          <p class="caption">Cited in: <a href="paper.html#p07" data-site-link>Return to P07</a></p>
+        </article>
+        <article class="claim-card" id="cl-010" data-state="unknown" data-classification="reported" data-search="cl-010 iea describes approximately 415 twh in 2024 and a projection of approximately 945 twh in 2030 for global data centers. global data centers sector electricity estimate and projection 2024; 2030 full retrieval failed dns; publication edition unknown; not ai-only or a marginal regional factor.">
+          <header><h3>CL-010</h3><p class="claim-labels"><span class="status-label">reported</span><span class="status-label">Verification: unknown</span><span class="status-label">Confidence: unassessed</span></p></header>
+          <p class="claim-text">IEA describes approximately 415 TWh in 2024 and a projection of approximately 945 TWh in 2030 for global data centers.</p>
+          <dl>
+            <div><dt>Entity · metric</dt><dd>global data centers · sector electricity estimate and projection</dd></div>
+            <div><dt>Period · units</dt><dd>2024; 2030 · TWh</dd></div>
+            <div><dt>Sources</dt><dd><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-008">SRC-008</a></dd></div>
+            <div><dt>Locator</dt><dd>Indexed executive summary; report edition and method pending</dd></div>
+            <div><dt>Caveats</dt><dd>Full retrieval failed DNS; publication edition unknown; not AI-only or a marginal regional factor.</dd></div>
+            <div><dt>Review</dt><dd>No human review recorded</dd></div>
+          </dl>
+          <p class="caption">Cited in: <a href="paper.html#p07" data-site-link>Return to P07</a></p>
+        </article>
+        <article class="claim-card" id="cl-011" data-state="unknown" data-classification="reported" data-search="cl-011 sec headers for the five registration-sequence filings and the 8-k identify anthropic pbc cik 0002130357 with accessions forms and acceptance times consistent with the captured indices and filenames. anthropic filing identity 2026-10-26 to 2026-11-25 w1 disposition: supported internally (headers, indices, filenames and sources agree). internal agreement is not origin authentication; network access to sec failed in this environment.">
+          <header><h3>CL-011</h3><p class="claim-labels"><span class="status-label">reported</span><span class="status-label">Verification: unknown</span><span class="status-label">Confidence: medium</span></p></header>
+          <p class="claim-text">SEC headers for the five registration-sequence filings and the 8-K identify Anthropic PBC CIK 0002130357 with accessions forms and acceptance times consistent with the captured indices and filenames.</p>
+          <dl>
+            <div><dt>Entity · metric</dt><dd>Anthropic · filing identity</dd></div>
+            <div><dt>Period · units</dt><dd>2026-10-26 to 2026-11-25 · document</dd></div>
+            <div><dt>Sources</dt><dd><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-001">SRC-001</a> · <a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-002">SRC-002</a> · <a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-014">SRC-014</a> · <a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-015">SRC-015</a> · <a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-016">SRC-016</a> · <a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-017">SRC-017</a></dd></div>
+            <div><dt>Locator</dt><dd>research/*__sec-header.md and 8-K complete-submission header; research/W1-FILING-RECONSTRUCTION.md#w1-identity</dd></div>
+            <div><dt>Caveats</dt><dd>W1 disposition: supported internally (headers, indices, filenames and SOURCES agree). Internal agreement is not origin authentication; network access to SEC failed in this environment.</dd></div>
+            <div><dt>Review</dt><dd>No human review recorded</dd></div>
+          </dl>
+          <p class="caption">Cited in: <a href="paper.html#p02" data-site-link>Return to P02</a> · <a href="paper.html#p12" data-site-link>Return to P12</a></p>
+        </article>
+        <article class="claim-card" id="cl-012" data-state="unknown" data-classification="reported" data-search="cl-012 the supplied draft describes a portfolio of hyperscalers neoclouds multiple accelerators and long- and short-term capacity. anthropic supply portfolio initial draft cutoff w1 disposition: supported with specifics: aws trainium, google tpus, nvidia gpus and amd gpus; multiple csps; named neocloud counterparties (cl-023); leased hardware in third-party-operated facilities. locations and power not extracted. primary issuer filing text located in the supplied capture; values consistent across applicable versions; capture hash matches manifest but origin not network-authenticated; no human review recorded.">
+          <header><h3>CL-012</h3><p class="claim-labels"><span class="status-label">reported</span><span class="status-label">Verification: unknown</span><span class="status-label">Confidence: medium</span></p></header>
+          <p class="claim-text">The supplied draft describes a portfolio of hyperscalers neoclouds multiple accelerators and long- and short-term capacity.</p>
+          <dl>
+            <div><dt>Entity · metric</dt><dd>Anthropic · supply portfolio</dd></div>
+            <div><dt>Period · units</dt><dd>initial draft cutoff · qualitative</dd></div>
+            <div><dt>Sources</dt><dd><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-001">SRC-001</a> · <a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-002">SRC-002</a> · <a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-014">SRC-014</a> · <a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-015">SRC-015</a> · <a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-016">SRC-016</a></dd></div>
+            <div><dt>Locator</dt><dd>424B4 L13466-13468 (four chip families), L20049-20105 (Anthropic Direct), L17029-17169 (named arrangements), L13348-13354 (lead time and short-term); research/W1-FILING-RECONSTRUCTION.md#w1-providers</dd></div>
+            <div><dt>Caveats</dt><dd>W1 disposition: supported with specifics: AWS Trainium, Google TPUs, NVIDIA GPUs and AMD GPUs; multiple CSPs; named neocloud counterparties (CL-023); leased hardware in third-party-operated facilities. Locations and power not extracted. Primary issuer filing text located in the supplied capture; values consistent across applicable versions; capture hash matches manifest but origin not network-authenticated; no human review recorded.</dd></div>
+            <div><dt>Review</dt><dd>No human review recorded</dd></div>
+          </dl>
+          <p class="caption">Cited in: <a href="paper.html#p06" data-site-link>Return to P06</a> · <a href="paper.html#p12" data-site-link>Return to P12</a></p>
+        </article>
+        <article class="claim-card" id="cl-013" data-state="unknown" data-classification="derived" data-search="cl-013 with positive proportional task-price pass-through and fixed success rate and pue the energy ratio is g^(1-e); for 0&lt;g&lt;1 the break-even elasticity magnitude is one. synthetic task model analytical break-even one comparison mathematical identity under stated constraints only; no empirical elasticity estimate or universal threshold.">
+          <header><h3>CL-013</h3><p class="claim-labels"><span class="status-label">derived</span><span class="status-label">Verification: unknown</span><span class="status-label">Confidence: unassessed</span></p></header>
+          <p class="claim-text">With positive proportional task-price pass-through and fixed success rate and PUE the energy ratio is g^(1-e); for 0&lt;g&lt;1 the break-even elasticity magnitude is one.</p>
+          <dl>
+            <div><dt>Entity · metric</dt><dd>synthetic task model · analytical break-even</dd></div>
+            <div><dt>Period · units</dt><dd>one comparison · dimensionless</dd></div>
+            <div><dt>Locator</dt><dd>R05 analytical derivation; not an external observation</dd></div>
+            <div><dt>Formula</dt><dd><code>S1/S0=g^(-e); I1/I0=g; E1/E0=g^(1-e)</code></dd></div>
+            <div><dt>Caveats</dt><dd>Mathematical identity under stated constraints only; no empirical elasticity estimate or universal threshold.</dd></div>
+            <div><dt>Review</dt><dd>No human review recorded</dd></div>
+          </dl>
+          <p class="caption">Cited in: <a href="paper.html#p05" data-site-link>Return to P05</a> · <a href="paper.html#p12" data-site-link>Return to P12</a></p>
+        </article>
+        <article class="claim-card" id="cl-014" data-state="unknown" data-classification="derived" data-search="cl-014 for s0=100 s=0.5 i0=0.01 and pue=1.2 baseline energy is 2.4 kwh; halving price and it intensity gives 2.4 kwh at e=1 and 4.8 kwh at e=2. synthetic task model verification fixtures one comparison arithmetic verified locally; research reviewer pending; not measured company workload or energy.">
+          <header><h3>CL-014</h3><p class="claim-labels"><span class="status-label">derived</span><span class="status-label">Verification: unknown</span><span class="status-label">Confidence: unassessed</span></p></header>
+          <p class="claim-text">For S0=100 s=0.5 I0=0.01 and PUE=1.2 baseline energy is 2.4 kWh; halving price and IT intensity gives 2.4 kWh at e=1 and 4.8 kWh at e=2.</p>
+          <dl>
+            <div><dt>Entity · metric</dt><dd>synthetic task model · verification fixtures</dd></div>
+            <div><dt>Period · units</dt><dd>one comparison · kWh</dd></div>
+            <div><dt>Locator</dt><dd>Section 8 synthetic fixtures</dd></div>
+            <div><dt>Formula</dt><dd><code>E1=100*(P1/P0)^(-e)/0.5*I1*1.2</code></dd></div>
+            <div><dt>Caveats</dt><dd>Arithmetic verified locally; research reviewer pending; not measured company workload or energy.</dd></div>
+            <div><dt>Review</dt><dd>No human review recorded</dd></div>
+          </dl>
+          <p class="caption">Cited in: <a href="paper.html#p08" data-site-link>Return to P08</a> · <a href="paper.html#p12" data-site-link>Return to P12</a></p>
+        </article>
+        <article class="claim-card" id="cl-015" data-state="unknown" data-classification="reported" data-search="cl-015 masanet and colleagues describe much faster global data-center compute-instance growth than energy growth in their 2010 to 2018 estimates. global data centers historical efficiency comparison 2010 to 2018 historical sector estimates; not current frontier-ai measurement or empirical ai demand elasticity.">
+          <header><h3>CL-015</h3><p class="claim-labels"><span class="status-label">reported</span><span class="status-label">Verification: unknown</span><span class="status-label">Confidence: unassessed</span></p></header>
+          <p class="claim-text">Masanet and colleagues describe much faster global data-center compute-instance growth than energy growth in their 2010 to 2018 estimates.</p>
+          <dl>
+            <div><dt>Entity · metric</dt><dd>global data centers · historical efficiency comparison</dd></div>
+            <div><dt>Period · units</dt><dd>2010 to 2018 · qualitative</dd></div>
+            <div><dt>Sources</dt><dd><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-009">SRC-009</a></dd></div>
+            <div><dt>Locator</dt><dd>Indexed original-paper text; full methods and supplements pending</dd></div>
+            <div><dt>Caveats</dt><dd>Historical sector estimates; not current frontier-AI measurement or empirical AI demand elasticity.</dd></div>
+            <div><dt>Review</dt><dd>No human review recorded</dd></div>
+          </dl>
+          <p class="caption">Cited in: <a href="paper.html#p01" data-site-link>Return to P01</a></p>
+        </article>
+        <article class="claim-card" id="cl-016" data-state="unknown" data-classification="reported" data-search="cl-016 swe-bench evaluates generated patches for github issue tasks using relevant repository tests. software issue benchmark coding evaluation method publication version pending version and harness must match; passing tests does not establish every aspect of commercial task usefulness.">
+          <header><h3>CL-016</h3><p class="claim-labels"><span class="status-label">reported</span><span class="status-label">Verification: unknown</span><span class="status-label">Confidence: unassessed</span></p></header>
+          <p class="claim-text">SWE-bench evaluates generated patches for GitHub issue tasks using relevant repository tests.</p>
+          <dl>
+            <div><dt>Entity · metric</dt><dd>software issue benchmark · coding evaluation method</dd></div>
+            <div><dt>Period · units</dt><dd>publication version pending · qualitative</dd></div>
+            <div><dt>Sources</dt><dd><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-010">SRC-010</a></dd></div>
+            <div><dt>Locator</dt><dd>Indexed original-paper evaluation passages; full selected version pending</dd></div>
+            <div><dt>Caveats</dt><dd>Version and harness must match; passing tests does not establish every aspect of commercial task usefulness.</dd></div>
+            <div><dt>Review</dt><dd>No human review recorded</dd></div>
+          </dl>
+          <p class="caption">Cited in: <a href="paper.html#p03" data-site-link>Return to P03</a></p>
+        </article>
+        <article class="claim-card" id="cl-017" data-state="unknown" data-classification="reported" data-search="cl-017 openai describes swe-bench verified as a 500-sample subset selected with human annotation. software issue benchmark subset definition 2024 announcement vendor announcement; verified is a benchmark name not primary-source verification or commercial parity.">
+          <header><h3>CL-017</h3><p class="claim-labels"><span class="status-label">reported</span><span class="status-label">Verification: unknown</span><span class="status-label">Confidence: unassessed</span></p></header>
+          <p class="claim-text">OpenAI describes SWE-bench Verified as a 500-sample subset selected with human annotation.</p>
+          <dl>
+            <div><dt>Entity · metric</dt><dd>software issue benchmark · subset definition</dd></div>
+            <div><dt>Period · units</dt><dd>2024 announcement · samples</dd></div>
+            <div><dt>Sources</dt><dd><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-011">SRC-011</a></dd></div>
+            <div><dt>Locator</dt><dd>Indexed official announcement; full annotation and method inspection pending</dd></div>
+            <div><dt>Caveats</dt><dd>Vendor announcement; Verified is a benchmark name not primary-source verification or commercial parity.</dd></div>
+            <div><dt>Review</dt><dd>No human review recorded</dd></div>
+          </dl>
+          <p class="caption">Cited in: <a href="paper.html#p03" data-site-link>Return to P03</a></p>
+        </article>
+        <article class="claim-card" id="cl-018" data-state="unknown" data-classification="reported" data-search="cl-018 epa egrid describes geographic output emission rates from emissions divided by electricity generation and also provides nonbaseload rates. us electricity emissions accounting method data edition pending annual and nonbaseload rates are not interchangeable with hourly marginal dispatch or long-run load responses.">
+          <header><h3>CL-018</h3><p class="claim-labels"><span class="status-label">reported</span><span class="status-label">Verification: unknown</span><span class="status-label">Confidence: unassessed</span></p></header>
+          <p class="claim-text">EPA eGRID describes geographic output emission rates from emissions divided by electricity generation and also provides nonbaseload rates.</p>
+          <dl>
+            <div><dt>Entity · metric</dt><dd>US electricity · emissions accounting method</dd></div>
+            <div><dt>Period · units</dt><dd>data edition pending · qualitative</dd></div>
+            <div><dt>Sources</dt><dd><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-012">SRC-012</a></dd></div>
+            <div><dt>Locator</dt><dd>Indexed official FAQ; full data edition inspection pending</dd></div>
+            <div><dt>Caveats</dt><dd>Annual and nonbaseload rates are not interchangeable with hourly marginal dispatch or long-run load responses.</dd></div>
+            <div><dt>Review</dt><dd>No human review recorded</dd></div>
+          </dl>
+          <p class="caption">Cited in: <a href="paper.html#p07" data-site-link>Return to P07</a></p>
+        </article>
+        <article class="claim-card" id="cl-019" data-state="unknown" data-classification="reported" data-search="cl-019 cambium documentation describes simulated hourly electricity-sector futures and long-run marginal rates that can reflect grid operating and structural changes. us electricity marginal emissions modeling documentation and data editions pending model outputs are scenarios not measurements; match documentation and dataset edition before use.">
+          <header><h3>CL-019</h3><p class="claim-labels"><span class="status-label">reported</span><span class="status-label">Verification: unknown</span><span class="status-label">Confidence: unassessed</span></p></header>
+          <p class="claim-text">Cambium documentation describes simulated hourly electricity-sector futures and long-run marginal rates that can reflect grid operating and structural changes.</p>
+          <dl>
+            <div><dt>Entity · metric</dt><dd>US electricity · marginal emissions modeling</dd></div>
+            <div><dt>Period · units</dt><dd>documentation and data editions pending · qualitative</dd></div>
+            <div><dt>Sources</dt><dd><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-013">SRC-013</a></dd></div>
+            <div><dt>Locator</dt><dd>Indexed official publication and dataset descriptions; full selected method pending</dd></div>
+            <div><dt>Caveats</dt><dd>Model outputs are scenarios not measurements; match documentation and dataset edition before use.</dd></div>
+            <div><dt>Review</dt><dd>No human review recorded</dd></div>
+          </dl>
+          <p class="caption">Cited in: <a href="paper.html#p07" data-site-link>Return to P07</a></p>
+        </article>
+        <article class="claim-card" id="cl-020" data-state="unknown" data-classification="reported" data-search="cl-020 the final prospectus states aggregate contractual obligations and commitments of approximately 900.9 billion as of and subsequent to 2026-09-30 substantially all compute and infrastructure including about 451.6 billion expected before 2031 and about 70.7 billion due within 12 months. anthropic aggregate committed spend as of and subsequent to 2026-09-30 decomposes into table 319.993 + short-term 17.4 + leases not commenced 451.2 + subsequent 105.7 + subsequent short-term 6.6 within rounding (chk-11). supersedes cl-005; a1 to a2 change equals +5.5 billion subsequent commitments (chk-13). excludes arrangements without fixed dollar commitments (cl-021). primary issuer filing text located in the supplied capture; values consistent across applicable versions; capture hash matches manifest but origin not network-authenticated; no human review recorded.">
+          <header><h3>CL-020</h3><p class="claim-labels"><span class="status-label">reported</span><span class="status-label">Verification: unknown</span><span class="status-label">Confidence: medium</span></p></header>
+          <p class="claim-text">The final prospectus states aggregate contractual obligations and commitments of approximately 900.9 billion as of and subsequent to 2026-09-30 substantially all compute and infrastructure including about 451.6 billion expected before 2031 and about 70.7 billion due within 12 months.</p>
+          <dl>
+            <div><dt>Entity · metric</dt><dd>Anthropic · aggregate committed spend</dd></div>
+            <div><dt>Period · units</dt><dd>as of and subsequent to 2026-09-30 · USD billion</dd></div>
+            <div><dt>Sources</dt><dd><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-014">SRC-014</a> · <a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-015">SRC-015</a> · <a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-016">SRC-016</a></dd></div>
+            <div><dt>Locator</dt><dd>424B4 L665-671 (summary) and L16890-16892, L16935-17003 (components); A2 L818 and L17179-17181; A3 L17245-17247; research/W1-FILING-RECONSTRUCTION.md#w1-commitments</dd></div>
+            <div><dt>Caveats</dt><dd>Decomposes into table 319.993 + short-term 17.4 + leases not commenced 451.2 + subsequent 105.7 + subsequent short-term 6.6 within rounding (CHK-11). Supersedes CL-005; A1 to A2 change equals +5.5 billion subsequent commitments (CHK-13). Excludes arrangements without fixed dollar commitments (CL-021). Primary issuer filing text located in the supplied capture; values consistent across applicable versions; capture hash matches manifest but origin not network-authenticated; no human review recorded.</dd></div>
+            <div><dt>Review</dt><dd>No human review recorded</dd></div>
+          </dl>
+          <p class="caption">Cited in: <a href="paper.html#p06" data-site-link>Return to P06</a> · <a href="paper.html#p12" data-site-link>Return to P12</a></p>
+        </article>
+        <article class="claim-card" id="cl-021" data-state="unknown" data-classification="reported" data-search="cl-021 about 186.2 billion of the aggregate obligations are subject to exercisable termination rights or contingent conditions and the aggregate excludes an estimated 150 to 175 billion of arrangements without a fixed dollar commitment. anthropic commitment conditionality and exclusions as of and subsequent to 2026-09-30 conditional amount fell from 213.8 billion in a1 to 186.2 billion in a2 without an extracted reason. the 150 to 175 billion is an issuer estimate first stated in a2, not a fixed obligation. do not add to cl-020. primary issuer filing text located in the supplied capture; values consistent across applicable versions; capture hash matches manifest but origin not network-authenticated; no human review recorded.">
+          <header><h3>CL-021</h3><p class="claim-labels"><span class="status-label">reported</span><span class="status-label">Verification: unknown</span><span class="status-label">Confidence: medium</span></p></header>
+          <p class="claim-text">About 186.2 billion of the aggregate obligations are subject to exercisable termination rights or contingent conditions and the aggregate excludes an estimated 150 to 175 billion of arrangements without a fixed dollar commitment.</p>
+          <dl>
+            <div><dt>Entity · metric</dt><dd>Anthropic · commitment conditionality and exclusions</dd></div>
+            <div><dt>Period · units</dt><dd>as of and subsequent to 2026-09-30 · USD billion</dd></div>
+            <div><dt>Sources</dt><dd><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-014">SRC-014</a> · <a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-015">SRC-015</a> · <a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-016">SRC-016</a></dd></div>
+            <div><dt>Locator</dt><dd>424B4 L16906-16910 (conditional), L17011-17013 (4.2 billion within 12 months), L16894-16898 (excluded estimate); A1 L16540-16543 (213.8 billion); research/W1-FILING-RECONSTRUCTION.md#w1-commitments</dd></div>
+            <div><dt>Caveats</dt><dd>Conditional amount fell from 213.8 billion in A1 to 186.2 billion in A2 without an extracted reason. The 150 to 175 billion is an issuer estimate first stated in A2, not a fixed obligation. Do not add to CL-020. Primary issuer filing text located in the supplied capture; values consistent across applicable versions; capture hash matches manifest but origin not network-authenticated; no human review recorded.</dd></div>
+            <div><dt>Review</dt><dd>No human review recorded</dd></div>
+          </dl>
+          <p class="caption">Cited in: <a href="paper.html#p06" data-site-link>Return to P06</a> · <a href="paper.html#p12" data-site-link>Return to P12</a></p>
+        </article>
+        <article class="claim-card" id="cl-022" data-state="unknown" data-classification="reported" data-search="cl-022 named arrangements include amazon at least 110.0 billion; google at least about 121.3 billion plus an estimated 125.0 to 150.0 billion of additional tpu compute; microsoft 47.2 to 49.2 billion; spacexai up to 120.5 billion; broadcom equipment leases about 161.2 billion; amd expected above 20.0 billion if initial capacity is procured. anthropic named compute arrangements terms 2026 to 2036 amounts are not additive with each other or with cl-020: some are inside the table or lease totals, some are variable estimates outside the aggregate, and spacexai is an up-to amount with cancellation rights. google and microsoft amounts were revised in a1 and a2. primary issuer filing text located in the supplied capture; values consistent across applicable versions; capture hash matches manifest but origin not network-authenticated; no human review recorded.">
+          <header><h3>CL-022</h3><p class="claim-labels"><span class="status-label">reported</span><span class="status-label">Verification: unknown</span><span class="status-label">Confidence: medium</span></p></header>
+          <p class="claim-text">Named arrangements include Amazon at least 110.0 billion; Google at least about 121.3 billion plus an estimated 125.0 to 150.0 billion of additional TPU compute; Microsoft 47.2 to 49.2 billion; SpaceXAI up to 120.5 billion; Broadcom equipment leases about 161.2 billion; AMD expected above 20.0 billion if initial capacity is procured.</p>
+          <dl>
+            <div><dt>Entity · metric</dt><dd>Anthropic · named compute arrangements</dd></div>
+            <div><dt>Period · units</dt><dd>terms 2026 to 2036 · USD billion</dd></div>
+            <div><dt>Sources</dt><dd><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-014">SRC-014</a> · <a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-015">SRC-015</a> · <a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-016">SRC-016</a></dd></div>
+            <div><dt>Locator</dt><dd>424B4 L17029-17169; S-1 L16357-16479 (Microsoft 44.9; Google 114.5); A1 L16693-16822; research/W1-FILING-RECONSTRUCTION.md#w1-commitments</dd></div>
+            <div><dt>Caveats</dt><dd>Amounts are not additive with each other or with CL-020: some are inside the table or lease totals, some are variable estimates outside the aggregate, and SpaceXAI is an up-to amount with cancellation rights. Google and Microsoft amounts were revised in A1 and A2. Primary issuer filing text located in the supplied capture; values consistent across applicable versions; capture hash matches manifest but origin not network-authenticated; no human review recorded.</dd></div>
+            <div><dt>Review</dt><dd>No human review recorded</dd></div>
+          </dl>
+          <p class="caption">Cited in: <a href="paper.html#p06" data-site-link>Return to P06</a> · <a href="paper.html#p12" data-site-link>Return to P12</a></p>
+        </article>
+        <article class="claim-card" id="cl-023" data-state="unknown" data-classification="reported" data-search="cl-023 lambda inc. agreements total about 41.3 billion into 2034 with fees only as capacity is delivered and accepted; the august 2026 agreement of about 34.9 billion is currently terminable by either party because lambda did not secure a facility lease by the specified date. nscale agreements are up to about 44.6 billion into 2033 and fluidstack provides colocation and data-center services. anthropic provider counterparty edges as of 2026-11-18 prospectus lambda is the only one of the seven research candidates named as a counterparty. coreweave, nebius, crusoe, together ai, fireworks ai and baseten were not found by name in the five primary documents; absence is not evidence of no relationship. nscale and fluidstack are not research candidates. primary issuer filing text located in the supplied capture; values consistent across applicable versions; capture hash matches manifest but origin not network-authenticated; no human review recorded.">
+          <header><h3>CL-023</h3><p class="claim-labels"><span class="status-label">reported</span><span class="status-label">Verification: unknown</span><span class="status-label">Confidence: medium</span></p></header>
+          <p class="claim-text">Lambda Inc. agreements total about 41.3 billion into 2034 with fees only as capacity is delivered and accepted; the August 2026 agreement of about 34.9 billion is currently terminable by either party because Lambda did not secure a facility lease by the specified date. Nscale agreements are up to about 44.6 billion into 2033 and Fluidstack provides colocation and data-center services.</p>
+          <dl>
+            <div><dt>Entity · metric</dt><dd>Anthropic · provider counterparty edges</dd></div>
+            <div><dt>Period · units</dt><dd>as of 2026-11-18 prospectus · USD billion</dd></div>
+            <div><dt>Sources</dt><dd><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-014">SRC-014</a> · <a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-015">SRC-015</a> · <a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-016">SRC-016</a></dd></div>
+            <div><dt>Locator</dt><dd>424B4 L17113-17155 (Nscale and Lambda) and L20099-20101 (Fluidstack); A2 L17430-17436 (terminable status first disclosed); research/W1-FILING-RECONSTRUCTION.md#w1-providers</dd></div>
+            <div><dt>Caveats</dt><dd>Lambda is the only one of the seven research candidates named as a counterparty. CoreWeave, Nebius, Crusoe, Together AI, Fireworks AI and Baseten were not found by name in the five primary documents; absence is not evidence of no relationship. Nscale and Fluidstack are not research candidates. Primary issuer filing text located in the supplied capture; values consistent across applicable versions; capture hash matches manifest but origin not network-authenticated; no human review recorded.</dd></div>
+            <div><dt>Review</dt><dd>No human review recorded</dd></div>
+          </dl>
+          <p class="caption">Cited in: <a href="paper.html#p06" data-site-link>Return to P06</a> · <a href="paper.html#p12" data-site-link>Return to P12</a></p>
+        </article>
+        <article class="claim-card" id="cl-024" data-state="unknown" data-classification="reported" data-search="cl-024 compute and infrastructure expense covers research, model development, customer serving and internal usage as one shared resource; from 2026 it also includes lease costs and depreciation and amortization; the issuer defines compute efficiency as intelligence produced and revenue generated per dollar of compute invested. anthropic expense scope and efficiency definition fy2023 to nine months 2026 issuer compute efficiency is a financial and capability definition, not per-task or physical efficiency (fr-04). cost of revenue in note 8 is a different caption and was not extracted. the 2026 composition change affects multi-quarter comparability. primary issuer filing text located in the supplied capture; values consistent across applicable versions; capture hash matches manifest but origin not network-authenticated; no human review recorded.">
+          <header><h3>CL-024</h3><p class="claim-labels"><span class="status-label">reported</span><span class="status-label">Verification: unknown</span><span class="status-label">Confidence: medium</span></p></header>
+          <p class="claim-text">Compute and infrastructure expense covers research, model development, customer serving and internal usage as one shared resource; from 2026 it also includes lease costs and depreciation and amortization; the issuer defines compute efficiency as intelligence produced and revenue generated per dollar of compute invested.</p>
+          <dl>
+            <div><dt>Entity · metric</dt><dd>Anthropic · expense scope and efficiency definition</dd></div>
+            <div><dt>Period · units</dt><dd>FY2023 to nine months 2026 · qualitative</dd></div>
+            <div><dt>Sources</dt><dd><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-014">SRC-014</a> · <a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-015">SRC-015</a> · <a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-016">SRC-016</a></dd></div>
+            <div><dt>Locator</dt><dd>424B4 L14352-14372, L14418-14422 and L13440-13442; S-1 L13963-13975 and L13077-13079; research/W1-FILING-RECONSTRUCTION.md#w1-revenue-compute</dd></div>
+            <div><dt>Caveats</dt><dd>Issuer compute efficiency is a financial and capability definition, not per-task or physical efficiency (FR-04). Cost of revenue in Note 8 is a different caption and was not extracted. The 2026 composition change affects multi-quarter comparability. Primary issuer filing text located in the supplied capture; values consistent across applicable versions; capture hash matches manifest but origin not network-authenticated; no human review recorded.</dd></div>
+            <div><dt>Review</dt><dd>No human review recorded</dd></div>
+          </dl>
+          <p class="caption">Cited in: <a href="paper.html#p03" data-site-link>Return to P03</a> · <a href="paper.html#p12" data-site-link>Return to P12</a></p>
+        </article>
+        <article class="claim-card" id="cl-025" data-state="unknown" data-classification="derived" data-search="cl-025 under the illustrative trigger of compute and infrastructure expense above 60 percent of revenue for four consecutive comparable quarters the reported 2025 quarters meet the boundary (251 177 148 and 144 percent) while q2 and q3 2026 are 48 and 58 percent. anthropic illustrative compute-pressure boundary q1-2025 to q3-2026 illustrative fr-14 trigger applied to historical reported quarters during a deliberate ramp; demonstrates that crossing it is not a solvency or viability signal. continuity across q4-2025 to q1-2026 depends on the 2026 composition change. no forecast or safety verdict.">
+          <header><h3>CL-025</h3><p class="claim-labels"><span class="status-label">derived</span><span class="status-label">Verification: unknown</span><span class="status-label">Confidence: medium</span></p></header>
+          <p class="claim-text">Under the illustrative trigger of compute and infrastructure expense above 60 percent of revenue for four consecutive comparable quarters the reported 2025 quarters meet the boundary (251 177 148 and 144 percent) while Q2 and Q3 2026 are 48 and 58 percent.</p>
+          <dl>
+            <div><dt>Entity · metric</dt><dd>Anthropic · illustrative compute-pressure boundary</dd></div>
+            <div><dt>Period · units</dt><dd>Q1-2025 to Q3-2026 · percent</dd></div>
+            <div><dt>Sources</dt><dd><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-016">SRC-016</a></dd></div>
+            <div><dt>Locator</dt><dd>data/derived/w1-compute-pressure-illustrative.csv; research/W1-FILING-RECONSTRUCTION.md#w1-stress</dd></div>
+            <div><dt>Formula</dt><dd><code>ratio_q = 100*CI_q/REV_q; boundary met when ratio_q &gt; 60 for four consecutive comparable quarters</code></dd></div>
+            <div><dt>Inputs</dt><dd><a href="#cl-001" data-site-link>CL-001</a> · <a href="#cl-002" data-site-link>CL-002</a> · <a href="#cl-024" data-site-link>CL-024</a></dd></div>
+            <div><dt>Caveats</dt><dd>Illustrative FR-14 trigger applied to historical reported quarters during a deliberate ramp; demonstrates that crossing it is not a solvency or viability signal. Continuity across Q4-2025 to Q1-2026 depends on the 2026 composition change. No forecast or safety verdict.</dd></div>
+            <div><dt>Review</dt><dd>No human review recorded</dd></div>
+          </dl>
+          <p class="caption">Cited in: <a href="paper.html#p09" data-site-link>Return to P09</a> · <a href="paper.html#p12" data-site-link>Return to P12</a></p>
+        </article>
+        <article class="claim-card" id="cl-040" data-state="unknown" data-classification="reported" data-search="cl-040 in a controlled study of six anthropic and openai models, raising per-trajectory token budgets above typical published budgets added about 11.7 points on frontiermath (1m to 10m tokens) and 11.9 points on hle (64k to 5m) but only about 0.3 points on swe-bench pro (about 16m to 30m) and 1.3 points on terminalbench (about 7.3m to 10m). frontier llm evaluations (anthropic and openai models) benchmark score gain from expanded inference budget models released may 2025 to mar 2026; preprint v3 supplied local text hash-matched manifest; origin not network-authenticated; not human-reviewed. medium: controlled crossed design with documented protocol, but unrefereed preprint, up to 100-task subsets (frontiermath 12), one react scaffold, model-averaged gains with large sds measured from the upper end of typical budgets, no open-weight models. supports protocol dependence of benchmark clocks; not a cost, energy or open-versus-closed lag measurement.">
+          <header><h3>CL-040</h3><p class="claim-labels"><span class="status-label">reported</span><span class="status-label">Verification: unknown</span><span class="status-label">Confidence: medium</span></p></header>
+          <p class="claim-text">In a controlled study of six Anthropic and OpenAI models, raising per-trajectory token budgets above typical published budgets added about 11.7 points on FrontierMath (1M to 10M tokens) and 11.9 points on HLE (64K to 5M) but only about 0.3 points on SWE-Bench Pro (about 16M to 30M) and 1.3 points on TerminalBench (about 7.3M to 10M).</p>
+          <dl>
+            <div><dt>Entity · metric</dt><dd>frontier LLM evaluations (Anthropic and OpenAI models) · benchmark score gain from expanded inference budget</dd></div>
+            <div><dt>Period · units</dt><dd>models released May 2025 to Mar 2026; preprint v3 · percentage points</dd></div>
+            <div><dt>Sources</dt><dd><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-021">SRC-021</a></dd></div>
+            <div><dt>Locator</dt><dd>research/05-lit__arxiv-2606.17930-inference-compute-and-frontier-evaluation.md L135-L137 and L147-L159; Sec. 3.1.1 and Table 3</dd></div>
+            <div><dt>Caveats</dt><dd>Supplied local text hash-matched manifest; origin not network-authenticated; not human-reviewed. Medium: controlled crossed design with documented protocol, but unrefereed preprint, up to 100-task subsets (FrontierMath 12), one ReAct scaffold, model-averaged gains with large SDs measured from the upper end of typical budgets, no open-weight models. Supports protocol dependence of benchmark clocks; not a cost, energy or open-versus-closed lag measurement.</dd></div>
+            <div><dt>Review</dt><dd>No human review recorded</dd></div>
+          </dl>
+          <p class="caption">Cited in: <a href="paper.html#p03" data-site-link>Return to P03</a> · <a href="paper.html#p04" data-site-link>Return to P04</a> · <a href="paper.html#p12" data-site-link>Return to P12</a></p>
+        </article>
+        <article class="claim-card" id="cl-041" data-state="unknown" data-classification="reported" data-search="cl-041 the same study attributes generational gains mainly to reach (more tasks unlocked) and reliability (unlocked tasks solved more consistently); output tokens per solve fell significantly with model generation on four of six benchmarks but not on frontiermath or hle. frontier llm evaluations (anthropic and openai models) decomposition of generational gains models released may 2025 to mar 2026; preprint v3 supplied local text hash-matched manifest; origin not network-authenticated; not human-reviewed. medium: task-level regressions with stated specifications and a balanced-panel sensitivity check. token efficiency is output tokens per solve conditional on unlocked tasks; excludes failed-attempt tokens; tokens not dollars or energy; two vendor families only.">
+          <header><h3>CL-041</h3><p class="claim-labels"><span class="status-label">reported</span><span class="status-label">Verification: unknown</span><span class="status-label">Confidence: medium</span></p></header>
+          <p class="claim-text">The same study attributes generational gains mainly to reach (more tasks unlocked) and reliability (unlocked tasks solved more consistently); output tokens per solve fell significantly with model generation on four of six benchmarks but not on FrontierMath or HLE.</p>
+          <dl>
+            <div><dt>Entity · metric</dt><dd>frontier LLM evaluations (Anthropic and OpenAI models) · decomposition of generational gains</dd></div>
+            <div><dt>Period · units</dt><dd>models released May 2025 to Mar 2026; preprint v3 · regression effects (qualitative summary)</dd></div>
+            <div><dt>Sources</dt><dd><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-021">SRC-021</a></dd></div>
+            <div><dt>Locator</dt><dd>research/05-lit__arxiv-2606.17930-inference-compute-and-frontier-evaluation.md L175; L189-L191; L201-L207; Sec. 3.2 and Table 4</dd></div>
+            <div><dt>Caveats</dt><dd>Supplied local text hash-matched manifest; origin not network-authenticated; not human-reviewed. Medium: task-level regressions with stated specifications and a balanced-panel sensitivity check. Token efficiency is output tokens per solve conditional on unlocked tasks; excludes failed-attempt tokens; tokens not dollars or energy; two vendor families only.</dd></div>
+            <div><dt>Review</dt><dd>No human review recorded</dd></div>
+          </dl>
+          <p class="caption">Cited in: <a href="paper.html#p12" data-site-link>Return to P12</a></p>
+        </article>
+        <article class="claim-card" id="cl-042" data-state="unknown" data-classification="reported" data-search="cl-042 across 61 citations documenting 89 published harness setups for the studied benchmarks, the token budget was undocumented in 42 (69 percent), the turn cap in 57, the cost cap in 57 and trajectories per task in 34. published llm evaluation reports protocol documentation rate sources dated 2025 to 2026 supplied local text hash-matched manifest; origin not network-authenticated; not human-reviewed. medium: authors own tabulation limited to benchmark preprints, lab system or model cards and prominent leaderboards; caption also says 60 citations (minor inconsistency). implies many published open-versus-closed score pairs cannot be protocol-matched.">
+          <header><h3>CL-042</h3><p class="claim-labels"><span class="status-label">reported</span><span class="status-label">Verification: unknown</span><span class="status-label">Confidence: medium</span></p></header>
+          <p class="claim-text">Across 61 citations documenting 89 published harness setups for the studied benchmarks, the token budget was undocumented in 42 (69 percent), the turn cap in 57, the cost cap in 57 and trajectories per task in 34.</p>
+          <dl>
+            <div><dt>Entity · metric</dt><dd>published LLM evaluation reports · protocol documentation rate</dd></div>
+            <div><dt>Period · units</dt><dd>sources dated 2025 to 2026 · count of citations</dd></div>
+            <div><dt>Sources</dt><dd><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-021">SRC-021</a></dd></div>
+            <div><dt>Locator</dt><dd>research/05-lit__arxiv-2606.17930-inference-compute-and-frontier-evaluation.md L339; Appendix Table 8 caption</dd></div>
+            <div><dt>Caveats</dt><dd>Supplied local text hash-matched manifest; origin not network-authenticated; not human-reviewed. Medium: authors own tabulation limited to benchmark preprints, lab system or model cards and prominent leaderboards; caption also says 60 citations (minor inconsistency). Implies many published open-versus-closed score pairs cannot be protocol-matched.</dd></div>
+            <div><dt>Review</dt><dd>No human review recorded</dd></div>
+          </dl>
+          <p class="caption">Cited in: <a href="paper.html#p04" data-site-link>Return to P04</a> · <a href="paper.html#p12" data-site-link>Return to P12</a></p>
+        </article>
+        <article class="claim-card" id="cl-043" data-state="unknown" data-classification="reported" data-search="cl-043 allowing repeated submissions raised cumulative performance on all five main benchmarks (about 6.4 to 17.3 points; 14.4 on swe-bench pro); trajectories were credited if any submission was correct, and scoring by first or last submission lowered solve rates on most benchmarks but not on swe-bench pro. frontier llm evaluations (anthropic and openai models) iteration gain and scoring-rule sensitivity models released may 2025 to mar 2026; preprint v3 supplied local text hash-matched manifest; origin not network-authenticated; not human-reviewed. medium: same controlled design; the oracle condition reveals correctness and stops at the first correct submission, which is ecologically valid mainly where deployable verifiers exist. motivates counting each submission as an attempt and scoring the delivered output.">
+          <header><h3>CL-043</h3><p class="claim-labels"><span class="status-label">reported</span><span class="status-label">Verification: unknown</span><span class="status-label">Confidence: medium</span></p></header>
+          <p class="claim-text">Allowing repeated submissions raised cumulative performance on all five main benchmarks (about 6.4 to 17.3 points; 14.4 on SWE-Bench Pro); trajectories were credited if any submission was correct, and scoring by first or last submission lowered solve rates on most benchmarks but not on SWE-Bench Pro.</p>
+          <dl>
+            <div><dt>Entity · metric</dt><dd>frontier LLM evaluations (Anthropic and OpenAI models) · iteration gain and scoring-rule sensitivity</dd></div>
+            <div><dt>Period · units</dt><dd>models released May 2025 to Mar 2026; preprint v3 · percentage points</dd></div>
+            <div><dt>Sources</dt><dd><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-021">SRC-021</a></dd></div>
+            <div><dt>Locator</dt><dd>research/05-lit__arxiv-2606.17930-inference-compute-and-frontier-evaluation.md L123; L143; L215-L221; L233; Sec. 3.1 footnote 1 and Sec. 3.3.1</dd></div>
+            <div><dt>Caveats</dt><dd>Supplied local text hash-matched manifest; origin not network-authenticated; not human-reviewed. Medium: same controlled design; the oracle condition reveals correctness and stops at the first correct submission, which is ecologically valid mainly where deployable verifiers exist. Motivates counting each submission as an attempt and scoring the delivered output.</dd></div>
+            <div><dt>Review</dt><dd>No human review recorded</dd></div>
+          </dl>
+          <p class="caption">Cited in: <a href="paper.html#p03" data-site-link>Return to P03</a> · <a href="paper.html#p12" data-site-link>Return to P12</a></p>
+        </article>
+        <article class="claim-card" id="cl-044" data-state="unknown" data-classification="reported" data-search="cl-044 for five deepseek-r1-distill models (1.5b to 70b) on four synthetic reasoning tasks, capability grew sublinearly with parameters (for addition at temperature 0.6 doubling parameters multiplied the decay scale by about 1.61) while output length among correct answers did not decrease systematically with model size. deepseek-r1-distill model family capability and token-efficiency scaling with parameter count preprint v2 supplied local text hash-matched manifest; origin not network-authenticated; not human-reviewed. medium: controlled design with 100 instances per size and posterior checks, but one distilled open-weight family, synthetic tasks and possible tokenizer confounding; efficiency conditioned on correct answers; no cost or energy measured. any inference that larger models use more compute per correct answer is project interpretation, not the paper finding.">
+          <header><h3>CL-044</h3><p class="claim-labels"><span class="status-label">reported</span><span class="status-label">Verification: unknown</span><span class="status-label">Confidence: medium</span></p></header>
+          <p class="claim-text">For five DeepSeek-R1-Distill models (1.5B to 70B) on four synthetic reasoning tasks, capability grew sublinearly with parameters (for addition at temperature 0.6 doubling parameters multiplied the decay scale by about 1.61) while output length among correct answers did not decrease systematically with model size.</p>
+          <dl>
+            <div><dt>Entity · metric</dt><dd>DeepSeek-R1-Distill model family · capability and token-efficiency scaling with parameter count</dd></div>
+            <div><dt>Period · units</dt><dd>preprint v2 · dimensionless scaling exponents</dd></div>
+            <div><dt>Sources</dt><dd><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-023">SRC-023</a></dd></div>
+            <div><dt>Locator</dt><dd>research/05-lit__arxiv-2609.27166-scaling-capability-and-efficiency.md L22; L337-L353; L500; L543-L551; Sec. II B-C and III</dd></div>
+            <div><dt>Caveats</dt><dd>Supplied local text hash-matched manifest; origin not network-authenticated; not human-reviewed. Medium: controlled design with 100 instances per size and posterior checks, but one distilled open-weight family, synthetic tasks and possible tokenizer confounding; efficiency conditioned on correct answers; no cost or energy measured. Any inference that larger models use more compute per correct answer is project interpretation, not the paper finding.</dd></div>
+            <div><dt>Review</dt><dd>No human review recorded</dd></div>
+          </dl>
+          <p class="caption">Cited in: <a href="paper.html#p03" data-site-link>Return to P03</a> · <a href="paper.html#p12" data-site-link>Return to P12</a></p>
+        </article>
+        <article class="claim-card" id="cl-045" data-state="unknown" data-classification="scenario" data-search="cl-045 a single-author scenario model states that with announced capacity growth (about 2.6x by 2029) and assumed 30 percent per year bytes-per-token efficiency gains, new ai infrastructure stays solvent only if token demand grows about 2x per year for four years; the threshold moves from about 1.6x to 2.4x for 15 to 45 percent per year efficiency. ai inference infrastructure (aggregate) solvency threshold for token-demand growth 2026 to 2030 projection supplied local text hash-matched manifest; origin not network-authenticated; not human-reviewed. low: model output from assumed parameters (appendix parameter table absent from extraction) and relayed capacity announcements; scenario probabilities in the same paper are subjective; substantial ai assistance disclosed. stress-test structure only; not calibration, observation or demand-elasticity evidence.">
+          <header><h3>CL-045</h3><p class="claim-labels"><span class="status-label">scenario</span><span class="status-label">Verification: unknown</span><span class="status-label">Confidence: low</span></p></header>
+          <p class="claim-text">A single-author scenario model states that with announced capacity growth (about 2.6x by 2029) and assumed 30 percent per year bytes-per-token efficiency gains, new AI infrastructure stays solvent only if token demand grows about 2x per year for four years; the threshold moves from about 1.6x to 2.4x for 15 to 45 percent per year efficiency.</p>
+          <dl>
+            <div><dt>Entity · metric</dt><dd>AI inference infrastructure (aggregate) · solvency threshold for token-demand growth</dd></div>
+            <div><dt>Period · units</dt><dd>2026 to 2030 projection · annual growth multiple</dd></div>
+            <div><dt>Sources</dt><dd><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-022">SRC-022</a></dd></div>
+            <div><dt>Locator</dt><dd>research/05-lit__arxiv-2607.07207-memory-scarcity-open-models-ai-industry.md L33; L113-L127; Sec. 7 and 7.1</dd></div>
+            <div><dt>Caveats</dt><dd>Supplied local text hash-matched manifest; origin not network-authenticated; not human-reviewed. Low: model output from assumed parameters (appendix parameter table absent from extraction) and relayed capacity announcements; scenario probabilities in the same paper are subjective; substantial AI assistance disclosed. Stress-test structure only; not calibration, observation or demand-elasticity evidence.</dd></div>
+            <div><dt>Review</dt><dd>No human review recorded</dd></div>
+          </dl>
+          <p class="caption">Cited in: <a href="paper.html#p01" data-site-link>Return to P01</a> · <a href="paper.html#p12" data-site-link>Return to P12</a></p>
+        </article>
+        <article class="claim-card" id="cl-046" data-state="unknown" data-classification="reported" data-search="cl-046 the same paper relays vendor and platform token-volume trackers (google about 9.7 trillion tokens per month in may 2024 to 3.2 quadrillion in may 2026; openrouter about 5 to over 31 trillion tokens per week from spring 2025 to late may 2026) and argues they overstate underlying demand because of supply-injected volume, channel substitution, subsidy, low-value context re-reading and disclosure selection. ai token demand (vendor and platform trackers) token-volume growth and measurement bias may 2024 to may 2026 supplied local text hash-matched manifest; origin not network-authenticated; not human-reviewed. low: second-hand relay of vendor-reported or aggregator figures in non-comparable native units; the author quality-adjusted 2 to 3x per year is an estimate. token growth alongside falling prices is co-movement, not an identified price elasticity; tokens are not tasks.">
+          <header><h3>CL-046</h3><p class="claim-labels"><span class="status-label">reported</span><span class="status-label">Verification: unknown</span><span class="status-label">Confidence: low</span></p></header>
+          <p class="claim-text">The same paper relays vendor and platform token-volume trackers (Google about 9.7 trillion tokens per month in May 2024 to 3.2 quadrillion in May 2026; OpenRouter about 5 to over 31 trillion tokens per week from spring 2025 to late May 2026) and argues they overstate underlying demand because of supply-injected volume, channel substitution, subsidy, low-value context re-reading and disclosure selection.</p>
+          <dl>
+            <div><dt>Entity · metric</dt><dd>AI token demand (vendor and platform trackers) · token-volume growth and measurement bias</dd></div>
+            <div><dt>Period · units</dt><dd>May 2024 to May 2026 · tokens per month or per week</dd></div>
+            <div><dt>Sources</dt><dd><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-022">SRC-022</a></dd></div>
+            <div><dt>Locator</dt><dd>research/05-lit__arxiv-2607.07207-memory-scarcity-open-models-ai-industry.md L139; L145; L151-L153; Sec. 9 and 9.1</dd></div>
+            <div><dt>Caveats</dt><dd>Supplied local text hash-matched manifest; origin not network-authenticated; not human-reviewed. Low: second-hand relay of vendor-reported or aggregator figures in non-comparable native units; the author quality-adjusted 2 to 3x per year is an estimate. Token growth alongside falling prices is co-movement, not an identified price elasticity; tokens are not tasks.</dd></div>
+            <div><dt>Review</dt><dd>No human review recorded</dd></div>
+          </dl>
+          <p class="caption">Cited in: <a href="paper.html#p01" data-site-link>Return to P01</a> · <a href="paper.html#p12" data-site-link>Return to P12</a></p>
+        </article>
+        <article class="claim-card" id="cl-047" data-state="unknown" data-classification="reported" data-search="cl-047 the same paper relays that open-weight glm-5.2 (744b total and 40b active parameters, mit license, june 2026) matches or exceeds proprietary flagships on long-horizon coding and agentic benchmarks at roughly one-sixth of the serving price. glm-5.2 versus proprietary flagship models benchmark parity and serving-price ratio june 2026 supplied local text hash-matched manifest; origin not network-authenticated; not human-reviewed. low: relayed from vendor release and press coverage; benchmarks, versions, inference budgets and price basis not specified in the passage. benchmark-clock lead only; not workload or commercial equivalency and not a lag estimate (compare cl-006).">
+          <header><h3>CL-047</h3><p class="claim-labels"><span class="status-label">reported</span><span class="status-label">Verification: unknown</span><span class="status-label">Confidence: low</span></p></header>
+          <p class="claim-text">The same paper relays that open-weight GLM-5.2 (744B total and 40B active parameters, MIT license, June 2026) matches or exceeds proprietary flagships on long-horizon coding and agentic benchmarks at roughly one-sixth of the serving price.</p>
+          <dl>
+            <div><dt>Entity · metric</dt><dd>GLM-5.2 versus proprietary flagship models · benchmark parity and serving-price ratio</dd></div>
+            <div><dt>Period · units</dt><dd>June 2026 · qualitative; price ratio</dd></div>
+            <div><dt>Sources</dt><dd><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-022">SRC-022</a></dd></div>
+            <div><dt>Locator</dt><dd>research/05-lit__arxiv-2607.07207-memory-scarcity-open-models-ai-industry.md L45; Sec. 1 Market Context</dd></div>
+            <div><dt>Caveats</dt><dd>Supplied local text hash-matched manifest; origin not network-authenticated; not human-reviewed. Low: relayed from vendor release and press coverage; benchmarks, versions, inference budgets and price basis not specified in the passage. Benchmark-clock lead only; not workload or commercial equivalency and not a lag estimate (compare CL-006).</dd></div>
+            <div><dt>Review</dt><dd>No human review recorded</dd></div>
+          </dl>
+          <p class="caption">Cited in: <a href="paper.html#p04" data-site-link>Return to P04</a> · <a href="paper.html#p12" data-site-link>Return to P12</a></p>
+        </article>
+        <article class="claim-card" id="cl-048" data-state="unknown" data-classification="reported" data-search="cl-048 the same paper relays a serving-cost study finding effective cost on identical h100 hardware ranging from 0.21 to 15.25 usd per million output tokens depending on utilization and offered request rate. llm serving on h100 hardware effective serving cost study date not verified supplied local text hash-matched manifest; origin not network-authenticated; not human-reviewed. low: secondary relay of an uninspected study; model, workload and pricing basis absent from the passage. supports treating serving configuration and utilization as comparability-critical metadata; not an input value.">
+          <header><h3>CL-048</h3><p class="claim-labels"><span class="status-label">reported</span><span class="status-label">Verification: unknown</span><span class="status-label">Confidence: low</span></p></header>
+          <p class="claim-text">The same paper relays a serving-cost study finding effective cost on identical H100 hardware ranging from 0.21 to 15.25 USD per million output tokens depending on utilization and offered request rate.</p>
+          <dl>
+            <div><dt>Entity · metric</dt><dd>LLM serving on H100 hardware · effective serving cost</dd></div>
+            <div><dt>Period · units</dt><dd>study date not verified · USD per million output tokens</dd></div>
+            <div><dt>Sources</dt><dd><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-022">SRC-022</a></dd></div>
+            <div><dt>Locator</dt><dd>research/05-lit__arxiv-2607.07207-memory-scarcity-open-models-ai-industry.md L65; Sec. 2 scope qualification</dd></div>
+            <div><dt>Caveats</dt><dd>Supplied local text hash-matched manifest; origin not network-authenticated; not human-reviewed. Low: secondary relay of an uninspected study; model, workload and pricing basis absent from the passage. Supports treating serving configuration and utilization as comparability-critical metadata; not an input value.</dd></div>
+            <div><dt>Review</dt><dd>No human review recorded</dd></div>
+          </dl>
+          <p class="caption">Cited in: <a href="paper.html#p03" data-site-link>Return to P03</a> · <a href="paper.html#p12" data-site-link>Return to P12</a></p>
+        </article>
+        <article class="claim-card" id="cl-049" data-state="unknown" data-classification="estimated" data-search="cl-049 stanford ai index 2026 chapter 1 estimates global ai data-center power capacity at about 29.6 gw by q4 2025, derived from rated thermal design power of ai chips sold (about 11.8 gw) with an approximately 2.5x multiplier for cooling, networking and other infrastructure. global ai data centers ai data-center power capacity q4 2025 supplied local text hash-matched manifest; origin not network-authenticated; not human-reviewed. low: secondary synthesis; rated capacity, not metered consumption; the multiplier is an assumption and not a pue; the chapter separate de vries and gao estimate (about 9.4 gw all-in through 2024) is not reconciled. chapter text license pending. not for company or regional allocation.">
+          <header><h3>CL-049</h3><p class="claim-labels"><span class="status-label">estimated</span><span class="status-label">Verification: unknown</span><span class="status-label">Confidence: low</span></p></header>
+          <p class="claim-text">Stanford AI Index 2026 Chapter 1 estimates global AI data-center power capacity at about 29.6 GW by Q4 2025, derived from rated thermal design power of AI chips sold (about 11.8 GW) with an approximately 2.5x multiplier for cooling, networking and other infrastructure.</p>
+          <dl>
+            <div><dt>Entity · metric</dt><dd>global AI data centers · AI data-center power capacity</dd></div>
+            <div><dt>Period · units</dt><dd>Q4 2025 · GW</dd></div>
+            <div><dt>Sources</dt><dd><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-024">SRC-024</a></dd></div>
+            <div><dt>Locator</dt><dd>research/05-lit__stanford-hai-ai-index-2026-ch1-full-chapter.md L356; Sec. 1.2 Data Center Power Capacity</dd></div>
+            <div><dt>Caveats</dt><dd>Supplied local text hash-matched manifest; origin not network-authenticated; not human-reviewed. Low: secondary synthesis; rated capacity, not metered consumption; the multiplier is an assumption and not a PUE; the chapter separate de Vries and Gao estimate (about 9.4 GW all-in through 2024) is not reconciled. Chapter text license pending. Not for company or regional allocation.</dd></div>
+            <div><dt>Review</dt><dd>No human review recorded</dd></div>
+          </dl>
+          <p class="caption">Cited in: <a href="paper.html#p07" data-site-link>Return to P07</a> · <a href="paper.html#p12" data-site-link>Return to P12</a></p>
+        </article>
+        <article class="claim-card" id="cl-050" data-state="unknown" data-classification="estimated" data-search="cl-050 the chapter relays jegham et al. (2025) per-prompt inference energy estimates for about 1000 input and 1000 output tokens: deepseek v3.2 and v3.2 exp about 23 wh, gpt-5 (high) about 21.9 wh, and claude 4 opus and gpt-5 mini (medium) between 5 and 6 wh. selected deployed llms inference energy per medium-length prompt 2025 estimates supplied local text hash-matched manifest; origin not network-authenticated; not human-reviewed. low: secondary relay of modeled estimates; method, hardware and serving assumptions absent from the extraction; per prompt not per successful task; reasoning-effort settings change the estimate; other chart values are loose numbers. order-of-magnitude context pending t-004.">
+          <header><h3>CL-050</h3><p class="claim-labels"><span class="status-label">estimated</span><span class="status-label">Verification: unknown</span><span class="status-label">Confidence: low</span></p></header>
+          <p class="claim-text">The chapter relays Jegham et al. (2025) per-prompt inference energy estimates for about 1000 input and 1000 output tokens: DeepSeek V3.2 and V3.2 Exp about 23 Wh, GPT-5 (high) about 21.9 Wh, and Claude 4 Opus and GPT-5 mini (medium) between 5 and 6 Wh.</p>
+          <dl>
+            <div><dt>Entity · metric</dt><dd>selected deployed LLMs · inference energy per medium-length prompt</dd></div>
+            <div><dt>Period · units</dt><dd>2025 estimates · Wh per prompt</dd></div>
+            <div><dt>Sources</dt><dd><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-024">SRC-024</a></dd></div>
+            <div><dt>Locator</dt><dd>research/05-lit__stanford-hai-ai-index-2026-ch1-full-chapter.md L434; Sec. 1.4 Inference</dd></div>
+            <div><dt>Caveats</dt><dd>Supplied local text hash-matched manifest; origin not network-authenticated; not human-reviewed. Low: secondary relay of modeled estimates; method, hardware and serving assumptions absent from the extraction; per prompt not per successful task; reasoning-effort settings change the estimate; other chart values are loose numbers. Order-of-magnitude context pending T-004.</dd></div>
+            <div><dt>Review</dt><dd>No human review recorded</dd></div>
+          </dl>
+          <p class="caption">Cited in: <a href="paper.html#p07" data-site-link>Return to P07</a> · <a href="paper.html#p12" data-site-link>Return to P12</a></p>
+        </article>
+        <article class="claim-card" id="cl-051" data-state="unknown" data-classification="reported" data-search="cl-051 the chapter reports that in 2025, 47 of 102 notable ai models were released with api access, open weights (unrestricted) was the second most common release type, and 81 of 102 were released without training code; open-weight releases are split into unrestricted, restricted-use and noncommercial categories. notable ai models (epoch-classified) release access type 2025 supplied local text hash-matched manifest; origin not network-authenticated; not human-reviewed. medium: secondary synthesis of epoch notable-model data with stated categories; selection criteria not inspected. supports recording license class for the commercial clock because open weights are not necessarily commercially usable. chapter text license pending.">
+          <header><h3>CL-051</h3><p class="claim-labels"><span class="status-label">reported</span><span class="status-label">Verification: unknown</span><span class="status-label">Confidence: medium</span></p></header>
+          <p class="claim-text">The chapter reports that in 2025, 47 of 102 notable AI models were released with API access, open weights (unrestricted) was the second most common release type, and 81 of 102 were released without training code; open-weight releases are split into unrestricted, restricted-use and noncommercial categories.</p>
+          <dl>
+            <div><dt>Entity · metric</dt><dd>notable AI models (Epoch-classified) · release access type</dd></div>
+            <div><dt>Period · units</dt><dd>2025 · count of models</dd></div>
+            <div><dt>Sources</dt><dd><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-024">SRC-024</a></dd></div>
+            <div><dt>Locator</dt><dd>research/05-lit__stanford-hai-ai-index-2026-ch1-full-chapter.md L194; Sec. 1.1 Model Release</dd></div>
+            <div><dt>Caveats</dt><dd>Supplied local text hash-matched manifest; origin not network-authenticated; not human-reviewed. Medium: secondary synthesis of Epoch notable-model data with stated categories; selection criteria not inspected. Supports recording license class for the commercial clock because open weights are not necessarily commercially usable. Chapter text license pending.</dd></div>
+            <div><dt>Review</dt><dd>No human review recorded</dd></div>
+          </dl>
+          <p class="caption">Cited in: <a href="paper.html#p04" data-site-link>Return to P04</a> · <a href="paper.html#p12" data-site-link>Return to P12</a></p>
+        </article>
+      </div>
+      <p class="caption"><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/CLAIM-LEDGER.csv">Download the claim ledger (CSV) ↗</a> · <a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#access-and-evidence-policy">Source register and evidence policy ↗</a></p>
     </section>
     <section class="section two-column" id="review-records" aria-labelledby="records-title">
       <div><p class="eyebrow">Source → claim → interpretation</p><h2 id="records-title">Open the review trail.</h2>
         <ul class="review-links">
-          <li><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#access-and-evidence-policy">Source register and evidence policy ↗</a><p>Access, authentication, and evidence limitations are separate questions.</p></li>
-          <li><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/CLAIM-LEDGER.csv">Claim ledger · repository record ↗</a><p>Inspect claim IDs and unresolved states in the review file; no ledger values are imported here.</p></li>
-          <li><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/FILING-INTAKE-REVIEW.md">Filing intake review ↗</a><p>Received captures, completeness checks, reconciliation work, and remaining review questions.</p></li>
+          <li><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/W1-FILING-RECONSTRUCTION.md">W1 filing reconstruction ↗</a><p>Method, identity, definitions, commitments, provider edges, dispositions and open questions.</p></li>
+          <li><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#access-and-evidence-policy">Source register and evidence policy ↗</a><p>Access, authentication and evidence limitations are separate questions.</p></li>
+          <li><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/FILING-INTAKE-REVIEW.md">Filing intake review ↗</a><p>Received captures, completeness checks and extraction limits.</p></li>
           <li><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/MANIFEST.csv">Capture manifest ↗</a><p>File inventory and integrity record. Matching a supplied hash does not establish claim truth.</p></li>
-          <li><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/INDEPENDENT-EVIDENCE.md#r06">Independent evidence and work boundaries ↗</a><p>Separate literature and method work from filing-dependent calibration.</p></li>
+          <li><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/research/INDEPENDENT-EVIDENCE.md#r06">Independent evidence and work boundaries ↗</a><p>Literature and method work kept separate from filing-dependent calibration.</p></li>
         </ul>
       </div>
-      <div><div class="gate-note"><h3>Before a company claim becomes a result</h3><p>Authenticate document identity and provenance, locate the relevant passage, reconcile amendments and periods, inspect contract overlap, and record a human review.</p><p>Text capture receipt does not complete those steps. No financial values, relationships, or physical conversions are endorsed by this timeline.</p></div>
-        <ul class="scope-list" style="margin-top:1.5rem"><li>Originals and excerpts<span>Not served, fetched, or parsed by this site.</span></li><li>Analytical dataset<span>Unavailable until reconciliation and validation.</span></li><li>Evidence filters and claim inspector<span>Planned, not represented as working controls.</span></li><li>Historical snapshots and manifests<span>Planned; these links identify the current review branch.</span></li></ul>
+      <div><div class="gate-note"><h3>Before a located claim becomes verified</h3><p>Authenticate the capture against SEC origin (or record the author's attestation), confirm the passage and definitions, and record a human financial review with reviewer and date.</p><p>Successive filings by one issuer are not independent corroboration. Located values must not be used to calibrate a model until that review is recorded.</p></div>
+        <ul class="scope-list" style="margin-top:1.5rem"><li>Source documents<span>Linked on GitHub; not served, fetched or parsed in your browser.</span></li><li>Extracted data<span>Short excerpts with locators, regenerated by <code>tools/extract-filing-facts.mjs</code>.</span></li><li>Versioned snapshots<span>Planned; links currently identify the main branch.</span></li></ul>
       </div>
     </section>
+    <script type="module" src="assets/js/evidence.mjs"></script>
   </main>
   <footer class="site-footer">
     <div class="wrap">
       <div class="footer-top">
         <div><strong>Models, Megawatts, and Moats</strong>
-          <p>v0.4 · Initial author yorkerhodes3 · Demo · no calibrated results</p>
+          <p>v0.4 · Initial author yorkerhodes3 · Review draft, not an analytical release</p>
           <p>Text capture portfolio through 2026-11-25; not a validated dataset cutoff.</p>
         </div>
         <nav class="footer-links" aria-label="Review documents">

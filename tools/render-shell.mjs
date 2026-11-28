@@ -3,6 +3,7 @@ import { fileURLToPath } from 'node:url';
 import { SITE, documentURL } from '../docs/assets/js/config.mjs';
 import { SECTIONS, FILINGS } from '../docs/assets/js/research.mjs';
 import { THEMES, tokensFor } from '../docs/assets/js/themes.mjs';
+import { paperBody, evidenceBody } from './render-reader.mjs';
 import { MODEL_VERSION, TOLERANCE, SWEEP_VALUES, SYNTHETIC_FIXTURES, compute, sweepElasticity } from '../docs/assets/js/model/task-energy.mjs';
 import { SCENARIOS, FIELDS, WORKLOAD } from '../docs/assets/js/model/scenarios.mjs';
 import { EVIDENCE_CUTOFF } from '../docs/assets/js/model/manifest.mjs';
@@ -25,7 +26,7 @@ function header(page) {
         <span class="identity-text"><strong>Frontier half-life</strong><small>Ethical Tech CoLab · research demo</small></span>
       </a>
       <nav class="site-nav" id="primary-nav" aria-label="Main navigation">
-        ${[['index.html', 'Overview'], ['paper.html', 'Paper guide'], ['evidence.html', 'Evidence'], ['rebound.html', 'Rebound lab']].map(([file, label]) =>
+        ${[['index.html', 'Overview'], ['paper.html', 'Paper'], ['evidence.html', 'Evidence'], ['rebound.html', 'Rebound lab']].map(([file, label]) =>
           `<a href="${file}" data-site-link${page === file ? ' aria-current="page"' : ''}>${label}</a>`).join('\n        ')}
         ${docLink('PLAN.md', 'Research docs ↗', 'nav-cta')}
       </nav>
@@ -48,7 +49,7 @@ function header(page) {
   </header>
   <div class="wrap notice-row">
     <span class="version">${SITE.version} / DEMO</span>
-    <p id="theme-message" class="theme-message" role="status" aria-live="polite" aria-atomic="true">CoLab presentation. Demo; no calibrated results.</p>
+    <p id="theme-message" class="theme-message" role="status" aria-live="polite" aria-atomic="true">CoLab presentation. Review draft; no calibrated results.</p>
   </div>
   <noscript><p class="wrap noscript">JavaScript is off. All research-guide content and source links remain readable in the default CoLab theme. Theme switching requires JavaScript.</p></noscript>`;
 }
@@ -59,7 +60,7 @@ function footer() {
     <div class="wrap">
       <div class="footer-top">
         <div><strong>Models, Megawatts, and Moats</strong>
-          <p>${SITE.version} · Initial author ${SITE.author} · Demo · no calibrated results</p>
+          <p>${SITE.version} · Initial author ${SITE.author} · Review draft, not an analytical release</p>
           <p>Text capture portfolio through ${SITE.captureThrough}; not a validated dataset cutoff.</p>
         </div>
         <nav class="footer-links" aria-label="Review documents">
@@ -88,9 +89,9 @@ function footer() {
 
 function reviewStrip() {
   return `<div class="review-strip" aria-label="Research and release status">
-    <div class="review-item"><small>Intake</small><strong>Text captures received</strong></div>
-    <div class="review-item"><small>Evidence review</small><strong>Claim reconciliation pending</strong></div>
-    <div class="review-item"><small>This site</small><strong>Demo · no calibrated results</strong></div>
+    <div class="review-item"><small>Filing evidence</small><strong>Passages located · unverified</strong></div>
+    <div class="review-item"><small>Human review</small><strong>Financial review pending</strong></div>
+    <div class="review-item"><small>This site</small><strong>Review draft · no calibrated results</strong></div>
   </div>`;
 }
 
@@ -102,7 +103,7 @@ function overview() {
         <h1 id="hero-title"><span>Models,</span> <span>Megawatts,</span> <span class="accent">and Moats.</span></h1>
         <p class="question">When useful AI gets cheaper, do we use fewer resources—or just more AI?</p>
         <p class="intro">An evidence-first inquiry into open-model catch-up, task efficiency, demand rebound, and the infrastructure that makes it possible.</p>
-        <div class="actions">${siteLink('paper.html#contents', 'Read the paper guide ↗', 'button')}${siteLink('evidence.html#filing-timeline', 'Follow the evidence →', 'button secondary')}</div>
+        <div class="actions">${siteLink('paper.html#about', 'Read the paper draft →', 'button')}${siteLink('evidence.html#claims', 'Inspect the evidence →', 'button secondary')}</div>
         <p class="caption" style="margin-top:1rem">${SITE.version} · Initial author ${SITE.author} · Research draft for review</p>
       </div>
       <aside class="concept-board" aria-label="Conceptual research chain, not a measured chart">
@@ -119,16 +120,16 @@ function overview() {
     <section class="section" id="roadmap" aria-labelledby="roadmap-title">
       <div class="section-heading"><div><p class="eyebrow">One argument. Three connected surfaces.</p><h2 id="roadmap-title">A path from evidence to understanding.</h2></div><p>The paper and dashboard are equal deliverables. This shell makes the path inspectable before results are ready.</p></div>
       <div class="cards">
-        <article class="card"><span class="step">01 / Evidence room</span><span class="status-label">Received text · review pending</span><h3>Know what supports a claim.</h3><p>Follow the filing sequence and find source, claim, and intake records. Receipt is separate from verification.</p>${siteLink('evidence.html', 'Open the evidence room →')}</article>
-        <article class="card"><span class="step">02 / Paper reader</span><span class="status-label">Section guide available</span><h3>Read the shape of the argument.</h3><p>P00–P12 anchors lead to the manuscript and research plan. This is a navigation guide, not a published analytical paper.</p>${siteLink('paper.html#contents', 'Explore the paper guide →')}</article>
-        <article class="card"><span class="step">03 / Dashboard workspace</span><span class="status-label">Indexed rebound lab only · other views planned</span><h3>Challenge the assumptions.</h3><p>Only the illustrative indexed rebound lab is available: an elasticity-threshold explorer and three uncalibrated futures with replayable manifests. Efficiency, equivalency, provider, impact, and uncertainty views remain planned.</p>${siteLink('rebound.html', 'Open the rebound lab →')}</article>
+        <article class="card"><span class="step">01 / Evidence room</span><span class="status-label">Passages located · unverified</span><h3>Know what supports a claim.</h3><p>Follow the filing lineage and inspect every claim with its classification, verification state, locator and the paper sections that cite it.</p>${siteLink('evidence.html#claims', 'Open the claim inspector →')}</article>
+        <article class="card"><span class="step">02 / Paper reader</span><span class="status-label">Review draft · P00–P12</span><h3>Read the argument, then contest it.</h3><p>The full manuscript, rendered from its source. Claim IDs open the evidence; figure panels say whether a view is live or planned.</p>${siteLink('paper.html#about', 'Read the paper →')}</article>
+        <article class="card"><span class="step">03 / Dashboard workspace</span><span class="status-label">Indexed rebound lab live · other views planned</span><h3>Challenge the assumptions.</h3><p>Only the illustrative indexed rebound lab is available: an elasticity-threshold explorer and three uncalibrated futures with replayable manifests. Efficiency, equivalency, provider, impact, and uncertainty views follow evidence review.</p>${siteLink('rebound.html', 'Open the rebound lab →')}</article>
       </div>
     </section>
     <section class="section two-column" id="boundaries" aria-labelledby="boundaries-title">
       <div><p class="eyebrow">Deliberate boundaries</p><h2 id="boundaries-title">Useful questions.<br>Honest unknowns.</h2>
         <ul class="scope-list"><li>Useful-task efficiency, not just token prices.<span>Quality and failed attempts belong in the denominator.</span></li><li>Evidence-conditional company research.<span>Anthropic is an anchor, not a proxy for the whole sector.</span></li><li>Operational impacts, with place and boundaries.<span>No company-energy totals inferred from revenue.</span></li><li>Contestable scenarios, not investment forecasts.<span>Future results must retain assumptions and provenance.</span></li></ul>
       </div>
-      <div><div class="gate-note"><h3>What this demo does—and does not—authorize</h3><p>The author requested a narrow, non-analytical shell and separately approved the specification and plan on November 28, 2026. The rebound lab adds only illustrative, uncalibrated indexed scenarios from that plan; it awaits review. Claim reconciliation, calibrated models, and analytical publication still require their evidence and review gates.</p><p>No verified financial amounts, provider rankings, calibrated or stochastic results, or reported impact estimates are shown.</p></div>
+      <div><div class="gate-note"><h3>What this draft does—and does not—claim</h3><p>The author approved the specification and plan on November 28, 2026. The paper is published here as a review draft. Filing passages are located and internally checked, but origin authentication, financial review, calibrated models and analytical release still require their evidence and review gates. The rebound lab adds only illustrative, uncalibrated indexed scenarios.</p><p>Located filing values appear with their verification state; none is verified. No provider rankings, calibrated or stochastic results, or impact estimates are shown.</p></div>
         <ul class="review-links"><li>${docLink('SPECIFICATION.md#9-non-functional-requirements', 'Read the design and accessibility contract ↗')}<p>Accessible presentation is independent of research state.</p></li><li>${docLink('PLAN.md#6-milestones-and-dependencies', 'Review staged evidence and model gates ↗')}<p>A working shell is not a completed research milestone.</p></li></ul>
       </div>
     </section>
@@ -136,65 +137,11 @@ function overview() {
 }
 
 function paper() {
-  return `<main id="main" class="wrap" tabindex="-1" data-research-content>
-    <header class="page-intro"><p class="eyebrow">The linked research reader / section guide</p><h1>A question you can<br><span class="accent">follow and challenge.</span></h1>
-      <p class="lead">Thirteen stable sections connect the manuscript, its evidence, and the planned analysis. These short orientation notes do not reproduce or publish the unreconciled draft’s analytical claims.</p>
-      <p class="page-meta">${SITE.version} · Initial author ${SITE.author} · Text portfolio through ${SITE.captureThrough}<br>Draft for review · No calibrated dataset or results; the rebound lab is illustrative and indexed</p>
-      <div class="actions">${docLink('paper/PAPER-DRAFT.md', 'Open the review manuscript on GitHub ↗', 'button secondary')}${siteLink('evidence.html#review-records', 'Inspect review records →')}</div>
-    </header>
-    ${reviewStrip()}
-    <div class="reader-layout">
-      <nav id="contents" class="contents" aria-label="Paper section contents"><h2>In this paper / P00–P12</h2><ol>
-        ${SECTIONS.map((section) => `<li><a href="#${section.id}" data-site-link><span class="section-id">${section.id.toUpperCase()}</span><span>${escape(section.title)}</span></a></li>`).join('\n        ')}
-      </ol></nav>
-      <div class="paper-sections">${SECTIONS.map((section) => `
-        <section class="paper-section" id="${section.id}" aria-labelledby="${section.id}-title">
-          <p class="eyebrow">${section.id.toUpperCase()} / ${escape(section.lane)}</p>
-          <h2 id="${section.id}-title">${escape(section.title)}</h2>
-          <p>${escape(section.summary)}</p>
-          <div class="section-links">${docLink(`paper/PAPER-DRAFT.md#${section.id}`, `Read ${section.id.toUpperCase()} in the review draft ↗`)}${docLink(section.source, 'Source register ↗')}${docLink(section.research, 'Research / method notes ↗')}${docLink('PLAN.md#4-paper-coordination-and-pages-link-contract', 'Section / figure plan ↗')}</div>
-          <p class="planned-note">${escape(section.next)}</p>${section.shell ? `
-          <p class="caption">${escape(section.figure)} · ${escape(section.shellStatus)}<br>${siteLink(section.shell, `${section.shellLabel} →`)}</p>` : ''}
-          ${siteLink('#contents', 'Back to section contents ↑', 'back-to-contents')}
-        </section>`).join('\n')}
-        <div class="gate-note"><h3>The full reader is still a planned deliverable.</h3><p>Reviewed manuscript rendering, versioned datasets, immutable review snapshots, and most figures are not available. Only F04 and F07 open live, illustrative indexed views with run manifests and return links; they are uncalibrated and unreviewed. Source links point to the current review branch, not an immutable analytical release.</p></div>
-      </div>
-    </div>
-  </main>`;
+  return paperBody(reviewStrip());
 }
 
 function evidence() {
-  return `<main id="main" class="wrap" tabindex="-1" data-research-content>
-    <header class="page-intro"><p class="eyebrow">The evidence room / intake first</p><h1>Received is not<br><span class="accent">reconciled.</span></h1>
-      <p class="lead">A useful record begins with what arrived, what changed, and what still needs checking. This chronology identifies six named text captures; it does not authenticate the issuer, filing metadata, or financial claims.</p>
-      <p class="page-meta">${SITE.version} · Initial author ${SITE.author} · Named capture dates through ${SITE.captureThrough}<br>No source documents or excerpts are loaded into your browser.</p>
-      <div class="actions">${siteLink('#filing-timeline', 'Explore filing chronology ↓', 'button')}${siteLink('#review-records', 'Find the review records ↓', 'button secondary')}</div>
-    </header>
-    ${reviewStrip()}
-    <section class="section" id="filing-timeline" aria-labelledby="timeline-title">
-      <div class="section-heading"><div><p class="eyebrow">F01 / Received-text chronology shell</p><h2 id="timeline-title">Follow the document lineage.</h2></div><p>Dates and form labels reflect the supplied capture names, not a verified external filing history. Originals and PDFs are not embedded here.</p></div>
-      <ol class="timeline">
-        ${FILINGS.map((filing) => `<li><time datetime="${filing.date}">${filing.date}</time>
-          <div><p class="eyebrow">${escape(filing.form)}</p><h3>${escape(filing.label)}</h3><p>${escape(filing.note)}</p>${docLink(filing.file, 'Inspect the text capture on GitHub ↗')}<span class="source-path">${escape(filing.file.split('/')[1])}</span></div>
-          <div><span class="status-label">Text received</span><p class="caption">Claim reconciliation pending</p></div></li>`).join('\n        ')}
-      </ol>
-      <p class="caption" style="margin-top:1.5rem">${siteLink('paper.html#p02', 'Return to P02 · evidence method →')} · ${docLink('PLAN.md#61-filing-intake-and-remediation', 'Inspect intake / reconciliation method ↗')}</p>
-    </section>
-    <section class="section two-column" id="review-records" aria-labelledby="records-title">
-      <div><p class="eyebrow">Source → claim → interpretation</p><h2 id="records-title">Open the review trail.</h2>
-        <ul class="review-links">
-          <li>${docLink('SOURCES.md#access-and-evidence-policy', 'Source register and evidence policy ↗')}<p>Access, authentication, and evidence limitations are separate questions.</p></li>
-          <li>${docLink('CLAIM-LEDGER.csv', 'Claim ledger · repository record ↗')}<p>Inspect claim IDs and unresolved states in the review file; no ledger values are imported here.</p></li>
-          <li>${docLink('research/FILING-INTAKE-REVIEW.md', 'Filing intake review ↗')}<p>Received captures, completeness checks, reconciliation work, and remaining review questions.</p></li>
-          <li>${docLink('research/MANIFEST.csv', 'Capture manifest ↗')}<p>File inventory and integrity record. Matching a supplied hash does not establish claim truth.</p></li>
-          <li>${docLink('research/INDEPENDENT-EVIDENCE.md#r06', 'Independent evidence and work boundaries ↗')}<p>Separate literature and method work from filing-dependent calibration.</p></li>
-        </ul>
-      </div>
-      <div><div class="gate-note"><h3>Before a company claim becomes a result</h3><p>Authenticate document identity and provenance, locate the relevant passage, reconcile amendments and periods, inspect contract overlap, and record a human review.</p><p>Text capture receipt does not complete those steps. No financial values, relationships, or physical conversions are endorsed by this timeline.</p></div>
-        <ul class="scope-list" style="margin-top:1.5rem"><li>Originals and excerpts<span>Not served, fetched, or parsed by this site.</span></li><li>Analytical dataset<span>Unavailable until reconciliation and validation.</span></li><li>Evidence filters and claim inspector<span>Planned, not represented as working controls.</span></li><li>Historical snapshots and manifests<span>Planned; these links identify the current review branch.</span></li></ul>
-      </div>
-    </section>
-  </main>`;
+  return evidenceBody(reviewStrip());
 }
 
 const LAB_STATUS = 'Illustrative indexed scenario — not calibrated, not a forecast';
@@ -422,6 +369,7 @@ function page(file, title, description, body, scripts = []) {
   <link rel="stylesheet" href="assets/fonts/fonts.css">
   <link rel="stylesheet" href="assets/themes.css">
   <link rel="stylesheet" href="assets/site.css">
+  <link rel="stylesheet" href="assets/reader.css">
   <script type="module" src="assets/js/site.mjs"></script>${scripts.map((script) => `
   <script type="module" src="${script}"></script>`).join('')}
 </head>
@@ -439,8 +387,8 @@ export function renderShell() {
     `${theme.id === 'colab' ? ':root, ' : ''}:root[data-brand="${theme.id}"] {\n${Object.entries(tokensFor(theme)).map(([key, value]) => `  ${key}: ${value};`).join('\n')}\n}`).join('\n\n')}\n`;
   return {
     'index.html': page('index.html', 'Models, Megawatts, and Moats', 'An evidence-first research demo about AI efficiency, open-model catch-up, demand, and infrastructure. Only illustrative, uncalibrated indexed scenarios are computed.', overview()),
-    'paper.html': page('paper.html', 'Paper section guide', 'P00–P12 orientation notes and direct manuscript, source, and research-plan links. Draft for review, not a published analytical paper.', paper()),
-    'evidence.html': page('evidence.html', 'Evidence room', 'A non-analytical chronology of six received text captures, with claim reconciliation pending and links to review records.', evidence()),
+    'paper.html': page('paper.html', 'Live research reader', 'The v0.4 review draft of Models, Megawatts, and Moats, rendered from the manuscript with linked claims, sources and figures. Not an analytical release.', paper()),
+    'evidence.html': page('evidence.html', 'Evidence room', 'Filing lineage and a claim inspector: located, internally checked passages with locators. No claim is verified yet.', evidence()),
     'rebound.html': page('rebound.html', 'Rebound lab', 'F04 elasticity threshold and F07 scenario comparison: illustrative indexed scenarios computed with the task-energy model. Not calibrated, not a forecast.', rebound(), ['assets/js/rebound.mjs']),
     'assets/themes.css': themeCSS,
   };

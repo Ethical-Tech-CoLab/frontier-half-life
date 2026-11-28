@@ -254,13 +254,14 @@ test('each static page is no-JS readable, has labeled navigation/status/skip foc
     assert.match(html, /id="nav-toggle"[^>]+aria-controls="primary-nav"[^>]+aria-expanded="false" hidden/);
     assert.match(html, /id="theme-control"[^>]+hidden/);
     assert.equal((html.match(/aria-current="page"/g) || []).length, 1);
-    for (const status of ['Text captures received', 'Claim reconciliation pending', 'Demo · no calibrated results']) assert.ok(html.includes(status));
+    for (const status of ['Passages located · unverified', 'Financial review pending', 'Review draft · no calibrated results']) assert.ok(html.includes(status), `${page}: ${status}`);
     assert.doesNotMatch(html, /Demo shell only|no analytical results/);
     assert.ok(html.includes(SITE.author) && html.includes(SITE.version));
     assert.match(html, /<a href="rebound.html" data-site-link[^>]*>Rebound lab<\/a>/);
     assert.doesNotMatch(html, /<(?:script|iframe|img)[^>]+src="https?:/);
     assert.doesNotMatch(html, / disabled|<iframe/);
-    if (page !== 'rebound.html') assert.doesNotMatch(html, /<input/);
+    // Lab scenario forms sit inside a hidden data-rebound-interactive container (checked in the lab test).
+    for (const form of html.match(/<form[^>]*>/g) || []) if (!/data-scenario-form/.test(form)) assert.match(form, /\bhidden\b/, `${page}: forms start hidden until their script runs`);
     assert.match(html, /<noscript>.*All research-guide content and source links remain readable/);
     assert.equal(new Set(ids(html)).size, ids(html).length, `${page}: duplicate IDs`);
   }
@@ -335,9 +336,13 @@ test('all site links, assets, source files, and explicit or GitHub-heading secti
       const href = decode(match[1]);
       if (href.startsWith(SITE.documentBase)) {
         const target = href.slice(SITE.documentBase.length);
-        const [path, fragment] = target.split('#');
+        const [withQuery, fragment] = target.split('#');
+        const path = withQuery.split('?')[0];
         await access(resolve(root, path));
-        if (fragment) {
+        if (fragment && /^L\d+$/.test(fragment)) {
+          assert.match(withQuery, /\?plain=1$/, `${page}: line locators need the plain view`);
+          assert.ok(Number(fragment.slice(1)) <= (await read(path)).split('\n').length, `${page}: ${target}`);
+        } else if (fragment) {
           const document = await read(path);
           const explicit = ids(document);
           const headingIDs = [...document.matchAll(/^#{1,6}\s+(.+)$/gm)].map((heading) =>
@@ -376,15 +381,15 @@ test('P00–P12 link directly to manuscript anchors, and timeline captures link 
 
 test('P05 and P08 open live, labeled F04/F07 lab targets that return to their invoking sections', async () => {
   const paper = await read('docs/paper.html');
-  for (const [section, target, label] of [
-    ['p05', 'rebound.html#elasticity-threshold', 'F04 · elasticity threshold — illustrative indexed explorer'],
-    ['p08', 'rebound.html#scenario-comparison', 'F07 · scenario comparison — illustrative indexed futures'],
+  for (const [section, target, figure] of [
+    ['p05', 'rebound.html#elasticity-threshold', 'F04'],
+    ['p08', 'rebound.html#scenario-comparison', 'F07'],
   ]) {
     const block = paper.match(new RegExp(`<section class="paper-section" id="${section}"[\\s\\S]*?</section>`))[0];
     assert.ok(block.includes(`href="${target}" data-site-link`), `${section} links to ${target}`);
-    assert.ok(block.includes(label));
-    assert.ok(block.includes(`${LAB_STATUS}.`));
-    assert.match(block, /T-014/);
+    assert.ok(block.includes(`Explore ${figure} →`));
+    assert.match(block, /Live view · not calibrated/);
+    assert.match(block, /live, illustrative/);
   }
   const lab = await read('docs/rebound.html');
   for (const anchor of ['elasticity-threshold', 'scenario-comparison', 'method']) assert.ok(ids(lab).includes(anchor), anchor);
@@ -401,7 +406,7 @@ test('P05 and P08 open live, labeled F04/F07 lab targets that return to their in
   assert.match(lab, /T-005/);
   assert.match(lab, /<noscript><p class="planned-note">JavaScript is off: inputs, live results, and manifest export\/import are unavailable/);
   const overview = await read('docs/index.html');
-  assert.match(overview, /Indexed rebound lab only · other views planned/);
+  assert.match(overview, /Indexed rebound lab live · other views planned/);
   assert.match(overview, /<a href="rebound.html" data-site-link>Open the rebound lab →<\/a>/);
 });
 

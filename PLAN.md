@@ -17,7 +17,7 @@ The author approved the revised specification, plan and backlog on 2026-11-28. T
 
 **Current research state:** All requested filing texts, indices and new exhibits are received, including the November 25 8-K; [the intake record](research/FILING-INTAKE-REVIEW.md) confirms 80 manifest file hashes/sizes. The author waived original PDF retrieval. The [claim ledger](CLAIM-LEDGER.csv) still preserves unresolved claim reconciliation, including the initial filing-portfolio leads; derived fixtures are separate. Independent-source full-text gaps remain where no usable text was supplied. Intake completion is not completed financial reconstruction or literature review.
 
-The gathering dependency is closed for this scope. Proceed with text-based passage extraction/revision reconciliation below; retain specific ambiguous cells as unknown rather than impose a blanket original-layout blocker.
+The gathering dependency is closed for this scope. The text-based reconstruction is drafted in [the W1 note](research/W1-FILING-RECONSTRUCTION.md): passages located with line locators across all versions, 22 derived checks passing, CL-005 superseded and CL-020–CL-025 added. Claims stay `unknown` until origin authentication and a financial reviewer's sign-off; Amendment 1 table cells remain alignment-unverified.
 
 ## 2. Technical and editorial decisions
 

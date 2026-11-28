@@ -6,13 +6,13 @@
 
 **Working version:** v0.4
 
-**Evidence cutoff:** 2026-11-27
+**Evidence cutoff:** indexed literature 2026-11-27; supplied literature tranche analyzed 2026-11-28; filing captures through 2026-11-25 (8-K)
 
-**Status:** Early, incomplete research draft for review. No authenticated Anthropic financial results, company energy estimates, or empirical stress findings are presented.
+**Status:** Early, incomplete research draft for review. Filing passages are now located and internally checked ([W1 reconstruction](../research/W1-FILING-RECONSTRUCTION.md)), but **no company figure is verified**: capture origin is not yet authenticated and no financial reviewer has signed off. No company energy estimates or empirical stress findings are presented.
 
-This is the manuscript source for the **live linked research reader**, a key deliverable alongside the dashboard. A non-analytical Pages shell is authorized on 2026-11-28 for navigation and section summaries. The full manuscript rendering, analytical visuals and versioned replay remain later work; shell availability is not analytical publication.
+This is the manuscript source for the **live linked research reader**, a key deliverable alongside the dashboard. Pages renders this file directly as the reader, so the published text and the reviewed source cannot drift. Claim IDs open the evidence room; figure panels state whether their view is live or planned. Publishing the review draft is not an analytical release, and versioned replay snapshots remain later work.
 
-The requested primary filing texts and exhibits are received, including all three amendments and the November 25 8-K. The author directed text-based review and waived original PDFs. Company-specific financial conclusions remain blocked by passage/definition/revision reconciliation, not file acquisition. Independent literature summaries still distinguish inspected indexed passages from full-text review.
+The requested primary filing texts and exhibits are received, including all three amendments and the November 25 8-K. The author directed text-based review and waived original PDFs. A reproducible text-based reconstruction (T-011–T-014) now locates every initial company claim, recomputes footings and ratios, and records revisions; company-specific conclusions still await origin authentication and financial review. Independent literature summaries still distinguish inspected indexed passages from full-text review.
 
 ## Reader guide
 
@@ -39,7 +39,7 @@ Read the argument below; inspect [the evidence register](../SOURCES.md), [claim 
 
 Lower AI task costs can reduce the resource intensity of an operation while also making additional use attractive. Open-model catch-up may further change price, model routing, and who earns revenue from that use. This research proposes to examine those mechanisms together without equating a benchmark score, token price, or compute-expense ratio with useful-task or system efficiency.
 
-The current draft sets out a source-addressable method, a bounded literature synthesis, distinct equivalency clocks, and a conditional demand–energy identity. The analytical identity shows why a break-even elasticity of one arises only under proportional price/intensity reductions and unchanged success/facility conditions. It does not estimate actual elasticity or demonstrate an Anthropic outcome. Empirical results, financial decomposition, release-pair distributions, and operational-impact estimates await acquisition, validation and review. Revise this abstract last when those results exist.
+The current draft sets out a source-addressable method, a bounded literature synthesis, distinct equivalency clocks, and a conditional demand–energy identity. The analytical identity shows why a break-even elasticity of one arises only under proportional price/intensity reductions and unchanged success/facility conditions. It does not estimate actual elasticity or demonstrate an Anthropic outcome. A text-based filing reconstruction supports four of the five initial financial figures and shows the fifth (aggregate commitments) was revised upward after the first amendment, with material conditional and excluded amounts; these remain unverified pending review. Empirical results, financial decomposition, release-pair distributions, and operational-impact estimates await acquisition, validation and review. Revise this abstract last when those results exist.
 
 <a id="p01"></a>
 ## P01 — The efficiency question and competing mechanisms
@@ -50,31 +50,39 @@ The provisional literature gives reasons to consider more than one regime. UKERC
 
 The proposed causal chain is technical/task efficiency → useful-task cost → price and product design → demand and workload mix → model/provider allocation → capacity and energy consequences. Each arrow needs evidence or an explicitly labeled assumption. The task-demand identity captures a direct response; spending elsewhere, capability change, and economy-wide effects require additional analysis.
 
-**Research backing:** [R01](../research/INDEPENDENT-EVIDENCE.md#r01), W4 in [PLAN §3](../PLAN.md#3-evidence-work-packages). Full-text review and empirical AI-demand literature remain open.
+The first supplied literature tranche sharpens what is missing rather than settling the question ([tranche 01 S4](../research/LITERATURE-TRANCHE-01.md#s4)). None of its seven sources measures or borrows an AI price elasticity. Rapid token growth is reported from vendor trackers ([SRC-022](../SOURCES.md#src-022), CL-046), but tokens are not tasks, and the same source lists ways those trackers overstate demand. The source's solvency corridor and scenario probabilities are outputs of assumed parameters, so they can structure a stress test but cannot calibrate one (CL-045).
+
+**Research backing:** [R01](../research/INDEPENDENT-EVIDENCE.md#r01), [tranche 01](../research/LITERATURE-TRANCHE-01.md#synthesis), W4 in [PLAN §3](../PLAN.md#3-evidence-work-packages). Full-text review and empirical AI-demand literature remain open.
 
 <a id="p02"></a>
 ## P02 — Evidence method and filing chronology
 
 Anthropic is the proposed initial company anchor, conditional on authenticating primary documents. The source hierarchy favors filings and official disclosures, then independent research, with estimates and scenarios labeled separately. A claim described as “reported” is not automatically verified; classification, verification state, source confidence, and review status answer different questions.
 
-The original S-1 and Amendment 1 are received text captures ([SRC-001](../SOURCES.md#src-001), [SRC-002](../SOURCES.md#src-002)), alongside Amendments 2/3, the final prospectus and November 25 8-K (SRC-014–SRC-017). Their stated identities and manifest hashes have been checked at inventory level. This does not authenticate every revenue, expense, short-term compute, discount, or committed-spend figure in the supplied draft (CL-001–CL-005), nor the portfolio description (CL-012). Those remain pending claim reconciliation, not conclusions of this paper.
+The original S-1 and Amendment 1 are received text captures ([SRC-001](../SOURCES.md#src-001), [SRC-002](../SOURCES.md#src-002)), alongside Amendments 2/3, the final prospectus and November 25 8-K (SRC-014–SRC-017). All six headers name the same issuer and CIK, with accessions and acceptance times matching the captured indices (CL-011). That is internal agreement, not authentication against SEC origin, which remains blocked by network access in the research environment.
 
-Continue [the remediation pass](../PLAN.md#61-filing-intake-and-remediation) from completed text inventory: inspect exact table/passage locators, units, definitions and revisions, and record review history. The supplied join-check compares words rather than numeric table alignment; original PDF retrieval is not required, but ambiguous values must remain unresolved. The 8-K text covers closing agreements, placement/rights and IPO events rather than providing a new historical compute-efficiency series. Contradictions require correction of paper claims and downstream figures, not merely appending a source link.
+The [W1 reconstruction](../research/W1-FILING-RECONSTRUCTION.md) applies one declared pattern per fact to all five registration-sequence documents and records each value with its line locator, so a reader can see where a figure first appears, when it changes, and where a version left a placeholder. Derived checks recompute quarterly footings, rounded ratios, growth rates and the commitment decomposition; all 22 pass. The lineage matters: the original S-1 reports results only through June 30, 2026 and leaves every commitment amount blank; Amendment 1 adds the September quarter and first quantifies commitments; Amendment 2 revises the commitment total and adds termination and exclusion disclosures; Amendment 3 and the final prospectus leave the extracted facts unchanged. The 8-K covers closing, governance and placement items, not a new compute or revenue series.
 
-**F01 — Filing chronology (demo-shell scope):** `evidence.html#filing-timeline`. The shell lists the received documents and links to their text; this is an inventory timeline, not a reconciled financial series. **Static reference:** [received-text review](../research/FILING-INTAKE-REVIEW.md). Return destination: `paper.html#p02`.
+Four of the five initial financial claims are supported by located passages (CL-001–CL-004) and one is superseded (CL-005, see P06). “Supported” is a reconstruction disposition. Every company claim keeps `verification_state=unknown` until origin authentication and a financial reviewer's sign-off are recorded; successive filings by the same issuer are not independent corroboration. Amendment 1's joined text is not used to assert table alignment.
+
+**F01 — Filing chronology and revision lineage:** `evidence.html#filing-timeline`. Static fallback: [W1 §2 identity table](../research/W1-FILING-RECONSTRUCTION.md#w1-identity) and the per-version [extracted facts](../data/extracted/w1-filing-facts.csv). Return destination: `paper.html#p02`.
 
 <a id="p03"></a>
 ## P03 — Decomposing efficiency without collapsing denominators
 
 Financial ratios can change through pricing, product/revenue mix, accounting boundaries, procurement terms, utilization, or technical efficiency. The ratio of compute expense to revenue alone cannot distinguish those drivers, and is not a measure of gross margin unless the accounting definitions support that relationship. Company revenue cannot be converted to physical energy without workload and infrastructure evidence.
 
+The filings illustrate the problem. The issuer reports compute and infrastructure expense falling from 251% of revenue in Q1-2025 to 48% in Q2-2026, then rising to 58% in Q3-2026 when $5.0B of short-term compute was delivered (CL-002, CL-003). It defines “compute efficiency” as intelligence produced and revenue generated per dollar of compute invested (CL-024). That is a financial and capability definition. The expense line covers research, model development, serving and internal use as one shared pool, and its composition widens in 2026 as leases and depreciation begin. The ratio therefore mixes revenue growth, prepaid capacity coming online, procurement terms and workload mix; it reports no task, token or energy denominator. It is evidence that financial efficiency improved during a ramp, not a measure of useful-task or physical efficiency ([W1 §3](../research/W1-FILING-RECONSTRUCTION.md#w1-revenue-compute)).
+
 The provisional task-energy literature describes different deployment costs across tasks and model configurations ([SRC-005](../SOURCES.md#src-005), CL-007). The appropriate denominator therefore includes useful output and quality, not just tokens or requests. For coding, test-defined issue resolution offers a candidate operational criterion ([SRC-010](../SOURCES.md#src-010), CL-016). Different task subsets and harnesses, including SWE-bench Verified, must not be merged into one supposedly comparable score ([SRC-011](../SOURCES.md#src-011), CL-017).
 
-The proposed useful-task measures count failed attempts, retries, context and tools. They display success rate alongside cost and energy per successful outcome. Extraction and bounded-agent rubrics must be defined in advance; they cannot inherit a coding rubric by analogy.
+Inference-time compute makes the denominator harder still. A controlled evaluation of six frontier models found that larger token budgets added about 12 points on some benchmarks and about 0.3 on SWE-Bench Pro, and that repeated submissions raised scores everywhere ([SRC-021](../SOURCES.md#src-021), CL-040, CL-043). Success rate and energy per attempt are therefore set together by the reasoning budget and protocol; a falling price per token need not mean a falling price per successful task. Larger models in one distilled family did not give shorter correct answers (CL-044), and realized serving cost on identical hardware varied more than seventyfold with utilization (CL-048). Cost per successful task without protocol and serving metadata is not comparable ([tranche 01 S2](../research/LITERATURE-TRANCHE-01.md#s2)).
 
-**F02 — Denominator comparison (planned):** `efficiency.html#task-and-financial-measures`. Static caption: show model/operation compute, successful-task cost, financial ratios, capacity use and operational energy as distinct measures with their units and missing-data states. No financial waterfall is populated until W1 reconciliation. Return: `paper.html#p03`.
+The proposed useful-task measures count failed attempts, retries, context and tools. They display success rate alongside cost and energy per successful outcome. Extraction and bounded-agent rubrics must be defined in advance; they cannot inherit a coding rubric by analogy. Draft rubrics for all three workloads, with every threshold marked as a proposal for reviewer decision, are in [WORKLOAD-RUBRICS.md](../research/WORKLOAD-RUBRICS.md) (`0.4-draft`, not adopted).
 
-**Research backing:** [R02](../research/INDEPENDENT-EVIDENCE.md#r02), W1/W2; financial results pending.
+**F02 — Denominator comparison (planned):** `efficiency.html#task-and-financial-measures`. Static caption: show model/operation compute, successful-task cost, financial ratios, capacity use and operational energy as distinct measures with their units and missing-data states. The financial row may show the reported ratio series with its composition caveat once reviewed; no task or energy row is populated from filings, which disclose neither. Return: `paper.html#p03`.
+
+**Research backing:** [R02](../research/INDEPENDENT-EVIDENCE.md#r02), [W1 §3](../research/W1-FILING-RECONSTRUCTION.md#w1-revenue-compute), [tranche 01 S2](../research/LITERATURE-TRANCHE-01.md#s2), [draft rubrics](../research/WORKLOAD-RUBRICS.md), W2; financial series located, review pending.
 
 <a id="p04"></a>
 ## P04 — What it would mean for an open model to catch up
@@ -83,16 +91,18 @@ The initial four-to-six-month hypothesis is testable only after specifying equiv
 
 We distinguish benchmark catch-up, workload catch-up, and commercial catch-up. The second requires a matched task rubric and quality/cost configuration; the third adds licensing, serving availability, region, throughput, reliability and operational requirements. Open weights alone do not settle those requirements.
 
+The benchmark clock is more fragile than it looks. Scores move with token budget, feedback, submission rule and parallel sampling, and 42 of 61 published evaluation citations do not record a token budget at all ([SRC-021](../SOURCES.md#src-021), CL-040, CL-042). Many published open-versus-closed score pairs will therefore be **not comparable**, a status distinct from matched or censored. Release type and licence also vary: in 2025, 47 of 102 notable models were released through API access, and 81 of 102 without training code (CL-051). Two supplied preprints assert open-weight parity without a stated method, and one relays a press claim that an open-weight model matches proprietary flagships at a fraction of the price (CL-047). These are leads, not measurements. No source in the tranche measures the lag, so CL-006 and the four-to-six-month hypothesis are unchanged ([tranche 01 S1](../research/LITERATURE-TRANCHE-01.md#s1)).
+
 The release-pair investigation will retain frontier releases without a match by the cutoff as censored records. It will also record configuration and endpoint availability, rather than treating a model-release date as immediate commercial readiness. At present no release-pair dataset or equivalency distribution has been evaluated; no numerical lag finding is claimed.
 
 **F03 — Release-pair clocks (planned):** `equivalency.html#release-pairs`. Static caption: show three clocks and an explicit “not observed by cutoff” state, with workload/harness versions and license caveats. No invented matched pair is supplied. Return: `paper.html#p04`.
 
-**Research backing:** [R03](../research/INDEPENDENT-EVIDENCE.md#r03), W2/W3.
+**Research backing:** [R03](../research/INDEPENDENT-EVIDENCE.md#r03), [tranche 01 S1](../research/LITERATURE-TRANCHE-01.md#s1), [draft rubrics](../research/WORKLOAD-RUBRICS.md), W2/W3.
 
 <a id="p05"></a>
 ## P05 — Demand response and the conditional rebound threshold
 
-For a defined workload, use nonnegative price-elasticity magnitude `e`. With positive prices, the scenario demand ratio is `(P1/P0)^(-e)`. This is a modeling assumption about price response, not a fitted relationship. Identifying real elasticity requires variation that distinguishes price from capability, customer growth, budgets, routing and other changes. A simultaneous price reduction and revenue increase does not identify it by itself.
+For a defined workload, use nonnegative price-elasticity magnitude `e`. With positive prices, the scenario demand ratio is `(P1/P0)^(-e)`. This is a modeling assumption about price response, not a fitted relationship. Identifying real elasticity requires variation that distinguishes price from capability, customer growth, budgets, routing and other changes. A simultaneous price reduction and revenue increase does not identify it by itself. The filings show exactly that pattern: from Q2 to Q3 2026 revenue rose $5.4B while the issuer attributes an offset of about $600M to price reductions with new model versions and contractual discounts (CL-004). New models, products and customers arrived in the same quarter, so the observation is co-movement, not an elasticity estimate. The literature tranche adds named confounders for any future estimate: supply-injected volume, channel substitution, subsidies, low-value context re-reading, base effects, budget rationing and relocation from metered cloud to owned hardware. Relocation moves load out of a provider's revenue without removing it from the grid ([SRC-022](../SOURCES.md#src-022); [tranche 01 S4](../research/LITERATURE-TRANCHE-01.md#s4)).
 
 Facility energy is expected attempted work times IT energy per attempt times matched PUE. Under the declared repeated-attempt model, successful task demand `S` and success rate `s>0` imply expected attempts `S/s`. Combining these definitions gives:
 
@@ -102,7 +112,7 @@ E1/E0 = (P1/P0)^(-e) × (s0/s1) × (I1/I0) × (p1/p0)
 
 If price and IT energy per attempt both decline by factor `g`, with `0<g<1` and success/PUE unchanged, `E1/E0=g^(1-e)`. Thus the threshold `e=1` is a conditional analytical result (CL-013), not a universal rule. Partial pass-through, quality changes, routing and changed facility intensity can move the boundary.
 
-**F04 — Rebound threshold (planned):** `rebound.html#elasticity-threshold`. Static caption: under the stated proportional conditions, energy falls for `e<1`, stays unchanged for `e=1`, and rises for `e>1`; changing other conditions requires recalculation. Return: `paper.html#p05`.
+**F04 — Rebound threshold (live, illustrative):** `rebound.html#elasticity-threshold`. The explorer computes the threshold `e*=ln(k)/ln(q)` and the energy ratio across elasticities with the shared `task-energy/0.4.0` engine; every input is a declared scenario value, not a measurement. Static caption: under the stated proportional conditions, energy falls for `e<1`, stays unchanged for `e=1`, and rises for `e>1`; changing other conditions requires recalculation. Return: `paper.html#p05`.
 
 **Research backing:** [R05](../research/INDEPENDENT-EVIDENCE.md#r05), [specification modeling rules](../SPECIFICATION.md#8-modeling-rules-and-edge-cases), W4/W7. No actual elasticity estimate is available.
 
@@ -113,11 +123,15 @@ Open-model substitution may change who serves a workload without reducing aggreg
 
 Capacity economics must distinguish installed, available, contractually committed, and economically demanded capacity, with compatible units and delivery dates. Price pressure does not automatically imply insolvency. Cancellation rights, financing conditions, contract amendments, hardware usability, fixed obligations and realized utilization require contract-level evidence.
 
-The initial research candidates are CoreWeave, Nebius, Lambda and Crusoe for infrastructure, and Together AI, Fireworks AI and Baseten for managed inference. They are research cohorts, not a list of Anthropic counterparties or a ranking. Provider-specific disclosures and the relevant filings remain acquisition tasks.
+The initial research candidates are CoreWeave, Nebius, Lambda and Crusoe for infrastructure, and Together AI, Fireworks AI and Baseten for managed inference. They are research cohorts, not a list of Anthropic counterparties or a ranking. Provider-specific disclosures remain acquisition tasks.
 
-**F05 — Commitment exposure (planned):** `providers.html#commitment-exposure`. Static caption: compare archetypes and evidenced contract conditions, retaining unknown relationships and incompatible metrics; no aggregate exposure result until reconciliation. Return: `paper.html#p06`.
+The final prospectus states aggregate contractual obligations and commitments of about $900.9B, substantially all compute and infrastructure, as of and after September 30, 2026 (CL-020). This replaces Amendment 1's $895.4B, which the initial draft carried (CL-005, superseded); the whole change is $5.5B of commitments signed after the quarter. Exposure is not one number. About $186.2B is subject to termination rights or contingent conditions, and an estimated $150–175B of variable arrangements is excluded from the total (CL-021). The named arrangements, including Amazon, Google, Microsoft, SpaceXAI, Broadcom and AMD, use different instruments, terms and conditions and must not be summed (CL-022).
 
-**Research backing:** W1/W5; CL-003/CL-005/CL-012 remain unverified. This section is a research framework awaiting primary evidence.
+Of the seven research candidates, only Lambda is named as a counterparty: about $41.3B of agreements into 2034, with fees only as capacity is delivered and accepted, of which an August 2026 agreement of about $34.9B is currently terminable by either party because Lambda did not secure a facility lease in time (CL-023). Nscale and Fluidstack are also named. The other six candidates are not named in these documents, which is not evidence that no relationship exists. This gives the provider chapter one evidenced, explicitly fragile edge, and shows why delivery and financing conditions matter more than headline totals ([W1 §5–6](../research/W1-FILING-RECONSTRUCTION.md#w1-commitments)).
+
+**F05 — Commitment exposure (planned):** `providers.html#commitment-exposure`. Static caption: separate fixed, variable, conditional and excluded commitments; show the evidenced Lambda edge with its termination status; retain unknown relationships and incompatible metrics. No summed exposure across instruments. Return: `paper.html#p06`.
+
+**Research backing:** [W1 §5–6](../research/W1-FILING-RECONSTRUCTION.md#w1-commitments), W5; CL-012/CL-020–CL-023 located but unverified. Provider-side evidence is still to be acquired.
 
 <a id="p07"></a>
 ## P07 — Operational energy, geography, and excluded impacts
@@ -130,7 +144,9 @@ Unlocated capacity remains unlocated; US factors are not applied to non-US commi
 
 **F06 — Location coverage (planned):** `impacts.html#location-coverage`. Static caption: quantify the share of capacity with documented compatible regional evidence and show excluded/unknown locations. There is no regional capacity allocation or company energy total in this draft. Return: `paper.html#p07`.
 
-**Research backing:** [R04](../research/INDEPENDENT-EVIDENCE.md#r04), W2/W6.
+Secondary energy figures in the tranche illustrate the boundary problem. One estimate converts chip power ratings into about 29.6 GW of AI data-center capacity using a roughly 2.5× multiplier (CL-049). Modeled per-prompt estimates span roughly 5 to 23 Wh depending on model and reasoning setting (CL-050). Neither is company metering, and neither is energy per successful task. Both are order-of-magnitude context only ([tranche 01 S5](../research/LITERATURE-TRANCHE-01.md#s5)).
+
+**Research backing:** [R04](../research/INDEPENDENT-EVIDENCE.md#r04), [tranche 01 S5](../research/LITERATURE-TRANCHE-01.md#s5), W2/W6.
 
 <a id="p08"></a>
 ## P08 — Deterministic futures: synthetic checks before empirical results
@@ -147,7 +163,7 @@ Before company calibration, the following checks expose the accounting logic (CL
 
 These examples are verified arithmetic, not research measurements. The actual three futures, calibration and versioned run manifests have not been implemented. Without sufficient data, the eventual tool must label its results indexed or assumed rather than imply empirical absolute company energy.
 
-**F07 — Scenario comparison (planned):** `rebound.html#scenario-comparison`. Static fallback: the table above and the declared equations; future “Explore this result” links must pin the exact model/data versions and inputs, not just a seed. Return: `paper.html#p08`.
+**F07 — Scenario comparison (live, illustrative):** `rebound.html#scenario-comparison`. Three uncalibrated indexed futures (efficient abundance, rebound acceleration, demand air pocket / open-model substitution) with editable inputs, field-level errors, sensitivity and exportable run manifests that replay inputs and results with the pinned model version. Static fallback: the table above and the declared equations. Return: `paper.html#p08`.
 
 **Research backing:** [R05](../research/INDEPENDENT-EVIDENCE.md#r05), W7; real scenario results pending.
 
@@ -158,9 +174,9 @@ Monte Carlo methods can propagate declared uncertainty but do not transform assu
 
 The initial reverse tests investigate compute-cost pressure, committed-capacity mismatch, and regional power constraints. The two illustrative financial/capacity boundaries are expense above 60% of revenue and use below 60% of available committed capacity, respectively, for four consecutive comparable quarters. The regional boundary compares required load with documented deliverable supply in a matched period.
 
-These are research triggers, not solvency, covenant, climate, or community acceptability certificates. The requested filings are received, but unreconciled denominator definitions, obligations, delivery dates, and regional supply still prevent empirical evaluation. A search finding no breach within its domain is not evidence of safety outside that domain; claiming a minimal shock requires publishing the search method and admissible assumptions.
+These are research triggers, not solvency, covenant, climate, or community acceptability certificates. Applying the compute-pressure trigger to the reported quarters shows why (CL-025): expense exceeded 60% of revenue in every 2025 quarter (251%, 177%, 148%, 144%) and in Q1-2026 (72%), so the four-quarter boundary was met during 2025, a period when revenue grew more than fivefold while committed capacity came online. Q2 and Q3 2026 were 48% and 58%. Crossing the boundary during a deliberate ramp is not a failure signal, and continuity across 2025–2026 depends on the composition change noted in P03 ([W1 §7](../research/W1-FILING-RECONSTRUCTION.md#w1-stress)). The capacity-use and regional-power tests remain unevaluated: the filings disclose no utilization or facility-level supply. A search finding no breach within its domain is not evidence of safety outside that domain; claiming a minimal shock requires publishing the search method and admissible assumptions.
 
-**F08 — Stress boundaries (planned):** `uncertainty.html#stress-boundaries`. Static fallback: the three definitions above and a current “not evaluated / insufficient evidence” state, not a plotted invented result. Return: `paper.html#p09`.
+**F08 — Stress boundaries (planned):** `uncertainty.html#stress-boundaries`. Static fallback: the three definitions above; the compute-pressure history as a derived table with its comparability caveat; “insufficient evidence” for capacity use and regional power. No forward probability. Return: `paper.html#p09`.
 
 **Research backing:** [PLAN §3 W7](../PLAN.md#3-evidence-work-packages), [specification](../SPECIFICATION.md#8-modeling-rules-and-edge-cases), W5/W6/W7.
 
@@ -180,7 +196,9 @@ Affected communities are participants who can contest sources, boundaries and ac
 
 The present contribution is a bounded method and provisional synthesis, not an empirical verdict about Anthropic, neocloud viability, or total AI energy. The derived rebound identity supplies a conditional boundary, while the literature leads motivate multiple possible regimes and measurable workload definitions. Much of the central evidence remains to be acquired and inspected.
 
-The next filing pass can correct the initial numbers and even change the case-study framing. Failure to authenticate the anchor must produce an evidence-gap analysis, not a modeled company result. Failure of the six-month hypothesis is a valid finding. Future results should distinguish task price, workload growth, model substitution, provider allocation and facility intensity rather than report one efficiency score.
+The first filing pass confirmed four of the five initial figures and superseded the fifth; later passes and review can still correct numbers or change the case-study framing. Failure to authenticate the anchor must produce an evidence-gap analysis, not a modeled company result. Failure of the six-month hypothesis is a valid finding. Future results should distinguish task price, workload growth, model substitution, provider allocation and facility intensity rather than report one efficiency score.
+
+Still unknown after the first literature tranche ([S7](../research/LITERATURE-TRANCHE-01.md#s7)): any measured distribution of open/closed lags at any of the three clocks; open-weight results under protocols matched to frontier results; dollar cost and energy per successful task for any current model; whether token-efficiency gains offset rising test-time budgets; and any identified AI price elasticity.
 
 **Questions for review:** Are the task rubrics defensible? Are the three equivalency clocks appropriately separated? Which causal links have identification evidence, rather than co-movement? Are financial/physical boundaries compatible? Can a reader trace every number through a source or formula? Which local impacts and participant perspectives are still missing?
 
@@ -202,9 +220,16 @@ The following references are stable **discovery records**, not claims of complet
 | [SRC-010](../SOURCES.md#src-010), [SRC-011](../SOURCES.md#src-011) | SWE-bench paper; OpenAI Verified announcement | P03/P04; coding rubric/harness provenance |
 | [SRC-012](../SOURCES.md#src-012), [SRC-013](../SOURCES.md#src-013) | EPA eGRID FAQ; NREL Cambium documentation/data descriptions | P07; different emissions questions |
 | CL-013/CL-014 in [CLAIM-LEDGER.csv](../CLAIM-LEDGER.csv) | Local algebra and synthetic checks | P05/P08; not empirical inputs |
+| [SRC-020](../SOURCES.md#src-020)–[SRC-026](../SOURCES.md#src-026); [literature tranche 01](../research/LITERATURE-TRANCHE-01.md) | Four arXiv preprints (2026), Stanford AI Index 2026 Ch. 1, Anthropic provable-inference post | P01/P03/P04/P05/P07/P11; CL-040–CL-051; supplied local text, unreviewed, licensing of three files unresolved |
+| [Draft workload rubrics](../research/WORKLOAD-RUBRICS.md) | Proposed coding, extraction and bounded-agent rubrics (`0.4-draft`) | P03/P04; awaiting the OQ-02 reviewer decision |
+| [W1 reconstruction](../research/W1-FILING-RECONSTRUCTION.md), [extracted facts](../data/extracted/w1-filing-facts.csv), [derived checks](../data/derived/w1-reconciliation-checks.csv) | Reproducible filing extraction (`node tools/extract-filing-facts.mjs --check`) | P02/P03/P05/P06/P09; CL-001–CL-005, CL-011/CL-012, CL-020–CL-025 |
 
-**Reproducibility status:** No company-calibrated dataset, engine release, Monte Carlo trial set, scenario manifest, or deployed Pages interaction exists yet. Current algebra and synthetic inputs are fully shown in P05/P08 and [R05](../research/INDEPENDENT-EVIDENCE.md#r05). Later snapshots must pin paper, source/data/model versions and manifests; a live update must not silently change a reviewed result.
+**Reproducibility status:** The indexed rebound lab (F04/F07) uses the shared deterministic engine `task-energy/0.4.0`, defined in [DATA-DICTIONARY.md](../DATA-DICTIONARY.md), and exports run manifests (`frontier-half-life/run-manifest` 1.0.0) that replay its illustrative scenarios. No company-calibrated dataset or Monte Carlo trial set exists. Current algebra and synthetic inputs are fully shown in P05/P08 and [R05](../research/INDEPENDENT-EVIDENCE.md#r05). Later snapshots must pin paper, source/data/model versions and manifests; a live update must not silently change a reviewed result.
 
 **v0.4, 2026-11-27:** Initial coordinated manuscript, independent literature synthesis, source-access triage, and synthetic identities. Primary filings are being gathered by the author; remediation is planned, not completed. The initial author is **yorkerhodes3**. Repository original work is MIT licensed; third-party materials retain their respective terms.
 
 **v0.4 intake update, 2026-11-28:** Requested text intake complete; claim reconciliation pending. PDF retrieval waived by author; non-analytical demo shell authorized and revised specification/plan/backlog separately approved. Evidence cutoff stays 2026-11-27; analytical release is not approved.
+
+**v0.4 W1 update, 2026-11-28:** Text-based filing reconstruction: located passages and line locators for all initial company claims; 22 derived checks pass; CL-005 superseded by CL-020; new claims CL-020–CL-025; P02/P03/P05/P06/P09 revised. All company claims remain unverified pending origin authentication and financial review.
+
+**v0.4 literature update, 2026-11-28:** Literature tranche 01 (SRC-020–SRC-026, CL-040–CL-051) and draft workload rubrics integrated into P01/P03/P04/P05/P07/P11/P12. No elasticity or open/closed lag is measured by any supplied source; CL-006 unchanged. The manuscript is published on Pages as the live reader (review draft).
