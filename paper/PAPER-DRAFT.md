@@ -184,7 +184,7 @@ The next filing pass can correct the initial numbers and even change the case-st
 
 **Questions for review:** Are the task rubrics defensible? Are the three equivalency clocks appropriately separated? Which causal links have identification evidence, rather than co-movement? Are financial/physical boundaries compatible? Can a reader trace every number through a source or formula? Which local impacts and participant perspectives are still missing?
 
-Follow [PLAN milestones and dependencies](../PLAN.md#6-milestones-and-dependencies) and [the backlog](../BACKLOG.md) to see what is unfinished. Revised specification and plan approval remain pending. Three actual reviewers and resolution of blocking findings are required before analytical release.
+Follow [PLAN milestones and dependencies](../PLAN.md#6-milestones-and-dependencies) and [the backlog](../BACKLOG.md) to see what is unfinished. The author approved the revised specification and plan/backlog on 2026-11-28. Three actual reviewers and resolution of blocking findings are still required before analytical release.
 
 <a id="p12"></a>
 ## P12 — References, reproducibility, and version history
@@ -207,4 +207,4 @@ The following references are stable **discovery records**, not claims of complet
 
 **v0.4, 2026-11-27:** Initial coordinated manuscript, independent literature synthesis, source-access triage, and synthetic identities. Primary filings are being gathered by the author; remediation is planned, not completed. The initial author is **yorkerhodes3**. Repository original work is MIT licensed; third-party materials retain their respective terms.
 
-**v0.4 intake update, 2026-11-28:** Requested text intake complete; claim reconciliation pending. PDF retrieval waived by author; non-analytical demo shell authorized while revised specification/plan review remains pending. Evidence cutoff stays 2026-11-27.
+**v0.4 intake update, 2026-11-28:** Requested text intake complete; claim reconciliation pending. PDF retrieval waived by author; non-analytical demo shell authorized and revised specification/plan/backlog separately approved. Evidence cutoff stays 2026-11-27; analytical release is not approved.

@@ -112,6 +112,8 @@ Working choices made on 2026-11-27 at the author's request. They are reversible 
 
 **2026-11-28 intake/shell direction:** The requested filing text captures and exhibits are received; use extracted text and skip original PDFs. A non-analytical Pages demo shell is explicitly authorized in parallel with document updates. This narrow exception does not approve full analytical implementation, claim verification or publication of research findings.
 
+**2026-11-28 review update:** The author subsequently approved the revised specification and, in a separate question, the coordinated plan/backlog. Their recorded verdicts permit the scoped work sequence; claim reconciliation and specialist analytical publication review remain required.
+
 ### 11.1 Preserve the initial research, validate before adopting it
 
 `INITIAL-RESEARCH.md` remains the supplied research record. Its numerical claims, source URLs, hypothesized mechanisms, and proposed methods are not silently rewritten or promoted to verified evidence. This concept is the current scope authority; the original's broad modules and document sequence are research inputs, not permission to bypass the startup guide.
