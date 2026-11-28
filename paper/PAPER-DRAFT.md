@@ -37,9 +37,11 @@ Read the argument below; inspect [the evidence register](../SOURCES.md), [claim 
 <a id="p00"></a>
 ## P00 — Provisional abstract
 
-Lower AI task costs can reduce the resource intensity of an operation while also making additional use attractive. Open-model catch-up may further change price, model routing, and who earns revenue from that use. This research proposes to examine those mechanisms together without equating a benchmark score, token price, or compute-expense ratio with useful-task or system efficiency.
+Lower AI task costs can reduce the resource intensity of an operation while also making additional use attractive. Open-model catch-up may further change price, model routing, and who earns revenue from that use. This draft examines those mechanisms together without equating a benchmark score, token price, or compute-expense ratio with useful-task or system efficiency.
 
-The current draft sets out a source-addressable method, a bounded literature synthesis, distinct equivalency clocks, and a conditional demand–energy identity. The analytical identity shows why a break-even elasticity of one arises only under proportional price/intensity reductions and unchanged success/facility conditions. It does not estimate actual elasticity or demonstrate an Anthropic outcome. A text-based filing reconstruction supports four of the five initial financial figures and shows the fifth (aggregate commitments) was revised upward after the first amendment, with material conditional and excluded amounts; these remain unverified pending review. Empirical results, financial decomposition, release-pair distributions, and operational-impact estimates await acquisition, validation and review. Revise this abstract last when those results exist.
+The draft contributes a source-addressable method and four evidence bases. A reproducible reconstruction of the supplied filing texts supports four of five initial financial figures (CL-001–CL-004). It supersedes the fifth: the aggregate commitment rose from $895.4B to about $900.9B after the first amendment (CL-005, CL-020). The same reconstruction locates material conditional and excluded amounts (CL-021) and one evidenced, currently terminable neocloud edge (CL-023). The filings also show why they cannot identify a demand response: the issuer reports demand exceeding available compute, so observed usage measures allocated capacity (CL-026). A first literature tranche finds no measured AI price elasticity and no measured open/closed lag, and shows that benchmark scores depend on inference budget and protocol (CL-040, CL-042). An analytical identity locates the energy break-even at an elasticity of one only under proportional price and intensity reductions with unchanged success and facility conditions (CL-013). An indexed, uncalibrated lab lets readers vary those conditions.
+
+Every company figure is located but unverified until origin authentication and financial review. No elasticity, catch-up lag, cost or energy per successful task, or company energy estimate is claimed. The abstract will be rewritten when reviewed results exist.
 
 <a id="p01"></a>
 ## P01 — The efficiency question and competing mechanisms
@@ -202,7 +204,19 @@ The first filing pass confirmed four of the five initial figures and superseded 
 
 Still unknown after the first literature tranche ([S7](../research/LITERATURE-TRANCHE-01.md#s7)): any measured distribution of open/closed lags at any of the three clocks; open-weight results under protocols matched to frontier results; dollar cost and energy per successful task for any current model; whether token-efficiency gains offset rising test-time budgets; and any identified AI price elasticity.
 
-**Questions for review:** Are the task rubrics defensible? Are the three equivalency clocks appropriately separated? Which causal links have identification evidence, rather than co-movement? Are financial/physical boundaries compatible? Can a reader trace every number through a source or formula? Which local impacts and participant perspectives are still missing?
+**Questions for review.** Each question points to the record a reviewer would check.
+
+| Area | Question | Where to check |
+| --- | --- | --- |
+| Filing evidence | Do the W1 dispositions hold, and is a four-quarter comparison across the 2026 change in expense composition defensible? Can capture origin be attested? | [W1 §8–10](../research/W1-FILING-RECONSTRUCTION.md#w1-claims), `evidence.html#claims` |
+| Commitments | Is treating the conditional $186.2B as a characteristic rather than a component the right reading? Should Nscale and Fluidstack enter the provider cohort? | [W1 §5–6](../research/W1-FILING-RECONSTRUCTION.md#w1-commitments), `providers.html` |
+| Rubrics | Which thresholds, budgets and task sets should the coding, extraction and agent rubrics adopt (OQ-02)? | [Draft rubrics](../research/WORKLOAD-RUBRICS.md) |
+| Equivalency | Are the three clocks and the separate “not comparable” status the right structure for P04? | [Tranche 01 S1](../research/LITERATURE-TRANCHE-01.md#s1) |
+| Demand | Is the successful-task own-price elasticity the right estimand? Should the scenarios add a capacity-constrained regime? | [W4 note](../research/W4-DEMAND-IDENTIFICATION.md#w4-review) |
+| Model | Are the indexed presets and the threshold explorer clear about what they are not? | [Data dictionary](../DATA-DICTIONARY.md), `rebound.html` |
+| Stress triggers | Are the illustrative 60% triggers useful, given that the reported history crosses one during a ramp? | [W1 §7](../research/W1-FILING-RECONSTRUCTION.md#w1-stress), `uncertainty.html` |
+| Traceability | Can every number be followed to a source line or a formula? | `evidence.html`, [extracted facts](../data/extracted/w1-filing-facts.csv) |
+| Impacts | Which local impacts and participant perspectives are still missing? | P07, P10 |
 
 Follow [PLAN milestones and dependencies](../PLAN.md#6-milestones-and-dependencies) and [the backlog](../BACKLOG.md) to see what is unfinished. The author approved the revised specification and plan/backlog on 2026-11-28. Three actual reviewers and resolution of blocking findings are still required before analytical release.
 
@@ -233,6 +247,8 @@ The following references are stable **discovery records**, not claims of complet
 **v0.4 intake update, 2026-11-28:** Requested text intake complete; claim reconciliation pending. PDF retrieval waived by author; non-analytical demo shell authorized and revised specification/plan/backlog separately approved. Evidence cutoff stays 2026-11-27; analytical release is not approved.
 
 **v0.4 W1 update, 2026-11-28:** Text-based filing reconstruction: located passages and line locators for all initial company claims; 22 derived checks pass; CL-005 superseded by CL-020; new claims CL-020–CL-025; P02/P03/P05/P06/P09 revised. All company claims remain unverified pending origin authentication and financial review.
+
+**v0.4 review snapshot r1, 2026-11-28:** The git tag `v0.4-review.1` pins the commit containing this entry: manuscript, claim ledger, figure registry, W1 extraction, model `task-energy/0.4.0` and manifest schema 1.0.0. A pre-release with the same tag attaches a PDF of this reader whose source links point at the tag, not at `main`. The live reader keeps changing; review comments should cite the snapshot. This is a review draft, not an analytical release.
 
 **v0.4 demand-identification update, 2026-11-28:** T-018 note added; CL-026 (supply constraint and non-price rationing) and CL-027 (consumption-based revenue) located; P05 states why the filing series cannot identify an elasticity.
 
