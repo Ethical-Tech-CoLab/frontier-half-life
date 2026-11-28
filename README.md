@@ -8,8 +8,9 @@ as the research proceeds; the label does not imply a completed release.
 It includes an overview, the **live research reader** (the full P00–P12 review
 draft rendered from `paper/PAPER-DRAFT.md`, with claim and figure links), an
 **evidence room** (filing lineage and a claim inspector), the indexed **rebound
-lab** (F04/F07), **commitment exposure** (F05, `providers.html`), **stress
-boundaries** (F08, `uncertainty.html`), and 13 presentation themes. GitHub Pages deployment succeeded on 2026-11-28;
+lab** (F04/F07), **efficiency denominators** (F02, `efficiency.html`), **commitment exposure** (F05, `providers.html`), **stress
+boundaries** (F08, `uncertainty.html`), and 13 presentation themes. The reader
+prints or saves to PDF with its static figure explanations. GitHub Pages deployment succeeded on 2026-11-28;
 the published artifact matches the locally checked shell and excludes research
 captures/source documents. Public HTTP access is blocked in this session, so
 remote browser verification is not claimed.

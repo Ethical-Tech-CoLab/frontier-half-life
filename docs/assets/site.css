@@ -274,6 +274,10 @@ button.button { cursor: pointer; }
 @media (min-width: 1500px) {
   .hero { padding-block: 6rem; }
 }
+@media (max-width: 1360px) {
+  .identity small { display: none; }
+  .site-nav a { padding-inline: .6rem; }
+}
 @media (max-width: 1050px) {
   .header-row { gap: .5rem; }
   .site-nav a { padding-inline: .45rem; }
@@ -281,7 +285,7 @@ button.button { cursor: pointer; }
   .hero { gap: 2rem; }
   .reader-layout { gap: 2rem; grid-template-columns: 215px minmax(0, 1fr); }
 }
-@media (max-width: 1100px) {
+@media (max-width: 1240px) {
   .identity { margin-right: auto; }
   .theme-picker { position: static; }
   .theme-panel { right: 1.2rem; }

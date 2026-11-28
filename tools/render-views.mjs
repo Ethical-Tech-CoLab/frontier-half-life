@@ -162,3 +162,56 @@ export function uncertaintyBody(reviewStrip) {
     <script type="module" src="assets/js/stress.mjs"></script>
   </main>`;
 }
+
+// F02 (efficiency.html#task-and-financial-measures): distinct denominators, each
+// with its own unit and evidence state. Only the financial row has located values.
+const MEASURES = [
+  { id: 'financial', measure: 'Compute and infrastructure expense ÷ revenue', unit: '% of revenue', denominator: 'Revenue (USD)',
+    claims: ['CL-002', 'CL-024'], state: 'Located · unverified',
+    note: 'Financial ratio for one shared compute pool (research, development, serving and internal use). Not gross margin, not task or physical efficiency; composition widens in 2026.' },
+  { id: 'issuer-definition', measure: 'Issuer “compute efficiency”', unit: 'Intelligence and revenue per compute dollar', denominator: 'Compute dollars invested',
+    claims: ['CL-024'], state: 'Definition only',
+    note: 'A stated goal, not a reported metric. No “intelligence” unit is defined or disclosed.' },
+  { id: 'operation-compute', measure: 'Tokens per attempt and per solve', unit: 'Tokens by type', denominator: 'Attempt or solved task',
+    claims: ['CL-040', 'CL-041', 'CL-044'], state: 'Literature context only',
+    note: 'Controlled studies show tokens per solve and success both move with the inference budget and protocol. No deployed-workload values for any company.' },
+  { id: 'task-cost', measure: 'Cost per successful task', unit: 'USD per successful task', denominator: 'Successful task under a fixed rubric',
+    claims: ['CL-048'], state: 'Unknown',
+    note: 'Needs an adopted rubric (T-005), dated prices, tokens per attempt and success rate. Serving configuration alone can move cost per token many-fold.' },
+  { id: 'capacity', measure: 'Committed-capacity use', unit: '% of committed capacity', denominator: 'Delivered committed capacity',
+    claims: ['CL-020'], state: 'Unknown',
+    note: 'The filings disclose commitments but not delivered capacity or utilization (see F08).' },
+  { id: 'energy', measure: 'Operational energy per successful task', unit: 'kWh per successful task', denominator: 'Successful task × facility PUE',
+    claims: ['CL-049', 'CL-050'], state: 'Unknown',
+    note: 'Only secondary sector capacity and modeled per-prompt estimates exist; neither is metered nor per successful task.' },
+];
+
+export function efficiencyBody(reviewStrip) {
+  const { facts, ledger } = loadResearch();
+  const known = new Set(ledger.map((row) => row.claim_id));
+  const series = ['Q1-2025', 'Q2-2025', 'Q3-2025', 'Q4-2025', 'Q1-2026', 'Q2-2026', 'Q3-2026']
+    .map((period) => ({ period, row: fact(facts, 'CI-PCT-Q', period) }));
+  const growth = ['Q3-2026 revenue', 'Q3-2026 compute and infrastructure'].map((period) => fact(facts, 'GROWTH-Q3', period));
+  const claims = (ids) => ids.filter((id) => known.has(id)).map((id) => siteLink(`evidence.html#${id.toLowerCase()}`, id)).join(' · ');
+  const financialCell = `<span class="series">${series.map(({ period, row }) => `<span title="${escape(period)}">${escape(row.value)}%</span>`).join(' → ')}</span><br><span class="caption">Q1-2025 → Q3-2026 · Q3-2026 year over year: revenue +${escape(growth[0].value)}%, expense +${escape(growth[1].value)}% ${locator(growth[0])}</span>`;
+  return `<main id="main" class="wrap" tabindex="-1" data-research-content>
+    ${intro('Efficiency / F02', 'Efficiency has', 'many denominators.',
+    'A cheaper token, a better financial ratio and a lower energy bill per useful task are different claims. This view keeps each measure in its own unit and says which ones the evidence can and cannot fill. Today only the financial ratio has located values.',
+    'Filing captures through 2026-11-25 · Literature tranche 01 · Located or unknown, never inferred')}
+    ${reviewStrip}
+    <section class="section" id="task-and-financial-measures" aria-labelledby="measures-title">
+      <div class="section-heading"><div><p class="eyebrow">F02 / Denominator comparison</p><h2 id="measures-title">Six measures, one row each.</h2></div><p>No row is converted into another. A blank is written as unknown with the reason, not filled from a neighbouring row.</p></div>
+      <div class="table-wrap" role="region" tabindex="0" aria-labelledby="measures-caption"><table class="measures">
+        <caption id="measures-caption">Distinct efficiency measures with their units, denominators and evidence state (SPECIFICATION FR-04). Located values are unverified.</caption>
+        <thead><tr><th scope="col">Measure</th><th scope="col">Unit</th><th scope="col">Denominator</th><th scope="col">What the evidence holds</th><th scope="col">State</th><th scope="col">Claims</th></tr></thead>
+        <tbody>
+        ${MEASURES.map((m) => `<tr id="measure-${m.id}"><th scope="row">${escape(m.measure)}</th><td>${escape(m.unit)}</td><td>${escape(m.denominator)}</td><td>${m.id === 'financial' ? `${financialCell}<br>` : ''}${escape(m.note)}</td><td><span class="status-label">${escape(m.state)}</span></td><td>${claims(m.claims)}</td></tr>`).join('\n        ')}
+        </tbody></table></div>
+      <div class="two-column compact">
+        <div class="gate-note"><h3>Why the rows do not convert</h3><p>For a fixed workload: attempts <code>A = S / s</code>, facility energy <code>E = A × I × p</code>, and task cost <code>= A × price per attempt</code>. The financial ratio has none of <code>S</code>, <code>s</code>, <code>I</code> or <code>p</code> in it, so it cannot be turned into task cost or energy without inventing them. ${siteLink('rebound.html#elasticity-threshold', 'See the identity in the rebound lab →')}</p></div>
+        <div class="gate-note"><h3>What would fill the unknown rows</h3><p>An adopted workload rubric (${docLink('research/WORKLOAD-RUBRICS.md', 'draft ↗')}), dated prices and token counts per attempt, measured success under matched protocols, delivered-capacity disclosures, and metered or well-bounded energy per attempt. None is in hand.</p></div>
+      </div>
+      <p class="caption">Static fallback: ${siteLink('paper.html#p03', 'P03 text')} · ${docLink('research/W1-FILING-RECONSTRUCTION.md#w1-revenue-compute', 'W1 §3 ↗')} · ${docLink('research/LITERATURE-TRANCHE-01.md#s2', 'Tranche 01 S2 ↗')} · ${siteLink('paper.html#p03', 'Return to P03 →')}</p>
+    </section>
+  </main>`;
+}

@@ -124,7 +124,8 @@ export function paperBody(reviewStrip) {
     <header class="page-intro"><p class="eyebrow">The live research reader / review draft</p><h1>${title ? title.html : 'Models, Megawatts, and Moats'}</h1>
       ${subtitle ? `<p class="lead">${subtitle.html}</p>` : ''}
       <div class="page-meta paper-meta">${meta.map((block) => `<p>${block.html}</p>`).join('')}</div>
-      <div class="actions">${siteLink('#p00', 'Start reading ↓', 'button')}${siteLink('evidence.html#claims', 'Inspect the claims →', 'button secondary')}${docLink('paper/PAPER-DRAFT.md', 'Manuscript source ↗')}</div>
+      <div class="actions">${siteLink('#p00', 'Start reading ↓', 'button')}${siteLink('evidence.html#claims', 'Inspect the claims →', 'button secondary')}${docLink('paper/PAPER-DRAFT.md', 'Manuscript source ↗')}<button type="button" class="button secondary" data-print hidden>Print or save as PDF</button></div>
+      <p class="print-only">Printed from the live research reader: https://ethical-tech-colab.github.io/frontier-half-life/docs/paper.html · ${SITE.version} review draft, not an analytical release. Claim IDs (CL-NNN) resolve at docs/evidence.html#cl-NNN; figure routes are printed in each figure panel with its static explanation.</p>
     </header>
     ${reviewStrip}
     <div class="reader-layout">

@@ -45,10 +45,18 @@ uncalibrated scenarios computed in the browser by the shared task-energy model.
   the compute-pressure boundary on reported quarters; `assets/js/stress.mjs`
   makes the illustrative threshold adjustable (progressive enhancement) and the
   other two boundaries show insufficient evidence. Values are located, unverified.
-- Views whose figures are still planned (efficiency, equivalency, impacts) are
-  explicitly unavailable.
-- Navigation collapses into the menu at 1100px and below so six items never
-  truncate the project name.
+- `efficiency.html#task-and-financial-measures` (F02, return to P03) keeps six
+  measures in their own units; only the financial ratio has located values and
+  every other row states why it is unknown.
+- `paper.html` has a **Print or save as PDF** button (revealed by script) and a
+  print stylesheet: prose, tables, figure routes and static explanations print;
+  controls, filters and navigation do not. Every brand prints with the CoLab
+  Daylight tokens so text stays readable on paper.
+- Views whose figures are still planned (equivalency, impacts) are explicitly
+  unavailable.
+- Navigation collapses into the menu at 1240px and below, and the masthead
+  subtitle hides below 1360px, so seven items never overlap or truncate the
+  project name (measured in headless Chrome).
 
 ## Rebound lab model and static fallback
 

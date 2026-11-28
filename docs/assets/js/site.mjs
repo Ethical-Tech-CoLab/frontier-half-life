@@ -102,7 +102,18 @@ export function initializeTheme({ document, location, history, getStorage, liste
   return { get brand() { return current; } };
 }
 
+// Print is progressive enhancement: the button stays hidden without JavaScript.
+export function initializePrint({ document, print }) {
+  const buttons = [...document.querySelectorAll('[data-print]')];
+  for (const button of buttons) {
+    button.hidden = false;
+    button.addEventListener('click', () => print());
+  }
+  return buttons.length;
+}
+
 if (typeof window !== 'undefined' && typeof document !== 'undefined') {
+  initializePrint({ document, print: () => window.print() });
   initializeTheme({
     document, location: window.location, history: window.history,
     getStorage: () => window.localStorage,

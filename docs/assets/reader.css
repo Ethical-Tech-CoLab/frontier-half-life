@@ -70,8 +70,15 @@
 @media (max-width: 430px) {
   .contents ol { grid-template-columns: minmax(0, 1fr); }
 }
+.print-only { display: none; }
 @media print {
-  .filters, .figure-actions .button { display: none; }
+  @page { margin: 16mm; }
+  .print-only { display: block; font-size: .75rem; border: 1px solid var(--line); padding: .5rem .7rem; }
+  .filters, .figure-actions .button, .page-intro .actions .button, [data-print], .contents, .review-strip, .notice-row, .site-footer .theme-provenance { display: none; }
+  .reader-layout { display: block; padding: 0; }
+  .paper-section { break-inside: auto; border-bottom: 0; }
+  .paper-section h2, .paper-section h3 { break-after: avoid; }
+  .figure-ref .caption { display: block; }
   .claim-card, .figure-ref { break-inside: avoid; }
   .table-wrap { overflow: visible; }
 }

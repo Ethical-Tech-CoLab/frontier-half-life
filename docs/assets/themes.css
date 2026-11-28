@@ -297,3 +297,29 @@
   --radius: 16px;
   --color-scheme: dark;
 }
+
+/* Paper is light: print every brand with the contrast-tested CoLab Daylight tokens. */
+@media print {
+  :root, :root[data-brand] {
+    --bg: #f5f2f9;
+    --surface: #ffffff;
+    --card: #ffffff;
+    --fg: #1a1020;
+    --muted: #675f6c;
+    --accent: #5f6b00;
+    --accent-ink: #ffffff;
+    --focus: #5f6b00;
+    --control: #88818d;
+    --line: #d2ced6;
+    --glow: #6d28d9;
+    --font-display: "Bebas Neue", Impact, sans-serif;
+    --font-body: "Space Mono", ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    --font-mono: "Space Mono", ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    --display-case: uppercase;
+    --display-tracking: 0.02em;
+    --display-weight: 400;
+    --display-leading: 0.9;
+    --radius: 18px;
+    --color-scheme: light;
+  }
+}
