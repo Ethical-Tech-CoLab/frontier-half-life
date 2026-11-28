@@ -10,7 +10,7 @@
 | Working version | v0.4 — advance as the work proceeds |
 | Reviewer(s) | @yorkerhodes3 — concept-stage scope approval |
 | Created | 2026-11-27 |
-| Last updated | 2026-11-27 |
+| Last updated | 2026-11-28 |
 
 ## 1. One-sentence pitch
 
@@ -109,6 +109,10 @@ Working choices made on 2026-11-27 at the author's request. They are reversible 
 ## 11. Research approach and decision boundaries
 
 **2026-11-27 author direction:** Start the coordinated research, paper, and dashboard at **v0.4**, not v1. The paper is a key deliverable alongside the dashboard: a live, linked research reader whose text cites evidence and points to specific Pages visuals or reproducible interactions. `yorkerhodes3` is the initial author. The revised specification and requested plan remain drafts for review; this direction does not claim that their review gates have been completed.
+
+**2026-11-28 intake/shell direction:** The requested filing text captures and exhibits are received; use extracted text and skip original PDFs. A non-analytical Pages demo shell is explicitly authorized in parallel with document updates. This narrow exception does not approve full analytical implementation, claim verification or publication of research findings.
+
+**2026-11-28 review update:** The author subsequently approved the revised specification and, in a separate question, the coordinated plan/backlog. Their recorded verdicts permit the scoped work sequence; claim reconciliation and specialist analytical publication review remain required.
 
 ### 11.1 Preserve the initial research, validate before adopting it
 

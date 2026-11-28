@@ -22,19 +22,23 @@ so it remains readable without them.
 | [paper/PAPER-DRAFT.md](paper/PAPER-DRAFT.md) | P00–P12 manuscript draft with evidence/method references, static explanations and planned contextual visuals |
 | [research/INDEPENDENT-EVIDENCE.md](research/INDEPENDENT-EVIDENCE.md) | Independent literature synthesis and analytical threshold/energy checks |
 | [SOURCES.md](SOURCES.md) / [CLAIM-LEDGER.csv](CLAIM-LEDGER.csv) | Source-access records, provisional evidence and explicit verification gaps |
+| [research/FILING-INTAKE-REVIEW.md](research/FILING-INTAKE-REVIEW.md) | Completed requested text intake, provenance limitations, and claim-reconciliation work |
 
-**Status:** Concept merged; revised specification and requested plan are drafts
-for review. Independent literature/method research and paper writing have
-continued while **yorkerhodes3 gathers the primary filings**. Direct primary-source
-retrieval is failing DNS in this environment; indexed passages are not
-authenticated filing figures. Filing-dependent conclusions stay blocked, with
-an explicit [intake/remediation pass](PLAN.md#61-filing-intake-and-remediation)
-to update claims and dependent paper/dashboard results after receipt.
-Pages reader/interaction destinations are planned, not deployed.
+**Status:** Revised specification, plan and backlog approved 2026-11-28.
+The original S-1, three amendments, final prospectus, November 25
+8-K and requested indices/exhibits are received. The
+[intake review](research/FILING-INTAKE-REVIEW.md) confirms 80 manifest-listed
+file hashes/sizes. **Use the extracted text; original PDFs are not required.**
+Intake completion does not authenticate every financial value. The
+[intake/remediation pass](PLAN.md#61-filing-intake-and-remediation) still requires
+claim-level verification and reconciliation before dependent findings.
+A first non-analytical demo shell is authorized for Pages while full manuscript
+rendering, models and analytical interactions remain gated.
 
 Follow CONCEPT-IDEA → SPECIFICATION → PLAN + BACKLOG, with human approval between
-stages and before implementation. The author requested plan drafting in this
-session; no specification/plan approval or public analytical release is inferred.
+stages and before full implementation. Specification and plan/backlog approval
+are now recorded; the separate non-analytical shell authorization and those
+document verdicts do not authorize unreconciled claims or analytical release.
 
 ## License
 

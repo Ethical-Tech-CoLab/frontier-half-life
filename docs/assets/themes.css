@@ -1,0 +1,247 @@
+/* Generated from the attributed registry by tools/render-shell.mjs. */
+:root, :root[data-brand="colab"] {
+  --bg: #120c1a;
+  --surface: #1b1226;
+  --card: #201630;
+  --fg: #f3eefb;
+  --muted: #a49fac;
+  --accent: #c8f04b;
+  --accent-ink: #141413;
+  --focus: #c8f04b;
+  --control: #837d8b;
+  --line: #3b3543;
+  --glow: #7b5cff;
+  --font-display: Impact, Haettenschweiler, "Arial Narrow", sans-serif;
+  --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --radius: 18px;
+  --color-scheme: dark;
+}
+
+:root[data-brand="colab-daylight"] {
+  --bg: #f5f2f9;
+  --surface: #ffffff;
+  --card: #ffffff;
+  --fg: #1a1020;
+  --muted: #675f6c;
+  --accent: #5f6b00;
+  --accent-ink: #ffffff;
+  --focus: #5f6b00;
+  --control: #88818d;
+  --line: #d2ced6;
+  --glow: #6d28d9;
+  --font-display: Impact, Haettenschweiler, "Arial Narrow", sans-serif;
+  --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --radius: 18px;
+  --color-scheme: light;
+}
+
+:root[data-brand="anthropic"] {
+  --bg: #faf9f5;
+  --surface: #f1efe7;
+  --card: #faf9f5;
+  --fg: #141413;
+  --muted: #656462;
+  --accent: #9e5740;
+  --accent-ink: #ffffff;
+  --focus: #9e5740;
+  --control: #878784;
+  --line: #d5d4d1;
+  --glow: #788c5d;
+  --font-display: Arial, Helvetica, sans-serif;
+  --font-body: Georgia, "Times New Roman", serif;
+  --font-mono: ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --radius: 10px;
+  --color-scheme: light;
+}
+
+:root[data-brand="openai"] {
+  --bg: #ffffff;
+  --surface: #f7f7f8;
+  --card: #ffffff;
+  --fg: #0f0f0f;
+  --muted: #636363;
+  --accent: #0c7f63;
+  --accent-ink: #ffffff;
+  --focus: #0c7f63;
+  --control: #878787;
+  --line: #d9d9d9;
+  --glow: #10a37f;
+  --font-display: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --radius: 18px;
+  --color-scheme: light;
+}
+
+:root[data-brand="coreweave"] {
+  --bg: #ffffff;
+  --surface: #f9f9f9;
+  --card: #fdfdfd;
+  --fg: #0a0a0f;
+  --muted: #606063;
+  --accent: #2741e7;
+  --accent-ink: #ffffff;
+  --focus: #2741e7;
+  --control: #858587;
+  --line: #d8d8d9;
+  --glow: #2741e7;
+  --font-display: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --radius: 12px;
+  --color-scheme: light;
+}
+
+:root[data-brand="nebius"] {
+  --bg: #052b42;
+  --surface: #10354b;
+  --card: #173a4f;
+  --fg: #ffffff;
+  --muted: #a8b5bd;
+  --accent: #e0ff4f;
+  --accent-ink: #141413;
+  --focus: #e0ff4f;
+  --control: #8295a1;
+  --line: #325164;
+  --glow: #3277ff;
+  --font-display: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --radius: 24px;
+  --color-scheme: dark;
+}
+
+:root[data-brand="lambda"] {
+  --bg: #0b0b0b;
+  --surface: #161616;
+  --card: #1c1c1c;
+  --fg: #fefefe;
+  --muted: #a9a9a9;
+  --accent: #8e6ef7;
+  --accent-ink: #141413;
+  --focus: #8e6ef7;
+  --control: #858585;
+  --line: #373737;
+  --glow: #6236f4;
+  --font-display: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --radius: 8px;
+  --color-scheme: dark;
+}
+
+:root[data-brand="crusoe"] {
+  --bg: #ffffff;
+  --surface: #f9f9f9;
+  --card: #fcfcfc;
+  --fg: #000000;
+  --muted: #595959;
+  --accent: #69780a;
+  --accent-ink: #ffffff;
+  --focus: #69780a;
+  --control: #808080;
+  --line: #d6d6d6;
+  --glow: #f59a36;
+  --font-display: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --radius: 16px;
+  --color-scheme: light;
+}
+
+:root[data-brand="together"] {
+  --bg: #ffffff;
+  --surface: #f9f9fa;
+  --card: #fdfdfd;
+  --fg: #0f172a;
+  --muted: #636875;
+  --accent: #5e61e5;
+  --accent-ink: #ffffff;
+  --focus: #5e61e5;
+  --control: #878b95;
+  --line: #d9dadd;
+  --glow: #8b5cf6;
+  --font-display: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --radius: 22px;
+  --color-scheme: light;
+}
+
+:root[data-brand="nscale"] {
+  --bg: #0a0e14;
+  --surface: #15191f;
+  --card: #1b1f24;
+  --fg: #ffffff;
+  --muted: #a9abad;
+  --accent: #8174ff;
+  --accent-ink: #141413;
+  --focus: #8174ff;
+  --control: #85878a;
+  --line: #36393e;
+  --glow: #6b5bff;
+  --font-display: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --radius: 12px;
+  --color-scheme: dark;
+}
+
+:root[data-brand="fluidstack"] {
+  --bg: #131313;
+  --surface: #1e1e1e;
+  --card: #242424;
+  --fg: #ffffff;
+  --muted: #acacac;
+  --accent: #d5a81f;
+  --accent-ink: #141413;
+  --focus: #d5a81f;
+  --control: #898989;
+  --line: #3d3d3d;
+  --glow: #d5a81f;
+  --font-display: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --radius: 12px;
+  --color-scheme: dark;
+}
+
+:root[data-brand="vultr"] {
+  --bg: #f8f8f8;
+  --surface: #ffffff;
+  --card: #ffffff;
+  --fg: #0b1222;
+  --muted: #5e636d;
+  --accent: #006de0;
+  --accent-ink: #ffffff;
+  --focus: #006de0;
+  --control: #82858d;
+  --line: #d2d3d6;
+  --glow: #51b9ff;
+  --font-display: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --radius: 12px;
+  --color-scheme: light;
+}
+
+:root[data-brand="voltagepark"] {
+  --bg: #0f0f0f;
+  --surface: #1a1a1a;
+  --card: #202020;
+  --fg: #ffffff;
+  --muted: #ababab;
+  --accent: #cbfc55;
+  --accent-ink: #141413;
+  --focus: #cbfc55;
+  --control: #878787;
+  --line: #3a3a3a;
+  --glow: #6929c4;
+  --font-display: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --radius: 16px;
+  --color-scheme: dark;
+}

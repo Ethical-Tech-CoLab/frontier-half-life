@@ -3,9 +3,9 @@
 | Field | Value |
 | --- | --- |
 | Initial author / coordinator | yorkerhodes3 |
-| Last groomed | 2026-11-27 |
-| Current milestone | Evidence preparation and coordinated review drafts; M0 implementation not started |
-| Status | Revised specification and requested plan pending review |
+| Last groomed | 2026-11-28 |
+| Current milestone | Received-text reconciliation and authorized M0 demo shell |
+| Status | Specification, plan and backlog approved 2026-11-28; claim/release review still required |
 
 IDs are stable. **S** means less than an hour of active work; **M** means a few hours. These are proposed sizes, not measured effort. Tasks larger than a source batch or one view must be split before work. Dependencies are explicit, not inferred from order. References point to [SPECIFICATION.md](SPECIFICATION.md) requirements and [PLAN §3](PLAN.md#3-evidence-work-packages) work packages. Drafted artifacts are not marked reviewed or merged merely because they exist.
 
@@ -13,23 +13,23 @@ IDs are stable. **S** means less than an hour of active work; **M** means a few 
 
 | ID | Task | Ref | Size / state | Acceptance / dependency |
 | --- | --- | --- | --- | --- |
-| T-001 | Review revised v0.4 specification, including live-reader and evidence boundaries | FR-15, FR-16 | M / review | Actual author verdict recorded; source access does not waive evidence or build gates |
-| T-002 | Review coordinated plan, backlog, milestones and paper-section dependencies | FR-16; W8 | M / review | After T-001 approval, record plan verdict, owners and scope cuts; no automatic approval from drafting request |
+| T-001 | Review revised v0.4 specification, including live-reader and evidence boundaries | FR-15, FR-16 | M / done | Author approved 2026-11-28; source access does not waive claim or release review |
+| T-002 | Review coordinated plan, backlog, milestones and paper-section dependencies | FR-16; W8 | M / done | Author separately approved 2026-11-28 after specification approval; not inferred from drafting request |
 | T-003 | Inspect full UKERC review and Masanet methods once public access works | FR-01, FR-02; W4 | M / blocked by independent-source access | Capture sections/limitations and supporting or contrary findings; revise R01/P01 without borrowing AI elasticities |
 | T-004 | Inspect inference-energy and SWE-bench method/version/annotation records | FR-03, FR-04; W2 | M / blocked by independent-source access | Record task/hardware/harness/license boundaries; revise R02/P03/P04; no invented current frontier-energy inputs |
 | T-005 | Define proposed coding, extraction and bounded-agent rubrics for reviewer selection | FR-03, FR-05; W2 | M / todo | Use R02 proposals; mark uninspected dataset/license choices pending; fix thresholds before claiming comparable outcomes |
 | T-006 | Review reader prose and citation/figure links as a coordinated artifact | FR-15; W8 | M / review | P00–P12 are readable without interactions; F01–F09 and every empirical claim have support or explicit gaps; do not promote provisional summaries to findings |
 
-Read-only research and writing may continue while document reviews are pending. Code, model/site implementation and deployment wait for T-001/T-002.
+The author authorized a narrow non-analytical demo-shell/Pages exception on 2026-11-28. T-020–T-022 and shell-only theme work may proceed under it. Complete analytical models and later implementation still wait for T-001/T-002 and the relevant evidence.
 
 <a id="next-evidence-reconstruction"></a>
 ## Next — evidence reconstruction
 
-The author confirmed on 2026-11-27 that filing documents will be provided shortly; no delivery deadline is assumed. Resume the following tasks when files arrive, using [PLAN §6.1](PLAN.md#61-filing-intake-and-remediation).
+The requested texts are received; T-010 is complete for this scope. Resume passage/definition checks using [PLAN §6.1](PLAN.md#61-filing-intake-and-remediation), without requiring original PDFs.
 
 | ID | Task | Ref / package | Size | Depends on / acceptance |
 | --- | --- | --- | --- | --- |
-| T-010 | Inventory original S-1, amendment, final prospectus and exhibits | FR-01; W1 | S | Author files or restored official access; retain originals, hash, origin, form/accession/date and gaps |
+| T-010 | Inventory S-1, three amendments, final prospectus, 8-K and requested exhibits | FR-01; W1 | S / done | All 80 manifest-listed present files hash/size matched; selected text intake complete; see intake review |
 | T-011 | Authenticate filing identities and enumerate changes through cutoff | FR-01, FR-02; W1 | M | T-010; confirm documents/chronology against official origin; receipt alone is not verification |
 | T-012 | Reconstruct revenue and compute/infrastructure definitions for one source batch | FR-02, FR-04; W1 | M | T-011; locate CL-001/CL-002 values, units, periods, accounting scope; split remaining quarters into further batches |
 | T-013 | Reconstruct short-term compute, pricing adjustments and commitments | FR-02, FR-08; W1 | M | T-011; inspect CL-003/CL-004/CL-005/CL-012 passages, contingencies and overlaps; split contract batches as necessary |
@@ -39,12 +39,12 @@ The author confirmed on 2026-11-27 that filing documents will be provided shortl
 | T-017 | Inspect LBNL/IEA/eGRID/Cambium boundaries and one regional evidence tranche | FR-09, FR-10; W6 | M | Source access; compatible editions, location/period units, coverage and unknowns; no company allocation by revenue |
 | T-018 | Write demand-identification note with competing empirical studies | FR-02, FR-06; W4 | M | Source access; distinguish measured, borrowed and assumed elasticity; P05 names confounders rather than asserting causality |
 
-## Implementation queue — after specification and plan approval
+## Implementation queue — shell exception; full phase still gated
 
 | ID | Task | Ref / milestone | Size | Depends on / acceptance |
 | --- | --- | --- | --- | --- |
-| T-020 | Confirm Pages eligibility/settings and reviewer/effort availability | FR-16; M0 | S | T-001/T-002; actual permissions and owners recorded; no hosting availability assumed |
-| T-021 | Build reader shell for one paper section with explicit draft states | FR-15, FR-16; M0 | M | T-020; readable without JS; v0.4 and yorkerhodes3 visible; planned visuals are not advertised as live |
+| T-020 | Confirm Pages eligibility/settings | FR-16; M0 | S / done | Existing legacy Pages site inspected; docs-only publication authorized; full reviewer assignments remain open |
+| T-021 | Build branded reader/evidence shell with explicit draft states | FR-11, FR-12, FR-15, FR-16; M0 | M / done | Three static pages, 13 themes, P00–P12 orientation and six-filing timeline; local browser/theme/mobile and focused tests pass |
 | T-022 | Deploy and verify the walking reader URL and fragments | FR-15, FR-16; M0 | S | T-021 and deployment access; verify real HTTP/assets; analytical draft publication still gated |
 | T-023 | Add metric dictionary and shared deterministic fixture validation | FR-04, FR-05; M3 | M | T-001/T-002/T-005; distinguish unit/quality boundaries and expected synthetic results; no company calibration without T-014 |
 | T-024 | Build one evidence view with bidirectional P02/F01 source references | FR-01, FR-02, FR-15; M3 | M | T-021 and validated evidence/gap artifact; claim states, empty/error paths, locators and return links work |
@@ -63,17 +63,16 @@ The author confirmed on 2026-11-27 that filing documents will be provided shortl
 
 | Blocker | Affects | Owner / unblocker | Since / next action |
 | --- | --- | --- | --- |
-| Primary Anthropic files not received; direct source DNS failures | T-010–T-014, company calibration and empirical interpretations in P02/P03/P06/P09 | yorkerhodes3 gathering files; agent performs intake after receipt | 2026-11-27; continue independent work, remediate when supplied |
+| Filing claim reconciliation and extraction ambiguity | T-011–T-014, company calibration and empirical interpretations in P02/P03/P06/P09 | Research lead + reviewer | 2026-11-28; requested texts received; reconcile exact passages/units/revisions, no PDF prerequisite |
 | Public-source full-text retrieval fails DNS | T-003/T-004 and full-method portions of T-015–T-018 | Session environment/access restoration or lawful accessible documents | 2026-11-27; provisional indexed synthesis remains limited, not falsely complete |
-| Revised specification and plan not approved | T-020 onward | yorkerhodes3 | 2026-11-27; document review, not inferred approval |
 | Release reviewers not assigned | T-042 and public analytical release | yorkerhodes3 | 2026-11-27; proposed assignment/access checkpoint 2026-12-01, not an automated reminder |
 
-## Drafted this session — not reviewed or merged
+## Draft research status
 
 | Artifact | Current completion boundary | Ref |
 | --- | --- | --- |
-| v0.4 specification/plan and author attribution | Drafted for review; no execution authorization | FR-15, FR-16 |
-| Source register and ledger | Indexed discovery and access records; filing/literature claims not authenticated | FR-01, FR-02 |
+| v0.4 specification/plan and author attribution | Author approved 2026-11-28; evidence/release verdicts remain separate | FR-15, FR-16 |
+| Source register and ledger | Received filing-text provenance; claim-level reconciliation pending | FR-01, FR-02 |
 | Independent evidence synthesis R01–R06 | Scoped source summaries and checked algebra; not full W2–W6 research | FR-03, FR-04, FR-05 |
 | Paper P00–P12 | Prose/methods/synthetic checks and gaps linked to work and planned figures | FR-15 |
 
@@ -82,6 +81,8 @@ The author confirmed on 2026-11-27 that filing documents will be provided shortl
 | ID | Work | Completed | PR |
 | --- | --- | --- | --- |
 | T-000 | Initial concept, preserved research and MIT license | 2026-11-27 | #1 |
+
+The v0.4 research-planning package was merged in #2. The author separately approved the revised specification and plan/backlog on 2026-11-28; those verdicts are recorded in the documents and do not approve financial findings.
 
 ## Later / cuts
 

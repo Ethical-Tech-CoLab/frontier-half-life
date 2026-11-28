@@ -2,17 +2,19 @@
 
 > **Purpose:** Define research outputs and site behavior precisely enough to review before planning.
 > **Input:** The approved [CONCEPT-IDEA.md](CONCEPT-IDEA.md).
-> **Rule:** This is a specification draft, not permission to build or publish analytical findings.
+> **Rule:** Approved requirements guide the reviewed plan; approval does not verify financial claims or authorize unreviewed analytical publication.
+
+**2026-11-28 scoped authorization:** The author requested a first non-analytical demo shell on Pages in parallel with document updates. Navigation, 13-theme styling, section summaries and received-text status may ship under that exception. This is not approval of the complete specification, calibrated models or public analytical conclusions.
 
 | Field | Value |
 | --- | --- |
-| Status | Draft — human specification review required |
+| Status | Approved — plan/backlog also approved 2026-11-28; analytical release reviews remain required |
 | Concept doc | [CONCEPT-IDEA.md](CONCEPT-IDEA.md), approved 2026-11-27 |
 | Initial author | yorkerhodes3 |
 | Drafting support | AI assistance; human review required |
-| Reviewer(s) | Author review pending; specialist release reviewers not yet assigned |
+| Reviewer(s) | yorkerhodes3 — specification approved 2026-11-28; specialist release reviews still required |
 | Working version | v0.4 — update as work proceeds |
-| Last updated | 2026-11-27 |
+| Last updated | 2026-11-28 |
 
 ## 1. Summary
 
@@ -189,22 +191,22 @@ These are explicit research/planning dependencies, not requests to invent missin
 | OQ-06 | Who are the three release reviewers, and what are milestone dates, scope cuts, Pages eligibility, and browser-run budgets? | Author / maintainer | PLAN + BACKLOG review |
 | OQ-07 | What sourced Anthropic approximation and licensed fonts satisfy the 13-theme requirement? | Design contributor + reviewer | Before theme implementation |
 
-**2026-11-27 filing handoff:** The author is gathering primary documents and authorized independent research/writing to continue. OQ-01 remains unresolved. Follow [PLAN §6.1](PLAN.md#61-filing-intake-and-remediation) on receipt; the upload itself does not verify a claim or authorize a calibrated finding.
+**2026-11-28 filing handoff:** The requested text captures, including Amendment 3's new exhibits and the November 25 8-K, are received. The author directed use of extracted text and asked to skip original PDFs; no PDF/HTML retrieval dependency remains. OQ-01 now concerns claim-specific reconciliation and interpretation, not file acquisition. Follow [PLAN §6.1](PLAN.md#61-filing-intake-and-remediation); hash matching and a word-only join check do not verify every financial table.
 
 ## Reviewer sign-off
 
-- [ ] Every Must story maps to a testable functional requirement.
-- [ ] Data fields cover the views, provenance, and replay requirements.
-- [ ] Empty, loading, invalid-input, and unavailable-evidence paths are specified.
-- [ ] Workload, financial, energy, and geographic boundaries match the approved concept.
-- [ ] Stage scope, cost constraints, privacy, accessibility, and licensing are acceptable.
-- [ ] Open research dependencies and illustrative thresholds are not presented as resolved evidence.
-- [ ] The definition of done and remaining planning decisions are realistic.
+- [x] Every Must story maps to a testable functional requirement.
+- [x] Data fields cover the views, provenance, and replay requirements.
+- [x] Empty, loading, invalid-input, and unavailable-evidence paths are specified.
+- [x] Workload, financial, energy, and geographic boundaries match the approved concept.
+- [x] Stage scope, cost constraints, privacy, accessibility, and licensing are acceptable.
+- [x] Open research dependencies and illustrative thresholds are not presented as resolved evidence.
+- [x] The definition of done and remaining planning decisions are accepted.
 
-**Reviewer:** Pending human specification review
+**Reviewer:** yorkerhodes3
 
-**Date:** Not yet reviewed
+**Date:** 2026-11-28
 
-**Verdict:** Pending — no specification approval recorded
+**Verdict:** `Approved`
 
-**Reviewer notes:** Record `Approved`, `Approved with changes`, or `Needs rework` after review. Only an approved specification advances to PLAN + BACKLOG; this document does not authorize implementation.
+**Reviewer notes:** The author selected “Approve the revised v0.4 specification” after receiving the updated requirements and review link, then separately approved PLAN + BACKLOG. These verdicts approve requirements and planned work, not financial claims or specialist publication review. The non-analytical shell had separate authorization.

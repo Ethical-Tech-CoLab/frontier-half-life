@@ -3,21 +3,23 @@
 **Initial author:** yorkerhodes3. **Research cutoff / access check:** 2026-11-27.
 **Status:** Discovery and access triage, not a completed literature review or authenticated financial dataset.
 
+**2026-11-28 intake update:** All requested text captures for the selected filing sequence are received: original S-1, three amendments, final prospectus, November 25 8-K and the requested exhibits/indices. All 80 present manifest-listed files match their recorded hashes and sizes. See [the intake review](research/FILING-INTAKE-REVIEW.md). Original PDFs are not required; the author directed use of the extracted text. Claim-level reconciliation and review remain pending.
+
 ## Access and evidence policy
 
 Direct `web_fetch` requests to the two supplied SEC filings, the issuer filing page, Epoch, and IEA failed hostname resolution. A second, direct HTTP attempt also failed DNS resolution for SEC submissions, the amended filing, issuer page, Epoch, arXiv, and IEA. These are environment access failures, not evidence that the sources or claims are false.
 
-Web search returned indexed passages attributed to official sources. Those passages identify candidate documents and scoped claims but do not substitute for inspecting the full primary documents, tables, methods, and amendments. No claim in [CLAIM-LEDGER.csv](CLAIM-LEDGER.csv) has been upgraded to `verified` in this pass. Targeted searches for financial figures returned filing metadata rather than the financial tables; the supplied figures remain unverified.
+Earlier web search returned indexed passages attributed to official sources. For the SEC claims, the supplied local text captures now supersede snippet-only access. No claim in [CLAIM-LEDGER.csv](CLAIM-LEDGER.csv) has been upgraded to `verified` by file receipt alone. Check exact passages, definitions, periods, amendments and text-conversion caveats before changing a claim's status. The previously supplied figures remain unverified pending that work.
 
 The ledger's `retrieval_date` records the discovery/check date, **not** successful archival download. `source_date` is the candidate date supplied by the original draft or indexed source; verify it against the document. A locator containing “pending” means no primary passage has yet been captured. Confidence in discovery is not confidence in the truth of the claim.
 
-After access is restored, capture lawful document copies or immutable identifiers, checksums, exact locators, metric boundaries, and reviewer records. Store sources and raw evidence before transformations; log unsuccessful attempts. Use revisions rather than overwriting contradictory or superseded evidence. See [PLAN §3](PLAN.md#3-evidence-work-packages) and [BACKLOG T-010](BACKLOG.md#next-evidence-reconstruction).
+Use the received text files and their manifest identifiers/checksums to capture exact locators, metric boundaries and reviewer records. No PDF/HTML reacquisition gate is imposed. For independent sources still unavailable, retain access failures separately. Use revisions rather than overwriting contradictory or superseded evidence. See [PLAN §3](PLAN.md#3-evidence-work-packages) and [BACKLOG T-010](BACKLOG.md#next-evidence-reconstruction).
 
 ## Filing handoff and remediation
 
-On 2026-11-27, the author confirmed they are gathering the necessary filing documents and asked the project to continue independent work. Filing-dependent conclusions remain blocked, not waived. No uploaded primary filing has been received or inspected in this work.
+The 2026-11-27 gathering request has been fulfilled for the selected intake. On 2026-11-28 the author directed text-based review without original PDFs. The primary filing covers, indices, 8-K items and join-check limits have been inspected; financial claims have not yet been reconciled or signed off.
 
-When the documents arrive, follow [PLAN §6.1](PLAN.md#61-filing-intake-and-remediation): inventory and hash the originals; record provider, official origin, issuer, accession, date and form; inspect primary passages; reconcile original/amended/final numbers and contracts; update claims individually; invalidate dependent draft interpretations; and revise P02/P03/P06/P09 plus any figure or manifest that depends on the corrections. Receiving a file alone does not authenticate its contents or complete the research.
+Continue [PLAN §6.1](PLAN.md#61-filing-intake-and-remediation) from the completed inventory: reconcile primary passages across the captured revisions, update claims individually, and revise P02/P03/P06/P09 plus any dependent figure/manifest. Receipt and hash matching do not establish every value's accuracy. The join-check explicitly excludes numeric/table alignment.
 
 ## Independent continuation pass
 
@@ -32,6 +34,7 @@ The ledger also contains explicitly `derived` algebra/synthetic fixtures with lo
 - **Primary document:** https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm
 - **Indexed official header:** https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/0001628280-26-067168-index-headers.html
 - **Observed:** Search returned a header identifying Anthropic, PBC, that accession, and form S-1. Direct document retrieval failed DNS.
+- **Received text:** [Primary capture](research/01-s1-2026-10-26__primary-document-anthropicpbc-sx1.md), index, header and exhibits in [research/MANIFEST.csv](research/MANIFEST.csv); received-text inventory confirmed 2026-11-28.
 - **Next:** Authenticate full submission, issuer, dates, and exhibits; establish which metrics/commitments change in amendments. Metadata alone does not substantiate amounts.
 - **Feeds:** CL-001–CL-005, CL-012; paper P02/P03/P06.
 
@@ -42,6 +45,7 @@ The ledger also contains explicitly `derived` algebra/synthetic fixtures with lo
 - **Primary document:** https://www.sec.gov/Archives/edgar/data/2130357/000162828026068676/anthropicpbc-sx1ax1.htm
 - **Indexed official index:** https://www.sec.gov/Archives/edgar/data/2130357/000162828026068676/0001628280-26-068676-index.htm
 - **Observed:** Search returned issuer/form/date and the named main document; searches for the amounts did not expose financial-table passages. Direct retrieval failed DNS.
+- **Received text:** [Amendment 1](research/02-s1a1-2026-11-02__primary-document-anthropicpbc-sx1ax1.txt), index, header and revised exhibits; [join-check note](research/02-s1a1-2026-11-02__join-check-note.md) documents word-level continuity checks, not numeric alignment.
 - **Next:** Verify the revenue periods, compute/infrastructure definition, short-term cost narrative, discount treatment, aggregate commitments, contingencies, and overlaps.
 - **Feeds:** CL-001–CL-005; paper P02/P03/P06. No calibrated model inputs yet.
 
@@ -49,8 +53,8 @@ The ledger also contains explicitly `derived` algebra/synthetic fixtures with lo
 ## SRC-003 — Issuer filing chronology candidate
 
 - **Official listing:** https://investor.anthropic.com/sec-filings/default.aspx
-- **Observed:** Indexed listing includes a 424B4 dated 2026-11-19 and an 8-K dated 2026-11-25. Their underlying accessions and contents have not been inspected. Direct retrieval failed DNS.
-- **Next:** Enumerate original filing, all amendments, final prospectus, exhibits, and subsequent material filings through the cutoff. Do not stop at the two supplied accessions or presume a prospectus is identical to an amendment.
+- **Observed:** Earlier indexed listing identified the final prospectus and 8-K; their local captures/indices are now present (SRC-016/SRC-017), alongside all three amendments. Direct online listing access previously failed DNS.
+- **Next:** Reconcile the selected sequence through the cutoff. Do not presume the prospectus equals an amendment or that receipt completes a census of every SEC filing.
 - **Feeds:** Paper P02/P03/P06; T-010/T-011.
 
 <a id="src-004"></a>
@@ -167,6 +171,39 @@ The ledger also contains explicitly `derived` algebra/synthetic fixtures with lo
 - **Limit:** A modeled scenario is not an observed marginal generator or a forecast guaranteed to hold. Documentation and data editions differ and must be matched.
 - **Next:** Select a compatible edition, scenario, location and time horizon; inspect method/uncertainty and report all choices before using rates.
 - **Feeds:** CL-019; paper P07/P09; W6/W7.
+
+<a id="src-014"></a>
+## SRC-014 — Amendment No. 2, received text
+
+- **Accession / filing date:** `0001628280-26-072484`, 2026-11-10.
+- **Local source:** [Primary capture](research/02b-s1a2-2026-11-10__primary-document-anthropicpbc-sx1ax2.md), index, header, fee table and eight exhibits.
+- **Use:** Reconcile revisions from Amendment 1, including contract/note disclosures; do not treat newly added passages as capture gaps without checking.
+- **Status:** Hash/size inventory complete; claim extraction and reconciliation pending.
+
+<a id="src-015"></a>
+## SRC-015 — Amendment No. 3, received text and new exhibits
+
+- **Accession / filing date:** `0001628280-26-074338`, 2026-11-17.
+- **Local source:** [Primary](research/03-s1a3-2026-11-17__primary-document-anthropicpbc-sx1ax3.md), [index](research/03-s1a3-2026-11-17__filing-index.md), SEC header, underwriting form 1.1 and consents 23.1/23.2.
+- **Use:** Compare the later offering/underwriting terms with Amendment 2 and the final prospectus.
+- **Status:** All indexed primary/text exhibits present and hash/size matched; no assumption that financial tables are unchanged.
+
+<a id="src-016"></a>
+## SRC-016 — Final prospectus, received text
+
+- **Accession / filed date:** `0001628280-26-074944`, 2026-11-19; prospectus dated 2026-11-18.
+- **Local source:** [Final 424B4](research/04-424b4-2026-11-19__primary-document-anthropicpbc-424b4.md), index, header and directory listing.
+- **Use:** Final registration/prospectus reconciliation, separate from later IPO-close events.
+- **Status:** Received text with recorded provenance; individual claims require unit/period/passage checks, not PDF retrieval.
+
+<a id="src-017"></a>
+## SRC-017 — November 25 8-K, received primary and complete submission
+
+- **Accession / filed date:** `0001628280-26-075973`, 2026-11-25; earliest reported event 2026-11-19.
+- **Local sources:** [Primary](research/04b-8k-2026-11-25__primary-document-ant-20261119.md), [index](research/04b-8k-2026-11-25__filing-index.md), complete submission and five exhibits.
+- **Inspected scope:** Items 1.01/3.02/3.03/5.03/7.01/8.01/9.01 concern closing agreements, placement/rights, governance, disclosure channels and IPO completion. Separate filed material from Item 7.01's furnished disclosures.
+- **Use:** Financing/governance reconciliation in P02/P06; not a new historical compute-efficiency series.
+- **Status:** Text/exhibit coverage and manifest integrity checked. No monetary claim or financing ratio has been promoted to verified by this intake pass.
 
 ## Remaining source streams
 
