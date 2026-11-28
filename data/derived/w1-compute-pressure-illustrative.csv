@@ -1,0 +1,8 @@
+period,revenue_usd_million,compute_infrastructure_usd_million,ratio_percent,threshold_percent,above_threshold,consecutive_quarters_above,boundary_met,comparability,source
+Q1-2025,376,944,251.06,60,true,1,false,Same disclosed composition within 2025.,424B4 REV-Q and CI-Q
+Q2-2025,787,1390,176.62,60,true,2,false,Same disclosed composition within 2025.,424B4 REV-Q and CI-Q
+Q3-2025,1382,2047,148.12,60,true,3,false,Same disclosed composition within 2025.,424B4 REV-Q and CI-Q
+Q4-2025,2040,2945,144.36,60,true,4,true,Same disclosed composition within 2025.,424B4 REV-Q and CI-Q
+Q1-2026,4731,3387,71.59,60,true,5,true,"Composition expands in 2026 as lease, depreciation and amortization costs commence; continuity across Q4-2025/Q1-2026 needs reviewer judgment.",424B4 REV-Q and CI-Q
+Q2-2026,11555,5558,48.1,60,false,0,false,"Composition expands in 2026 as lease, depreciation and amortization costs commence; continuity across Q4-2025/Q1-2026 needs reviewer judgment.",424B4 REV-Q and CI-Q
+Q3-2026,16956,9863,58.17,60,false,0,false,"Composition expands in 2026 as lease, depreciation and amortization costs commence; continuity across Q4-2025/Q1-2026 needs reviewer judgment.",424B4 REV-Q and CI-Q
