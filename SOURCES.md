@@ -7,6 +7,8 @@
 
 **2026-11-28 intake update:** All requested text captures for the selected filing sequence are received: original S-1, three amendments, final prospectus, November 25 8-K and the requested exhibits/indices. All 80 present manifest-listed files match their recorded hashes and sizes. See [the intake review](research/FILING-INTAKE-REVIEW.md). Original PDFs are not required; the author directed use of the extracted text. Claim-level reconciliation and review remain pending.
 
+**2026-11-28 literature update:** The seven supplied `05-lit` texts are registered as SRC-020–SRC-026 under [supplied literature tranche 01](#supplied-literature-tranche-01). Their analysis is a draft and has not been reviewed.
+
 ## Access and evidence policy
 
 Direct `web_fetch` requests to the two supplied SEC filings, the issuer filing page, Epoch, and IEA failed hostname resolution. A second, direct HTTP attempt also failed DNS resolution for SEC submissions, the amended filing, issuer page, Epoch, arXiv, and IEA. These are environment access failures, not evidence that the sources or claims are false.
@@ -206,6 +208,108 @@ The ledger also contains explicitly `derived` algebra/synthetic fixtures with lo
 - **Inspected scope:** Items 1.01/3.02/3.03/5.03/7.01/8.01/9.01 concern closing agreements, placement/rights, governance, disclosure channels and IPO completion. Separate filed material from Item 7.01's furnished disclosures.
 - **Use:** Financing/governance reconciliation in P02/P06; not a new historical compute-efficiency series.
 - **Status:** Text/exhibit coverage and manifest integrity checked. No monetary claim or financing ratio has been promoted to verified by this intake pass.
+
+<a id="supplied-literature-tranche-01"></a>
+## Supplied literature tranche 01 (2026-11-28)
+
+Seven supplied `05-lit` text captures were analyzed in [research/LITERATURE-TRANCHE-01.md](research/LITERATURE-TRANCHE-01.md). That analysis is a draft and has not been reviewed. On 2026-11-28 each file's SHA-256 and size matched [research/MANIFEST.csv](research/MANIFEST.csv). Origins were not network-authenticated, so receipt and hash matching establish intake integrity only. Line locators refer to the hashed local files. Three files remain marked "held back - license check": cite them with short quotations and locators only, and do not republish them. SRC-018–SRC-019 are reserved for concurrent filing-reconstruction records.
+
+<a id="src-020"></a>
+## SRC-020 — Open-weight commoditization thesis (argumentative preprint)
+
+- **Author/title:** Jared James Grogan, *The End of the Foundation Model Era: Open-Weight Models, Sovereign AI, and Inference as Infrastructure*.
+- **Identifier / version:** arXiv:2604.06217 v1. The capture records submission on 2026-03-18 and events covered through 2026-03-09. The `2604` prefix and the March date disagree; check at origin.
+- **URL (manifest):** https://arxiv.org/pdf/2604.06217
+- **Local source:** [Text capture](research/05-lit__arxiv-2604.06217-end-of-the-foundation-model-era.md); SHA-256 prefix `21c00a872203`.
+- **Access / authentication:** Supplied local text; hash matched manifest; origin not network-authenticated.
+- **License / redistribution:** CC BY 4.0 per manifest and capture header; attribution in [research/README.md](research/README.md#attribution-arxiv-papers-cc-by-40).
+- **Observed:** A single-author structural argument with no dataset or measurement protocol. Its revenue figures come from press reporting.
+- **Use:** Hypotheses about value migration and inference as a cost centre. Its "parity" framing conflicts with CL-006 and is recorded without adjudication.
+- **Limit:** Its assertions are not measurements of catch-up, price, cost or demand, and its press-relayed revenue run-rate is not a W1 input.
+- **Feeds:** [L01](research/LITERATURE-TRANCHE-01.md#l01); W3/W5 hypotheses only; no ledger claim.
+
+<a id="src-021"></a>
+## SRC-021 — Inference-compute sensitivity of frontier evaluation (UK AISI preprint)
+
+- **Authors/title:** Jessica McFadyen, Ole Jorgensen, Harry Coppock, Kevin Wei and Cozmin Ududec, *How Inference Compute Shapes Frontier LLM Evaluation*.
+- **Identifier / version:** arXiv:2606.17930. v1 is dated 2026-06-16 and v3 2026-07-16; the capture is v3. The intake corrected the identifier from 2606.1793.
+- **URL (manifest):** https://arxiv.org/pdf/2606.17930
+- **Local source:** [Text capture](research/05-lit__arxiv-2606.17930-inference-compute-and-frontier-evaluation.md); SHA-256 prefix `558de029d5bf`.
+- **Access / authentication:** Supplied local text; hash matched manifest; origin not network-authenticated.
+- **License / redistribution:** CC BY 4.0 per manifest; attribution in [research/README.md](research/README.md#attribution-arxiv-papers-cc-by-40).
+- **Observed:** A controlled crossed design: six Anthropic/OpenAI models on five benchmarks, under two feedback conditions with 5 trajectories per task. Budgets run to 5M–30M tokens per trajectory, and a literature table covers 89 published harness setups.
+- **Use:** Benchmark scores depend on inference budget, feedback, submission and sampling protocol. Most published setups omit those fields. Generational gains come mainly from reach and reliability.
+- **Limit:** No open-weight models; tokens, not dollars or energy; up to 100-task subsets (12 for FrontierMath); one scaffold; unrefereed preprint. The authors had developer-provided model access.
+- **Next:** Confirm the version at origin; inspect the appendices on the efficiency-model specification and budget conversions before reusing numbers.
+- **Feeds:** CL-040–CL-043; [L02](research/LITERATURE-TRANCHE-01.md#l02); [proposed rubrics](research/WORKLOAD-RUBRICS.md); W2/W3; paper P03/P04.
+
+<a id="src-022"></a>
+## SRC-022 — Memory-scarcity scenario analysis (single-author preprint)
+
+- **Author/title:** Satoshi Matsuoka, *Memory Scarcity, Open Models, and the Restructuring of the AI Industry, 2026–2030 — A quantitative scenario analysis of inference economics, training-cost divergence, and infrastructure solvency*.
+- **Identifier / version:** arXiv:2607.07207 v1, 2026-07-08, captured from arXiv HTML.
+- **URL (manifest):** https://arxiv.org/html/2607.07207v1
+- **Local source:** [Text capture](research/05-lit__arxiv-2607.07207-memory-scarcity-open-models-ai-industry.md); SHA-256 prefix `4b6dac256c9f`.
+- **Access / authentication:** Supplied local text; hash matched manifest; origin not network-authenticated.
+- **License / redistribution:** CC BY 4.0 per manifest; attribution in [research/README.md](research/README.md#attribution-arxiv-papers-cc-by-40).
+- **Observed:** A closed-form $/PB bandwidth cost model with assumed parameters. Only the caption of the appendix parameter table survived extraction. It sets out five scenarios with subjective probabilities. Market figures are relayed from press, vendors and analysts. The author discloses substantial AI assistance.
+- **Use:** Stress-test structure, full versus marginal cost and metered versus total inference definitions, and a list of demand-tracker biases (confounders for T-018).
+- **Limit:** Projections and probabilities are model outputs, not observations. No price elasticity is estimated or borrowed. Relayed figures, including a press-reported Anthropic compute lease, are not authenticated and do not substitute for filing reconciliation.
+- **Next:** Inspect the cited serving-cost study, DRAM price surveys and tracker disclosures before using any number.
+- **Feeds:** CL-045–CL-048; [L03](research/LITERATURE-TRANCHE-01.md#l03); W4/W5/W6 scenarios; paper P05/P06/P09 context.
+
+<a id="src-023"></a>
+## SRC-023 — Capability and token-efficiency scaling in a distilled reasoning family
+
+- **Authors/title:** Moritz Laber, Zohair Shafi, Germans Savcisens, Brennan Klein, Matteo Chinazzi, Samuel V. Scarpino, Albert-László Barabási, Alessandro Vespignani and Tina Eliassi-Rad, *Scaling of Capability and Efficiency at Inference Time in Large Reasoning Models*.
+- **Identifier / version:** arXiv:2609.27166 v2. v1 is dated 2026-09-22 and v2 2026-09-24; the text is dated 2026-09-25.
+- **URL (manifest):** https://arxiv.org/pdf/2609.27166
+- **Local source:** [Text capture](research/05-lit__arxiv-2609.27166-scaling-capability-and-efficiency.md); SHA-256 prefix `984d5732061f`.
+- **Access / authentication:** Supplied local text; hash matched manifest; origin not network-authenticated.
+- **License / redistribution:** CC BY 4.0 per manifest; attribution in [research/README.md](research/README.md#attribution-arxiv-papers-cc-by-40).
+- **Observed:** Five DeepSeek-R1-Distill models (1.5B–70B) on four synthetic tasks, analyzed with hierarchical Bayesian models. Code is reported as released.
+- **Use:** Within this family, larger models did not produce shorter correct answers; capability grew sublinearly with parameters.
+- **Limit:** One distilled family, synthetic tasks and possible tokenizer confounding. Efficiency is conditioned on correct answers. No cost or energy is measured.
+- **Feeds:** CL-044; [L04](research/LITERATURE-TRANCHE-01.md#l04); W2.
+
+<a id="src-024"></a>
+## SRC-024 — Stanford HAI AI Index 2026, Chapter 1 (full chapter text)
+
+- **Institution/title:** Stanford Institute for Human-Centered AI, *2026 AI Index Report*, Chapter 1 "Research and Development" (57-page chapter).
+- **Identifier / date:** The manifest gives 2026-04-13. The capture records the PDF as published 2026-07-16, so a later revision is possible; confirm the edition.
+- **URL (manifest):** https://hai.stanford.edu/assets/files/ai_index_report_2026_chapter_1_research_development.pdf
+- **Local source:** [Text capture](research/05-lit__stanford-hai-ai-index-2026-ch1-full-chapter.md); SHA-256 prefix `5020fdfa9768`.
+- **Access / authentication:** Supplied local text; hash matched manifest; origin not network-authenticated.
+- **License / redistribution:** Pending. The manifest marks the file "held back - license check" and notes that arXiv lists the full report (arXiv:2606.15708) under CC BY-NC-ND 4.0. Short quotations and locators only; do not republish.
+- **Observed:** A secondary synthesis of Epoch AI, Jegham et al. (2025), IEA (2025), de Vries and Gao (2025), Cloudscene and GitHub/Hugging Face data. Charts survive only as loose numbers.
+- **Use:** Release-access and licence categories; pointers to underlying energy and compute estimates.
+- **Limit:** Estimates and projections, not company metering. Per-prompt energy is not per successful task. The extraction has some suspect chart labels, and the capacity and demand estimates are not reconciled.
+- **Feeds:** CL-049–CL-051; [L05](research/LITERATURE-TRANCHE-01.md#l05); W3/W6; T-004/T-017 discovery.
+
+<a id="src-025"></a>
+## SRC-025 — Stanford HAI AI Index 2026, Chapter 1 highlights page
+
+- **Institution/title:** Stanford HAI, *Research and Development | The 2026 AI Index Report*, a highlights web page dated 2026-04-13.
+- **URL (manifest):** https://hai.stanford.edu/ai-index/2026-ai-index-report/research-and-development
+- **Local source:** [Text capture](research/05-lit__stanford-hai-ai-index-2026-ch1-web-page.md); SHA-256 prefix `c7f9cf183a68`.
+- **Access / authentication:** Supplied local text; hash matched manifest; origin not network-authenticated.
+- **License / redistribution:** No licence statement found; marked "held back - license check". Short quotations and locators only.
+- **Observed:** Ten takeaways that repeat the chapter's headline numbers.
+- **Limit:** Adds nothing beyond SRC-024; cite the chapter instead.
+- **Feeds:** [L06](research/LITERATURE-TRANCHE-01.md#l06); no ledger claim.
+
+<a id="src-026"></a>
+## SRC-026 — Anthropic provable-inference research post (issuer research)
+
+- **Authors/title:** Roy Rinberg, Alex Allain and collaborators, *Progress on provable inference for large language models* (Anthropic research post, 2026-11-02).
+- **URL (manifest):** https://www.anthropic.com/research/provable-inference
+- **Local source:** [Text capture](research/05-lit__anthropic-provable-inference-progress.md); SHA-256 prefix `c3d138e2b30e`.
+- **Access / authentication:** Supplied local text; hash matched manifest; origin not network-authenticated.
+- **License / redistribution:** No licence stated for the article text; the post says its code, Lean proofs and documentation are Apache 2.0. Marked "held back - license check". Short quotations and locators only.
+- **Observed:** A vendor-measured prototype: zkSNARK proofs for Llama 4 Maverick at about 110 tokens/s on one H100, roughly 70–95 times vLLM GPU time, with stated limits (greedy integer model, MoE only, 1,024-token context).
+- **Use:** A validity threat. Served-model identity through APIs or routers cannot be verified from outputs, so evaluations must record endpoint and identity status.
+- **Limit:** Issuer research on its own prototype; primary only for those prototype results. Not independent, not Claude serving, and not evidence of Anthropic efficiency or cost.
+- **Feeds:** [L07](research/LITERATURE-TRANCHE-01.md#l07); [proposed rubrics](research/WORKLOAD-RUBRICS.md) metadata; no ledger claim.
 
 ## Remaining source streams
 
