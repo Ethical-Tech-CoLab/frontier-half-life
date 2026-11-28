@@ -104,6 +104,8 @@ The release-pair investigation will retain frontier releases without a match by 
 
 For a defined workload, use nonnegative price-elasticity magnitude `e`. With positive prices, the scenario demand ratio is `(P1/P0)^(-e)`. This is a modeling assumption about price response, not a fitted relationship. Identifying real elasticity requires variation that distinguishes price from capability, customer growth, budgets, routing and other changes. A simultaneous price reduction and revenue increase does not identify it by itself. The filings show exactly that pattern: from Q2 to Q3 2026 revenue rose $5.4B while the issuer attributes an offset of about $600M to price reductions with new model versions and contractual discounts (CL-004). New models, products and customers arrived in the same quarter, so the observation is co-movement, not an elasticity estimate. The literature tranche adds named confounders for any future estimate: supply-injected volume, channel substitution, subsidies, low-value context re-reading, base effects, budget rationing and relocation from metered cloud to owned hardware. Relocation moves load out of a provider's revenue without removing it from the grid ([SRC-022](../SOURCES.md#src-022); [tranche 01 S4](../research/LITERATURE-TRANCHE-01.md#s4)).
 
+A further obstacle is specific to this case. The issuer says it has consistently operated with customer demand exceeding available compute, and that it has changed usage and rate limits (CL-026). When supply binds, observed usage measures capacity allocated, not demand at the posted price; non-price rationing changes the effective price without changing the list price; and new capacity arrived in the same quarter as the reported price cuts. Revenue is mainly consumption-based and not under long-term contracts (CL-027), so a demand response would show up quickly, but the quarterly series cannot isolate it. While the constraint binds, near-term energy use may follow **delivered capacity** more than price response, which ties this section to the commitments in P06 and the stress boundaries in P09. That is a framing hypothesis for review. The [identification note](../research/W4-DEMAND-IDENTIFICATION.md) lists confounders and candidate strategies, each with the data it would need; none is feasible with evidence in hand.
+
 Facility energy is expected attempted work times IT energy per attempt times matched PUE. Under the declared repeated-attempt model, successful task demand `S` and success rate `s>0` imply expected attempts `S/s`. Combining these definitions gives:
 
 ```text
@@ -114,7 +116,7 @@ If price and IT energy per attempt both decline by factor `g`, with `0<g<1` and 
 
 **F04 — Rebound threshold (live, illustrative):** `rebound.html#elasticity-threshold`. The explorer computes the threshold `e*=ln(k)/ln(q)` and the energy ratio across elasticities with the shared `task-energy/0.4.0` engine; every input is a declared scenario value, not a measurement. Static caption: under the stated proportional conditions, energy falls for `e<1`, stays unchanged for `e=1`, and rises for `e>1`; changing other conditions requires recalculation. Return: `paper.html#p05`.
 
-**Research backing:** [R05](../research/INDEPENDENT-EVIDENCE.md#r05), [specification modeling rules](../SPECIFICATION.md#8-modeling-rules-and-edge-cases), W4/W7. No actual elasticity estimate is available.
+**Research backing:** [R05](../research/INDEPENDENT-EVIDENCE.md#r05), [W4 identification note](../research/W4-DEMAND-IDENTIFICATION.md), [specification modeling rules](../SPECIFICATION.md#8-modeling-rules-and-edge-cases), W4/W7. No actual elasticity estimate is available.
 
 <a id="p06"></a>
 ## P06 — Provider economics and committed capacity
@@ -231,5 +233,7 @@ The following references are stable **discovery records**, not claims of complet
 **v0.4 intake update, 2026-11-28:** Requested text intake complete; claim reconciliation pending. PDF retrieval waived by author; non-analytical demo shell authorized and revised specification/plan/backlog separately approved. Evidence cutoff stays 2026-11-27; analytical release is not approved.
 
 **v0.4 W1 update, 2026-11-28:** Text-based filing reconstruction: located passages and line locators for all initial company claims; 22 derived checks pass; CL-005 superseded by CL-020; new claims CL-020–CL-025; P02/P03/P05/P06/P09 revised. All company claims remain unverified pending origin authentication and financial review.
+
+**v0.4 demand-identification update, 2026-11-28:** T-018 note added; CL-026 (supply constraint and non-price rationing) and CL-027 (consumption-based revenue) located; P05 states why the filing series cannot identify an elasticity.
 
 **v0.4 literature update, 2026-11-28:** Literature tranche 01 (SRC-020–SRC-026, CL-040–CL-051) and draft workload rubrics integrated into P01/P03/P04/P05/P07/P11/P12. No elasticity or open/closed lag is measured by any supplied source; CL-006 unchanged. The manuscript is published on Pages as the live reader (review draft).
