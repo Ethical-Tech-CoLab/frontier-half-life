@@ -1,0 +1,23 @@
+check_id,description,formula,computed,reported,tolerance,result,inputs,note
+CHK-01,Quarterly revenue Q1-Q4 2025 foots to FY2025 revenue,sum(REV-Q 2025),4585,4585,0,pass,424B4 REV-Q;REV-ANNUAL,
+CHK-02,Quarterly revenue Q1-Q3 2025 foots to nine-month 2025 revenue,sum(REV-Q Q1-Q3 2025),2545,2545,0,pass,424B4 REV-Q;REV-ANNUAL,
+CHK-03,Quarterly revenue Q1-Q3 2026 foots to nine-month 2026 revenue,sum(REV-Q Q1-Q3 2026),33242,33242,0,pass,424B4 REV-Q;REV-ANNUAL,
+CHK-04,Quarterly compute and infrastructure 2025 foots to FY2025,sum(CI-Q 2025),7326,7326,0,pass,424B4 CI-Q;CI-ANNUAL,
+CHK-05,Quarterly compute and infrastructure Q1-Q3 2025 foots to nine-month 2025,sum(CI-Q Q1-Q3 2025),4381,4381,0,pass,424B4 CI-Q;CI-ANNUAL,
+CHK-06,Quarterly compute and infrastructure Q1-Q3 2026 foots to nine-month 2026,sum(CI-Q Q1-Q3 2026),18808,18808,0,pass,424B4 CI-Q;CI-ANNUAL,
+CHK-07a,"Recomputed compute/revenue ratio rounds to reported percent, Q1-2025",round(100*CI-Q/REV-Q),251,251,0,pass,424B4 CI-Q;REV-Q;CI-PCT-Q,Financial ratio only; not gross margin or physical efficiency.
+CHK-07b,"Recomputed compute/revenue ratio rounds to reported percent, Q2-2025",round(100*CI-Q/REV-Q),177,177,0,pass,424B4 CI-Q;REV-Q;CI-PCT-Q,Financial ratio only; not gross margin or physical efficiency.
+CHK-07c,"Recomputed compute/revenue ratio rounds to reported percent, Q3-2025",round(100*CI-Q/REV-Q),148,148,0,pass,424B4 CI-Q;REV-Q;CI-PCT-Q,Financial ratio only; not gross margin or physical efficiency.
+CHK-07d,"Recomputed compute/revenue ratio rounds to reported percent, Q4-2025",round(100*CI-Q/REV-Q),144,144,0,pass,424B4 CI-Q;REV-Q;CI-PCT-Q,Financial ratio only; not gross margin or physical efficiency.
+CHK-07e,"Recomputed compute/revenue ratio rounds to reported percent, Q1-2026",round(100*CI-Q/REV-Q),72,72,0,pass,424B4 CI-Q;REV-Q;CI-PCT-Q,Financial ratio only; not gross margin or physical efficiency.
+CHK-07f,"Recomputed compute/revenue ratio rounds to reported percent, Q2-2026",round(100*CI-Q/REV-Q),48,48,0,pass,424B4 CI-Q;REV-Q;CI-PCT-Q,Financial ratio only; not gross margin or physical efficiency.
+CHK-07g,"Recomputed compute/revenue ratio rounds to reported percent, Q3-2026",round(100*CI-Q/REV-Q),58,58,0,pass,424B4 CI-Q;REV-Q;CI-PCT-Q,Financial ratio only; not gross margin or physical efficiency.
+CHK-08,Recomputed nine-month 2026 compute/revenue ratio rounds to reported percent,round(100*CI 9M-2026/REV 9M-2026),57,57,0,pass,424B4 CI-ANNUAL;REV-ANNUAL;CI-PCT-9M,
+CHK-09,Q3 2026 year-over-year revenue growth recomputes to reported percent,round(100*(REV Q3-2026/REV Q3-2025-1)),1127,1127,0,pass,424B4 REV-Q;GROWTH-Q3,
+CHK-10,Q3 2026 year-over-year compute growth recomputes to reported percent,round(100*(CI Q3-2026/CI Q3-2025-1)),382,382,0,pass,424B4 CI-Q;GROWTH-Q3,
+CHK-11,Final aggregate commitments decompose into disclosed components,table/1000 + short-term + leases not commenced + subsequent + subsequent short-term,900.893,900.9,0.05,pass,424B4 OBL-*;AGG-OBLIGATIONS,Tolerance reflects one-decimal rounding of disclosed billions.
+CHK-12,Amendment 1 aggregate commitments decompose into its disclosed components,"same components, A1 narrative values",895.393,895.4,0.05,pass,S-1/A-1 OBL-*;AGG-OBLIGATIONS,"Table total read from joined A1 text; numeric alignment unverified, checked against A2-424B4 equality below."
+CHK-13,A1 to A2 aggregate revision equals the change in post-quarter commitments,(AGG A2 - AGG A1) - (SUBSEQUENT A2 - SUBSEQUENT A1),0,0,0.05,pass,S-1/A-1;S-1/A-2 AGG-OBLIGATIONS;OBL-SUBSEQUENT,
+CHK-14,Original S-1 six-month 2026 revenue equals later Q1+Q2 2026 quarterly revenue,REV H1-2026 (S-1) - (REV Q1-2026 + REV Q2-2026) (424B4),0,0,0,pass,S-1 REV-ANNUAL;424B4 REV-Q,
+CHK-15,Original S-1 six-month 2026 compute equals later Q1+Q2 2026 quarterly compute,CI H1-2026 (S-1) - (CI Q1-2026 + CI Q2-2026) (424B4),0,0,0,pass,S-1 CI-ANNUAL;424B4 CI-Q,
+CHK-16,"Overlapping quarterly values Q1-2025 to Q2-2026 unchanged across S-1, A2, A3 and 424B4",count of differing quarterly cells,0,0,0,pass,REV-Q;CI-Q;CI-PCT-Q,A1 tables excluded because numeric alignment is not established by the join check.
