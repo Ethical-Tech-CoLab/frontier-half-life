@@ -13,6 +13,16 @@ the published artifact matches the locally checked shell and excludes research
 captures/source documents. Public HTTP access is blocked in this session, so
 remote browser verification is not claimed.
 
+**Rebound lab (added for review; Pages deployment not yet verified):**
+`docs/rebound.html` adds F04 (`#elasticity-threshold`) and F07
+(`#scenario-comparison`) for paper sections P05/P08. It runs the shared
+deterministic [task-energy model](docs/assets/js/model/task-energy.mjs) on
+**illustrative indexed scenarios — not calibrated, not forecasts**: three
+declared futures, field-level validation, sensitivity to elasticity, and JSON
+run-manifest export/import. No company calibration exists (filing reconciliation
+T-014 is incomplete) and the workload stays abstract until rubrics (T-005) are
+reviewed. See the [data dictionary](DATA-DICTIONARY.md).
+
 Start with [CONCEPT-IDEA.md](CONCEPT-IDEA.md), which records the working scope,
 decisions on the open questions (§9), and the research approach (§11).
 [INITIAL-RESEARCH.md](INITIAL-RESEARCH.md) preserves the supplied research draft;
@@ -30,6 +40,7 @@ so it remains readable without them.
 | [BACKLOG.md](BACKLOG.md) | Ordered, bounded tasks and evidence-access blockers |
 | [paper/PAPER-DRAFT.md](paper/PAPER-DRAFT.md) | P00–P12 manuscript draft with evidence/method references, static explanations and planned contextual visuals |
 | [research/INDEPENDENT-EVIDENCE.md](research/INDEPENDENT-EVIDENCE.md) | Independent literature synthesis and analytical threshold/energy checks |
+| [DATA-DICTIONARY.md](DATA-DICTIONARY.md) | Task-energy metric dictionary: symbols, units, domains, classifications, edge cases and manifest fields (draft for review) |
 | [SOURCES.md](SOURCES.md) / [CLAIM-LEDGER.csv](CLAIM-LEDGER.csv) | Source-access records, provisional evidence and explicit verification gaps |
 | [research/FILING-INTAKE-REVIEW.md](research/FILING-INTAKE-REVIEW.md) | Completed requested text intake, provenance limitations, and claim-reconciliation work |
 | [research/W1-FILING-RECONSTRUCTION.md](research/W1-FILING-RECONSTRUCTION.md) | Reproducible filing reconstruction: located passages, revisions, commitments, provider edges and derived checks |
@@ -48,7 +59,8 @@ pass): four figures are supported, the $895.4B commitment total is superseded by
 edge. **No company claim is verified** until origin authentication and a
 financial reviewer's sign-off are recorded.
 A first non-analytical demo shell is authorized for Pages while full manuscript
-rendering, models and analytical interactions remain gated.
+rendering, calibrated models and analytical interactions remain gated. The
+indexed rebound lab (T-023/T-025) is uncalibrated, illustrative and awaiting review.
 
 Follow CONCEPT-IDEA → SPECIFICATION → PLAN + BACKLOG, with human approval between
 stages and before full implementation. Specification and plan/backlog approval
@@ -57,11 +69,14 @@ document verdicts do not authorize unreconciled claims or analytical release.
 
 ## Maintaining the shell
 
-Serve `docs/` with a local static HTTP server. The checked-in site needs no build
-to serve; after changing its content or theme registry, run
-`node tools/render-shell.mjs`, then `node --test tests/`. After changing the
-filing extraction patterns, run `node tools/extract-filing-facts.mjs`; `--check`
-fails if outputs are stale or a derived check fails.
+Serve the repository root with a local static HTTP server (for example
+`python3 -m http.server`) and open `docs/`. The checked-in site needs no build
+to serve; after changing its content, model presets or theme registry, run
+`node tools/render-shell.mjs`, `node tools/render-shell.mjs --check`, then
+`node --test tests/` (shell, model, manifest and lab tests).
+After changing the filing extraction patterns, run
+`node tools/extract-filing-facts.mjs`; `--check` fails if outputs are stale or a
+derived check fails.
 Pages uses the existing `main` root, whose forwarder opens `docs/`;
 `_config.yml` keeps research and source records out of the Pages artifact.
 See [shell notes](docs/SHELL-NOTES.md) for design provenance and scope.

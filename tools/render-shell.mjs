@@ -4,6 +4,11 @@ import { SITE, documentURL } from '../docs/assets/js/config.mjs';
 import { SECTIONS, FILINGS } from '../docs/assets/js/research.mjs';
 import { THEMES, tokensFor } from '../docs/assets/js/themes.mjs';
 import { paperBody, evidenceBody } from './render-reader.mjs';
+import { MODEL_VERSION, TOLERANCE, SWEEP_VALUES, SYNTHETIC_FIXTURES, compute, sweepElasticity } from '../docs/assets/js/model/task-energy.mjs';
+import { SCENARIOS, FIELDS, WORKLOAD } from '../docs/assets/js/model/scenarios.mjs';
+import { EVIDENCE_CUTOFF } from '../docs/assets/js/model/manifest.mjs';
+import { F04_DEFAULTS, F04_KEYS, BASELINE_KEYS, CHART, X_TICKS, Y_TICKS, COMPARISON_ROWS, fmt, fieldId, fieldSpecKey, scenarioFieldKeys,
+  chartX, chartY, chartGeometry, chartDescription, changeText, thresholdLabel, positionText, scenarioSummary } from '../docs/assets/js/rebound-view.mjs';
 
 const escape = (value) => String(value).replace(/[&<>"']/g, (character) =>
   ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[character]);
@@ -21,7 +26,7 @@ function header(page) {
         <span class="identity-text"><strong>Frontier half-life</strong><small>Ethical Tech CoLab · research demo</small></span>
       </a>
       <nav class="site-nav" id="primary-nav" aria-label="Main navigation">
-        ${[['index.html', 'Overview'], ['paper.html', 'Paper'], ['evidence.html', 'Evidence']].map(([file, label]) =>
+        ${[['index.html', 'Overview'], ['paper.html', 'Paper'], ['evidence.html', 'Evidence'], ['rebound.html', 'Rebound lab']].map(([file, label]) =>
           `<a href="${file}" data-site-link${page === file ? ' aria-current="page"' : ''}>${label}</a>`).join('\n        ')}
         ${docLink('PLAN.md', 'Research docs ↗', 'nav-cta')}
       </nav>
@@ -117,14 +122,14 @@ function overview() {
       <div class="cards">
         <article class="card"><span class="step">01 / Evidence room</span><span class="status-label">Passages located · unverified</span><h3>Know what supports a claim.</h3><p>Follow the filing lineage and inspect every claim with its classification, verification state, locator and the paper sections that cite it.</p>${siteLink('evidence.html#claims', 'Open the claim inspector →')}</article>
         <article class="card"><span class="step">02 / Paper reader</span><span class="status-label">Review draft · P00–P12</span><h3>Read the argument, then contest it.</h3><p>The full manuscript, rendered from its source. Claim IDs open the evidence; figure panels say whether a view is live or planned.</p>${siteLink('paper.html#about', 'Read the paper →')}</article>
-        <article class="card"><span class="step">03 / Dashboard workspace</span><span class="status-label">Planned · not available</span><h3>Challenge the assumptions.</h3><p>Task efficiency, equivalency, rebound, providers, impacts, and uncertainty views follow evidence and model review. No simulation runs here.</p>${docLink('PLAN.md#4-paper-coordination-and-pages-link-contract', 'Inspect planned views on GitHub ↗')}</article>
+        <article class="card"><span class="step">03 / Dashboard workspace</span><span class="status-label">Indexed rebound lab live · other views planned</span><h3>Challenge the assumptions.</h3><p>Only the illustrative indexed rebound lab is available: an elasticity-threshold explorer and three uncalibrated futures with replayable manifests. Efficiency, equivalency, provider, impact, and uncertainty views follow evidence review.</p>${siteLink('rebound.html', 'Open the rebound lab →')}</article>
       </div>
     </section>
     <section class="section two-column" id="boundaries" aria-labelledby="boundaries-title">
       <div><p class="eyebrow">Deliberate boundaries</p><h2 id="boundaries-title">Useful questions.<br>Honest unknowns.</h2>
         <ul class="scope-list"><li>Useful-task efficiency, not just token prices.<span>Quality and failed attempts belong in the denominator.</span></li><li>Evidence-conditional company research.<span>Anthropic is an anchor, not a proxy for the whole sector.</span></li><li>Operational impacts, with place and boundaries.<span>No company-energy totals inferred from revenue.</span></li><li>Contestable scenarios, not investment forecasts.<span>Future results must retain assumptions and provenance.</span></li></ul>
       </div>
-      <div><div class="gate-note"><h3>What this draft does—and does not—claim</h3><p>The author approved the specification and plan on November 28, 2026. The paper is published here as a review draft. Filing passages are located and internally checked, but origin authentication, financial review, calibrated models and analytical release still require their evidence and review gates.</p><p>Located filing values appear with their verification state; none is verified. No provider rankings, calibrated results, or impact estimates are shown.</p></div>
+      <div><div class="gate-note"><h3>What this draft does—and does not—claim</h3><p>The author approved the specification and plan on November 28, 2026. The paper is published here as a review draft. Filing passages are located and internally checked, but origin authentication, financial review, calibrated models and analytical release still require their evidence and review gates. The rebound lab adds only illustrative, uncalibrated indexed scenarios.</p><p>Located filing values appear with their verification state; none is verified. No provider rankings, calibrated or stochastic results, or impact estimates are shown.</p></div>
         <ul class="review-links"><li>${docLink('SPECIFICATION.md#9-non-functional-requirements', 'Read the design and accessibility contract ↗')}<p>Accessible presentation is independent of research state.</p></li><li>${docLink('PLAN.md#6-milestones-and-dependencies', 'Review staged evidence and model gates ↗')}<p>A working shell is not a completed research milestone.</p></li></ul>
       </div>
     </section>
@@ -139,7 +144,216 @@ function evidence() {
   return evidenceBody(reviewStrip());
 }
 
-function page(file, title, description, body) {
+const LAB_STATUS = 'Illustrative indexed scenario — not calibrated, not a forecast';
+const n1 = (value) => Number(value.toFixed(1));
+const metric = (id, label, value) => `<div><dt>${escape(label)}</dt><dd id="${id}">${escape(value)}</dd></div>`;
+const table = (caption, head, rows, className = 'data-table numeric') => `<div class="table-wrap"><table class="${className}"><caption>${escape(caption)}</caption>
+          <thead><tr>${head.map((cell) => `<th scope="col">${escape(cell)}</th>`).join('')}</tr></thead>
+          <tbody>
+            ${rows.join('\n            ')}
+          </tbody></table></div>`;
+
+function labField(scope, key, value) {
+  const spec = FIELDS[fieldSpecKey(key)];
+  const id = fieldId(scope, key);
+  return `<div class="field"><label for="${id}">${escape(spec.label)}</label><input id="${id}" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" value="${escape(value)}" data-field="${escape(key)}" aria-describedby="${id}-hint ${id}-error"><p class="field-hint" id="${id}-hint">${escape(spec.hint)}</p><p class="field-error" id="${id}-error" hidden></p></div>`;
+}
+
+function thresholdChart(q, k, e, energyRatio) {
+  const geometry = chartGeometry(q, k, e);
+  const right = CHART.width - CHART.right;
+  const bottom = CHART.height - CHART.bottom;
+  return `<svg id="f04-chart" class="threshold-chart" viewBox="0 0 ${CHART.width} ${CHART.height}" role="img" aria-labelledby="f04-chart-title f04-chart-desc">
+              <title id="f04-chart-title">F04 · Energy ratio E1/E0 versus elasticity magnitude e</title>
+              <desc id="f04-chart-desc">${escape(chartDescription(q, k, e, energyRatio))}</desc>
+              <g class="chart-grid">${Y_TICKS.map((tick) => `<line x1="${CHART.left}" x2="${right}" y1="${n1(chartY(tick))}" y2="${n1(chartY(tick))}"/>`).join('')}</g>
+              <g class="chart-text" aria-hidden="true">${Y_TICKS.map((tick) => `<text x="${CHART.left - 10}" y="${n1(chartY(tick)) + 5}" text-anchor="end">${tick}</text>`).join('')}${X_TICKS.map((tick) => `<text x="${n1(chartX(tick))}" y="${bottom + 24}" text-anchor="middle">${tick}</text>`).join('')}<text x="${n1((CHART.left + right) / 2)}" y="${CHART.height - 8}" text-anchor="middle">Elasticity magnitude e</text><text class="chart-ytitle" transform="translate(20 ${n1((CHART.top + bottom) / 2)}) rotate(-90)" text-anchor="middle">Energy ratio E1/E0</text></g>
+              <path class="chart-axis" d="M${CHART.left} ${CHART.top}V${bottom}H${right}"/>
+              <line class="chart-one" x1="${CHART.left}" x2="${right}" y1="${n1(chartY(1))}" y2="${n1(chartY(1))}"/>
+              <text class="chart-label" x="${right - 6}" y="${n1(chartY(1)) + 22}" text-anchor="end" aria-hidden="true">1 = no change</text>
+              <path id="f04-curve" class="chart-curve" d="${geometry.path}"/>
+              <g id="f04-threshold-mark"${geometry.threshold.visible ? '' : ' hidden'}><line id="f04-threshold-line" class="chart-threshold" x1="${n1(geometry.threshold.x)}" x2="${n1(geometry.threshold.x)}" y1="${CHART.top}" y2="${bottom}"/><text id="f04-threshold-text" class="chart-label" x="${n1(geometry.threshold.labelX)}" y="${CHART.top + 18}" text-anchor="${geometry.threshold.labelAnchor}" aria-hidden="true">${escape(geometry.threshold.label)}</text></g>
+              <circle id="f04-point" class="chart-point" cx="${n1(geometry.selected.x)}" cy="${n1(geometry.selected.y)}" r="7"${geometry.selected.visible ? '' : ' hidden'}/>
+            </svg>`;
+}
+
+function f04Section() {
+  const defaults = F04_DEFAULTS;
+  const inputs = { e: defaults.e, q: defaults.q, s0: defaults.s0, s1: defaults.s1, iRatio: defaults.iRatio, pueRatio: defaults.pueRatio };
+  const result = compute(inputs);
+  const geometry = chartGeometry(defaults.q, result.k, defaults.e);
+  const rows = sweepElasticity(inputs).rows.map((row) => {
+    const demand = compute({ ...inputs, e: row.e }).demandRatio;
+    return `<tr><th scope="row">${fmt.elasticity(row.e)}</th><td class="num">${fmt.ratio(demand)}</td><td class="num">${fmt.ratio(row.energyRatio)}</td><td class="num">${changeText(row.energyRatio)}</td><td class="num">${fmt.ratio(0.5 ** (1 - row.e))}</td></tr>`;
+  });
+  return `<section class="section" id="elasticity-threshold" aria-labelledby="f04-title">
+      <div class="section-heading"><div><p class="eyebrow">F04 / Elasticity threshold · P05</p><h2 id="f04-title">Where cheaper becomes more.</h2></div><p>Below the threshold e*, induced demand is too weak to offset lower energy per successful task, so facility energy falls. Above it, demand outruns efficiency and energy rises. The threshold moves whenever success, intensity, or PUE changes.</p></div>
+      <p class="status-label">${LAB_STATUS}</p>
+      <div class="lab-grid">
+        <form id="f04-form" class="lab-form" data-rebound-interactive hidden novalidate aria-labelledby="f04-form-title">
+          <h3 id="f04-form-title">Declared conditions</h3>
+          <p class="caption">Defaults reproduce the P05 proportional case: price and IT energy per attempt both halve (g = 0.5) with success and PUE unchanged, so e* = 1.</p>
+          ${F04_KEYS.map((key) => labField('f04', key, String(defaults[key]))).join('\n          ')}
+          <button type="button" id="f04-reset" class="button secondary">Reset to the P05 case</button>
+        </form>
+        <div class="lab-output">
+          <div class="result-panel" id="f04-result">
+            <p class="result-state" id="f04-state">Build-time default · ${MODEL_VERSION}</p>
+            <dl class="metric-list">
+              ${metric('f04-k', 'Effective intensity ratio k', fmt.ratio(result.k))}
+              ${metric('f04-threshold', 'Threshold', thresholdLabel(result.threshold))}
+              ${metric('f04-demand', 'Demand S1/S0 at e', fmt.ratio(result.demandRatio))}
+              ${metric('f04-energy', 'Energy E1/E0 at e', `${fmt.ratio(result.energyRatio)} · ${changeText(result.energyRatio)}`)}
+            </dl>
+            <p class="result-summary" id="f04-summary" role="status" aria-live="polite">${escape(positionText(result.threshold, defaults.e))}</p>
+          </div>
+          <figure class="lab-figure">
+            ${thresholdChart(defaults.q, result.k, defaults.e, result.energyRatio)}
+            <figcaption class="caption"><strong>F04 · Elasticity threshold.</strong> E1/E0 = q^(−e) × k for elasticity magnitudes 0–3, with the no-change line (dashed), the break-even e* = ln(k)/ln(q) (dotted), and the selected e (dot). <span id="f04-clip-note">${geometry.clipped ? `Values above ${CHART.yMax} are clipped at the top edge.` : ''}</span> ${LAB_STATUS}. Model ${MODEL_VERSION} · paper ${SITE.version}.</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="static-reference">
+        <h3>Static reference · the P05 proportional case</h3>
+        <p class="caption">Computed at build time with ${MODEL_VERSION} for q = 0.5 and k = 0.5: price and IT energy per attempt both halve while success and PUE stay fixed. It does not change with your edits and stays readable without JavaScript. Here E1/E0 = g^(1−e) with g = 0.5, so energy falls for e &lt; 1, is unchanged at e = 1, and rises for e &gt; 1. This is a conditional identity (CL-013), not an elasticity estimate.</p>
+        ${table('F04 static fallback · energy ratio by elasticity magnitude, g = 0.5', ['e', 'Demand S1/S0', 'Energy E1/E0', 'Energy change', 'Check 0.5^(1−e)'], rows)}
+      </div>
+      <p class="return-links">${siteLink('paper.html#p05', 'Return to P05 · demand response →')} · ${docLink('paper/PAPER-DRAFT.md#p05', 'P05 in the review draft ↗')}</p>
+    </section>`;
+}
+
+function scenarioCard(scenario, result) {
+  const id = scenario.id;
+  const topKeys = scenarioFieldKeys(scenario).filter((key) => !key.startsWith('routes.'));
+  const routeFields = (scenario.inputs.routes || []).map((route, index) => `
+            <fieldset class="route-fieldset"><legend>${escape(scenario.routeLabels[route.id])}</legend>${['share', 's', 'iRatio', 'pueRatio']
+    .map((key) => labField(id, `routes.${index}.${key}`, String(route[key]))).join('')}</fieldset>`).join('');
+  const routeTable = scenario.inputs.routes ? `
+            ${table('Route breakdown · index; baseline 100 on one frontier route', ['Route', 'Tasks', 'Energy'], result.routes.map((route, index) =>
+    `<tr><th scope="row">${escape(scenario.routeLabels[route.id])}</th><td class="num" id="${id}-route-${index}-S">${fmt.index(route.successIndex)}</td><td class="num" id="${id}-route-${index}-E">${fmt.index(route.energyIndex)}</td></tr>`), 'data-table numeric compact')}` : '';
+  return `<article class="scenario-card" id="card-${id}" aria-labelledby="${id}-title">
+          <p class="eyebrow">Future ${scenario.number} / ${escape(scenario.classification)}</p>
+          <h3 id="${id}-title">${escape(scenario.title)}</h3>
+          <p class="status-label">Scenario · ${escape(scenario.evidence_status)}</p>
+          <p class="selected-note" id="${id}-selected" hidden>Opened from the link in the address bar</p>
+          <p class="card-summary">${escape(scenario.summary)}</p>
+          <div class="result-panel" id="${id}-result">
+            <p class="result-state" id="${id}-state">Build-time preset · ${MODEL_VERSION}</p>
+            <dl class="metric-list">
+              ${['S1', 'A1', 'E1', 'k', 'threshold', 'absolute'].map((key) => {
+    const [, label, value] = COMPARISON_ROWS.find(([row]) => row === key);
+    return metric(`${id}-${key}`, label, value(result, scenario.inputs, {}));
+  }).join('\n              ')}
+            </dl>${routeTable}
+            <p class="result-summary" id="${id}-summary" role="status" aria-live="polite">${escape(scenarioSummary(scenario.title, result, scenario.inputs.e))}</p>
+            <p class="state-link-row"><a id="${id}-link" class="state-link" href="rebound.html?scenario=${id}#scenario-comparison" data-site-link>Link to this state</a></p>
+          </div>
+          <form class="scenario-form" data-scenario-form="${id}" novalidate aria-label="${escape(scenario.title)} · declared inputs">
+            <fieldset><legend>Declared inputs</legend>${topKeys.map((key) => labField(id, key, String(scenario.inputs[key]))).join('')}</fieldset>${routeFields}
+          </form>
+        </article>`;
+}
+
+function f07Section() {
+  const evaluated = SCENARIOS.map((scenario) => ({ scenario, result: compute(scenario.inputs), sweep: sweepElasticity(scenario.inputs) }));
+  const head = ['Measure', ...SCENARIOS.map((scenario) => scenario.title)];
+  const comparison = (live) => COMPARISON_ROWS.map(([key, label, value]) => `<tr><th scope="row">${escape(label)}</th>${evaluated.map(({ scenario, result }) =>
+    `<td${live ? ` id="cmp-${scenario.id}-${key}"` : ''}>${escape(value(result, scenario.inputs, {}))}</td>`).join('')}</tr>`);
+  const sensitivity = [...SWEEP_VALUES.map((e, index) => `<tr><th scope="row">e = ${fmt.elasticity(e)}</th>${evaluated.map(({ scenario, sweep }) =>
+    `<td class="num" id="sens-${scenario.id}-${index}">${fmt.index(sweep.rows[index].energyIndex)}</td>`).join('')}</tr>`),
+  `<tr><th scope="row">Threshold e*</th>${evaluated.map(({ scenario, result }) => `<td class="num" id="sens-${scenario.id}-threshold">${escape(thresholdLabel(result.threshold))}</td>`).join('')}</tr>`];
+  const assumptions = SCENARIOS.flatMap((scenario) => scenarioFieldKeys(scenario).map((key) => {
+    const route = key.match(/^routes\.(\d+)\.(.+)$/);
+    const routeData = route ? scenario.inputs.routes[Number(route[1])] : null;
+    const label = route ? `${scenario.routeLabels[routeData.id]} · ${FIELDS[route[2]].label}` : FIELDS[key].label;
+    const value = route ? routeData[route[2]] : scenario.inputs[key];
+    const rationale = scenario.rationale[route ? `routes.${routeData.id}.${route[2]}` : key];
+    return `<tr><th scope="row">${escape(scenario.title)}</th><td>${escape(label)}</td><td class="num">${value}</td><td>${escape(scenario.classification)}</td><td>${escape(scenario.evidence_status)}</td><td>${escape(rationale)}</td></tr>`;
+  }));
+  const fixtures = SYNTHETIC_FIXTURES.map((fixture) => {
+    const { inputs } = fixture;
+    const result = compute(inputs);
+    return `<tr><th scope="row">${escape(fixture.label)}</th><td class="num">${inputs.absolute.S0}</td><td class="num">${inputs.s0}</td><td class="num">${inputs.q}</td><td class="num">${inputs.absolute.I0} → ${fmt.count(inputs.absolute.I0 * inputs.iRatio)}</td><td class="num">${inputs.absolute.p0}</td><td class="num">${inputs.e}</td><td class="num">${fmt.kwh(result.absolute.E1)}</td><td class="num">${fixture.expectedKWh}</td></tr>`;
+  });
+  return `<section class="section" id="scenario-comparison" aria-labelledby="f07-title">
+      <div class="section-heading"><div><p class="eyebrow">F07 / Scenario comparison · P08</p><h2 id="f07-title">Three futures, one identity.</h2></div><p>Each future declares price, elasticity, success, intensity, and—for substitution—routing assumptions for the same abstract workload. Edit any input: results, comparison, and sensitivity update together. Invalid inputs withhold results rather than guess.</p></div>
+      <p class="status-label">${LAB_STATUS}</p>
+      <p class="caption figure-caption"><strong>F07 · Scenario comparison.</strong> Indexed successful tasks, attempts, and facility energy (baseline = 100) for three declared futures, with each future’s threshold e* and an elasticity sensitivity sweep. Workload: ${WORKLOAD}. Evidence cutoff: ${EVIDENCE_CUTOFF}. ${LAB_STATUS}. Model ${MODEL_VERSION} · paper ${SITE.version}.</p>
+      <noscript><p class="planned-note">JavaScript is off: inputs, live results, and manifest export/import are unavailable. The static reference tables below were computed at build time with ${MODEL_VERSION} and remain readable.</p></noscript>
+      <div class="lab-live" data-rebound-interactive hidden>
+        <p id="lab-url-notice" class="planned-note" hidden></p>
+        <fieldset class="baseline-fieldset">
+          <legend>Optional absolute baseline · shared by all three futures</legend>
+          <p class="caption">Leave blank to stay indexed. Absolute kWh are computed only when you enter all of S0, I0, and p0—your own assumptions, never company data. A blank stays unknown, not zero.</p>
+          <div class="field-row">${BASELINE_KEYS.map((key) => labField('baseline', key, '')).join('')}</div>
+        </fieldset>
+        <div class="scenario-grid">
+        ${evaluated.map(({ scenario, result }) => scenarioCard(scenario, result)).join('\n        ')}
+        </div>
+        <h3 class="table-title">Live comparison</h3>
+        ${table('F07 live comparison · indexed results, baseline = 100; withheld when inputs are invalid', head, comparison(true), 'data-table')}
+        <h3 class="table-title">Sensitivity to elasticity</h3>
+        ${table('Facility energy index when only e changes; every other input stays at each future’s current value', ['Elasticity', ...SCENARIOS.map((scenario) => scenario.title)], sensitivity)}
+        <div class="manifest-tools" aria-labelledby="manifest-title">
+          <h3 id="manifest-title">Run manifest · export and replay</h3>
+          <p class="caption">A manifest records schema, model and paper versions, the evidence cutoff (${EVIDENCE_CUTOFF}), all inputs, results, and tolerance (relative ${TOLERANCE.relative}). Import replays it and requires the recorded results to reproduce; a rejected file leaves the current run unchanged. Files are read locally and never uploaded.</p>
+          <div class="manifest-actions"><button type="button" class="button" id="manifest-export">Export run manifest (JSON)</button><button type="button" class="button secondary" id="lab-reset">Reset all to presets</button></div>
+          <div class="field file-field"><label for="manifest-import">Import run manifest (JSON, at most 1 MiB)</label><input id="manifest-import" type="file" accept="application/json,.json" aria-describedby="manifest-import-hint"><p class="field-hint" id="manifest-import-hint">Imported text is treated as data: strict fields, finite numbers, known scenario and route references.</p></div>
+          <p id="manifest-status" class="result-summary" role="status" aria-live="polite">No manifest imported. Showing the presets.</p>
+          <div id="manifest-errors" class="error-list" role="alert"></div>
+        </div>
+      </div>
+      <div class="static-reference">
+        <h3>Static reference · build-time presets</h3>
+        <p class="caption">Computed when this page was generated, with the same ${MODEL_VERSION} engine. These values do not change with your edits and remain readable without JavaScript.</p>
+        ${table('F07 static fallback · preset results, indexed (baseline = 100)', head, comparison(false), 'data-table')}
+        <h3>Declared preset assumptions</h3>
+        ${table('Every preset value is a scenario assumption for an illustrative indexed workload; none is calibrated to company or provider data', ['Future', 'Input', 'Value', 'Classification', 'Evidence status', 'Rationale'], assumptions, 'data-table')}
+        <h3>Synthetic accounting fixtures (SPECIFICATION §8)</h3>
+        ${table('Fixture checks recomputed by the engine at build time (CL-014); arithmetic checks, not research observations', ['Case', 'S0', 's', 'q', 'I0 → I1 kWh', 'PUE', 'e', 'Engine E1 kWh', 'Expected kWh'], fixtures)}
+      </div>
+      <p class="return-links">${siteLink('paper.html#p08', 'Return to P08 · deterministic futures →')} · ${docLink('paper/PAPER-DRAFT.md#p08', 'P08 in the review draft ↗')}</p>
+    </section>`;
+}
+
+function rebound() {
+  const formulas = [
+    ['S1/S0 = q^(−e)', 'Successful demand responds to the price ratio q = P1/P0.'],
+    ['A = S / s', 'Attempts; each retry counts once as an attempt.'],
+    ['E = A × I × p', 'Facility kWh = attempts × IT kWh per attempt × PUE.'],
+    ['E1/E0 = q^(−e) × k', 'k = (s0/s1) × (I1/I0) × (p1/p0), the effective intensity ratio.'],
+    ['e* = ln(k) / ln(q)', 'Break-even elasticity magnitude, defined for q ≠ 1 and k > 0.'],
+  ];
+  return `<main id="main" class="wrap" tabindex="-1" data-research-content>
+    <header class="page-intro"><p class="eyebrow">The rebound lab / F04 + F07</p><h1>Cheaper tasks.<br><span class="accent">More energy, or less?</span></h1>
+      <p class="lead">An explorer for the conditional demand–energy identity in P05 and the three futures named in P08. Every number here comes from declared assumptions about an abstract, illustrative indexed workload—not from company data, measured elasticities, or forecasts.</p>
+      <p class="page-meta">${SITE.version} · Initial author ${SITE.author} · Model ${MODEL_VERSION} · Evidence cutoff: ${EVIDENCE_CUTOFF}<br>${LAB_STATUS}</p>
+      <div class="actions">${siteLink('#elasticity-threshold', 'F04 · Explore the threshold ↓', 'button')}${siteLink('#scenario-comparison', 'F07 · Compare three futures ↓', 'button secondary')}</div>
+      <p class="return-links">${siteLink('paper.html#p05', 'Return to P05')} · ${siteLink('paper.html#p08', 'Return to P08')}</p>
+    </header>
+    ${reviewStrip()}
+    <section class="section two-column" id="method" aria-labelledby="method-title">
+      <div><p class="eyebrow">Method / one shared identity</p><h2 id="method-title">Declared assumptions in. Indexed results out.</h2>
+        <dl class="formula-list">
+          ${formulas.map(([formula, meaning]) => `<div><dt><code>${escape(formula)}</code></dt><dd>${escape(meaning)}</dd></div>`).join('\n          ')}
+        </dl>
+        <p class="caption">Routed futures partition successful demand with shares that sum to 1, then apply each route’s success rate and intensity: k = Σ share × k(route). Results agree within relative ${TOLERANCE.relative} (absolute floor ${TOLERANCE.absolute}).</p>
+      </div>
+      <div><div class="gate-note"><h3>What this lab is—and is not</h3><p>No company calibration: filing claims are located but unverified (T-014 awaits review), and no Anthropic, OpenAI, or provider figure enters any input. The workload is an abstract illustrative indexed workload until the coding, extraction, and agent rubrics (T-005) are reviewed.</p><p>Indexed baseline = 100. Absolute kWh appear only from all three baseline values you enter; missing values stay unknown, never zero. Deterministic: no seed and no Monte Carlo (T-031 is later work).</p><p>A price ratio is not a margin, and an energy index is not an efficiency score; financial and physical measures stay separate. Not yet reviewed.</p></div>
+        <ul class="review-links">
+          <li>${docLink('DATA-DICTIONARY.md', 'Metric dictionary ↗')}<p>Symbols, units, domains, classifications, and what each measure is not.</p></li>
+          <li>${docLink('SPECIFICATION.md#8-modeling-rules-and-edge-cases', 'Modeling rules and edge cases (§8) ↗')}<p>Fixtures, positive prices, success and PUE domains, and import limits.</p></li>
+          <li>${docLink('research/INDEPENDENT-EVIDENCE.md#r05', 'Analytical derivation (R05) ↗')}<p>The conditional threshold derivation; not an empirical estimate.</p></li>
+          <li>${docLink('docs/assets/js/model/task-energy.mjs', 'Shared engine source ↗')}<p>The same module renders the static tables and runs the live view.</p></li>
+        </ul>
+      </div>
+    </section>
+    ${f04Section()}
+    ${f07Section()}
+  </main>`;
+}
+
+function page(file, title, description, body, scripts = []) {
   return `<!doctype html>
 <!-- Generated by tools/render-shell.mjs. Review document base: docs/assets/js/config.mjs. -->
 <html lang="en" data-brand="colab">
@@ -156,7 +370,8 @@ function page(file, title, description, body) {
   <link rel="stylesheet" href="assets/themes.css">
   <link rel="stylesheet" href="assets/site.css">
   <link rel="stylesheet" href="assets/reader.css">
-  <script type="module" src="assets/js/site.mjs"></script>
+  <script type="module" src="assets/js/site.mjs"></script>${scripts.map((script) => `
+  <script type="module" src="${script}"></script>`).join('')}
 </head>
 <body>
   ${header(file)}
@@ -171,9 +386,10 @@ export function renderShell() {
   const themeCSS = `/* Generated from the attributed registry by tools/render-shell.mjs. */\n${Object.values(THEMES).map((theme) =>
     `${theme.id === 'colab' ? ':root, ' : ''}:root[data-brand="${theme.id}"] {\n${Object.entries(tokensFor(theme)).map(([key, value]) => `  ${key}: ${value};`).join('\n')}\n}`).join('\n\n')}\n`;
   return {
-    'index.html': page('index.html', 'Models, Megawatts, and Moats', 'An evidence-first research demo about AI efficiency, open-model catch-up, demand, and infrastructure. No analytical results are published.', overview()),
+    'index.html': page('index.html', 'Models, Megawatts, and Moats', 'An evidence-first research demo about AI efficiency, open-model catch-up, demand, and infrastructure. Only illustrative, uncalibrated indexed scenarios are computed.', overview()),
     'paper.html': page('paper.html', 'Live research reader', 'The v0.4 review draft of Models, Megawatts, and Moats, rendered from the manuscript with linked claims, sources and figures. Not an analytical release.', paper()),
     'evidence.html': page('evidence.html', 'Evidence room', 'Filing lineage and a claim inspector: located, internally checked passages with locators. No claim is verified yet.', evidence()),
+    'rebound.html': page('rebound.html', 'Rebound lab', 'F04 elasticity threshold and F07 scenario comparison: illustrative indexed scenarios computed with the task-energy model. Not calibrated, not a forecast.', rebound(), ['assets/js/rebound.mjs']),
     'assets/themes.css': themeCSS,
   };
 }
@@ -188,5 +404,5 @@ if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
       await writeFile(path, contents);
     }
   }
-  console.log(check ? 'Shell HTML and theme CSS are current.' : 'Rendered three static pages and theme CSS.');
+  console.log(check ? 'Shell HTML and theme CSS are current.' : 'Rendered four static pages and theme CSS.');
 }
