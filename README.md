@@ -15,6 +15,12 @@ the published artifact matches the locally checked shell and excludes research
 captures/source documents. Public HTTP access is blocked in this session, so
 remote browser verification is not claimed.
 
+**Review snapshot r1:** tag [`v0.4-review.1`](https://github.com/Ethical-Tech-CoLab/frontier-half-life/tree/v0.4-review.1),
+with [paper](docs/snapshots/v0.4-review.1/frontier-half-life-v0.4-review.1-paper.pdf)
+and [evidence](docs/snapshots/v0.4-review.1/frontier-half-life-v0.4-review.1-evidence.pdf)
+PDFs whose repository links point at the tag ([checksums](docs/snapshots/v0.4-review.1/SHA256SUMS)).
+Review questions are in P11. Review draft, not an analytical release.
+
 **Rebound lab (published for review; Pages run 46110772364 succeeded):**
 `docs/rebound.html` adds F04 (`#elasticity-threshold`) and F07
 (`#scenario-comparison`) for paper sections P05/P08. It runs the shared

@@ -56,7 +56,7 @@ The requested texts are received; T-010 is complete for this scope. T-011–T-01
 | T-031 | Add bounded seeded Monte Carlo with failure counts and replay | FR-07, FR-13; M4 | M | T-025/T-030; deterministic checks first; publish trial settings and model limitations |
 | T-032 | Implement each stress search in a separately reviewable tranche | FR-14; M4 | M per test / compute-pressure tranche done (review) | `uncertainty.html#stress-boundaries` (F08) evaluates the >60% four-quarter compute-pressure trigger on reported quarters with an adjustable threshold, strict-above and gap-interrupt rules; capacity-use and regional-power tests show insufficient evidence. Comparability across the 2026 composition change needs reviewer judgment |
 | T-040 | Integrate paper chapters and F01–F09 against shared evidence/manifests | FR-15; M5 | M per chapter | Relevant evidence/views; split chapter batches; no conflicting values or broken return/replay links |
-| T-041 | Produce static/versioned paper review snapshot and reviewer questions | FR-15, FR-16; M5 | M / print export done; snapshot pending | T-040; reader prints to PDF with prose, references, captions, figure routes and static explanations (light tokens for every brand). Pinned, versioned review snapshot and consolidated reviewer questions still to do |
+| T-041 | Produce static/versioned paper review snapshot and reviewer questions | FR-15, FR-16; M5 | M / snapshot r1 published (review) | Tag `v0.4-review.1` pins sources; paper and evidence PDFs (repository links pinned to the tag) at `docs/snapshots/v0.4-review.1/` with SHA-256 checksums; reviewer questions consolidated in P11. GitHub releases are not permitted for this session token |
 | T-042 | Complete three scoped reviews and release disposition | FR-16; M5 | M coordination | T-041 and actual reviewers; blockers resolved or analytical release withheld; no fabricated sign-offs |
 
 ## Blockers and handoffs
@@ -91,6 +91,8 @@ The requested texts are received; T-010 is complete for this scope. T-011–T-01
 | T-023, T-025 (review) | Data dictionary, task-energy engine, indexed rebound lab F04/F07 with manifests | 2026-11-28 | #9 |
 | T-028 (F05), T-032 (compute pressure) | Commitment exposure and stress-boundary views | 2026-11-28 | #10 |
 | F02, T-041 (print) | Efficiency denominators view; reader print/PDF export; 1240px navigation collapse | 2026-11-28 | #12 |
+| T-018 (draft) | Demand-identification note; CL-026/CL-027; P05 | 2026-11-28 | #13 |
+| T-041 (snapshot r1) | Abstract refresh, P11 review table, tag `v0.4-review.1`, snapshot PDFs | 2026-11-28 | #14, #15 |
 
 The v0.4 research-planning package was merged in #2. The author separately approved the revised specification and plan/backlog on 2026-11-28; those verdicts are recorded in the documents and do not approve financial findings.
 

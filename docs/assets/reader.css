@@ -71,6 +71,8 @@
   .contents ol { grid-template-columns: minmax(0, 1fr); }
 }
 .print-only { display: none; }
+.snapshot-note { color: var(--muted); font-size: .8rem; margin-top: 1rem; }
+@media print { .snapshot-note { display: none; } }
 @media print {
   @page { margin: 16mm; }
   .print-only { display: block; font-size: .75rem; border: 1px solid var(--line); padding: .5rem .7rem; }

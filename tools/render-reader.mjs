@@ -125,6 +125,7 @@ export function paperBody(reviewStrip) {
       ${subtitle ? `<p class="lead">${subtitle.html}</p>` : ''}
       <div class="page-meta paper-meta">${meta.map((block) => `<p>${block.html}</p>`).join('')}</div>
       <div class="actions">${siteLink('#p00', 'Start reading ↓', 'button')}${siteLink('evidence.html#claims', 'Inspect the claims →', 'button secondary')}${docLink('paper/PAPER-DRAFT.md', 'Manuscript source ↗')}<button type="button" class="button secondary" data-print hidden>Print or save as PDF</button></div>
+      ${SITE.snapshots.map((snapshot) => `<p class="snapshot-note">Review snapshot <a href="${escape(`https://github.com/Ethical-Tech-CoLab/frontier-half-life/tree/${snapshot.id}`)}">${escape(snapshot.id)}</a> (${escape(snapshot.date)}): <a href="${escape(snapshot.paper)}">paper PDF</a> · <a href="${escape(snapshot.evidence)}">evidence PDF</a> · <a href="${escape(snapshot.checksums)}">SHA-256</a>. Cite the snapshot in review comments; this live reader keeps changing.</p>`).join('\n      ')}
       <p class="print-only">Printed from the live research reader: https://ethical-tech-colab.github.io/frontier-half-life/docs/paper.html · ${SITE.version} review draft, not an analytical release. Claim IDs (CL-NNN) resolve at docs/evidence.html#cl-NNN; figure routes are printed in each figure panel with its static explanation.</p>
     </header>
     ${reviewStrip}
