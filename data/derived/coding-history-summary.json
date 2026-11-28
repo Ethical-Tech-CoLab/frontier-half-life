@@ -1,0 +1,58 @@
+{
+  "rubric": "0.4.0",
+  "task_set": "SWE-bench Verified (500), Bash Only view, mini-SWE-agent",
+  "cutoff": "2026-11-30",
+  "status": "Contamination-flagged history (T12). Not used to decide the four-to-six-month hypothesis.",
+  "confirmed": {
+    "events": 4,
+    "references": 5,
+    "median_days": 193,
+    "median_months": 6.34,
+    "ci_lower_months": 3.94,
+    "ci_upper_months": "not reached",
+    "within_6_months": 2,
+    "adopted_rule_label": "consistent"
+  },
+  "nominal": {
+    "events": 5,
+    "references": 5,
+    "median_days": 97,
+    "median_months": 3.19,
+    "ci_lower_months": 2.07,
+    "ci_upper_months": 4.86,
+    "within_6_months": 4,
+    "adopted_rule_label": "consistent"
+  },
+  "same_harness_major": {
+    "v0": {
+      "events": 0,
+      "references": 1,
+      "median_days": null,
+      "median_months": null,
+      "ci_lower_months": null,
+      "ci_upper_months": "not reached",
+      "within_6_months": 0,
+      "adopted_rule_label": "inconclusive"
+    },
+    "v1": {
+      "events": 2,
+      "references": 5,
+      "median_days": null,
+      "median_months": null,
+      "ci_lower_months": 2.89,
+      "ci_upper_months": "not reached",
+      "within_6_months": 1,
+      "adopted_rule_label": "inconclusive"
+    },
+    "v2": {
+      "events": 2,
+      "references": 3,
+      "median_days": 120,
+      "median_months": 3.94,
+      "ci_lower_months": 3.81,
+      "ci_upper_months": "not reached",
+      "within_6_months": 2,
+      "adopted_rule_label": "consistent"
+    }
+  }
+}

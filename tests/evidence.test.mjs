@@ -74,14 +74,14 @@ test('claim ledger is well formed, references resolve, and nothing is verified w
 });
 
 test('research Markdown links added for W1 resolve to files and explicit anchors', async () => {
-  for (const path of ['research/W1-FILING-RECONSTRUCTION.md', 'research/W4-DEMAND-IDENTIFICATION.md', 'paper/PAPER-DRAFT.md']) {
+  for (const path of ['research/W1-FILING-RECONSTRUCTION.md', 'research/W4-DEMAND-IDENTIFICATION.md', 'research/PHASE1-CODING-HISTORY.md', 'research/WORKLOAD-RUBRICS.md', 'paper/PAPER-DRAFT.md']) {
     const text = await read(path);
     const base = resolve(root, path, '..');
     for (const [, target] of text.matchAll(/\]\(((?:\.\.\/|[\w-]+\/|[\w-]+\.)[^)\s]*)\)/g)) {
       if (target.startsWith('http')) continue;
       const [file, fragment] = target.split('#');
       const contents = await readFile(resolve(base, file), 'utf8');
-      if (fragment && /W1-FILING|W4-DEMAND|PAPER-DRAFT|SOURCES|LITERATURE-TRANCHE|INDEPENDENT-EVIDENCE/.test(file)) {
+      if (fragment && /W1-FILING|W4-DEMAND|PHASE1-CODING|WORKLOAD-RUBRICS|PAPER-DRAFT|SOURCES|LITERATURE-TRANCHE|INDEPENDENT-EVIDENCE/.test(file)) {
         assert.ok(contents.includes(`<a id="${fragment}"></a>`), `${path}: ${target}`);
       }
     }

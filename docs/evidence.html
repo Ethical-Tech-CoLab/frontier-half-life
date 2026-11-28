@@ -71,7 +71,7 @@
   <main id="main" class="wrap" tabindex="-1" data-research-content>
     <header class="page-intro"><p class="eyebrow">The evidence room / located, not yet verified</p><h1>Located is not<br><span class="accent">verified.</span></h1>
       <p class="lead">Each company figure below is found in a supplied filing text, has a line locator, and is checked for internal consistency. None is verified yet. The author attested the filing copies authentic on 2026-11-28; the author's financial review of each claim is still pending.</p>
-      <p class="page-meta">v0.4 · Initial author yorkerhodes3 · Filing captures through 2026-11-25<br>42 ledger claims · 22/22 derived W1 checks pass · No source document is loaded into your browser.</p>
+      <p class="page-meta">v0.4 · Initial author yorkerhodes3 · Filing captures through 2026-11-25<br>43 ledger claims · 22/22 derived W1 checks pass · No source document is loaded into your browser.</p>
       <div class="actions"><a href="#claims" data-site-link class="button">Inspect the claims ↓</a><a href="#filing-timeline" data-site-link class="button secondary">Follow the filing lineage ↓</a></div>
     </header>
     <div class="review-strip" aria-label="Research and release status">
@@ -127,8 +127,8 @@
         <label>Search <input name="search" type="search" autocomplete="off" placeholder="e.g. Lambda, revenue, CL-020"></label>
         <button type="reset" class="button secondary">Reset filters</button>
       </form>
-      <p id="claim-count" class="caption" role="status" aria-live="polite">42 claims.</p>
-      <p id="claims-empty" class="planned-note" hidden>No claims match these filters. Reset the filters to see all 42 claims.</p>
+      <p id="claim-count" class="caption" role="status" aria-live="polite">43 claims.</p>
+      <p id="claims-empty" class="planned-note" hidden>No claims match these filters. Reset the filters to see all 43 claims.</p>
       <div class="claim-list">
         <article class="claim-card" id="cl-001" data-state="unknown" data-classification="reported" data-search="cl-001 revenue was approximately 4.6 billion in fy2025 and 33.2 billion in the first nine months of 2026. anthropic revenue fy2025; nine months 2026 w1 disposition: supported. exact values fy2025 4585 and nine months 2026 33242 usd million; quarterly and annual footings pass (chk-01 to chk-03). nine-month and full-year periods are not comparable as annual growth. primary issuer filing text located in the supplied capture; values consistent across applicable versions; capture authenticity attested by the author (yorkerhodes3, 2026-11-28; not network-verified); financial review by yorkerhodes3 pending.">
           <header><h3>CL-001</h3><p class="claim-labels"><span class="status-label">reported</span><span class="status-label">Verification: unknown</span><span class="status-label">Confidence: medium</span></p></header>
@@ -677,6 +677,21 @@
             <div><dt>Review</dt><dd>No human review recorded</dd></div>
           </dl>
           <p class="caption">Cited in: <a href="paper.html#p12" data-site-link>Return to P12</a></p>
+        </article>
+        <article class="claim-card" id="cl-055" data-state="unknown" data-classification="derived" data-search="cl-055 under rubric 0.4.0 on the contamination-flagged swe-bench verified bash only protocol, 4 of 5 frontier references released in 2025 had a statistically confirmed open-weight match after 120 to 194 days (kaplan-meier median 193 days, upper 95% bound not reached); point-estimate matches came after 63 to 193 days (median 97 days); claude opus 4.5 had no confirmed match by 2026-11-30. open-weight vs anthropic/openai models benchmark-clock catch-up lag (history) 2025-02 to 2026-11-30 contamination-flagged history (t12): never the sole basis for dating a catch-up and not used for the hypothesis decision. submitter-reported release dates; mixed harness versions (same-version subsets are sparser); reference window start set after inspecting the data; one confirmation is borderline (kimi k2.5 bound -2.997 points). benchmark clock only; says nothing about workload or commercial catch-up.">
+          <header><h3>CL-055</h3><p class="claim-labels"><span class="status-label">derived</span><span class="status-label">Verification: unknown</span><span class="status-label">Confidence: low</span></p></header>
+          <p class="claim-text">Under rubric 0.4.0 on the contamination-flagged SWE-bench Verified Bash Only protocol, 4 of 5 frontier references released in 2025 had a statistically confirmed open-weight match after 120 to 194 days (Kaplan-Meier median 193 days, upper 95% bound not reached); point-estimate matches came after 63 to 193 days (median 97 days); Claude Opus 4.5 had no confirmed match by 2026-11-30.</p>
+          <dl>
+            <div><dt>Entity · metric</dt><dd>open-weight vs Anthropic/OpenAI models · benchmark-clock catch-up lag (history)</dd></div>
+            <div><dt>Period · units</dt><dd>2025-02 to 2026-11-30 · days</dd></div>
+            <div><dt>Sources</dt><dd><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#src-032">SRC-032</a></dd></div>
+            <div><dt>Locator</dt><dd>data/derived/coding-history-pairs.csv; data/derived/coding-history-summary.json; research/PHASE1-CODING-HISTORY.md#ph1-results</dd></div>
+            <div><dt>Formula</dt><dd><code>confirmed: one-sided 95% lower bound of (open - reference) &gt;= -0.03 over 500 tasks; lag = open release date - reference release date; Kaplan-Meier with censoring at 2026-11-30</code></dd></div>
+            <div><dt>Inputs</dt><dd><a href="#cl-052" data-site-link>CL-052</a> · <a href="#cl-054" data-site-link>CL-054</a></dd></div>
+            <div><dt>Caveats</dt><dd>Contamination-flagged history (T12): never the sole basis for dating a catch-up and not used for the hypothesis decision. Submitter-reported release dates; mixed harness versions (same-version subsets are sparser); reference window start set after inspecting the data; one confirmation is borderline (Kimi K2.5 bound -2.997 points). Benchmark clock only; says nothing about workload or commercial catch-up.</dd></div>
+            <div><dt>Review</dt><dd>No human review recorded</dd></div>
+          </dl>
+          <p class="caption">Cited in: <a href="paper.html#p04" data-site-link>Return to P04</a> · <a href="paper.html#p12" data-site-link>Return to P12</a></p>
         </article>
       </div>
       <p class="caption"><a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/CLAIM-LEDGER.csv">Download the claim ledger (CSV) ↗</a> · <a href="https://github.com/Ethical-Tech-CoLab/frontier-half-life/blob/main/SOURCES.md#access-and-evidence-policy">Source register and evidence policy ↗</a></p>

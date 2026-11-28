@@ -372,6 +372,16 @@ These records support the [rubric selections](research/WORKLOAD-RUBRICS.md#selec
 - **Limit:** Which leaderboard rows use the neutral Terminus 2 harness has not been confirmed.
 - **Feeds:** Rubric selections §0.2.
 
+<a id="src-032"></a>
+## SRC-032 — SWE-bench Verified Bash Only submissions (pinned copy)
+
+- **Source:** https://github.com/SWE-bench/experiments at commit `40f164d5b8f1d249bf95a6df8b74b577fd8e519d`, `evaluation/verified/*_mini-v*`.
+- **Local copy:** [data/raw/swebench-verified-bash-only](data/raw/swebench-verified-bash-only/SOURCE.md): 48 submissions with `metadata.yaml`, and `per_instance_details.json` where published (41). SHA-256 and source URLs are listed in `MANIFEST.csv`.
+- **Access:** Retrieved 2026-11-28 through the GitHub API and raw file host; content is MIT-licensed per the SWE-bench repository.
+- **Observed limits:** Release dates are submitter-reported. Three per-instance files contradict their published scores and are excluded from paired tests. Llama 4 metadata marks the models closed-weight. Harness versions range from 0.0.0 to 2.4.2.
+- **Use:** Contamination-flagged coding history (rubric T12) in [the Phase 1 coding history note](research/PHASE1-CODING-HISTORY.md).
+- **Feeds:** CL-055.
+
 ## Remaining source streams
 
 Provider/counterparty filings and contracts; official model/system cards, release notes and price histories; task-evaluation results; inference-runtime/hardware measurements; regional grid/utility planning, interconnection, emissions, water, permitting, and community submissions remain acquisition tasks, **not completed research**. The first pass above is an evidence-discovery seed.
