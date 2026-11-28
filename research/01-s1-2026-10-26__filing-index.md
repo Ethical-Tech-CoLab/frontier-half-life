@@ -8,7 +8,7 @@ source_url: "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/
 source_title: "EDGAR Filing Documents for 0001628280-26-067168"
 retrieved_on: "2026-11-27"
 retrieval_method: "Full text converted to Markdown with the Jina Reader service (r.jina.ai), run through the browser"
-note: "Lists all 87 documents in the filing with sizes and links."
+note: "Full index page: lists 79 files with sizes and links (EDGAR counts 87 documents in the submission)."
 ---
 Filing Date
 
