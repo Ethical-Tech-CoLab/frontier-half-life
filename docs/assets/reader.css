@@ -42,11 +42,22 @@
 .claim-card dl > div { min-width: 0; }
 .claim-card dt { color: var(--muted); font: 600 .66rem/1.5 var(--font-mono); text-transform: uppercase; letter-spacing: .06em; }
 .claim-card dd { margin: .15rem 0 0; overflow-wrap: anywhere; }
+/* Keep the sticky contents below the 69px sticky masthead and scrollable on short screens. */
+@media (min-width: 761px) {
+  .contents { top: 88px; max-height: calc(100vh - 104px); overflow-y: auto; }
+}
+/* Grid tracks must not grow to a wide table's min-content width. */
+.paper-sections, .claim-list, .claim-card { min-width: 0; }
 @media (max-width: 760px) {
+  .reader-layout { grid-template-columns: minmax(0, 1fr); }
+  .contents ol { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .claim-card dl { grid-template-columns: 1fr; }
   .claim-card { padding: 1.1rem; }
   .filters select, .filters input { min-width: 0; width: 100%; }
   .filters label { width: 100%; }
+}
+@media (max-width: 430px) {
+  .contents ol { grid-template-columns: minmax(0, 1fr); }
 }
 @media print {
   .filters, .figure-actions .button { display: none; }
