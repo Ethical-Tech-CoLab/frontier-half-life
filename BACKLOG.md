@@ -66,7 +66,7 @@ The requested texts are received; T-010 is complete for this scope. T-011–T-01
 | Financial review of company claims | Promotion of CL-001–CL-005/CL-011/CL-012/CL-020–CL-027 beyond `unknown`; company calibration | yorkerhodes3 (financial reviewer, assigned 2026-11-28) | Authenticity attested 2026-11-28. Next: review the W1 §8 dispositions and the 2026 comparability judgment, then record reviewer and date per claim |
 | Public-source full-text retrieval fails DNS | T-003/T-004 and full-method portions of T-015–T-018 | Session environment/access restoration or lawful accessible documents | 2026-11-27; provisional indexed synthesis remains limited, not falsely complete |
 | Author decisions 2026-11-28 | Claim promotion; rubric adoption; literature use | yorkerhodes3 | Decided: filing copies authentic; financial reviewer is yorkerhodes3; literature files usable as attributed input ([decisions](SOURCES.md#author-decisions-2026-11-28)). Rubric selections approved as proposed (T-005, OQ-02). Pending: Phase 2 spend decision |
-| Phase 1 decisions raised 2026-11-28 | Primary coding clock; hypothesis decision rule | yorkerhodes3 | (1) SWE-Bench Pro per-instance data beyond four models needs leaderboard access from another environment or approval to read Scale's public S3 bucket with an AWS account; (2) approve or reject the proposed T14 amendment `0.4.1`; (3) keep one Bash Only protocol or require one harness major version |
+| Phase 1 decisions raised 2026-11-28 | Primary coding clock; hypothesis decision rule | yorkerhodes3 | (0) check the [`ffx-0.4` extraction gold](research/ffx-0.4/README.md#review-checklist-for-the-financial-reviewer) as financial reviewer; (1) SWE-Bench Pro per-instance data beyond four models needs leaderboard access from another environment or approval to read Scale's public S3 bucket with an AWS account; (2) approve or reject the proposed T14 amendment `0.4.1`; (3) keep one Bash Only protocol or require one harness major version |
 | Release reviewers not assigned | T-042 and public analytical release | yorkerhodes3 | 2026-11-27; proposed assignment/access checkpoint 2026-12-01, not an automated reminder |
 
 ## Draft research status
@@ -86,6 +86,8 @@ The requested texts are received; T-010 is complete for this scope. T-011–T-01
 | --- | --- | --- | --- |
 | T-000 | Initial concept, preserved research and MIT license | 2026-11-27 | #1 |
 | M0 | Non-analytical v0.4 overview, paper guide, evidence timeline and 13 themes | 2026-11-28 | #3 |
+| Phase 1 tranche 1 | Coding history (contamination-flagged) benchmark clock; SRC-032, CL-055 | 2026-11-28 | #18 |
+| Phase 1 extraction set | `ffx-0.4` built (90 instances); gold awaiting financial review | 2026-11-28 | #19 |
 | T-011–T-014 (draft) | W1 filing reconstruction: extractor, 22 checks, CL-020–CL-025, P02/P03/P05/P06/P09 | 2026-11-28 | #5 |
 | T-005 (draft) | Literature tranche 01 (SRC-020–SRC-026, CL-040–CL-051) and proposed rubrics | 2026-11-28 | #6, #8 |
 | T-024, T-006 | Live paper reader generated from the manuscript; claim inspector and F01 lineage | 2026-11-28 | #7 |
