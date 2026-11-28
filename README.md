@@ -4,9 +4,11 @@ Models, Megawatts, and Moats: Testing the Six-Month Open-Model Equivalency Hypot
 **Initial author:** yorkerhodes3. Start at **v0.4** and update the working version
 as the research proceeds; the label does not imply a completed release.
 
-**Demo:** [Open the Pages shell](https://ethical-tech-colab.github.io/frontier-half-life/).
-It includes an overview, P00–P12 paper-section guide, received-text timeline,
-and 13 presentation themes. GitHub Pages deployment succeeded on 2026-11-28;
+**Site:** [Open on Pages](https://ethical-tech-colab.github.io/frontier-half-life/).
+It includes an overview, the **live research reader** (the full P00–P12 review
+draft rendered from `paper/PAPER-DRAFT.md`, with claim and figure links), an
+**evidence room** (filing lineage and a claim inspector), and 13 presentation
+themes. GitHub Pages deployment succeeded on 2026-11-28;
 the published artifact matches the locally checked shell and excludes research
 captures/source documents. Public HTTP access is blocked in this session, so
 remote browser verification is not claimed.

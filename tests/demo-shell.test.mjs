@@ -251,10 +251,11 @@ test('each static page is no-JS readable, has labeled navigation/status/skip foc
     assert.match(html, /id="nav-toggle"[^>]+aria-controls="primary-nav"[^>]+aria-expanded="false" hidden/);
     assert.match(html, /id="theme-control"[^>]+hidden/);
     assert.equal((html.match(/aria-current="page"/g) || []).length, 1);
-    for (const status of ['Text captures received', 'Claim reconciliation pending', 'Demo shell only']) assert.ok(html.includes(status));
+    for (const status of ['Passages located · unverified', 'Financial review pending', 'Review draft · no calibrated results']) assert.ok(html.includes(status), `${page}: ${status}`);
     assert.ok(html.includes(SITE.author) && html.includes(SITE.version));
     assert.doesNotMatch(html, /<(?:script|iframe|img)[^>]+src="https?:/);
-    assert.doesNotMatch(html, / disabled|<input|<iframe/);
+    assert.doesNotMatch(html, / disabled|<iframe/);
+    for (const form of html.match(/<form[^>]*>/g) || []) assert.match(form, /\bhidden\b|data-live-form/, `${page}: forms start hidden until their script runs`);
     assert.match(html, /<noscript>.*All research-guide content and source links remain readable/);
     assert.equal(new Set(ids(html)).size, ids(html).length, `${page}: duplicate IDs`);
   }
@@ -329,9 +330,13 @@ test('all site links, assets, source files, and explicit or GitHub-heading secti
       const href = decode(match[1]);
       if (href.startsWith(SITE.documentBase)) {
         const target = href.slice(SITE.documentBase.length);
-        const [path, fragment] = target.split('#');
+        const [withQuery, fragment] = target.split('#');
+        const path = withQuery.split('?')[0];
         await access(resolve(root, path));
-        if (fragment) {
+        if (fragment && /^L\d+$/.test(fragment)) {
+          assert.match(withQuery, /\?plain=1$/, `${page}: line locators need the plain view`);
+          assert.ok(Number(fragment.slice(1)) <= (await read(path)).split('\n').length, `${page}: ${target}`);
+        } else if (fragment) {
           const document = await read(path);
           const explicit = ids(document);
           const headingIDs = [...document.matchAll(/^#{1,6}\s+(.+)$/gm)].map((heading) =>

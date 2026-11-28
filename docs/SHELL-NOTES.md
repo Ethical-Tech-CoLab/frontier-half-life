@@ -1,29 +1,39 @@
-# v0.4 demo shell
+# v0.4 site: reader, evidence room and shell
 
-Initial author: **yorkerhodes3**. This static, no-build-step site is a narrow,
-author-requested non-analytical shell. Text captures are received; claim
-reconciliation, model calibration and analytical publication remain gated.
-The author approved the specification and plan/backlog on 2026-11-28; these
-document verdicts do not verify research claims. No source documents, excerpts, financial values, or
-model results are fetched or embedded.
+Initial author: **yorkerhodes3**. This static, no-build-step site publishes the
+**review draft** of the paper and an evidence room. Filing passages are located
+and internally checked (W1), but no claim is verified; model calibration and
+analytical release remain gated. The author approved the specification and
+plan/backlog on 2026-11-28; these document verdicts do not verify research
+claims. Nothing is fetched at runtime: the reader and evidence room are
+generated at build time from the manuscript, claim ledger, figure registry and
+W1 extraction, and only short filing excerpts with locators are published.
 
 ## Content and review links
 
 - `index.html`: human question, scope, evidence/paper/dashboard roadmap, review gates.
-- `paper.html#p00`–`#p12`: stable orientation anchors, **not** a second manuscript.
-  Each links directly to its GitHub manuscript section and source/method/plan.
-- `evidence.html#filing-timeline`: named capture chronology, not an authenticated
-  filing series. Dates reflect supplied filenames. `#review-records` links to
-  intake, manifest, source, and claim records.
-- Future efficiency, equivalency, rebound, provider, impact, and uncertainty
-  routes are explicitly unavailable. There are no mock simulation controls.
+- `paper.html`: the **live research reader**, rendered from
+  `paper/PAPER-DRAFT.md` by `tools/render-reader.mjs` and `tools/markdown.mjs`
+  (escaped Markdown subset; no hand-maintained copy). Sections keep the stable
+  `#p00`–`#p12` anchors. Claim IDs link to `evidence.html#cl-NNN`; figure panels
+  come from `paper/figures.json` and say “Live view · not calibrated” or
+  “Planned · not available”. Planned routes are never rendered as links.
+- `evidence.html#filing-timeline` (F01): filing chronology plus a per-version
+  lineage table generated from `data/extracted/w1-filing-facts.csv`, with GitHub
+  `?plain=1#L<n>` line locators. `#claims`: every ledger claim with
+  classification, verification state, confidence, locator, caveats and
+  “Return to Pnn” links to each citing section; filters are progressive
+  enhancement (`assets/js/evidence.mjs`) and all claims stay visible without
+  JavaScript. `#review-records` links to the W1, intake, manifest and source records.
+- Views whose figures are still planned (efficiency, equivalency, providers,
+  impacts, uncertainty) are explicitly unavailable.
 
 The **single review-document base** is `assets/js/config.mjs` (`SITE.documentBase`).
 It points to `main`, the current repository branch, not an
 immutable reviewed release. Changing it requires regenerating the checked-in
 HTML with `node tools/render-shell.mjs` from the repository root. This is an
 optional maintenance command; serving `docs/` requires no build or dependencies.
-The HTML guide never parses or duplicates analytical manuscript passages.
+The reader renders the manuscript; it never maintains a separate copy of it.
 
 ## Design and theme provenance
 
@@ -87,7 +97,8 @@ From the repository root:
 
 ```sh
 node tools/render-shell.mjs --check
-node --test tests/demo-shell.test.mjs
+node tools/extract-filing-facts.mjs --check
+node --test tests/
 ```
 
 Serve `docs/` with any static HTTP server. No accounts, analytics, live provider
@@ -96,5 +107,5 @@ The existing Pages source is `main` at its root. A root redirect opens `docs/`;
 root `_config.yml` excludes research, paper and other source records from Jekyll.
 Review links go to GitHub, and original source text is not republished as Pages.
 Browser accessibility/responsiveness and actual Pages publication are separate
-parent-task checks. Full reviewed paper rendering, models, replay, exports, evidence
-filters, and immutable snapshots are intentionally not implemented.
+parent-task checks. Calibrated models, Monte Carlo replay, exports and immutable
+review snapshots are not implemented yet.
