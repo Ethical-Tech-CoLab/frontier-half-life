@@ -65,6 +65,7 @@ The requested texts are received; T-010 is complete for this scope. T-011–T-01
 | --- | --- | --- | --- |
 | Filing origin authentication and financial review | Promotion of CL-001–CL-005/CL-011/CL-012/CL-020–CL-025 beyond `unknown`; company calibration | yorkerhodes3 + financial reviewer | 2026-11-28; text reconstruction drafted and reproducible; needs origin check or author attestation, then review of dispositions and the 2026 comparability judgment |
 | Public-source full-text retrieval fails DNS | T-003/T-004 and full-method portions of T-015–T-018 | Session environment/access restoration or lawful accessible documents | 2026-11-27; provisional indexed synthesis remains limited, not falsely complete |
+| Author decisions requested 2026-11-28 | Promotion of company claims; rubric adoption; literature redistribution | yorkerhodes3 | (1) attest or arrange origin authentication of the supplied filing captures; (2) name a financial reviewer for the W1 dispositions and the 2026 comparability judgment; (3) choose rubric thresholds/task sets under OQ-02; (4) decide licensing treatment for the Stanford and Anthropic literature files |
 | Release reviewers not assigned | T-042 and public analytical release | yorkerhodes3 | 2026-11-27; proposed assignment/access checkpoint 2026-12-01, not an automated reminder |
 
 ## Draft research status
@@ -84,6 +85,11 @@ The requested texts are received; T-010 is complete for this scope. T-011–T-01
 | --- | --- | --- | --- |
 | T-000 | Initial concept, preserved research and MIT license | 2026-11-27 | #1 |
 | M0 | Non-analytical v0.4 overview, paper guide, evidence timeline and 13 themes | 2026-11-28 | #3 |
+| T-011–T-014 (draft) | W1 filing reconstruction: extractor, 22 checks, CL-020–CL-025, P02/P03/P05/P06/P09 | 2026-11-28 | #5 |
+| T-005 (draft) | Literature tranche 01 (SRC-020–SRC-026, CL-040–CL-051) and proposed rubrics | 2026-11-28 | #6, #8 |
+| T-024, T-006 | Live paper reader generated from the manuscript; claim inspector and F01 lineage | 2026-11-28 | #7 |
+| T-023, T-025 (review) | Data dictionary, task-energy engine, indexed rebound lab F04/F07 with manifests | 2026-11-28 | #9 |
+| T-028 (F05), T-032 (compute pressure) | Commitment exposure and stress-boundary views | 2026-11-28 | #10 |
 
 The v0.4 research-planning package was merged in #2. The author separately approved the revised specification and plan/backlog on 2026-11-28; those verdicts are recorded in the documents and do not approve financial findings.
 

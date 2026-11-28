@@ -14,14 +14,14 @@ the published artifact matches the locally checked shell and excludes research
 captures/source documents. Public HTTP access is blocked in this session, so
 remote browser verification is not claimed.
 
-**Rebound lab (added for review; Pages deployment not yet verified):**
+**Rebound lab (published for review; Pages run 46110772364 succeeded):**
 `docs/rebound.html` adds F04 (`#elasticity-threshold`) and F07
 (`#scenario-comparison`) for paper sections P05/P08. It runs the shared
 deterministic [task-energy model](docs/assets/js/model/task-energy.mjs) on
 **illustrative indexed scenarios — not calibrated, not forecasts**: three
 declared futures, field-level validation, sensitivity to elasticity, and JSON
-run-manifest export/import. No company calibration exists (filing reconciliation
-T-014 is incomplete) and the workload stays abstract until rubrics (T-005) are
+run-manifest export/import. No company calibration exists (filing claims are
+located but unverified) and the workload stays abstract until rubrics (T-005) are
 reviewed. See the [data dictionary](DATA-DICTIONARY.md).
 
 Start with [CONCEPT-IDEA.md](CONCEPT-IDEA.md), which records the working scope,

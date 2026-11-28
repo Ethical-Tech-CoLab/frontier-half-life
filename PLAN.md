@@ -146,6 +146,8 @@ Verify real HTTP availability, section navigation, assets and brand behavior bef
 
 **2026-11-28 deployment record:** PR #3 merged with explicit author authorization. GitHub Pages run `46100801021` succeeded, Pages reports `built`, and the downloaded artifact contains the exact locally checked root/shell/assets without research or source records. All 13 themes, section navigation and 375px layouts were exercised locally. Direct public HTTP/browser access is blocked by this environment, so remote browser verification remains unavailable rather than falsely claimed.
 
+**2026-11-28 build sequence:** Each bundle was merged by PR and its Pages run checked before the next: #5 W1 filing reconstruction (run `46109275112`); #6 literature tranche 01 (`46109838588`); #7 live reader and claim inspector (`46110003099`); #8 literature integration (`46110189114`); #9 indexed rebound lab (`46110772364`); #10 commitment exposure and stress boundaries (`46111073334`). All succeeded. The artifacts for #7 and #10 were downloaded and matched every published local file byte-for-byte, with research captures, manuscript source, tools, tests and Markdown excluded. Local headless-Chrome checks covered fonts, 375–1440px layouts, theme invariance and interactions. Public HTTP remains blocked here. Publishing the review draft is not an analytical release.
+
 Show working version **v0.4**, initial author **yorkerhodes3**, dataset cutoff, and review state on the paper/dashboard and exports. Subsequent changes advance the version deliberately; a later retrieval date is not silently a later evidence cutoff. Archive paper+dataset+model+manifest compatibility at each review. Do not overwrite the original supplied research record.
 
 ## 8. Quality and research-to-paper integration

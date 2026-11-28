@@ -3,7 +3,7 @@ import { fileURLToPath } from 'node:url';
 import { SITE, documentURL } from '../docs/assets/js/config.mjs';
 import { SECTIONS, FILINGS } from '../docs/assets/js/research.mjs';
 import { THEMES, tokensFor } from '../docs/assets/js/themes.mjs';
-import { paperBody, evidenceBody } from './render-reader.mjs';
+import { paperBody, evidenceBody, loadResearch } from './render-reader.mjs';
 import { providersBody, uncertaintyBody } from './render-views.mjs';
 import { MODEL_VERSION, TOLERANCE, SWEEP_VALUES, SYNTHETIC_FIXTURES, compute, sweepElasticity } from '../docs/assets/js/model/task-energy.mjs';
 import { SCENARIOS, FIELDS, WORKLOAD } from '../docs/assets/js/model/scenarios.mjs';
@@ -96,6 +96,11 @@ function reviewStrip() {
   </div>`;
 }
 
+function liveFigures() {
+  const { figures } = loadResearch();
+  return `${figures.filter((figure) => figure.status === 'live').length} of ${figures.length}`;
+}
+
 function overview() {
   return `<main id="main" class="wrap" tabindex="-1" data-research-content>
     <section class="hero" aria-labelledby="hero-title">
@@ -123,7 +128,7 @@ function overview() {
       <div class="cards">
         <article class="card"><span class="step">01 / Evidence room</span><span class="status-label">Passages located · unverified</span><h3>Know what supports a claim.</h3><p>Follow the filing lineage and inspect every claim with its classification, verification state, locator and the paper sections that cite it.</p>${siteLink('evidence.html#claims', 'Open the claim inspector →')}</article>
         <article class="card"><span class="step">02 / Paper reader</span><span class="status-label">Review draft · P00–P12</span><h3>Read the argument, then contest it.</h3><p>The full manuscript, rendered from its source. Claim IDs open the evidence; figure panels say whether a view is live or planned.</p>${siteLink('paper.html#about', 'Read the paper →')}</article>
-        <article class="card"><span class="step">03 / Dashboard workspace</span><span class="status-label">Indexed rebound lab live · other views planned</span><h3>Challenge the assumptions.</h3><p>Only the illustrative indexed rebound lab is available: an elasticity-threshold explorer and three uncalibrated futures with replayable manifests. Efficiency, equivalency, provider, impact, and uncertainty views follow evidence review.</p>${siteLink('rebound.html', 'Open the rebound lab →')}</article>
+        <article class="card"><span class="step">03 / Dashboard workspace</span><span class="status-label">${liveFigures()} figures live · none calibrated</span><h3>Challenge the assumptions.</h3><p>Explore the indexed rebound lab (F04/F07), commitment exposure (F05) and stress boundaries (F08). Efficiency, equivalency and impact views wait for evidence. Nothing here is a forecast or a calibrated result.</p>${siteLink('rebound.html', 'Open the rebound lab →')} · ${siteLink('providers.html', 'Commitments →')} · ${siteLink('uncertainty.html', 'Stress →')}</article>
       </div>
     </section>
     <section class="section two-column" id="boundaries" aria-labelledby="boundaries-title">

@@ -406,7 +406,8 @@ test('P05 and P08 open live, labeled F04/F07 lab targets that return to their in
   assert.match(lab, /T-005/);
   assert.match(lab, /<noscript><p class="planned-note">JavaScript is off: inputs, live results, and manifest export\/import are unavailable/);
   const overview = await read('docs/index.html');
-  assert.match(overview, /Indexed rebound lab live · other views planned/);
+  const registry = JSON.parse(await read('paper/figures.json')).figures;
+  assert.ok(overview.includes(`${registry.filter((figure) => figure.status === 'live').length} of ${registry.length} figures live · none calibrated`));
   assert.match(overview, /<a href="rebound.html" data-site-link>Open the rebound lab →<\/a>/);
 });
 
