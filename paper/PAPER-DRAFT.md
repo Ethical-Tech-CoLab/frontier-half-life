@@ -10,7 +10,7 @@
 
 **Status:** Early, incomplete research draft for review. Filing passages are now located and internally checked ([W1 reconstruction](../research/W1-FILING-RECONSTRUCTION.md)), but **no company figure is verified**: capture origin is not yet authenticated and no financial reviewer has signed off. No company energy estimates or empirical stress findings are presented.
 
-This is the manuscript source for the **live linked research reader**, a key deliverable alongside the dashboard. A non-analytical Pages shell is authorized on 2026-11-28 for navigation and section summaries. The full manuscript rendering, analytical visuals and versioned replay remain later work; shell availability is not analytical publication.
+This is the manuscript source for the **live linked research reader**, a key deliverable alongside the dashboard. Pages renders this file directly as the reader, so the published text and the reviewed source cannot drift. Claim IDs open the evidence room; figure panels state whether their view is live or planned. Publishing the review draft is not an analytical release, and versioned replay snapshots remain later work.
 
 The requested primary filing texts and exhibits are received, including all three amendments and the November 25 8-K. The author directed text-based review and waived original PDFs. A reproducible text-based reconstruction (T-011–T-014) now locates every initial company claim, recomputes footings and ratios, and records revisions; company-specific conclusions still await origin authentication and financial review. Independent literature summaries still distinguish inspected indexed passages from full-text review.
 

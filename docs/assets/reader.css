@@ -1,0 +1,55 @@
+/* Reader and evidence-room styles. Theme tokens only; text colors use --fg, --muted, --accent or --accent-ink. */
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.paper-meta p { margin: 0 0 .35rem; }
+.prose .paper-section > p, .prose .paper-section > h3 { max-width: 46rem; }
+.prose .paper-section h3 { font-size: 1.35rem; margin: 1.8rem 0 .8rem; }
+.prose code, .claim-card code { font-family: var(--font-mono); font-size: .86em; background: var(--surface); border: 1px solid var(--line); border-radius: 4px; padding: .05rem .3rem; overflow-wrap: anywhere; }
+.prose pre { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 1rem 1.2rem; overflow-x: auto; max-width: 46rem; }
+.prose pre code { background: none; border: 0; padding: 0; font-size: .85rem; }
+.table-wrap { max-width: 100%; overflow-x: auto; margin: 1.2rem 0 1.6rem; border: 1px solid var(--line); border-radius: 8px; }
+.table-wrap:focus-visible { outline-offset: 2px; }
+.table-wrap table { width: 100%; border-collapse: collapse; font-size: .82rem; }
+.table-wrap caption { caption-side: bottom; text-align: left; color: var(--muted); font-size: .76rem; padding: .7rem .9rem; border-top: 1px solid var(--line); }
+.table-wrap th, .table-wrap td { padding: .6rem .8rem; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+.table-wrap thead th { background: var(--surface); font: 650 .72rem/1.4 var(--font-mono); text-transform: uppercase; letter-spacing: .04em; white-space: nowrap; }
+.table-wrap tbody tr:last-child > * { border-bottom: 0; }
+.table-wrap .num { text-align: right; white-space: nowrap; }
+.table-title { margin: 2.5rem 0 .4rem; font-size: 1.5rem; }
+.lineage tbody th { font-weight: 600; min-width: 13rem; }
+.line-ref { font: .66rem/1 var(--font-mono); margin-left: .3rem; }
+.cell-state { color: var(--muted); font: .72rem/1.4 var(--font-mono); }
+.claim-ref { font-family: var(--font-mono); font-size: .86em; white-space: nowrap; }
+.figure-ref { margin: 1.6rem 0; padding: 1.1rem 1.3rem; max-width: 46rem; background: var(--surface); border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; }
+.figure-ref p { font-size: .9rem; }
+.figure-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem 1rem; align-items: baseline; margin-bottom: .6rem; }
+.figure-head .eyebrow { margin: 0; }
+.figure-head .status-label { margin: 0; }
+.figure-actions { display: flex; flex-wrap: wrap; gap: .7rem 1.2rem; align-items: center; margin: .4rem 0 0; font-size: .82rem; }
+.figure-actions .button { min-height: 40px; padding: .5rem 1rem; }
+.filters { display: flex; flex-wrap: wrap; gap: .8rem 1.2rem; align-items: end; margin-bottom: 1rem; }
+.filters label { display: grid; gap: .3rem; font: 600 .72rem/1.4 var(--font-mono); text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+.filters select, .filters input { min-height: 44px; min-width: 12rem; padding: .5rem .7rem; background: var(--card); color: var(--fg); border: 1px solid var(--control); border-radius: 8px; font: .85rem/1.4 var(--font-body); text-transform: none; letter-spacing: 0; }
+.filters .button { min-height: 44px; }
+.claim-list { display: grid; gap: 1rem; margin: 1rem 0 1.5rem; }
+.claim-card { padding: 1.3rem 1.5rem; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); scroll-margin-top: 90px; }
+.claim-card:target { border-color: var(--accent); box-shadow: inset 3px 0 var(--accent); }
+.claim-card header { display: flex; flex-wrap: wrap; gap: .5rem 1rem; align-items: baseline; justify-content: space-between; }
+.claim-card h3 { margin: 0; font-size: 1.5rem; }
+.claim-labels { display: flex; flex-wrap: wrap; gap: .4rem; margin: 0; }
+.claim-labels .status-label { margin: 0; }
+.claim-text { font-size: .98rem; margin: .8rem 0; max-width: 60rem; }
+.claim-card dl { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .6rem 1.5rem; margin: 0 0 .8rem; font-size: .8rem; }
+.claim-card dl > div { min-width: 0; }
+.claim-card dt { color: var(--muted); font: 600 .66rem/1.5 var(--font-mono); text-transform: uppercase; letter-spacing: .06em; }
+.claim-card dd { margin: .15rem 0 0; overflow-wrap: anywhere; }
+@media (max-width: 760px) {
+  .claim-card dl { grid-template-columns: 1fr; }
+  .claim-card { padding: 1.1rem; }
+  .filters select, .filters input { min-width: 0; width: 100%; }
+  .filters label { width: 100%; }
+}
+@media print {
+  .filters, .figure-actions .button { display: none; }
+  .claim-card, .figure-ref { break-inside: avoid; }
+  .table-wrap { overflow: visible; }
+}
