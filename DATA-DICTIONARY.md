@@ -16,7 +16,7 @@
 
 ## 1. Calibration status and workload boundary
 
-- **No company calibration exists.** Filing reconciliation (BACKLOG T-014) is incomplete, so no Anthropic, OpenAI, provider, or filing-derived value enters any model input, preset, or result. The claim ledger entries CL-001–CL-005 and CL-012 remain unverified leads.
+- **No company calibration exists.** Filing claims are located but unverified (BACKLOG T-014 awaits financial review), so no Anthropic, OpenAI, provider, or filing-derived value enters any model input, preset, or result. The claim ledger entries CL-001–CL-005 and CL-012 remain unverified leads.
 - **The workload is abstract.** Every preset and every run describes an **illustrative indexed workload** until the coding, extraction and bounded-agent rubrics (BACKLOG T-005) are defined and reviewed. It is not a coding, extraction or agent workload, and its success rates are not evaluation results.
 - **Results are illustrative indexed scenarios — not calibrated, not forecasts.** They show what the declared assumptions imply under the identity in §4. They are not measured elasticities, energy totals, or probabilities.
 - **The model is deterministic.** It has no seed and no random component. Monte Carlo analysis (T-031) is later, separately reviewed work.

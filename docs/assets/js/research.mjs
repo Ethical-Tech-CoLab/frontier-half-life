@@ -25,7 +25,7 @@ export const SECTIONS = Object.freeze([
   { id: 'p05', title: 'Demand response', lane: 'The mechanisms',
     summary: 'Ask how price, capability, product design, and workload mix change demand. No measured elasticity is published in this shell.',
     research: 'research/INDEPENDENT-EVIDENCE.md#r01', source: 'SOURCES.md#src-006',
-    next: 'F04 explores the conditional threshold e* = ln(k)/ln(q) with declared, illustrative inputs. It is uncalibrated and not a measured elasticity; company calibration awaits filing reconciliation (T-014).',
+    next: 'F04 explores the conditional threshold e* = ln(k)/ln(q) with declared, illustrative inputs. It is uncalibrated and not a measured elasticity; company calibration awaits reviewed filing claims (T-014).',
     shell: 'rebound.html#elasticity-threshold', shellLabel: 'Explore the elasticity threshold',
     figure: 'F04 · elasticity threshold — illustrative indexed explorer',
     shellStatus: 'Illustrative indexed scenario — not calibrated, not a forecast.' },
